@@ -250,10 +250,10 @@ body::after {
   font-weight: 400;
 }
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 1.8rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
   max-width: 480px;
 }
 .hero-actions {
@@ -311,11 +311,12 @@ body::after {
 
 /* === Credential Badges: Beautiful individual designs === */
 .hero-credentials {
-  display: flex;
-  gap: 0.7rem;
-  flex-wrap: wrap;
-  padding-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0.55rem;
+  padding-top: 1.4rem;
   border-top: 1px solid var(--border-light);
+  justify-content: start;
 }
 .credential-badge {
   display: flex;
@@ -1006,7 +1007,7 @@ footer {
 @media (max-width: 600px) {
   section { padding: 4rem 1.5rem; }
   .hero-content { padding: 5rem 1.5rem 2rem; }
-  .hero-credentials { gap: 0.5rem; }
+  .hero-credentials { grid-template-columns: repeat(2, auto); gap: 0.5rem; }
   .credential-badge { padding: 0.4rem 0.7rem 0.4rem 0.5rem; }
   .credential-icon { width: 24px; height: 24px; }
   .credential-icon svg { width: 13px; height: 13px; }
