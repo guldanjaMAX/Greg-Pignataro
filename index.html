@@ -4,34 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Greg Pignataro | Radical Body Love</title>
-<meta name="description" content="Greg Pignataro helps high performers dissolve the hidden pain, suppressed emotions, and shame-based beliefs that keep them at war with their own bodies. What remains is freedom.">
+<meta name="description" content="Greg Pignataro helps you remember that your body was never the problem. Guinness World Record holder, Gabor Maté trained, psychology degree. What if you were never broken?">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 /* ============================================
    GREG PIGNATARO — RADICAL BODY LOVE
-   Brand Site v1.0
-   Design Direction: Dark luxury, gold accents,
-   editorial, warm, clinical-meets-philosophical
+   Brand Site v2.0
+   Design Direction: Light, warm, modern,
+   editorial, welcoming, remembering who you are
    ============================================ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg-primary: #0A0A0A;
-  --bg-secondary: #0E0E0E;
-  --bg-tertiary: #151515;
-  --bg-card: #121212;
-  --gold: #C4964A;
-  --gold-light: #D4A853;
-  --gold-bright: #E8C476;
-  --gold-dim: rgba(196,150,74,0.08);
-  --text-primary: #F2EDE8;
-  --text-secondary: #9E9890;
-  --text-muted: #605C57;
+  --bg-primary: #FDFBF8;
+  --bg-warm: #F7F3EE;
+  --bg-accent: #F0EBE3;
+  --bg-card: #FFFFFF;
+  --gold: #B8863A;
+  --gold-light: #C99B4F;
+  --gold-bright: #D4A853;
+  --gold-dim: rgba(184,134,58,0.06);
+  --text-primary: #2C2520;
+  --text-secondary: #6B5E52;
+  --text-muted: #9E9285;
+  --border-light: rgba(184,134,58,0.12);
+  --shadow-soft: 0 4px 24px rgba(44,37,32,0.06);
+  --shadow-hover: 0 8px 40px rgba(44,37,32,0.1);
   --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Shadow work section uses dark */
+  --shadow-bg: #1A1612;
+  --shadow-text: #F2EDE8;
+  --shadow-muted: #9E9890;
 }
 
 html { scroll-behavior: smooth; }
@@ -50,14 +58,14 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
-/* ===== GRAIN OVERLAY ===== */
+/* ===== SUBTLE TEXTURE ===== */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
+  opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 256px;
 }
@@ -76,11 +84,12 @@ nav {
   background: transparent;
 }
 nav.scrolled {
-  background: rgba(10,10,10,0.92);
+  background: rgba(253,251,248,0.95);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   padding: 1rem 4rem;
-  border-bottom: 1px solid rgba(196,150,74,0.08);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 2px 20px rgba(44,37,32,0.04);
 }
 .nav-logo {
   font-family: var(--serif);
@@ -131,7 +140,7 @@ nav.scrolled {
 }
 .nav-cta:hover {
   background: var(--gold);
-  color: var(--bg-primary);
+  color: #fff;
 }
 .nav-hamburger {
   display: none;
@@ -154,18 +163,16 @@ nav.scrolled {
   align-items: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(160deg, var(--bg-primary) 0%, var(--bg-warm) 50%, var(--bg-accent) 100%);
 }
-.hero-bg-image {
+.hero-glow {
   position: absolute;
-  inset: 0;
-  background: url('images/soccer/footy_hero_2.jpg') center center / cover no-repeat;
-  opacity: 0.15;
-  filter: grayscale(60%);
-}
-.hero-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.85) 40%, rgba(10,10,10,0.95) 100%);
+  top: -20%;
+  right: -10%;
+  width: 70%;
+  height: 140%;
+  background: radial-gradient(ellipse at center, rgba(184,134,58,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 .hero-content {
   position: relative;
@@ -202,6 +209,7 @@ nav.scrolled {
   font-weight: 300;
   line-height: 1.08;
   margin-bottom: 2rem;
+  color: var(--text-primary);
 }
 .hero-title em {
   font-style: italic;
@@ -209,7 +217,7 @@ nav.scrolled {
   font-weight: 400;
 }
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--text-secondary);
   line-height: 1.85;
   margin-bottom: 3rem;
@@ -225,34 +233,36 @@ nav.scrolled {
   display: inline-block;
   padding: 1.1rem 3.2rem;
   background: var(--gold);
-  color: var(--bg-primary);
+  color: #fff;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
+  border-radius: 4px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-primary:hover {
   background: var(--gold-bright);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(196,150,74,0.25);
+  box-shadow: 0 12px 40px rgba(184,134,58,0.2);
 }
 .btn-ghost {
   display: inline-block;
   padding: 1.1rem 2.5rem;
-  border: 1px solid rgba(196,150,74,0.3);
-  color: var(--gold);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
   font-size: 0.78rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
+  border-radius: 4px;
   transition: all 0.3s;
 }
 .btn-ghost:hover {
   border-color: var(--gold);
-  background: rgba(196,150,74,0.05);
+  color: var(--gold);
 }
 .hero-image-container {
   position: relative;
@@ -260,37 +270,37 @@ nav.scrolled {
 .hero-image {
   width: 100%;
   max-width: 480px;
-  aspect-ratio: 16/10;
+  aspect-ratio: 3/4;
   object-fit: cover;
-  filter: contrast(1.05) brightness(0.95);
+  border-radius: 8px;
+  filter: contrast(1.02) brightness(1.02);
   position: relative;
   z-index: 1;
+  box-shadow: var(--shadow-soft);
 }
-.hero-image-frame {
+.hero-image-glow {
   position: absolute;
-  top: -16px;
-  right: -16px;
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 16/10;
-  border: 1px solid rgba(196,150,74,0.15);
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(184,134,58,0.1) 0%, transparent 70%);
   z-index: 0;
+  border-radius: 50%;
 }
 .hero-credentials {
   display: flex;
-  gap: 3.5rem;
+  gap: 2.5rem;
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(196,150,74,0.12);
+  border-top: 1px solid var(--border-light);
+  flex-wrap: wrap;
 }
 .credential-value {
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--gold);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.02em;
 }
 .credential-label {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -302,15 +312,8 @@ nav.scrolled {
   text-align: center;
   padding: 9rem 4rem;
   position: relative;
-  background: var(--bg-secondary);
+  background: var(--bg-warm);
   overflow: hidden;
-}
-.manifesto-bg {
-  position: absolute;
-  inset: 0;
-  background: url('images/brand/kintsugi-stone.jpg') center center / cover no-repeat;
-  opacity: 0.12;
-  filter: grayscale(40%);
 }
 .manifesto-quote {
   font-family: var(--serif);
@@ -320,6 +323,9 @@ nav.scrolled {
   line-height: 1.55;
   max-width: 780px;
   margin: 0 auto 2rem;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
 }
 .manifesto-attribution {
   font-size: 0.75rem;
@@ -327,6 +333,8 @@ nav.scrolled {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 400;
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== SECTIONS ===== */
@@ -385,7 +393,8 @@ section { padding: 8rem 4rem; }
   width: 100%;
   aspect-ratio: 16/11;
   object-fit: cover;
-  filter: grayscale(20%) contrast(1.05);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
 }
 .story-body p {
   color: var(--text-secondary);
@@ -454,18 +463,17 @@ section { padding: 8rem 4rem; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(30%) contrast(1.08);
 }
 .full-bleed-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, var(--bg-primary) 0%, transparent 25%, transparent 75%, var(--bg-primary) 100%);
+  background: linear-gradient(to bottom, var(--bg-primary) 0%, transparent 20%, transparent 80%, var(--bg-primary) 100%);
 }
 
 /* ===== PROOF BAR ===== */
 .proof-bar {
   padding: 4.5rem 4rem;
-  background: var(--bg-tertiary);
+  background: var(--bg-accent);
 }
 .proof-grid {
   display: grid;
@@ -499,14 +507,16 @@ section { padding: 8rem 4rem; }
 .method-card {
   background: var(--bg-card);
   padding: 3rem 2.5rem;
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-soft);
 }
 .method-card:hover {
-  border-color: rgba(196,150,74,0.15);
   transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 .method-card::after {
   content: '';
@@ -514,7 +524,7 @@ section { padding: 8rem 4rem; }
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   opacity: 0;
   transition: opacity 0.4s;
@@ -523,7 +533,7 @@ section { padding: 8rem 4rem; }
 .method-num {
   font-family: var(--serif);
   font-size: 3.5rem;
-  color: rgba(196,150,74,0.1);
+  color: rgba(184,134,58,0.12);
   font-weight: 300;
   line-height: 1;
   margin-bottom: 1.5rem;
@@ -533,6 +543,7 @@ section { padding: 8rem 4rem; }
   font-size: 1.4rem;
   font-weight: 400;
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 .method-desc {
   font-size: 0.92rem;
@@ -549,13 +560,18 @@ section { padding: 8rem 4rem; }
 }
 .offer-card {
   background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
   padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
   transition: all 0.4s;
+  box-shadow: var(--shadow-soft);
 }
-.offer-card:hover { border-color: rgba(196,150,74,0.12); }
+.offer-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
 .offer-card.flagship {
   border-color: var(--gold);
   position: relative;
@@ -567,12 +583,13 @@ section { padding: 8rem 4rem; }
   left: 0;
   right: 0;
   background: var(--gold);
-  color: var(--bg-primary);
+  color: #fff;
   text-align: center;
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   padding: 0.5rem;
   font-weight: 600;
+  border-radius: 8px 8px 0 0;
 }
 .offer-card.flagship { padding-top: 4.5rem; }
 .offer-tier {
@@ -611,7 +628,7 @@ section { padding: 8rem 4rem; }
   padding: 0.55rem 0;
   font-size: 0.88rem;
   color: var(--text-secondary);
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border-light);
   padding-left: 1.5rem;
   position: relative;
 }
@@ -627,7 +644,7 @@ section { padding: 8rem 4rem; }
   display: block;
   text-align: center;
   padding: 1rem 2rem;
-  border: 1px solid rgba(196,150,74,0.4);
+  border: 1px solid var(--border-light);
   color: var(--gold);
   text-decoration: none;
   font-size: 0.78rem;
@@ -635,15 +652,16 @@ section { padding: 8rem 4rem; }
   text-transform: uppercase;
   transition: all 0.3s;
   font-weight: 500;
+  border-radius: 4px;
 }
 .offer-btn:hover {
   background: var(--gold);
-  color: var(--bg-primary);
+  color: #fff;
   border-color: var(--gold);
 }
 .offer-card.flagship .offer-btn {
   background: var(--gold);
-  color: var(--bg-primary);
+  color: #fff;
   border-color: var(--gold);
 }
 .offer-card.flagship .offer-btn:hover {
@@ -660,10 +678,12 @@ section { padding: 8rem 4rem; }
 .pillar {
   padding: 2.5rem;
   border-left: 2px solid var(--gold);
-  background: rgba(196,150,74,0.015);
+  background: var(--bg-card);
+  border-radius: 0 8px 8px 0;
   transition: all 0.3s;
+  box-shadow: var(--shadow-soft);
 }
-.pillar:hover { background: rgba(196,150,74,0.03); }
+.pillar:hover { box-shadow: var(--shadow-hover); }
 .pillar-name {
   font-family: var(--serif);
   font-size: 1.35rem;
@@ -676,19 +696,66 @@ section { padding: 8rem 4rem; }
   line-height: 1.8;
 }
 
+/* ===== SHADOW WORK SECTION (Dark) ===== */
+.shadow-section {
+  background: var(--shadow-bg);
+  color: var(--shadow-text);
+  position: relative;
+  overflow: hidden;
+}
+.shadow-section .eyebrow { color: var(--gold); }
+.shadow-section .section-title { color: var(--shadow-text); }
+.shadow-section .section-subtitle { color: var(--shadow-muted); }
+.shadow-section .story-body p { color: var(--shadow-muted); }
+.shadow-section .story-body p:first-of-type { color: var(--shadow-text); }
+.shadow-section .story-image { border-radius: 8px; }
+.shadow-glow {
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 60%;
+  height: 160%;
+  background: radial-gradient(ellipse at center, rgba(184,134,58,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 4rem auto 0;
+}
+.testimonial {
+  padding: 2.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+}
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.testimonial-author {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
 /* ===== CTA SECTION ===== */
 .cta-section {
   text-align: center;
   padding: 10rem 4rem;
   position: relative;
   overflow: hidden;
-}
-.cta-section .cta-bg {
-  position: absolute;
-  inset: 0;
-  background: url('images/soccer/footy_hero_4.jpg') center center / cover no-repeat;
-  opacity: 0.08;
-  filter: grayscale(60%);
+  background: linear-gradient(160deg, var(--bg-warm) 0%, var(--bg-accent) 50%, var(--bg-warm) 100%);
 }
 .cta-inner {
   position: relative;
@@ -702,11 +769,43 @@ section { padding: 8rem 4rem; }
   line-height: 1.85;
 }
 
+/* ===== CTA PROCESS STEPS ===== */
+.cta-process {
+  display: flex;
+  gap: 2.5rem;
+  margin: 3rem auto;
+  max-width: 700px;
+  justify-content: center;
+}
+.process-step {
+  flex: 1;
+  text-align: center;
+}
+.process-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1rem;
+  margin: 0 auto 1rem;
+}
+.process-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 /* ===== FOOTER ===== */
 footer {
   padding: 5rem 4rem 3rem;
-  border-top: 1px solid rgba(196,150,74,0.08);
+  border-top: 1px solid var(--border-light);
   text-align: center;
+  background: var(--bg-primary);
 }
 .footer-brand {
   font-family: var(--serif);
@@ -752,65 +851,6 @@ footer {
   letter-spacing: 0.05em;
 }
 
-/* ===== TESTIMONIALS ===== */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1100px;
-  margin: 4rem auto 0;
-}
-.testimonial {
-  padding: 2.5rem;
-  border: 1px solid rgba(196,150,74,0.1);
-  border-radius: 2px;
-  background: var(--bg-card);
-}
-.testimonial-text {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-style: italic;
-  line-height: 1.8;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-}
-.testimonial-author {
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-
-/* ===== CTA PROCESS STEPS ===== */
-.cta-process {
-  display: flex;
-  gap: 2.5rem;
-  margin: 3rem 0;
-  max-width: 700px;
-}
-.process-step {
-  flex: 1;
-  text-align: center;
-}
-.process-num {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: 1rem;
-  margin: 0 auto 1rem;
-}
-.process-text {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
 /* ===== ANIMATIONS ===== */
 .reveal {
   opacity: 0;
@@ -838,7 +878,6 @@ footer {
   }
   .hero-image-container { order: -1; }
   .hero-image { max-width: 100%; }
-  .hero-image-frame { display: none; }
   .story-grid { grid-template-columns: 1fr; gap: 3rem; }
   .method-grid { grid-template-columns: 1fr; }
   .offers-grid { grid-template-columns: 1fr; max-width: 500px; }
@@ -850,7 +889,7 @@ footer {
 @media (max-width: 600px) {
   section { padding: 4rem 1.5rem; }
   .hero-content { padding: 7rem 1.5rem 3rem; }
-  .hero-credentials { gap: 1.5rem; flex-wrap: wrap; }
+  .hero-credentials { gap: 1.5rem; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .full-bleed { height: 35vh; }
 }
@@ -875,13 +914,12 @@ footer {
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <div class="hero-bg-image"></div>
-  <div class="hero-gradient"></div>
+  <div class="hero-glow"></div>
   <div class="hero-content">
     <div class="hero-text">
       <p class="hero-eyebrow">Radical Body Love</p>
-      <h1 class="hero-title">Your body was never<br>the <em>enemy.</em></h1>
-      <p class="hero-subtitle">Guinness World Record holder, D1 athlete, and somatic intelligence pioneer. Greg Pignataro helps high performers dissolve the hidden pain, suppressed emotions, and shame based beliefs that keep them at war with their own bodies. What remains is freedom.</p>
+      <h1 class="hero-title">You were never <em>broken.</em></h1>
+      <p class="hero-subtitle">Your body is not the problem. It never was. Greg Pignataro helps you stop fighting yourself and start remembering who you really are. What you find on the other side is freedom.</p>
       <div class="hero-actions">
         <a href="#apply" class="btn-primary">Start the Conversation</a>
         <a href="#story" class="btn-ghost">Read the Story</a>
@@ -889,15 +927,19 @@ footer {
       <div class="hero-credentials">
         <div>
           <div class="credential-value">GWR</div>
-          <div class="credential-label">Guinness World Record Holder</div>
+          <div class="credential-label">Guinness World Record</div>
         </div>
         <div>
-          <div class="credential-value">D1</div>
-          <div class="credential-label">Marquette University Athlete</div>
+          <div class="credential-value">Maté</div>
+          <div class="credential-label">Gabor Maté Trained</div>
+        </div>
+        <div>
+          <div class="credential-value">B.S.</div>
+          <div class="credential-label">Psychology Degree</div>
         </div>
         <div>
           <div class="credential-value">CSCS</div>
-          <div class="credential-label">NSCA Certified Specialist</div>
+          <div class="credential-label">Certified Specialist</div>
         </div>
         <div>
           <div class="credential-value">NeuFit</div>
@@ -906,16 +948,15 @@ footer {
       </div>
     </div>
     <div class="hero-image-container">
+      <div class="hero-image-glow"></div>
       <img src="images/headshots/greg_hero_smile.jpg" alt="Greg Pignataro" class="hero-image" loading="eager">
-      <div class="hero-image-frame"></div>
     </div>
   </div>
 </section>
 
 <!-- ===================== MANIFESTO ===================== -->
 <section class="manifesto reveal">
-  <div class="manifesto-bg"></div>
-  <p class="manifesto-quote">"Stop avoiding what is real in your body. Stop chasing what is not real in your mind. What remains is freedom."</p>
+  <p class="manifesto-quote">"Stop running from what is real in your body. Stop chasing what is not real in your mind. What is left is freedom."</p>
   <p class="manifesto-attribution">The Radical Body Love Manifesto</p>
 </section>
 
@@ -925,11 +966,11 @@ footer {
     <div class="story-grid">
       <div class="story-body reveal">
         <p class="eyebrow">Origin</p>
-        <h2 class="section-title">The arc is always the same.</h2>
+        <h2 class="section-title">The same thing keeps <em>happening.</em></h2>
         <div class="divider"></div>
-        <p>A false assumption. Something shatters. And something truer gets uncovered underneath. This has happened repeatedly in Greg's life: with soccer, with purpose, with childhood trauma, with marriage, with his own body image, and with himself.</p>
-        <p>He is not a healer, coach, therapist, or trainer in the conventional sense. He is someone who teaches people that their body was never the enemy and proves it experientially, in a single afternoon.</p>
-        <p>Every key moment in Greg's life follows the same arc: a false assumption is discovered, something truer emerges, and what felt like destruction turns out to be the most important doorway he ever walked through.</p>
+        <p>Something breaks. And something truer shows up underneath. This has happened again and again in Greg's life. With soccer. With purpose. With childhood pain. With marriage. With his own body. With himself.</p>
+        <p>He is not a coach or a therapist in the normal sense. He is someone who shows people that their body was never the enemy. And he proves it in a single afternoon.</p>
+        <p>Every big moment in Greg's life follows the same shape: a false belief gets shattered, something more real takes its place, and what felt like the worst thing turns out to be the most important door he ever walked through.</p>
       </div>
       <div class="reveal reveal-delay-1">
         <img src="images/headshots/greg_speaking_gesture.jpg" alt="Greg Pignataro speaking" class="story-image">
@@ -943,24 +984,28 @@ footer {
   <div class="container">
     <div class="timeline">
       <div class="tl-item reveal">
+        <div class="tl-year">College</div>
+        <div class="tl-event">Earned a psychology degree while playing Division I soccer at Marquette University. The study of the mind and the demands of the body were never separate paths. They were always the same path.</div>
+      </div>
+      <div class="tl-item reveal">
         <div class="tl-year">Age 18</div>
-        <div class="tl-event">Torn ACL at Marquette University during a routine pass. What looked like the end of everything was the first real doorway. Traded the athlete identity for a deeper question: who am I without the performance?</div>
+        <div class="tl-event">Torn ACL during a routine pass. Everything he thought he was got ripped away in one moment. He traded the athlete identity for a bigger question: who am I when I cannot perform?</div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-year">Age 29</div>
-        <div class="tl-event">Three words at a bachelor party collapse the entire ego structure. A 10,000 pound weight lifts. Embraces universal peace, non separation, and unconditional love for the first time. Begins the month long inquiry that will reshape everything.</div>
+        <div class="tl-event">Three words at a bachelor party changed everything. A weight he had carried his whole life lifted. For the first time, he felt peace, connection, and love without conditions. The month that followed rewired his entire life.</div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-year">Age 33</div>
-        <div class="tl-event">Decades of suppressed emotion release in a 15 minute cry. Hip mobility transforms overnight. Sets the Guinness World Record for Nordic Hamstring Curls days later. 24 reps in 60 seconds. The body does not lie.</div>
+        <div class="tl-event">Decades of held emotion released in a 15 minute cry. His hip mobility changed overnight. Days later, he set the Guinness World Record for Nordic Hamstring Curls. 24 reps in 60 seconds. The body does not lie.</div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-year">Age 35</div>
-        <div class="tl-event">Transforms body composition by releasing the need to look a certain way. Stands in a fitness room, handles what arrives without flinching. Radical Body Love becomes not just a philosophy but a living practice.</div>
+        <div class="tl-year">Training</div>
+        <div class="tl-event">Certified under Dr. Gabor Maté, one of the world's leading experts on trauma and the body. This training gave a clinical framework to what Greg had already been living: the body holds what the mind will not face.</div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-year">Now</div>
-        <div class="tl-event">Cofounder of Enlightened Health. World record holder. The creator of a new category of embodied transformation that dissolves the boundary between physical training and spiritual awakening. Based in Phoenix, Arizona.</div>
+        <div class="tl-event">Cofounder of Enlightened Health. World record holder. Creator of a new kind of work that dissolves the line between physical training and deep personal transformation. Based in Phoenix, Arizona.</div>
       </div>
     </div>
   </div>
@@ -977,11 +1022,11 @@ footer {
   <div class="proof-grid reveal">
     <div class="proof-item">
       <div class="proof-value">GWR</div>
-      <div class="proof-label">Guinness World Record Holder</div>
+      <div class="proof-label">Guinness World Record</div>
     </div>
     <div class="proof-item">
       <div class="proof-value">24</div>
-      <div class="proof-label">Nordic Curls in 60 Seconds (Record)</div>
+      <div class="proof-label">Nordic Curls in 60 Seconds</div>
     </div>
     <div class="proof-item">
       <div class="proof-value">D1</div>
@@ -989,49 +1034,39 @@ footer {
     </div>
     <div class="proof-item">
       <div class="proof-value">15+</div>
-      <div class="proof-label">Years Clinical Practice</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">1000+</div>
-      <div class="proof-label">Lives Transformed</div>
+      <div class="proof-label">Years Practice</div>
     </div>
   </div>
 </section>
-
-<!-- ===================== BRAND IMAGE BREAK ===================== -->
-<div class="full-bleed reveal" style="height: 45vh;">
-  <img src="images/brand/golden-smoke.jpg" alt="Golden light breaking through darkness" loading="lazy">
-  <div class="full-bleed-overlay"></div>
-</div>
 
 <!-- ===================== METHODOLOGY ===================== -->
 <section id="method" style="background: var(--bg-primary);">
   <div class="container">
     <p class="eyebrow reveal">The Method</p>
-    <h2 class="section-title reveal">This is not fitness.<br>This is not therapy.<br>This is <em>both.</em></h2>
-    <p class="section-subtitle reveal">Greg combines clinical precision with philosophical depth to create embodied transformation that has no existing category. He does not teach people to use their body. He teaches people that their body was never broken.</p>
+    <h2 class="section-title reveal">Not fitness. Not therapy.<br>Something <em>deeper.</em></h2>
+    <p class="section-subtitle reveal">Greg blends body work with emotional depth to create change that has no name yet. He does not teach you to use your body. He helps you remember that your body was never broken.</p>
     <div class="method-grid">
       <div class="method-card reveal">
         <div class="method-num">01</div>
-        <div class="method-name">Somatic Intelligence</div>
-        <div class="method-desc">DC electrical frequencies, NeuFit technology, and nervous system regulation to access what talk therapy cannot reach. Your body stores the story your mind has been avoiding. Greg reads the body like a text and helps you rewrite the chapters that no longer serve you.</div>
+        <div class="method-name">Body Listening</div>
+        <div class="method-desc">Your body stores every story your mind has been avoiding. Using NeuFit technology and nervous system work, Greg helps you hear what your body has been trying to say. This is not talk therapy. This is the body finally getting to speak.</div>
       </div>
       <div class="method-card reveal reveal-delay-1">
         <div class="method-num">02</div>
-        <div class="method-name">Structural Liberation</div>
-        <div class="method-desc">ATG training principles, therapeutic movement, and biomechanical mastery combined with a philosophy that treats pain as signal, not sentence. Every restriction in the body has a message. Every limitation is an invitation to go deeper, not harder.</div>
+        <div class="method-name">Movement as Medicine</div>
+        <div class="method-desc">Every tight spot, every sore place, every part of you that will not move freely is holding a message. Greg treats pain as a signal, not a sentence. The goal is not to push harder. The goal is to listen deeper.</div>
       </div>
       <div class="method-card reveal reveal-delay-2">
         <div class="method-num">03</div>
-        <div class="method-name">Identity Dissolution</div>
-        <div class="method-desc">The real transformation is not physical. It is the collapse of the false self that needed the body to perform, prove, or protect. What is left is someone who finally inhabits their own skin. Not perfected. Not optimized. Liberated.</div>
+        <div class="method-name">Remembering Who You Are</div>
+        <div class="method-desc">The real shift is not physical. It is the moment you stop performing a version of yourself and start living as who you actually are. Not fixed. Not optimized. Free.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== WHO THIS IS FOR ===================== -->
-<section style="background: var(--bg-secondary);">
+<section style="background: var(--bg-warm);">
   <div class="container">
     <div class="story-grid">
       <div class="reveal">
@@ -1039,41 +1074,55 @@ footer {
       </div>
       <div class="story-body reveal reveal-delay-1">
         <p class="eyebrow">Who This Is For</p>
-        <h2 class="section-title">You have optimized everything except <em>yourself.</em></h2>
+        <h2 class="section-title">You have tried <em>everything.</em></h2>
         <div class="divider"></div>
-        <p>You are a high performer. Entrepreneur, executive, athlete, or seeker. You have read the books, done the retreats, tracked the macros, and optimized the sleep. And still, at 2am, something feels fundamentally unresolved.</p>
-        <p>You suspect that your chronic tension, your persistent dissatisfaction, your inability to truly rest has nothing to do with your training program and everything to do with what your body has been holding since long before you started counting reps.</p>
-        <p>You are ready to stop performing wellness and start actually inhabiting your life. You are ready to meet your body not as a project to fix, but as the most intelligent, beautiful instrument you have ever been given.</p>
+        <p>You are a high performer. Maybe a founder, an executive, an athlete, or someone searching for more. You have read the books. Done the retreats. Tracked the macros. Optimized the sleep. And still something feels off.</p>
+        <p>You have a feeling that your tension, your restlessness, your inability to truly rest has nothing to do with your training plan. It has everything to do with what your body has been holding for years.</p>
+        <p>You are ready to stop performing wellness and start actually living in your own skin. You are ready to meet your body not as a problem to solve, but as the most honest, intelligent thing you have ever been given.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== BODY IMAGE BREAK ===================== -->
-<div class="full-bleed reveal" style="height: 40vh;">
-  <img src="images/brand/body-golden.jpg" alt="Human form illuminated in golden light" loading="lazy">
-  <div class="full-bleed-overlay"></div>
-</div>
+<!-- ===================== SHADOW WORK SECTION (Dark) ===================== -->
+<section class="shadow-section" style="padding: 9rem 4rem;">
+  <div class="shadow-glow"></div>
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-body reveal">
+        <p class="eyebrow">The Shadow</p>
+        <h2 class="section-title">The parts you <em>hide.</em></h2>
+        <div class="divider"></div>
+        <p>This is where the real work lives. Underneath the goals, the achievements, the curated version of yourself, there are parts that got pushed away a long time ago. Anger. Grief. Shame. Fear. The body held them when the mind could not.</p>
+        <p>Shadow work is not about fixing what is wrong. It is about welcoming what has been exiled. When you stop running from these parts, something remarkable happens: the tension that lived in your body for decades can finally let go.</p>
+        <p>This is not comfortable work. But it is the most important work. And Greg, trained by Dr. Gabor Maté in the connection between trauma and the body, holds space for it with both clinical precision and deep compassion.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/brand/golden-smoke.jpg" alt="Golden light emerging from darkness" class="story-image">
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===================== OFFERS ===================== -->
 <section id="work" style="background: var(--bg-primary);">
   <div class="container">
     <p class="eyebrow reveal">The Work</p>
-    <h2 class="section-title reveal">Three doorways in.</h2>
-    <p class="section-subtitle reveal">Every path leads to the same place: a fundamentally different relationship with your body. The question is how deep you are ready to go.</p>
+    <h2 class="section-title reveal">Three ways <em>in.</em></h2>
+    <p class="section-subtitle reveal">Every path leads to the same place: a new relationship with your body. The question is how deep you are ready to go.</p>
     <div class="offers-grid">
 
       <div class="offer-card reveal">
         <p class="offer-tier">The First Step</p>
         <h3 class="offer-name">The Radical<br>Self Discovery</h3>
         <p class="offer-price">$197</p>
-        <p class="offer-desc">An AI powered self assessment and introductory course that gives you a genuine taste of this work. Real tools, real shifts, and a clear mirror that shows you exactly where your body has been trying to get your attention.</p>
+        <p class="offer-desc">An AI powered self assessment and starter course that gives you a real taste of this work. Real tools, real shifts, and a clear mirror showing you exactly where your body has been trying to get your attention.</p>
         <ul class="offer-features">
           <li>AI guided body awareness assessment</li>
           <li>5 module introductory course</li>
           <li>Somatic journaling framework</li>
           <li>Community access</li>
-          <li>Self qualifies you for deeper work</li>
+          <li>Qualifies you for deeper work</li>
         </ul>
         <a href="#apply" class="offer-btn">Get Started</a>
       </div>
@@ -1082,10 +1131,10 @@ footer {
         <p class="offer-tier">The Cohort</p>
         <h3 class="offer-name">The Embodied<br>Collective</h3>
         <p class="offer-price">$2,000</p>
-        <p class="offer-desc">A 12 week group immersion for those who want the depth of Greg's methodology in a community setting. Live sessions, somatic practices, and the shared experience of people who refuse to perform wellness any longer.</p>
+        <p class="offer-desc">A 12 week group experience for those who want Greg's approach in a community setting. Live sessions, body practices, and the shared experience of people who are done performing wellness.</p>
         <ul class="offer-features">
           <li>Weekly live group sessions</li>
-          <li>Curated somatic practices</li>
+          <li>Guided somatic practices</li>
           <li>Private community of peers</li>
           <li>Greg led Q&amp;A and hot seats</li>
           <li>Natural stepping stone to Immersion</li>
@@ -1097,14 +1146,14 @@ footer {
         <p class="offer-tier">The Immersion</p>
         <h3 class="offer-name">Radical Body Love<br>Intensive</h3>
         <p class="offer-price">$15,000+</p>
-        <p class="offer-desc">A 12 month private transformation for those who are done with surface level solutions. Deep somatic work, NeuFit technology, structural liberation, and identity level change with Greg personally guiding every step.</p>
+        <p class="offer-desc">A 12 month private transformation for people who are done with surface level answers. Deep body work, NeuFit technology, structural change, and identity level shifts with Greg guiding every step.</p>
         <ul class="offer-features">
           <li>Weekly private sessions with Greg</li>
           <li>NeuFit nervous system protocols</li>
           <li>Custom movement architecture</li>
-          <li>Metabolic and nutrition guidance</li>
+          <li>Nutrition and metabolic guidance</li>
           <li>Unlimited voice and text support</li>
-          <li>Maximum 4 to 6 clients at a time</li>
+          <li>Only 4 to 6 clients at a time</li>
         </ul>
         <a href="#apply" class="offer-btn">Apply Now</a>
       </div>
@@ -1113,48 +1162,48 @@ footer {
 </section>
 
 <!-- ===================== CONTENT PILLARS ===================== -->
-<section id="content" style="background: var(--bg-secondary);">
+<section id="content" style="background: var(--bg-warm);">
   <div class="container">
     <p class="eyebrow reveal">Content World</p>
-    <h2 class="section-title reveal">What Greg writes about.</h2>
-    <p class="section-subtitle reveal">Long form essays, provocative takes, and origin stories that challenge everything the wellness industry sells you. Published on Substack.</p>
+    <h2 class="section-title reveal">What Greg writes <em>about.</em></h2>
+    <p class="section-subtitle reveal">Long essays, bold ideas, and real stories that challenge everything the wellness industry sells you. Published on Substack.</p>
     <div class="pillars-grid">
       <div class="pillar reveal">
         <div class="pillar-name">Radical Presence</div>
-        <div class="pillar-desc">The body as teacher. Somatic intelligence. What happens when you stop trying to fix yourself and start listening. Presence is the medicine that performance culture refuses to prescribe.</div>
+        <div class="pillar-desc">The body as teacher. What happens when you stop trying to fix yourself and start listening. Presence is the medicine that hustle culture will not prescribe.</div>
       </div>
       <div class="pillar reveal reveal-delay-1">
         <div class="pillar-name">Identity Dissolution</div>
-        <div class="pillar-desc">Why "who you think you are" is the actual injury. The stories we perform, the roles we confuse with reality, and the quiet liberation of letting them fall away.</div>
+        <div class="pillar-desc">Why "who you think you are" is the actual injury. The stories we perform, the roles we confuse with reality, and the quiet freedom of letting them fall away.</div>
       </div>
       <div class="pillar reveal reveal-delay-2">
         <div class="pillar-name">Anti Shame Health</div>
-        <div class="pillar-desc">The fitness industry profits from your self hatred. Greg dismantles the machine. No more earning your food. No more punishing your body into compliance. A revolution in how we relate to health.</div>
+        <div class="pillar-desc">The fitness industry profits from your self hatred. Greg takes it apart. No more earning your food. No more punishing your body. A revolution in how we relate to health.</div>
       </div>
       <div class="pillar reveal reveal-delay-3">
         <div class="pillar-name">Origin Stories</div>
-        <div class="pillar-desc">Raw, personal narratives from the injuries, breakthroughs, and quiet moments that built this work. The torn ACL. The bachelor party. The 15 minute cry. The Guinness record. The divorce. All of it.</div>
+        <div class="pillar-desc">Raw, personal stories from the injuries, breakthroughs, and quiet moments that built this work. The torn ACL. The bachelor party. The 15 minute cry. The world record. All of it.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== SOCIAL PROOF ===================== -->
-<section style="background: var(--bg-secondary);">
+<section style="background: var(--bg-primary);">
   <div class="container">
     <p class="eyebrow reveal" style="justify-content: center;">Transformations</p>
     <h2 class="section-title reveal" style="text-align: center;">What people say after<br>working with <em>Greg.</em></h2>
     <div class="testimonials-grid">
       <div class="testimonial reveal">
-        <p class="testimonial-text">"I spent 20 years in therapy trying to understand my body. Greg helped me feel it for the first time in a single session. I did not know that was possible."</p>
+        <p class="testimonial-text">"I spent 20 years in therapy trying to understand my body. Greg helped me feel it for the first time in one session. I did not know that was possible."</p>
         <p class="testimonial-author">Former D1 Athlete &amp; Tech Founder</p>
       </div>
       <div class="testimonial reveal reveal-delay-1">
-        <p class="testimonial-text">"My chronic back pain of 12 years dissolved after we addressed what I was actually carrying. It was not a disc issue. It was decades of suppressed grief."</p>
+        <p class="testimonial-text">"My back pain of 12 years went away after we looked at what I was really carrying. It was not a disc problem. It was decades of grief I never let out."</p>
         <p class="testimonial-author">Executive, Fortune 500</p>
       </div>
       <div class="testimonial reveal reveal-delay-2">
-        <p class="testimonial-text">"I came for the physical training. I stayed because Greg showed me that every limitation in my body was a conversation I had been refusing to have with myself."</p>
+        <p class="testimonial-text">"I came for the training. I stayed because Greg showed me that every limit in my body was a conversation I had been refusing to have with myself."</p>
         <p class="testimonial-author">Professional Athlete &amp; Coach</p>
       </div>
     </div>
@@ -1163,34 +1212,32 @@ footer {
 
 <!-- ===================== CLOSING QUOTE ===================== -->
 <section class="manifesto reveal" style="padding: 8rem 4rem; overflow: hidden;">
-  <div class="manifesto-bg"></div>
-  <p class="manifesto-quote">"The wellness industry runs on shame disguised as motivation. Radical Body Love runs on something else entirely: the persistent, invitational truth that your body is intelligent, beautiful, and has been given everything it needs."</p>
+  <p class="manifesto-quote">"The wellness industry runs on shame dressed up as motivation. Radical Body Love runs on something else: the simple truth that your body is intelligent, beautiful, and already has everything it needs."</p>
   <p class="manifesto-attribution">Greg Pignataro</p>
 </section>
 
 <!-- ===================== APPLY CTA ===================== -->
-<section id="apply" class="cta-section" style="background: var(--bg-primary);">
-  <div class="cta-bg"></div>
+<section id="apply" class="cta-section">
   <div class="cta-inner">
     <p class="eyebrow reveal" style="justify-content: center;">Ready?</p>
     <h2 class="section-title reveal" style="font-size: clamp(2.5rem, 4.5vw, 4rem);">This is not for everyone.<br>It might be for <em>you.</em></h2>
-    <p class="cta-desc reveal">The first step is a conversation. No pitch. No pressure. Just an honest look at where you are, where your body has been trying to take you, and whether this work is the right path.</p>
+    <p class="cta-desc reveal">The first step is a conversation. No pitch. No pressure. Just an honest look at where you are, where your body has been trying to take you, and whether this is the right path.</p>
     <div class="cta-process reveal">
       <div class="process-step">
         <div class="process-num">1</div>
-        <div class="process-text">You apply below with a brief note about where you are and what brought you here.</div>
+        <div class="process-text">You apply below with a short note about where you are and what brought you here.</div>
       </div>
       <div class="process-step">
         <div class="process-num">2</div>
-        <div class="process-text">Greg personally reviews every application and responds within 48 hours.</div>
+        <div class="process-text">Greg reads every application himself and responds within 48 hours.</div>
       </div>
       <div class="process-step">
         <div class="process-num">3</div>
-        <div class="process-text">If there is a fit, you schedule a complimentary 30 minute call. No sales. Just truth.</div>
+        <div class="process-text">If it feels right, you schedule a free 30 minute call. No sales. Just truth.</div>
       </div>
     </div>
     <a href="mailto:greg@neverpastyourprime.com?subject=Radical%20Body%20Love%20%E2%80%94%20Application&body=Hi%20Greg%2C%0A%0AI%20found%20your%20site%20and%20something%20resonated.%20Here%20is%20a%20bit%20about%20where%20I%20am%20and%20what%20brought%20me%20here%3A%0A%0A" class="btn-primary reveal">Apply for a Conversation</a>
-    <p class="cta-note reveal" style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--text-muted); text-align: center; max-width: 400px;">Greg accepts 4 to 6 private clients at a time.<br>Current availability is limited.</p>
+    <p class="reveal" style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--text-muted); text-align: center; max-width: 400px; margin-left: auto; margin-right: auto;">Greg works with only 4 to 6 private clients at a time.<br>Availability is limited.</p>
   </div>
 </section>
 
@@ -1216,7 +1263,6 @@ footer {
 <script>
 // Navbar scroll behavior
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
