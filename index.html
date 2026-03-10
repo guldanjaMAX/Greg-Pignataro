@@ -71,7 +71,7 @@ body::after {
 }
 
 /* ===== NAVIGATION ===== */
-nav {
+#navbar {
   position: fixed;
   top: 0;
   width: 100%;
@@ -83,7 +83,7 @@ nav {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   background: transparent;
 }
-nav.scrolled {
+#navbar.scrolled {
   background: rgba(253,251,248,0.95);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -165,84 +165,65 @@ nav.scrolled {
   overflow: hidden;
   background: var(--bg-primary);
 }
-/* Warm ambient background */
+/* Warm ambient background on left side */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 90% at 70% 50%, rgba(184,134,58,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 30% 70%, rgba(201,155,79,0.04) 0%, transparent 50%),
-    linear-gradient(160deg, var(--bg-primary) 0%, var(--bg-warm) 40%, var(--bg-accent) 75%, #EDE5D8 100%);
+    radial-gradient(ellipse 60% 80% at 25% 50%, rgba(184,134,58,0.05) 0%, transparent 60%),
+    linear-gradient(160deg, var(--bg-primary) 0%, var(--bg-warm) 50%, var(--bg-accent) 100%);
   z-index: 0;
 }
-/* Golden light rays behind photo */
-.hero-atmosphere {
+
+/* Full-height image of Greg on the right side */
+.hero-image-panel {
   position: absolute;
-  top: -15%;
-  right: -8%;
-  width: 65%;
-  height: 130%;
-  background:
-    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(184,134,58,0.12) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 70% at 55% 45%, rgba(212,168,83,0.08) 0%, transparent 60%);
-  pointer-events: none;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 100%;
   z-index: 1;
-  animation: heroGlow 8s ease-in-out infinite alternate;
-}
-@keyframes heroGlow {
-  0% { opacity: 0.8; transform: scale(1) translate(0,0); }
-  100% { opacity: 1; transform: scale(1.05) translate(-1%, 1%); }
-}
-/* Subtle golden particles */
-.hero-particles {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
   overflow: hidden;
 }
-.hero-particles::before,
-.hero-particles::after {
+.hero-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+/* Soft gradient fade on the left edge so it blends into the background */
+.hero-image-panel::before {
   content: '';
   position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,134,58,0.25) 0%, transparent 70%);
-  animation: float 12s ease-in-out infinite;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(to right, var(--bg-warm) 0%, rgba(247,243,238,0.6) 40%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
 }
-.hero-particles::before {
-  width: 300px;
-  height: 300px;
-  top: 15%;
-  right: 20%;
-  animation-delay: 0s;
-}
-.hero-particles::after {
-  width: 200px;
-  height: 200px;
-  top: 55%;
-  right: 35%;
-  animation-delay: -4s;
-  opacity: 0.6;
-}
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-  33% { transform: translate(15px, -20px) scale(1.1); opacity: 0.7; }
-  66% { transform: translate(-10px, 10px) scale(0.95); opacity: 0.5; }
+/* Very subtle warm overlay to unify the photo with the palette */
+.hero-image-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(253,251,248,0) 0%, rgba(253,251,248,0) 70%, rgba(240,235,227,0.4) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 3;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 3rem;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 10rem 4rem 5rem;
-  align-items: center;
+  padding: 12rem 4rem 5rem;
+  width: 100%;
 }
-.hero-text { max-width: 620px; }
+.hero-text { max-width: 540px; }
 .hero-eyebrow {
   font-size: 0.72rem;
   letter-spacing: 0.35em;
@@ -333,51 +314,7 @@ nav.scrolled {
   color: var(--gold);
 }
 
-/* === Hero Image: Transparent cutout floating on golden atmosphere === */
-.hero-image-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-/* Large golden orb behind Greg */
-.hero-image-glow {
-  position: absolute;
-  width: 110%;
-  height: 105%;
-  bottom: -5%;
-  left: -5%;
-  background:
-    radial-gradient(ellipse 65% 60% at 50% 55%, rgba(184,134,58,0.14) 0%, transparent 70%),
-    radial-gradient(ellipse 45% 50% at 55% 50%, rgba(212,168,83,0.08) 0%, transparent 60%);
-  z-index: 0;
-  border-radius: 50%;
-  filter: blur(2px);
-}
-/* Warm gradient fade at bottom of photo so Greg floats into background */
-.hero-image-container::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 25%;
-  background: linear-gradient(to top, var(--bg-accent) 0%, transparent 100%);
-  z-index: 2;
-  pointer-events: none;
-}
-.hero-image {
-  width: 100%;
-  max-width: 460px;
-  object-fit: contain;
-  position: relative;
-  z-index: 1;
-  filter: contrast(1.04) brightness(1.01) saturate(1.05);
-  /* Subtle warm drop shadow to ground the figure */
-  drop-shadow: 0 20px 60px rgba(44,37,32,0.15);
-  -webkit-filter: contrast(1.04) brightness(1.01) saturate(1.05) drop-shadow(0 20px 60px rgba(44,37,32,0.15));
-  filter: contrast(1.04) brightness(1.01) saturate(1.05) drop-shadow(0 20px 60px rgba(44,37,32,0.15));
-}
+/* (old hero-image-container removed; using hero-image-panel now) */
 
 /* === Credentials: Elegant pill badges === */
 .hero-credentials {
@@ -1013,17 +950,27 @@ footer {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   section { padding: 6rem 2.5rem; }
-  nav { padding: 1.2rem 2rem; }
+  #navbar { padding: 1.2rem 2rem; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .hero-content {
-    grid-template-columns: 1fr;
     padding: 8rem 2.5rem 4rem;
-    gap: 2rem;
   }
-  .hero-image-container { order: -1; max-width: 340px; margin: 0 auto; }
-  .hero-image { max-width: 100%; }
-  .hero-atmosphere { width: 90%; right: -10%; }
+  .hero-text { max-width: 100%; }
+  .hero-image-panel {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    margin-top: 2rem;
+  }
+  .hero-image-panel::before {
+    width: 100%;
+    height: 20%;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, var(--bg-warm) 0%, transparent 100%);
+  }
   .hero-scroll { display: none; }
   .story-grid { grid-template-columns: 1fr; gap: 3rem; }
   .method-grid { grid-template-columns: 1fr; }
@@ -1061,8 +1008,9 @@ footer {
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <div class="hero-atmosphere"></div>
-  <div class="hero-particles"></div>
+  <div class="hero-image-panel">
+    <img src="images/shootproof/portraits/greg_01.jpg" alt="Greg Pignataro" loading="eager">
+  </div>
   <div class="hero-content">
     <div class="hero-text">
       <p class="hero-eyebrow">Radical Body Love</p>
@@ -1094,10 +1042,6 @@ footer {
           <span class="credential-label">Certified<br>Practitioner</span>
         </div>
       </div>
-    </div>
-    <div class="hero-image-container">
-      <div class="hero-image-glow"></div>
-      <img src="images/greg-transparent/01_hero_smile_transparent.png" alt="Greg Pignataro" class="hero-image" loading="eager">
     </div>
   </div>
   <div class="hero-scroll">
@@ -1399,9 +1343,9 @@ footer {
   <nav class="footer-nav">
     <a href="#story">Story</a>
     <a href="#method">Method</a>
-    <a href="#work">Work With Greg</a>
+    <a href="#work">The Work</a>
     <a href="#content">Content</a>
-    <a href="#apply">Apply</a>
+    <a href="#apply">Begin</a>
   </nav>
   <div class="footer-social">
     <a href="https://www.instagram.com/neverpastyourprime/" target="_blank" rel="noopener">Instagram</a>
