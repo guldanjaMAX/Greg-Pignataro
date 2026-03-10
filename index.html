@@ -163,26 +163,83 @@ nav.scrolled {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(160deg, var(--bg-primary) 0%, var(--bg-warm) 50%, var(--bg-accent) 100%);
+  background: var(--bg-primary);
 }
-.hero-glow {
+/* Warm ambient background */
+.hero::before {
+  content: '';
   position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 70%;
-  height: 140%;
-  background: radial-gradient(ellipse at center, rgba(184,134,58,0.08) 0%, transparent 70%);
-  pointer-events: none;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 90% at 70% 50%, rgba(184,134,58,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 30% 70%, rgba(201,155,79,0.04) 0%, transparent 50%),
+    linear-gradient(160deg, var(--bg-primary) 0%, var(--bg-warm) 40%, var(--bg-accent) 75%, #EDE5D8 100%);
+  z-index: 0;
 }
+/* Golden light rays behind photo */
+.hero-atmosphere {
+  position: absolute;
+  top: -15%;
+  right: -8%;
+  width: 65%;
+  height: 130%;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(184,134,58,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 70% at 55% 45%, rgba(212,168,83,0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+  animation: heroGlow 8s ease-in-out infinite alternate;
+}
+@keyframes heroGlow {
+  0% { opacity: 0.8; transform: scale(1) translate(0,0); }
+  100% { opacity: 1; transform: scale(1.05) translate(-1%, 1%); }
+}
+/* Subtle golden particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-particles::before,
+.hero-particles::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,134,58,0.25) 0%, transparent 70%);
+  animation: float 12s ease-in-out infinite;
+}
+.hero-particles::before {
+  width: 300px;
+  height: 300px;
+  top: 15%;
+  right: 20%;
+  animation-delay: 0s;
+}
+.hero-particles::after {
+  width: 200px;
+  height: 200px;
+  top: 55%;
+  right: 35%;
+  animation-delay: -4s;
+  opacity: 0.6;
+}
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  33% { transform: translate(15px, -20px) scale(1.1); opacity: 0.7; }
+  66% { transform: translate(-10px, 10px) scale(0.95); opacity: 0.5; }
+}
+
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 5rem;
-  max-width: 1400px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3rem;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 10rem 4rem 6rem;
+  padding: 10rem 4rem 5rem;
   align-items: center;
 }
 .hero-text { max-width: 620px; }
@@ -205,9 +262,9 @@ nav.scrolled {
 }
 .hero-title {
   font-family: var(--serif);
-  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-size: clamp(3.2rem, 5.8vw, 5.4rem);
   font-weight: 300;
-  line-height: 1.08;
+  line-height: 1.06;
   margin-bottom: 2rem;
   color: var(--text-primary);
 }
@@ -217,7 +274,7 @@ nav.scrolled {
   font-weight: 400;
 }
 .hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   color: var(--text-secondary);
   line-height: 1.85;
   margin-bottom: 3rem;
@@ -227,11 +284,11 @@ nav.scrolled {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 .btn-primary {
   display: inline-block;
-  padding: 1.1rem 3.2rem;
+  padding: 1.15rem 3.4rem;
   background: var(--gold);
   color: #fff;
   font-size: 0.78rem;
@@ -241,15 +298,26 @@ nav.scrolled {
   text-decoration: none;
   border-radius: 4px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
 }
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-primary:hover::before { opacity: 1; }
 .btn-primary:hover {
   background: var(--gold-bright);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(184,134,58,0.2);
+  box-shadow: 0 12px 40px rgba(184,134,58,0.25);
 }
 .btn-ghost {
   display: inline-block;
-  padding: 1.1rem 2.5rem;
+  padding: 1.15rem 2.5rem;
   border: 1px solid var(--border-light);
   color: var(--text-secondary);
   font-size: 0.78rem;
@@ -264,47 +332,124 @@ nav.scrolled {
   border-color: var(--gold);
   color: var(--gold);
 }
+
+/* === Hero Image: Transparent cutout floating on golden atmosphere === */
 .hero-image-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+/* Large golden orb behind Greg */
+.hero-image-glow {
+  position: absolute;
+  width: 110%;
+  height: 105%;
+  bottom: -5%;
+  left: -5%;
+  background:
+    radial-gradient(ellipse 65% 60% at 50% 55%, rgba(184,134,58,0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 50% at 55% 50%, rgba(212,168,83,0.08) 0%, transparent 60%);
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+/* Warm gradient fade at bottom of photo so Greg floats into background */
+.hero-image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  background: linear-gradient(to top, var(--bg-accent) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 .hero-image {
   width: 100%;
-  max-width: 480px;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  border-radius: 8px;
-  filter: contrast(1.02) brightness(1.02);
+  max-width: 460px;
+  object-fit: contain;
   position: relative;
   z-index: 1;
-  box-shadow: var(--shadow-soft);
+  filter: contrast(1.04) brightness(1.01) saturate(1.05);
+  /* Subtle warm drop shadow to ground the figure */
+  drop-shadow: 0 20px 60px rgba(44,37,32,0.15);
+  -webkit-filter: contrast(1.04) brightness(1.01) saturate(1.05) drop-shadow(0 20px 60px rgba(44,37,32,0.15));
+  filter: contrast(1.04) brightness(1.01) saturate(1.05) drop-shadow(0 20px 60px rgba(44,37,32,0.15));
 }
-.hero-image-glow {
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(ellipse at center, rgba(184,134,58,0.1) 0%, transparent 70%);
-  z-index: 0;
-  border-radius: 50%;
-}
+
+/* === Credentials: Elegant pill badges === */
 .hero-credentials {
   display: flex;
-  gap: 2.5rem;
+  gap: 1rem;
   padding-top: 2.5rem;
   border-top: 1px solid var(--border-light);
   flex-wrap: wrap;
 }
+.hero-credential {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.2rem;
+  background: rgba(184,134,58,0.06);
+  border: 1px solid rgba(184,134,58,0.12);
+  border-radius: 100px;
+  transition: all 0.3s;
+}
+.hero-credential:hover {
+  background: rgba(184,134,58,0.1);
+  border-color: rgba(184,134,58,0.2);
+}
 .credential-value {
   font-family: var(--serif);
-  font-size: 1.4rem;
+  font-size: 1.05rem;
   color: var(--gold);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
+  line-height: 1;
 }
 .credential-label {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   color: var(--text-muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-top: 0.2rem;
+  line-height: 1.2;
+}
+
+/* === Scroll indicator === */
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollLine 2.5s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
 /* ===== MANIFESTO ===== */
@@ -874,10 +1019,12 @@ footer {
   .hero-content {
     grid-template-columns: 1fr;
     padding: 8rem 2.5rem 4rem;
-    gap: 3rem;
+    gap: 2rem;
   }
-  .hero-image-container { order: -1; }
+  .hero-image-container { order: -1; max-width: 340px; margin: 0 auto; }
   .hero-image { max-width: 100%; }
+  .hero-atmosphere { width: 90%; right: -10%; }
+  .hero-scroll { display: none; }
   .story-grid { grid-template-columns: 1fr; gap: 3rem; }
   .method-grid { grid-template-columns: 1fr; }
   .offers-grid { grid-template-columns: 1fr; max-width: 500px; }
@@ -914,7 +1061,8 @@ footer {
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <div class="hero-glow"></div>
+  <div class="hero-atmosphere"></div>
+  <div class="hero-particles"></div>
   <div class="hero-content">
     <div class="hero-text">
       <p class="hero-eyebrow">Radical Body Love</p>
@@ -925,32 +1073,36 @@ footer {
         <a href="#story" class="btn-ghost">Read the Story</a>
       </div>
       <div class="hero-credentials">
-        <div>
-          <div class="credential-value">GWR</div>
-          <div class="credential-label">Guinness World Record</div>
+        <div class="hero-credential">
+          <span class="credential-value">GWR</span>
+          <span class="credential-label">Guinness World<br>Record Holder</span>
         </div>
-        <div>
-          <div class="credential-value">Maté</div>
-          <div class="credential-label">Gabor Maté Trained</div>
+        <div class="hero-credential">
+          <span class="credential-value">Maté</span>
+          <span class="credential-label">Gabor Maté<br>Trained</span>
         </div>
-        <div>
-          <div class="credential-value">B.S.</div>
-          <div class="credential-label">Psychology Degree</div>
+        <div class="hero-credential">
+          <span class="credential-value">B.S.</span>
+          <span class="credential-label">Psychology<br>Degree</span>
         </div>
-        <div>
-          <div class="credential-value">CSCS</div>
-          <div class="credential-label">Certified Specialist</div>
+        <div class="hero-credential">
+          <span class="credential-value">CSCS</span>
+          <span class="credential-label">Certified Strength<br>Specialist</span>
         </div>
-        <div>
-          <div class="credential-value">NeuFit</div>
-          <div class="credential-label">Certified Practitioner</div>
+        <div class="hero-credential">
+          <span class="credential-value">NeuFit</span>
+          <span class="credential-label">Certified<br>Practitioner</span>
         </div>
       </div>
     </div>
     <div class="hero-image-container">
       <div class="hero-image-glow"></div>
-      <img src="images/headshots/greg_hero_smile.jpg" alt="Greg Pignataro" class="hero-image" loading="eager">
+      <img src="images/greg-transparent/01_hero_smile_transparent.png" alt="Greg Pignataro" class="hero-image" loading="eager">
     </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
