@@ -79,12 +79,14 @@ body {
   overflow-x: hidden;
 }
 
-/* === HERO — Full viewport with Greg full height === */
+/* === HERO — Full viewport with composited background === */
 .necker-hero {
   height: 100vh;
   min-height: 700px;
   position: relative;
   overflow: hidden;
+  background: url('images/hero_option_a.jpg') center center / cover no-repeat;
+  background-color: #1a1410;
 }
 
 .necker-hero::before {
@@ -92,9 +94,7 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background:
-    radial-gradient(ellipse at 75% 50%, rgba(184,134,58,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 80%, rgba(184,134,58,0.04) 0%, transparent 50%),
-    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-warm) 100%);
+    linear-gradient(90deg, rgba(10,8,5,0.65) 0%, rgba(10,8,5,0.3) 40%, transparent 65%);
   z-index: 0;
 }
 
@@ -117,7 +117,7 @@ body {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-light);
   margin-bottom: 1.8rem;
   font-weight: 500;
 }
@@ -125,7 +125,7 @@ body {
   content: '';
   width: 28px;
   height: 1px;
-  background: var(--gold);
+  background: var(--gold-light);
 }
 
 .hero-content h1 {
@@ -133,21 +133,23 @@ body {
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
   font-weight: 300;
   line-height: 1.12;
-  color: var(--text-primary);
+  color: #FDFBF8;
   margin-bottom: 1.6rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .hero-content h1 em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .hero-content .lead {
   font-size: 1.02rem;
-  color: var(--text-secondary);
+  color: rgba(253,251,248,0.85);
   line-height: 1.75;
   margin-bottom: 2.4rem;
   max-width: 440px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
 }
 
 /* === Compact inline badge chips === */
@@ -164,15 +166,16 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 0.85rem 0.4rem 0.4rem;
-  background: rgba(184,134,58,0.04);
-  border: 1px solid rgba(184,134,58,0.12);
+  background: rgba(253,251,248,0.08);
+  border: 1px solid rgba(253,251,248,0.15);
   border-radius: 100px;
   transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 
 .cred-chip:hover {
-  background: rgba(184,134,58,0.08);
-  border-color: rgba(184,134,58,0.22);
+  background: rgba(253,251,248,0.14);
+  border-color: rgba(253,251,248,0.25);
 }
 
 .cred-chip img {
@@ -185,46 +188,12 @@ body {
 .cred-chip span {
   font-size: 0.7rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(253,251,248,0.8);
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
-/* === Greg Full Height Portrait === */
-.hero-portrait {
-  position: absolute;
-  right: -2%;
-  bottom: 0;
-  top: 0;
-  width: 55%;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-portrait::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 85%;
-  height: 75%;
-  background: radial-gradient(ellipse, rgba(184,134,58,0.14) 0%, rgba(184,134,58,0.05) 40%, transparent 70%);
-  z-index: -1;
-  filter: blur(60px);
-}
-
-.hero-portrait img {
-  width: 105%;
-  height: auto;
-  max-height: 90%;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 60px rgba(44,37,32,0.12));
-}
+/* Greg is composited into the hero background image */
 
 /* === CTA BUTTON === */
 .btn-gold {
@@ -487,23 +456,10 @@ body {
 
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
-  .hero-portrait {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    top: auto;
-    width: 70%;
-    max-width: 340px;
-    margin: 0 auto 2rem;
-    height: auto;
-  }
-  .hero-portrait img {
-    height: auto;
-    width: 100%;
-  }
   .necker-hero {
     height: auto;
-    min-height: auto;
+    min-height: 75vh;
+    background-position: 65% center;
   }
   .hero-content {
     margin-left: 0;
@@ -517,10 +473,14 @@ body {
   .credentials-strip { justify-content: center; }
   .explore-grid { grid-template-columns: 1fr; }
   .island-divider { height: 240px; }
+  .necker-hero::before {
+    background: linear-gradient(180deg, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 60%, rgba(10,8,5,0.6) 100%);
+  }
 }
 
 @media (max-width: 500px) {
   .hero-content { padding: 4rem 1.5rem 2rem; }
+  .necker-hero { min-height: 65vh; background-position: 60% center; }
   .about-section, .explore-section, .final-cta, .community-section { padding: 3rem 1.5rem; }
   .credentials-strip { gap: 0.5rem; }
   .cred-chip { padding: 0.35rem 0.7rem 0.35rem 0.35rem; }
@@ -538,17 +498,9 @@ body {
     <div class="necker-eyebrow">Necker Island 2026</div>
     <h1>Great meeting you.<br><em>Let's keep going.</em></h1>
     <p class="lead">You've built everything on the outside. I help high performers finally feel at home on the inside.</p>
-    <div class="credentials-strip">
-      <div class="cred-chip">
-        <img src="images/badges/badge_world_record.png" alt="Guinness World Record">
-        <span>Guinness World Record Holder</span>
-      </div>
-    </div>
     <a href="https://calendly.com/clients-enlightened" class="btn-gold" target="_blank" rel="noopener">Continue the Conversation</a>
   </div>
-  <div class="hero-portrait">
-    <img src="images/transparent/greg_hero_upscaled.png" alt="Greg Pignataro">
-  </div>
+  <!-- Greg is composited into the background image -->
 </section>
 
 <!-- ===================== ISLAND DIVIDER — Turquoise water ===================== -->

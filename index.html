@@ -81,7 +81,7 @@ body::after {
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  background: linear-gradient(180deg, rgba(253,251,248,0.92) 0%, rgba(253,251,248,0.6) 70%, transparent 100%);
+  background: linear-gradient(180deg, rgba(10,8,5,0.6) 0%, rgba(10,8,5,0.3) 70%, transparent 100%);
 }
 #navbar.scrolled {
   background: rgba(253,251,248,0.95);
@@ -91,6 +91,8 @@ body::after {
   border-bottom: 1px solid var(--border-light);
   box-shadow: 0 2px 20px rgba(44,37,32,0.04);
 }
+#navbar.scrolled .nav-links a { color: var(--text-secondary); }
+#navbar.scrolled .nav-links a:hover { color: var(--gold); }
 .nav-logo {
   font-family: var(--serif);
   font-size: 1.15rem;
@@ -106,7 +108,7 @@ body::after {
   list-style: none;
 }
 .nav-links a {
-  color: var(--text-secondary);
+  color: rgba(253,251,248,0.7);
   text-decoration: none;
   font-size: 0.78rem;
   font-weight: 400;
@@ -125,7 +127,7 @@ body::after {
   background: var(--gold);
   transition: width 0.3s;
 }
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover { color: var(--gold-light); }
 .nav-links a:hover::after { width: 100%; }
 .nav-cta {
   padding: 0.65rem 2rem;
@@ -152,7 +154,7 @@ body::after {
 .nav-hamburger span {
   width: 22px;
   height: 1.5px;
-  background: var(--gold);
+  background: var(--gold-light);
   transition: all 0.3s;
 }
 
@@ -164,52 +166,15 @@ body::after {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: var(--bg-primary);
+  background: url('images/hero_option_a.jpg') center center / cover no-repeat;
+  background-color: #1a1410;
 }
 .hero::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 50% 70% at 70% 60%, rgba(184,134,58,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 25% 50%, rgba(184,134,58,0.04) 0%, transparent 60%),
-    linear-gradient(160deg, var(--bg-primary) 0%, var(--bg-warm) 50%, var(--bg-accent) 100%);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, rgba(10,8,5,0.65) 0%, rgba(10,8,5,0.3) 40%, transparent 65%);
   z-index: 0;
-}
-
-/* Greg cutout photo — full height of hero on right side */
-.hero-portrait {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 50%;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-.hero-portrait img {
-  height: 92%;
-  width: auto;
-  max-width: 100%;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 80px rgba(44,37,32,0.12));
-}
-/* Beautiful warm gold glow behind Greg */
-.hero-portrait::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 70%;
-  background: radial-gradient(ellipse, rgba(184,134,58,0.14) 0%, rgba(184,134,58,0.06) 40%, transparent 70%);
-  z-index: -1;
-  filter: blur(60px);
 }
 
 .hero-content {
@@ -247,19 +212,21 @@ body::after {
   font-weight: 300;
   line-height: 1.06;
   margin-bottom: 1.2rem;
-  color: var(--text-primary);
+  color: #FDFBF8;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 .hero-title em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--gold-light);
   font-weight: 400;
 }
 .hero-subtitle {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: rgba(253,251,248,0.85);
   line-height: 1.7;
   margin-bottom: 1.5rem;
   max-width: 480px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
 }
 .hero-actions {
   display: flex;
@@ -299,8 +266,8 @@ body::after {
 .btn-ghost {
   display: inline-block;
   padding: 0.95rem 2.2rem;
-  border: 1px solid var(--border-light);
-  color: var(--text-secondary);
+  border: 1px solid rgba(253,251,248,0.25);
+  color: rgba(253,251,248,0.8);
   font-size: 0.74rem;
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -308,10 +275,12 @@ body::after {
   text-decoration: none;
   border-radius: 4px;
   transition: all 0.3s;
+  backdrop-filter: blur(4px);
 }
 .btn-ghost:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  background: rgba(253,251,248,0.05);
 }
 
 /* === Credential Badges: AI-Generated Badge Images === */
@@ -319,7 +288,7 @@ body::after {
   display: flex;
   gap: 1.2rem;
   padding-top: 1.6rem;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid rgba(253,251,248,0.15);
   align-items: flex-start;
 }
 .credential-badge {
@@ -342,14 +311,14 @@ body::after {
   height: 64px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(184,134,58,0.25);
-  box-shadow: 0 2px 12px rgba(184,134,58,0.1);
+  border: 2px solid rgba(184,134,58,0.35);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .credential-label {
   font-family: var(--serif);
   font-size: 0.72rem;
-  color: var(--text-primary);
+  color: rgba(253,251,248,0.8);
   font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1.2;
@@ -367,7 +336,7 @@ body::after {
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  color: var(--text-muted);
+  color: rgba(253,251,248,0.5);
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -955,25 +924,12 @@ footer {
   #navbar { padding: 1.2rem 2rem; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .hero { height: auto; max-height: none; min-height: 100vh; }
+  .hero { height: auto; max-height: none; min-height: 75vh; background-position: 65% center; }
+  .hero::before { background: linear-gradient(180deg, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 60%, rgba(10,8,5,0.6) 100%); }
   .hero-content {
     padding: 6rem 2.5rem 3rem;
   }
   .hero-text { max-width: 100%; }
-  .hero-portrait {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    top: auto;
-    width: 70%;
-    max-width: 360px;
-    margin: 0 auto;
-    height: auto;
-  }
-  .hero-portrait img {
-    height: auto;
-    width: 100%;
-  }
   .hero-scroll { display: none; }
   .story-grid { grid-template-columns: 1fr; gap: 3rem; }
   .method-grid { grid-template-columns: 1fr; }
@@ -985,6 +941,7 @@ footer {
 }
 @media (max-width: 600px) {
   section { padding: 4rem 1.5rem; }
+  .hero { min-height: 65vh; background-position: 60% center; }
   .hero-content { padding: 5rem 1.5rem 2rem; }
   .hero-credentials { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
   .badge-img { width: 52px; height: 52px; }
@@ -1013,9 +970,7 @@ footer {
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <div class="hero-portrait">
-    <img src="images/greg-transparent/01_hero_smile_transparent.png" alt="Greg Pignataro" loading="eager">
-  </div>
+  <!-- Greg is composited into the background image -->
   <div class="hero-content">
     <div class="hero-text">
       <p class="hero-eyebrow">Radical Body Love</p>
