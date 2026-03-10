@@ -194,34 +194,34 @@ body {
 /* === Greg Full Height Portrait === */
 .hero-portrait {
   position: absolute;
-  right: 0;
+  right: -2%;
   bottom: 0;
   top: 0;
   width: 55%;
   z-index: 1;
   pointer-events: none;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
 
 .hero-portrait::before {
   content: '';
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  height: 80%;
+  width: 85%;
+  height: 75%;
   background: radial-gradient(ellipse, rgba(184,134,58,0.14) 0%, rgba(184,134,58,0.05) 40%, transparent 70%);
   z-index: -1;
   filter: blur(60px);
 }
 
 .hero-portrait img {
-  height: 97%;
-  width: auto;
-  max-width: 110%;
+  width: 105%;
+  height: auto;
+  max-height: 90%;
   display: block;
   object-fit: contain;
   filter: drop-shadow(0 4px 60px rgba(44,37,32,0.12));
@@ -548,7 +548,7 @@ body {
     </div>
   </div>
   <div class="hero-portrait">
-    <img src="images/transparent/sp_greg_02.png" alt="Greg Pignataro">
+    <img src="images/transparent/greg_warm_upscaled.png" alt="Greg Pignataro">
   </div>
 </section>
 
