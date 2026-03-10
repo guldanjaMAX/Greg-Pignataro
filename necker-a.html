@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greg Pignataro | Continue the Conversation</title>
+<meta name="description" content="You met Greg at Necker Island. Here's how to continue the conversation about Radical Body Love.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #FDFBF8;
+  --bg-warm: #F7F3EE;
+  --bg-accent: #F0EBE3;
+  --gold: #B8863A;
+  --gold-light: #C99B4F;
+  --text-primary: #2C2520;
+  --text-secondary: #6B5E52;
+  --text-muted: #9E9285;
+  --border-light: rgba(184,134,58,0.12);
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* === HERO — Full viewport with Greg full height === */
+.necker-hero {
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+  overflow: hidden;
+}
+
+.necker-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse at 75% 50%, rgba(184,134,58,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(184,134,58,0.04) 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-warm) 100%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 540px;
+  padding: 0 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: max(3rem, calc((100vw - 1200px) / 2));
+}
+
+.necker-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+}
+.necker-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-content h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 300;
+  line-height: 1.12;
+  color: var(--text-primary);
+  margin-bottom: 1.6rem;
+}
+
+.hero-content h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-content .lead {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 2.4rem;
+  max-width: 440px;
+}
+
+/* === OPTION A: Pure Typography Credentials === */
+.credentials-text {
+  margin-top: 2.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.credentials-text p {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.credentials-text .cred-highlight {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.cred-sep {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin: 0 0.7rem;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+
+/* === Greg Full Height Portrait === */
+.hero-portrait {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 48%;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-portrait::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(ellipse, rgba(184,134,58,0.12) 0%, rgba(184,134,58,0.04) 40%, transparent 70%);
+  z-index: -1;
+  filter: blur(60px);
+}
+
+.hero-portrait img {
+  height: 90%;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 60px rgba(44,37,32,0.1));
+}
+
+/* === CTA BUTTON === */
+.btn-gold {
+  display: inline-block;
+  padding: 1.1rem 2.8rem;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(184,134,58,0.25);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(184,134,58,0.35);
+}
+
+/* === ABOUT SECTION === */
+.about-section {
+  padding: 5rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1.8rem;
+  line-height: 1.2;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 1.4rem;
+  max-width: 680px;
+}
+
+.about-section p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* === WHAT WE'LL EXPLORE === */
+.explore-section {
+  padding: 5rem 3rem;
+  background: var(--bg-warm);
+}
+
+.explore-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.explore-inner h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 2.4rem;
+  line-height: 1.2;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.explore-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem 2.2rem;
+  transition: all 0.3s ease;
+}
+
+.explore-card:hover {
+  box-shadow: 0 8px 32px rgba(44,37,32,0.06);
+  transform: translateY(-2px);
+}
+
+.explore-card h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+}
+
+.explore-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* === FINAL CTA === */
+.final-cta {
+  padding: 6rem 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.final-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.final-cta h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.final-cta p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.4rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* === FOOTER === */
+.necker-footer {
+  padding: 3rem;
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+}
+
+.necker-footer a {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+
+.necker-footer p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .hero-portrait {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    top: auto;
+    width: 70%;
+    max-width: 340px;
+    margin: 0 auto 2rem;
+    height: auto;
+  }
+  .hero-portrait img {
+    height: auto;
+    width: 100%;
+  }
+  .necker-hero {
+    height: auto;
+    min-height: auto;
+  }
+  .hero-content {
+    margin-left: 0;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    max-width: 100%;
+    align-items: center;
+  }
+  .hero-content .lead { margin-left: auto; margin-right: auto; }
+  .necker-eyebrow { justify-content: center; }
+  .credentials-text { text-align: center; }
+  .explore-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+  .hero-content { padding: 4rem 1.5rem 2rem; }
+  .about-section, .explore-section, .final-cta { padding: 3rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<section class="necker-hero">
+  <div class="hero-content">
+    <div class="necker-eyebrow">Necker Island 2026</div>
+    <h1>Great meeting you.<br><em>Let's keep going.</em></h1>
+    <p class="lead">You already know that success doesn't automatically mean peace in your own skin. That's exactly where my work begins. I help high performers stop fighting their bodies and start living in them.</p>
+    <a href="https://calendly.com/gregpignataro" class="btn-gold" target="_blank" rel="noopener">Book a Private Call</a>
+    <div class="credentials-text">
+      <p><span class="cred-highlight">Guinness World Record Holder</span><span class="cred-sep"></span><span class="cred-highlight">Dr. Gabor Maté Trained</span><span class="cred-sep"></span><span class="cred-highlight">D1 Athlete, Marquette</span><span class="cred-sep"></span><span class="cred-highlight">15+ Years Practice</span></p>
+    </div>
+  </div>
+  <div class="hero-portrait">
+    <img src="images/transparent/greg_warm_connect.png" alt="Greg Pignataro">
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about-section">
+  <h2>The work behind the conversation</h2>
+  <p>Most people at Necker have optimized everything in their external world. The business runs. The portfolio grows. The body keeps score differently. Somewhere along the way, the relationship with your own body became transactional: fuel it, push it, fix it, punish it.</p>
+  <p>Radical Body Love is the practice of ending that war. It draws on somatic psychology, nervous system science, and the wisdom traditions I've trained in for over 15 years. It's not about affirmations or positive thinking. It's about meeting what's actually happening in your body with the same intelligence you bring to everything else.</p>
+  <p>I've held a Guinness World Record, competed as a D1 athlete at Marquette, and trained directly under Dr. Gabor Maté. That background gives me a unique lens: I understand what it means to push the body to its absolute limits, and I understand what it costs.</p>
+</section>
+
+<!-- ===================== WHAT WE'LL EXPLORE ===================== -->
+<section class="explore-section">
+  <div class="explore-inner">
+    <h2>What a conversation with me looks like</h2>
+    <div class="explore-grid">
+      <div class="explore-card">
+        <h3>Your Body's Story</h3>
+        <p>We start by listening to what your body has been trying to tell you. Not fixing, not optimizing. Listening. Most high performers have never been given permission to do this.</p>
+      </div>
+      <div class="explore-card">
+        <h3>The Nervous System</h3>
+        <p>We map the patterns your nervous system runs on autopilot. The tension, the holding, the armor. These patterns made sense once. They may not serve you now.</p>
+      </div>
+      <div class="explore-card">
+        <h3>Integration, Not Escape</h3>
+        <p>This isn't about retreating from your high performance life. It's about bringing all of yourself to it. Body, mind, and the space between where real freedom lives.</p>
+      </div>
+      <div class="explore-card">
+        <h3>A Path Forward</h3>
+        <p>Whether it's a private intensive, a quarterly immersion, or an ongoing relationship, we design something that fits how you actually live. No cookie cutter programs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta">
+  <h2>The next step is<br><em>a conversation.</em></h2>
+  <p>No pitch. No pressure. Just a real conversation about where you are and where you want to be in your own body. 30 minutes. Completely confidential.</p>
+  <a href="https://calendly.com/gregpignataro" class="btn-gold" target="_blank" rel="noopener">Book Your Call</a>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="necker-footer">
+  <a href="index.html">Greg Pignataro</a>
+  <p>Radical Body Love</p>
+</footer>
+
+</body>
+</html>
