@@ -16,13 +16,13 @@
 <meta property="og:description" content="You met Greg at Necker Island. Continue the conversation about Radical Body Love and discover how high performers can find peace in their own bodies.">
 <meta property="og:url" content="https://guldanjamax.github.io/Greg-Pignataro/necker.html">
 <meta property="og:site_name" content="Greg Pignataro">
-<meta property="og:image" content="https://guldanjamax.github.io/Greg-Pignataro/images/transparent/greg_warm_connect.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://guldanjamax.github.io/Greg-Pignataro/images/transparent/greg_hero_upscaled.png">
+<meta property="og:image:width" content="1886">
+<meta property="og:image:height" content="1060">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Greg Pignataro | Continue the Conversation">
 <meta name="twitter:description" content="You met Greg at Necker Island. Continue the conversation about Radical Body Love.">
-<meta name="twitter:image" content="https://guldanjamax.github.io/Greg-Pignataro/images/transparent/greg_warm_connect.png">
+<meta name="twitter:image" content="https://guldanjamax.github.io/Greg-Pignataro/images/transparent/greg_hero_upscaled.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,7 +30,7 @@
   "name": "Greg Pignataro",
   "description": "Radical Body Love: helping high performers stop fighting their bodies and start living in them. Somatic psychology, nervous system science, and wisdom traditions.",
   "url": "https://guldanjamax.github.io/Greg-Pignataro/necker.html",
-  "image": "https://guldanjamax.github.io/Greg-Pignataro/images/transparent/greg_warm_connect.png",
+  "image": "https://guldanjamax.github.io/Greg-Pignataro/images/transparent/greg_hero_upscaled.png",
   "provider": {
     "@type": "Person",
     "name": "Greg Pignataro",
@@ -79,12 +79,14 @@ body {
   overflow-x: hidden;
 }
 
-/* === HERO — Full viewport with Greg full height === */
+/* === HERO — Full viewport with composited background === */
 .necker-hero {
   height: 100vh;
   min-height: 700px;
   position: relative;
   overflow: hidden;
+  background: url('images/hero_option_b.jpg') center center / cover no-repeat;
+  background-color: #1a2530;
 }
 
 .necker-hero::before {
@@ -92,9 +94,7 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background:
-    radial-gradient(ellipse at 75% 50%, rgba(184,134,58,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 80%, rgba(184,134,58,0.04) 0%, transparent 50%),
-    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-warm) 100%);
+    linear-gradient(90deg, rgba(15,10,25,0.7) 0%, rgba(15,10,25,0.35) 40%, transparent 60%);
   z-index: 0;
 }
 
@@ -117,7 +117,7 @@ body {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-light);
   margin-bottom: 1.8rem;
   font-weight: 500;
 }
@@ -125,7 +125,7 @@ body {
   content: '';
   width: 28px;
   height: 1px;
-  background: var(--gold);
+  background: var(--gold-light);
 }
 
 .hero-content h1 {
@@ -133,28 +133,29 @@ body {
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
   font-weight: 300;
   line-height: 1.12;
-  color: var(--text-primary);
+  color: #FDFBF8;
   margin-bottom: 1.6rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .hero-content h1 em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .hero-content .lead {
   font-size: 1.02rem;
-  color: var(--text-secondary);
+  color: rgba(253,251,248,0.85);
   line-height: 1.75;
   margin-bottom: 2.4rem;
   max-width: 440px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
 }
 
-/* === OPTION B: Compact inline badge chips === */
+/* === Compact inline badge chips === */
 .credentials-strip {
-  margin-top: 2.6rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid var(--border-light);
+  margin-top: 1.2rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
@@ -165,15 +166,16 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 0.85rem 0.4rem 0.4rem;
-  background: rgba(184,134,58,0.04);
-  border: 1px solid rgba(184,134,58,0.12);
+  background: rgba(253,251,248,0.08);
+  border: 1px solid rgba(253,251,248,0.15);
   border-radius: 100px;
   transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 
 .cred-chip:hover {
-  background: rgba(184,134,58,0.08);
-  border-color: rgba(184,134,58,0.22);
+  background: rgba(253,251,248,0.14);
+  border-color: rgba(253,251,248,0.25);
 }
 
 .cred-chip img {
@@ -186,46 +188,12 @@ body {
 .cred-chip span {
   font-size: 0.7rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(253,251,248,0.8);
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
-/* === Greg Full Height Portrait === */
-.hero-portrait {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 48%;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.hero-portrait::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 70%;
-  background: radial-gradient(ellipse, rgba(184,134,58,0.12) 0%, rgba(184,134,58,0.04) 40%, transparent 70%);
-  z-index: -1;
-  filter: blur(60px);
-}
-
-.hero-portrait img {
-  height: 90%;
-  width: auto;
-  max-width: 100%;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 60px rgba(44,37,32,0.1));
-}
+/* Greg is composited into the hero background image */
 
 /* === CTA BUTTON === */
 .btn-gold {
@@ -248,11 +216,41 @@ body {
   box-shadow: 0 8px 32px rgba(184,134,58,0.35);
 }
 
+/* === NECKER ISLAND PHOTO DIVIDER === */
+.island-divider {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+}
+
+.island-divider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.island-divider::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(253,251,248,0.15) 0%, rgba(253,251,248,0) 30%, rgba(253,251,248,0) 70%, rgba(253,251,248,0.15) 100%);
+  pointer-events: none;
+}
+
 /* === ABOUT SECTION === */
 .about-section {
+  position: relative;
   padding: 5rem 3rem;
+  overflow: hidden;
+}
+
+.about-inner {
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .about-section h2 {
@@ -274,6 +272,56 @@ body {
 
 .about-section p:last-of-type {
   margin-bottom: 0;
+}
+
+/* === COMMUNITY SECTION — Evening bar photo background === */
+.community-section {
+  position: relative;
+  padding: 5rem 3rem;
+  overflow: hidden;
+}
+
+.community-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    url('images/necker/necker-community.jpg') center center / cover no-repeat;
+  filter: brightness(0.25) saturate(0.6);
+  z-index: 0;
+}
+
+.community-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(44,37,32,0.5) 0%, rgba(44,37,32,0.7) 100%);
+  z-index: 1;
+}
+
+.community-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.community-inner h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  color: #FDFBF8;
+  margin-bottom: 1.4rem;
+  line-height: 1.2;
+}
+
+.community-inner p {
+  font-size: 1.05rem;
+  color: rgba(253,251,248,0.8);
+  line-height: 1.85;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 /* === WHAT WE'LL EXPLORE === */
@@ -329,39 +377,54 @@ body {
   line-height: 1.7;
 }
 
-/* === FINAL CTA === */
+/* === FINAL CTA — Boat photo background === */
 .final-cta {
-  padding: 6rem 3rem;
-  text-align: center;
   position: relative;
+  padding: 7rem 3rem;
+  text-align: center;
+  overflow: hidden;
 }
 
 .final-cta::before {
   content: '';
   position: absolute;
-  top: 0; left: 50%; transform: translateX(-50%);
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    url('images/necker/necker-boat.jpg') center center / cover no-repeat;
+  filter: brightness(0.22) saturate(0.5);
+  z-index: 0;
+}
+
+.final-cta::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(44,37,32,0.4) 0%, rgba(44,37,32,0.65) 100%);
+  z-index: 1;
+}
+
+.final-cta-inner {
+  position: relative;
+  z-index: 2;
 }
 
 .final-cta h2 {
   font-family: var(--serif);
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 300;
-  color: var(--text-primary);
+  color: #FDFBF8;
   margin-bottom: 1rem;
   line-height: 1.15;
 }
 
 .final-cta h2 em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .final-cta p {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: rgba(253,251,248,0.8);
   margin-bottom: 2.4rem;
   max-width: 480px;
   margin-left: auto;
@@ -393,23 +456,10 @@ body {
 
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
-  .hero-portrait {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    top: auto;
-    width: 70%;
-    max-width: 340px;
-    margin: 0 auto 2rem;
-    height: auto;
-  }
-  .hero-portrait img {
-    height: auto;
-    width: 100%;
-  }
   .necker-hero {
     height: auto;
-    min-height: auto;
+    min-height: 75vh;
+    background-position: 65% center;
   }
   .hero-content {
     margin-left: 0;
@@ -422,15 +472,21 @@ body {
   .necker-eyebrow { justify-content: center; }
   .credentials-strip { justify-content: center; }
   .explore-grid { grid-template-columns: 1fr; }
+  .island-divider { height: 240px; }
+  .necker-hero::before {
+    background: linear-gradient(180deg, rgba(15,10,25,0.75) 0%, rgba(15,10,25,0.4) 60%, rgba(15,10,25,0.65) 100%);
+  }
 }
 
 @media (max-width: 500px) {
   .hero-content { padding: 4rem 1.5rem 2rem; }
-  .about-section, .explore-section, .final-cta { padding: 3rem 1.5rem; }
+  .necker-hero { min-height: 65vh; background-position: 60% center; }
+  .about-section, .explore-section, .final-cta, .community-section { padding: 3rem 1.5rem; }
   .credentials-strip { gap: 0.5rem; }
   .cred-chip { padding: 0.35rem 0.7rem 0.35rem 0.35rem; }
   .cred-chip img { width: 24px; height: 24px; }
   .cred-chip span { font-size: 0.62rem; }
+  .island-divider { height: 180px; }
 }
 </style>
 </head>
@@ -441,70 +497,73 @@ body {
   <div class="hero-content">
     <div class="necker-eyebrow">Necker Island 2026</div>
     <h1>Great meeting you.<br><em>Let's keep going.</em></h1>
-    <p class="lead">You already know that success doesn't automatically mean peace in your own skin. That's exactly where my work begins. I help high performers stop fighting their bodies and start living in them.</p>
-    <a href="https://calendly.com/clients-enlightened" class="btn-gold" target="_blank" rel="noopener">Book a Private Call</a>
+    <p class="lead">You've built everything on the outside. I help high performers finally feel at home on the inside.</p>
     <div class="credentials-strip">
       <div class="cred-chip">
-        <img src="images/badges/badge_world_record.png" alt="World Record">
-        <span>World Record Holder</span>
-      </div>
-      <div class="cred-chip">
-        <img src="images/badges/badge_mate_trained.png" alt="Maté Trained">
-        <span>Maté Trained</span>
-      </div>
-      <div class="cred-chip">
-        <img src="images/badges/badge_d1_athlete.png" alt="D1 Athlete">
-        <span>D1 Athlete</span>
-      </div>
-      <div class="cred-chip">
-        <img src="images/badges/badge_15years.png" alt="15+ Years">
-        <span>15+ Years</span>
+        <img src="images/badges/badge_world_record.png" alt="Guinness World Record">
+        <span>Guinness World Record Holder</span>
       </div>
     </div>
+    <a href="https://calendly.com/clients-enlightened" class="btn-gold" target="_blank" rel="noopener">Continue the Conversation</a>
   </div>
-  <div class="hero-portrait">
-    <img src="images/transparent/greg_warm_connect.png" alt="Greg Pignataro">
-  </div>
+  <!-- Greg is composited into the background image -->
 </section>
+
+<!-- ===================== ISLAND DIVIDER — Turquoise water ===================== -->
+<div class="island-divider">
+  <img src="images/necker/necker-hero.jpg" alt="Crystal clear waters of Necker Island" loading="lazy">
+</div>
 
 <!-- ===================== ABOUT ===================== -->
 <section class="about-section">
-  <h2>The work behind the conversation</h2>
-  <p>Most people at Necker have optimized everything in their external world. The business runs. The portfolio grows. The body keeps score differently. Somewhere along the way, the relationship with your own body became transactional: fuel it, push it, fix it, punish it.</p>
-  <p>Radical Body Love is the practice of ending that war. It draws on somatic psychology, nervous system science, and the wisdom traditions I've trained in for over 15 years. It's not about affirmations or positive thinking. It's about meeting what's actually happening in your body with the same intelligence you bring to everything else.</p>
-  <p>I've held a Guinness World Record, competed as a D1 athlete at Marquette, and trained directly under Dr. Gabor Maté. That background gives me a unique lens: I understand what it means to push the body to its absolute limits, and I understand what it costs.</p>
+  <div class="about-inner">
+    <h2>You've optimized everything except this</h2>
+    <p>The business runs. The portfolio grows. And yet somewhere in your body, there's a tension that no amount of success has resolved. You feel it in the way you carry stress, the way sleep eludes you, the way you're performing even when no one's watching.</p>
+    <p>That disconnect is exactly what I work with. For over 15 years, I've helped high performers close the gap between outer achievement and inner experience. My training under Dr. Gabor Maté, combined with a background as a D1 athlete and Guinness World Record holder, means I understand ambition from the inside. I know what it costs the body.</p>
+    <p>This isn't therapy. It's not wellness. It's a direct, private practice for people who want to stop managing their bodies and start actually living in them.</p>
+  </div>
+</section>
+
+<!-- ===================== COMMUNITY — Evening bar photo bg ===================== -->
+<section class="community-section">
+  <div class="community-inner">
+    <h2>Real conversations. Complete discretion.</h2>
+    <p>The most honest conversations at Necker happened off the agenda. That same energy defines how I work: direct, unhurried, and completely confidential. Every engagement is private. No social media. No case studies. Just the work.</p>
+  </div>
 </section>
 
 <!-- ===================== WHAT WE'LL EXPLORE ===================== -->
 <section class="explore-section">
   <div class="explore-inner">
-    <h2>What a conversation with me looks like</h2>
+    <h2>What people come to me for</h2>
     <div class="explore-grid">
       <div class="explore-card">
-        <h3>Your Body's Story</h3>
-        <p>We start by listening to what your body has been trying to tell you. Not fixing, not optimizing. Listening. Most high performers have never been given permission to do this.</p>
+        <h3>Chronic tension that won't resolve</h3>
+        <p>You've tried everything: trainers, massage, meditation apps. The tension keeps coming back because the source isn't muscular. We go to where it actually lives.</p>
       </div>
       <div class="explore-card">
-        <h3>The Nervous System</h3>
-        <p>We map the patterns your nervous system runs on autopilot. The tension, the holding, the armor. These patterns made sense once. They may not serve you now.</p>
+        <h3>Performing even off the clock</h3>
+        <p>You can't turn it off. The vigilance, the scanning, the low grade hum of "on" that follows you home. We find the switch your body forgot it had.</p>
       </div>
       <div class="explore-card">
-        <h3>Integration, Not Escape</h3>
-        <p>This isn't about retreating from your high performance life. It's about bringing all of yourself to it. Body, mind, and the space between where real freedom lives.</p>
+        <h3>Success that still feels empty</h3>
+        <p>You hit the number, closed the deal, built the thing. And yet. That gap between achievement and fulfillment is precisely where this work begins.</p>
       </div>
       <div class="explore-card">
-        <h3>A Path Forward</h3>
-        <p>Whether it's a private intensive, a quarterly immersion, or an ongoing relationship, we design something that fits how you actually live. No cookie cutter programs.</p>
+        <h3>Ready for something different</h3>
+        <p>Private intensives, quarterly immersions, or an ongoing relationship. Structured around how you actually live and work, not a one size program.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== FINAL CTA ===================== -->
+<!-- ===================== FINAL CTA — Boat photo bg ===================== -->
 <section class="final-cta">
-  <h2>The next step is<br><em>a conversation.</em></h2>
-  <p>No pitch. No pressure. Just a real conversation about where you are and where you want to be in your own body. 30 minutes. Completely confidential.</p>
-  <a href="https://calendly.com/clients-enlightened" class="btn-gold" target="_blank" rel="noopener">Book Your Call</a>
+  <div class="final-cta-inner">
+    <h2>The next step is<br><em>a conversation.</em></h2>
+    <p>No pitch. No intake forms. 30 minutes to see if this resonates the way it did at Necker. Completely confidential.</p>
+    <a href="https://calendly.com/clients-enlightened" class="btn-gold" target="_blank" rel="noopener">Continue the Conversation</a>
+  </div>
 </section>
 
 <!-- ===================== FOOTER ===================== -->
