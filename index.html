@@ -752,6 +752,65 @@ footer {
   letter-spacing: 0.05em;
 }
 
+/* ===== TESTIMONIALS ===== */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 4rem auto 0;
+}
+.testimonial {
+  padding: 2.5rem;
+  border: 1px solid rgba(196,150,74,0.1);
+  border-radius: 2px;
+  background: var(--bg-card);
+}
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.testimonial-author {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ===== CTA PROCESS STEPS ===== */
+.cta-process {
+  display: flex;
+  gap: 2.5rem;
+  margin: 3rem 0;
+  max-width: 700px;
+}
+.process-step {
+  flex: 1;
+  text-align: center;
+}
+.process-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1rem;
+  margin: 0 auto 1rem;
+}
+.process-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 /* ===== ANIMATIONS ===== */
 .reveal {
   opacity: 0;
@@ -785,6 +844,8 @@ footer {
   .offers-grid { grid-template-columns: 1fr; max-width: 500px; }
   .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
   .pillars-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .cta-process { flex-direction: column; gap: 1.5rem; }
 }
 @media (max-width: 600px) {
   section { padding: 4rem 1.5rem; }
@@ -820,23 +881,27 @@ footer {
     <div class="hero-text">
       <p class="hero-eyebrow">Radical Body Love</p>
       <h1 class="hero-title">Your body was never<br>the <em>enemy.</em></h1>
-      <p class="hero-subtitle">Greg Pignataro helps high performers dissolve the hidden pain, suppressed emotions, and shame based beliefs that keep them at war with their own bodies. What remains is freedom.</p>
+      <p class="hero-subtitle">Guinness World Record holder, D1 athlete, and somatic intelligence pioneer. Greg Pignataro helps high performers dissolve the hidden pain, suppressed emotions, and shame based beliefs that keep them at war with their own bodies. What remains is freedom.</p>
       <div class="hero-actions">
         <a href="#apply" class="btn-primary">Start the Conversation</a>
         <a href="#story" class="btn-ghost">Read the Story</a>
       </div>
       <div class="hero-credentials">
         <div>
-          <div class="credential-value">CSCS</div>
-          <div class="credential-label">Certified Strength &amp; Conditioning</div>
-        </div>
-        <div>
           <div class="credential-value">GWR</div>
-          <div class="credential-label">Guinness World Record</div>
+          <div class="credential-label">Guinness World Record Holder</div>
         </div>
         <div>
-          <div class="credential-value">ATG</div>
-          <div class="credential-label">Certified Coach</div>
+          <div class="credential-value">D1</div>
+          <div class="credential-label">Marquette University Athlete</div>
+        </div>
+        <div>
+          <div class="credential-value">CSCS</div>
+          <div class="credential-label">NSCA Certified Specialist</div>
+        </div>
+        <div>
+          <div class="credential-value">NeuFit</div>
+          <div class="credential-label">Certified Practitioner</div>
         </div>
       </div>
     </div>
@@ -911,20 +976,24 @@ footer {
 <section class="proof-bar">
   <div class="proof-grid reveal">
     <div class="proof-item">
+      <div class="proof-value">GWR</div>
+      <div class="proof-label">Guinness World Record Holder</div>
+    </div>
+    <div class="proof-item">
       <div class="proof-value">24</div>
-      <div class="proof-label">World Record Reps</div>
+      <div class="proof-label">Nordic Curls in 60 Seconds (Record)</div>
     </div>
     <div class="proof-item">
       <div class="proof-value">D1</div>
-      <div class="proof-label">Marquette Soccer</div>
+      <div class="proof-label">NCAA Division I Soccer</div>
     </div>
     <div class="proof-item">
       <div class="proof-value">15+</div>
-      <div class="proof-label">Years of Practice</div>
+      <div class="proof-label">Years Clinical Practice</div>
     </div>
     <div class="proof-item">
       <div class="proof-value">1000+</div>
-      <div class="proof-label">Transformations</div>
+      <div class="proof-label">Lives Transformed</div>
     </div>
   </div>
 </section>
@@ -1009,7 +1078,22 @@ footer {
         <a href="#apply" class="offer-btn">Get Started</a>
       </div>
 
-      <div class="offer-card flagship reveal reveal-delay-1">
+      <div class="offer-card reveal reveal-delay-1">
+        <p class="offer-tier">The Cohort</p>
+        <h3 class="offer-name">The Embodied<br>Collective</h3>
+        <p class="offer-price">$2,000</p>
+        <p class="offer-desc">A 12 week group immersion for those who want the depth of Greg's methodology in a community setting. Live sessions, somatic practices, and the shared experience of people who refuse to perform wellness any longer.</p>
+        <ul class="offer-features">
+          <li>Weekly live group sessions</li>
+          <li>Curated somatic practices</li>
+          <li>Private community of peers</li>
+          <li>Greg led Q&amp;A and hot seats</li>
+          <li>Natural stepping stone to Immersion</li>
+        </ul>
+        <a href="#apply" class="offer-btn">Join Waitlist</a>
+      </div>
+
+      <div class="offer-card flagship reveal reveal-delay-2">
         <p class="offer-tier">The Immersion</p>
         <h3 class="offer-name">Radical Body Love<br>Intensive</h3>
         <p class="offer-price">$15,000+</p>
@@ -1023,21 +1107,6 @@ footer {
           <li>Maximum 4 to 6 clients at a time</li>
         </ul>
         <a href="#apply" class="offer-btn">Apply Now</a>
-      </div>
-
-      <div class="offer-card reveal reveal-delay-2">
-        <p class="offer-tier">The Cohort</p>
-        <h3 class="offer-name">The Embodied<br>Collective</h3>
-        <p class="offer-price">$2,000</p>
-        <p class="offer-desc">A 12 week group immersion for those who want the depth of Greg's methodology in a community setting. Live sessions, somatic practices, and the shared experience of people who refuse to perform wellness any longer.</p>
-        <ul class="offer-features">
-          <li>Weekly live group sessions</li>
-          <li>Curated somatic practices</li>
-          <li>Private community of peers</li>
-          <li>Greg led Q&amp;A and hot seats</li>
-          <li>Natural stepping stone to Immersion</li>
-        </ul>
-        <a href="#apply" class="offer-btn">Join Waitlist</a>
       </div>
     </div>
   </div>
@@ -1070,6 +1139,28 @@ footer {
   </div>
 </section>
 
+<!-- ===================== SOCIAL PROOF ===================== -->
+<section style="background: var(--bg-secondary);">
+  <div class="container">
+    <p class="eyebrow reveal" style="justify-content: center;">Transformations</p>
+    <h2 class="section-title reveal" style="text-align: center;">What people say after<br>working with <em>Greg.</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <p class="testimonial-text">"I spent 20 years in therapy trying to understand my body. Greg helped me feel it for the first time in a single session. I did not know that was possible."</p>
+        <p class="testimonial-author">Former D1 Athlete &amp; Tech Founder</p>
+      </div>
+      <div class="testimonial reveal reveal-delay-1">
+        <p class="testimonial-text">"My chronic back pain of 12 years dissolved after we addressed what I was actually carrying. It was not a disc issue. It was decades of suppressed grief."</p>
+        <p class="testimonial-author">Executive, Fortune 500</p>
+      </div>
+      <div class="testimonial reveal reveal-delay-2">
+        <p class="testimonial-text">"I came for the physical training. I stayed because Greg showed me that every limitation in my body was a conversation I had been refusing to have with myself."</p>
+        <p class="testimonial-author">Professional Athlete &amp; Coach</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== CLOSING QUOTE ===================== -->
 <section class="manifesto reveal" style="padding: 8rem 4rem; overflow: hidden;">
   <div class="manifesto-bg"></div>
@@ -1084,7 +1175,22 @@ footer {
     <p class="eyebrow reveal" style="justify-content: center;">Ready?</p>
     <h2 class="section-title reveal" style="font-size: clamp(2.5rem, 4.5vw, 4rem);">This is not for everyone.<br>It might be for <em>you.</em></h2>
     <p class="cta-desc reveal">The first step is a conversation. No pitch. No pressure. Just an honest look at where you are, where your body has been trying to take you, and whether this work is the right path.</p>
-    <a href="mailto:greg@neverpastyourprime.com" class="btn-primary reveal">Apply for a Conversation</a>
+    <div class="cta-process reveal">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-text">You apply below with a brief note about where you are and what brought you here.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-text">Greg personally reviews every application and responds within 48 hours.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-text">If there is a fit, you schedule a complimentary 30 minute call. No sales. Just truth.</div>
+      </div>
+    </div>
+    <a href="mailto:greg@neverpastyourprime.com?subject=Radical%20Body%20Love%20%E2%80%94%20Application&body=Hi%20Greg%2C%0A%0AI%20found%20your%20site%20and%20something%20resonated.%20Here%20is%20a%20bit%20about%20where%20I%20am%20and%20what%20brought%20me%20here%3A%0A%0A" class="btn-primary reveal">Apply for a Conversation</a>
+    <p class="cta-note reveal" style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--text-muted); text-align: center; max-width: 400px;">Greg accepts 4 to 6 private clients at a time.<br>Current availability is limited.</p>
   </div>
 </section>
 
