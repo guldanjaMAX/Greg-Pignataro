@@ -158,61 +158,53 @@ body::after {
 
 /* ===== HERO ===== */
 .hero {
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
   background: var(--bg-primary);
 }
-/* Warm ambient background on left side */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 25% 50%, rgba(184,134,58,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 70% 60%, rgba(184,134,58,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 25% 50%, rgba(184,134,58,0.04) 0%, transparent 60%),
     linear-gradient(160deg, var(--bg-primary) 0%, var(--bg-warm) 50%, var(--bg-accent) 100%);
   z-index: 0;
 }
 
-/* Full-height image of Greg on the right side */
-.hero-image-panel {
+/* Greg cutout photo composited on right */
+.hero-portrait {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 48%;
-  height: 100%;
+  right: 4%;
+  bottom: 0;
+  width: 38%;
+  max-width: 520px;
   z-index: 1;
-  overflow: hidden;
+  pointer-events: none;
 }
-.hero-image-panel img {
+.hero-portrait img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
+  height: auto;
   display: block;
+  filter: drop-shadow(0 4px 60px rgba(44,37,32,0.08));
 }
-/* Soft gradient fade on the left edge so it blends into the background */
-.hero-image-panel::before {
+/* Subtle gold glow behind Greg */
+.hero-portrait::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 35%;
-  height: 100%;
-  background: linear-gradient(to right, var(--bg-warm) 0%, rgba(247,243,238,0.6) 40%, transparent 100%);
-  z-index: 2;
-  pointer-events: none;
-}
-/* Very subtle warm overlay to unify the photo with the palette */
-.hero-image-panel::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(253,251,248,0) 0%, rgba(253,251,248,0) 70%, rgba(240,235,227,0.4) 100%);
-  z-index: 2;
-  pointer-events: none;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(ellipse, rgba(184,134,58,0.1) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(40px);
 }
 
 .hero-content {
@@ -220,33 +212,36 @@ body::after {
   z-index: 3;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 12rem 4rem 5rem;
+  padding: 7rem 4rem 2rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero-text { max-width: 540px; }
 .hero-eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   font-weight: 400;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 .hero-eyebrow::before {
   content: '';
-  width: 40px;
+  width: 32px;
   height: 1px;
   background: var(--gold);
 }
 .hero-title {
   font-family: var(--serif);
-  font-size: clamp(3.2rem, 5.8vw, 5.4rem);
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
   font-weight: 300;
   line-height: 1.06;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   color: var(--text-primary);
 }
 .hero-title em {
@@ -255,26 +250,26 @@ body::after {
   font-weight: 400;
 }
 .hero-subtitle {
-  font-size: 1.18rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
-  line-height: 1.85;
-  margin-bottom: 3rem;
-  max-width: 500px;
+  line-height: 1.75;
+  margin-bottom: 1.8rem;
+  max-width: 480px;
 }
 .hero-actions {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   align-items: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
 }
 .btn-primary {
   display: inline-block;
-  padding: 1.15rem 3.4rem;
+  padding: 0.95rem 2.8rem;
   background: var(--gold);
   color: #fff;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
@@ -298,10 +293,10 @@ body::after {
 }
 .btn-ghost {
   display: inline-block;
-  padding: 1.15rem 2.5rem;
+  padding: 0.95rem 2.2rem;
   border: 1px solid var(--border-light);
   color: var(--text-secondary);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -314,44 +309,77 @@ body::after {
   color: var(--gold);
 }
 
-/* (old hero-image-container removed; using hero-image-panel now) */
-
-/* === Credentials: Elegant pill badges === */
+/* === Credential Badges: Beautiful individual designs === */
 .hero-credentials {
   display: flex;
-  gap: 1rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--border-light);
+  gap: 0.7rem;
   flex-wrap: wrap;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--border-light);
 }
-.hero-credential {
+.credential-badge {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.55rem 1.2rem;
-  background: rgba(184,134,58,0.06);
-  border: 1px solid rgba(184,134,58,0.12);
-  border-radius: 100px;
-  transition: all 0.3s;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem 0.5rem 0.65rem;
+  background: linear-gradient(135deg, rgba(184,134,58,0.06) 0%, rgba(184,134,58,0.02) 100%);
+  border: 1px solid rgba(184,134,58,0.15);
+  border-radius: 8px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
 }
-.hero-credential:hover {
-  background: rgba(184,134,58,0.1);
-  border-color: rgba(184,134,58,0.2);
+.credential-badge:hover {
+  background: linear-gradient(135deg, rgba(184,134,58,0.12) 0%, rgba(184,134,58,0.04) 100%);
+  border-color: rgba(184,134,58,0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(184,134,58,0.1);
 }
-.credential-value {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  color: var(--gold);
-  font-weight: 600;
-  letter-spacing: 0.02em;
+.credential-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.credential-icon svg {
+  width: 16px;
+  height: 16px;
+}
+.credential-icon.icon-gwr {
+  background: linear-gradient(135deg, #B8863A 0%, #D4A853 100%);
+}
+.credential-icon.icon-mate {
+  background: linear-gradient(135deg, #6B5E52 0%, #8A7B6D 100%);
+}
+.credential-icon.icon-d1 {
+  background: linear-gradient(135deg, #2C2520 0%, #4A3F37 100%);
+}
+.credential-icon.icon-years {
+  background: linear-gradient(135deg, #9E9285 0%, #B8ADA2 100%);
+}
+.credential-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   line-height: 1;
 }
-.credential-label {
-  font-size: 0.62rem;
+.credential-title {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+.credential-desc {
+  font-size: 0.58rem;
   color: var(--text-muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.3;
+  margin-top: 1px;
 }
 
 /* === Scroll indicator === */
@@ -953,23 +981,18 @@ footer {
   #navbar { padding: 1.2rem 2rem; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+  .hero { height: auto; max-height: none; min-height: 100vh; }
   .hero-content {
-    padding: 8rem 2.5rem 4rem;
+    padding: 6rem 2.5rem 3rem;
   }
   .hero-text { max-width: 100%; }
-  .hero-image-panel {
+  .hero-portrait {
     position: relative;
-    width: 100%;
-    height: 50vh;
-    margin-top: 2rem;
-  }
-  .hero-image-panel::before {
-    width: 100%;
-    height: 20%;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to top, var(--bg-warm) 0%, transparent 100%);
+    right: auto;
+    bottom: auto;
+    width: 60%;
+    max-width: 300px;
+    margin: 0 auto;
   }
   .hero-scroll { display: none; }
   .story-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -982,8 +1005,13 @@ footer {
 }
 @media (max-width: 600px) {
   section { padding: 4rem 1.5rem; }
-  .hero-content { padding: 7rem 1.5rem 3rem; }
-  .hero-credentials { gap: 1.5rem; }
+  .hero-content { padding: 5rem 1.5rem 2rem; }
+  .hero-credentials { gap: 0.5rem; }
+  .credential-badge { padding: 0.4rem 0.7rem 0.4rem 0.5rem; }
+  .credential-icon { width: 24px; height: 24px; }
+  .credential-icon svg { width: 13px; height: 13px; }
+  .credential-title { font-size: 0.75rem; }
+  .credential-desc { font-size: 0.52rem; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .full-bleed { height: 35vh; }
 }
@@ -1008,8 +1036,8 @@ footer {
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <div class="hero-image-panel">
-    <img src="images/shootproof/portraits/greg_01.jpg" alt="Greg Pignataro" loading="eager">
+  <div class="hero-portrait">
+    <img src="images/greg-transparent/01_hero_smile_transparent.png" alt="Greg Pignataro" loading="eager">
   </div>
   <div class="hero-content">
     <div class="hero-text">
@@ -1021,25 +1049,51 @@ footer {
         <a href="#story" class="btn-ghost">Read the Story</a>
       </div>
       <div class="hero-credentials">
-        <div class="hero-credential">
-          <span class="credential-value">GWR</span>
-          <span class="credential-label">Guinness World<br>Record Holder</span>
+        <div class="credential-badge">
+          <div class="credential-icon icon-gwr">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.5 4.3 12.3l.7-4.1-3-2.9 4.2-.7L8 1z" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="credential-info">
+            <span class="credential-title">World Record</span>
+            <span class="credential-desc">Guinness World Record Holder</span>
+          </div>
         </div>
-        <div class="hero-credential">
-          <span class="credential-value">Maté</span>
-          <span class="credential-label">Gabor Maté<br>Trained</span>
+        <div class="credential-badge">
+          <div class="credential-icon icon-mate">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 2C5.2 2 3 4.2 3 7c0 1.7.8 3.1 2 4.1V13c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-1.9c1.2-1 2-2.4 2-4.1 0-2.8-2.2-5-5-5z" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="credential-info">
+            <span class="credential-title">Maté Trained</span>
+            <span class="credential-desc">Dr. Gabor Maté Certified</span>
+          </div>
         </div>
-        <div class="hero-credential">
-          <span class="credential-value">B.S.</span>
-          <span class="credential-label">Psychology<br>Degree</span>
+        <div class="credential-badge">
+          <div class="credential-icon icon-d1">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="6" r="4" fill="#fff"/>
+              <path d="M8 11c-2.7 0-5 1.3-5 3v1h10v-1c0-1.7-2.3-3-5-3z" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="credential-info">
+            <span class="credential-title">D1 Athlete</span>
+            <span class="credential-desc">NCAA Div. I, Marquette</span>
+          </div>
         </div>
-        <div class="hero-credential">
-          <span class="credential-value">CSCS</span>
-          <span class="credential-label">Certified Strength<br>Specialist</span>
-        </div>
-        <div class="hero-credential">
-          <span class="credential-value">NeuFit</span>
-          <span class="credential-label">Certified<br>Practitioner</span>
+        <div class="credential-badge">
+          <div class="credential-icon icon-years">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="6" stroke="#fff" stroke-width="1.5" fill="none"/>
+              <path d="M8 4v4l2.5 2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="credential-info">
+            <span class="credential-title">15+ Years</span>
+            <span class="credential-desc">Body &amp; Mind Practice</span>
+          </div>
         </div>
       </div>
     </div>
