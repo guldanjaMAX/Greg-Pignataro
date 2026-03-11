@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greg Pignataro | Radical Body Love</title>
+<meta name="description" content="Greg Pignataro helps you remember that your body was never the problem. Guinness World Record holder, Gabor Maté trained, psychology degree. What if you were never broken?">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Greg Pignataro | Radical Body Love">
+<meta property="og:description" content="Your body was never the problem. Guinness World Record holder, Gabor Maté trained, psychology degree. What if you were never broken?">
+<meta property="og:url" content="https://gregpignataro.com">
+<meta property="og:image" content="https://gregpignataro.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Greg Pignataro">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Greg Pignataro | Radical Body Love">
+<meta name="twitter:description" content="Your body was never the problem. What if you were never broken?">
+<meta name="twitter:image" content="https://gregpignataro.com/og-image.jpg">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://gregpignataro.com">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X73WCJRFHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X73WCJRFHT');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   GREG PIGNATARO — RADICAL BODY LOVE
+   Brand Site v2.0
+   Design Direction: Light, warm, modern,
+   editorial, welcoming, remembering who you are
+   ============================================ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #FDFBF8;
+  --bg-warm: #F7F3EE;
+  --bg-accent: #F0EBE3;
+  --bg-card: #FFFFFF;
+  --gold: #B8863A;
+  --gold-light: #C99B4F;
+  --gold-bright: #D4A853;
+  --gold-dim: rgba(184,134,58,0.06);
+  --text-primary: #2C2520;
+  --text-secondary: #6B5E52;
+  --text-muted: #9E9285;
+  --border-light: rgba(184,134,58,0.12);
+  --shadow-soft: 0 4px 24px rgba(44,37,32,0.06);
+  --shadow-hover: 0 8px 40px rgba(44,37,32,0.1);
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Shadow work section uses dark */
+  --shadow-bg: #1A1612;
+  --shadow-text: #F2EDE8;
+  --shadow-muted: #9E9890;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ===== SUBTLE TEXTURE ===== */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* ===== NAVIGATION ===== */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.8rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(180deg, rgba(10,8,5,0.6) 0%, rgba(10,8,5,0.3) 70%, transparent 100%);
+}
+#navbar.scrolled {
+  background: rgba(253,251,248,0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 1rem 4rem;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 2px 20px rgba(44,37,32,0.04);
+}
+#navbar.scrolled .nav-links a { color: var(--text-secondary); }
+#navbar.scrolled .nav-links a:hover { color: var(--gold); }
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2.8rem;
+  list-style: none;
+}
+.nav-links a {
+  color: rgba(253,251,248,0.7);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  padding: 0.65rem 2rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.4s;
+  font-weight: 500;
+}
+.nav-cta:hover {
+  background: var(--gold);
+  color: #fff;
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-hamburger span {
+  width: 22px;
+  height: 1.5px;
+  background: var(--gold-light);
+  transition: all 0.3s;
+}
+
+/* Mobile menu open state */
+.nav-links.mobile-open {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(253,251,248,0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 1.5rem 2rem 2rem;
+  gap: 1.2rem;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(44,37,32,0.08);
+}
+.nav-links.mobile-open a {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+.nav-links.mobile-open a:hover { color: var(--gold); }
+.nav-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: url('images/hero_option_a.jpg') center center / cover no-repeat;
+  background-color: #1a1410;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, rgba(10,8,5,0.65) 0%, rgba(10,8,5,0.3) 40%, transparent 65%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 7rem 4rem 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-text { max-width: 540px; }
+.hero-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  font-weight: 300;
+  line-height: 1.06;
+  margin-bottom: 1.2rem;
+  color: #FDFBF8;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+  font-weight: 400;
+}
+.hero-subtitle {
+  font-size: 1rem;
+  color: rgba(253,251,248,0.85);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+}
+.hero-actions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.btn-primary {
+  display: inline-block;
+  padding: 0.95rem 2.8rem;
+  background: var(--gold);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(184,134,58,0.25);
+}
+.btn-ghost {
+  display: inline-block;
+  padding: 0.95rem 2.2rem;
+  border: 1px solid rgba(253,251,248,0.25);
+  color: rgba(253,251,248,0.8);
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+  backdrop-filter: blur(4px);
+}
+.btn-ghost:hover {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  background: rgba(253,251,248,0.05);
+}
+
+/* === Credential Badges: AI-Generated Badge Images === */
+.hero-credentials {
+  display: flex;
+  gap: 1.2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(253,251,248,0.15);
+  align-items: flex-start;
+}
+.credential-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  text-align: center;
+  cursor: default;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.credential-badge:hover {
+  transform: translateY(-2px);
+}
+.credential-badge:hover .badge-img {
+  box-shadow: 0 6px 24px rgba(184,134,58,0.2);
+}
+.badge-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(184,134,58,0.35);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.credential-label {
+  font-family: var(--serif);
+  font-size: 0.72rem;
+  color: rgba(253,251,248,0.8);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  max-width: 80px;
+}
+
+/* === Scroll indicator === */
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.6;
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+.hero-scroll-chevron {
+  width: 20px;
+  height: 20px;
+  border-right: 1.5px solid var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  transform: rotate(45deg);
+  animation: chevronBounce 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+@keyframes chevronBounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(6px); }
+}
+
+/* ===== MANIFESTO ===== */
+.manifesto {
+  text-align: center;
+  padding: 6rem 4rem;
+  position: relative;
+  background: var(--bg-warm);
+  overflow: hidden;
+}
+.manifesto::before,
+.manifesto::after {
+  font-family: var(--serif);
+  font-size: 8rem;
+  color: rgba(184,134,58,0.08);
+  position: absolute;
+  z-index: 0;
+  line-height: 1;
+}
+.manifesto::before {
+  content: '\201C';
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateX(-340px);
+}
+.manifesto::after {
+  content: '\201D';
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateX(340px);
+}
+.manifesto-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  max-width: 780px;
+  margin: 0 auto 2rem;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+}
+.manifesto-attribution {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== SECTIONS ===== */
+section { padding: 8rem 4rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.85;
+}
+.divider {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  margin: 2.5rem 0;
+}
+
+/* ===== STORY ===== */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.story-image {
+  width: 100%;
+  aspect-ratio: 16/11;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+.story-body p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+.story-body p:first-of-type {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+/* ===== FULL BLEED IMAGE ===== */
+.full-bleed {
+  position: relative;
+  padding: 0;
+  height: 55vh;
+  overflow: hidden;
+}
+.full-bleed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.full-bleed-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--bg-primary) 0%, transparent 20%, transparent 80%, var(--bg-primary) 100%);
+}
+
+/* ===== PROOF BAR ===== */
+.proof-bar {
+  padding: 4.5rem 4rem;
+  background: var(--bg-accent);
+}
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.proof-item { text-align: center; }
+.proof-value {
+  font-family: var(--serif);
+  font-size: 3.4rem;
+  color: var(--gold);
+  font-weight: 300;
+}
+.proof-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+
+/* ===== METHOD CARDS ===== */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+.method-card {
+  background: var(--bg-card);
+  padding: 3rem 2.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-soft);
+}
+.method-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+.method-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.4;
+  transition: opacity 0.4s;
+}
+.method-card:hover::after { opacity: 1; }
+.method-num {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  color: rgba(184,134,58,0.12);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+.method-name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+.method-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ===== OFFERS ===== */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+.offer-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s;
+  box-shadow: var(--shadow-soft);
+}
+.offer-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+.offer-card.flagship {
+  border-color: var(--gold);
+  position: relative;
+}
+.offer-card.flagship::before {
+  content: 'FLAGSHIP EXPERIENCE';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--gold);
+  color: #fff;
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  padding: 0.5rem;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+}
+.offer-card.flagship { padding-top: 4.5rem; }
+.offer-tier {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.offer-name {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.offer-price {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.offer-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+.offer-features {
+  list-style: none;
+  margin-bottom: 2.5rem;
+}
+.offer-features li {
+  padding: 0.55rem 0;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+  padding-left: 1.5rem;
+  position: relative;
+}
+.offer-features li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.offer-btn {
+  display: block;
+  text-align: center;
+  padding: 1rem 2rem;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  font-weight: 500;
+  border-radius: 4px;
+  margin-top: auto;
+}
+.offer-btn:hover {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+.offer-card.flagship .offer-btn {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+.offer-card.flagship .offer-btn:hover {
+  background: var(--gold-bright);
+}
+
+/* ===== PILLARS ===== */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.pillar {
+  padding: 2.5rem;
+  border-left: 2px solid var(--gold);
+  background: var(--bg-card);
+  border-radius: 0 8px 8px 0;
+  transition: all 0.3s;
+  box-shadow: var(--shadow-soft);
+}
+.pillar:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+.pillar-name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+.pillar-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ===== SHADOW WORK SECTION (Dark) ===== */
+.shadow-section {
+  background: var(--shadow-bg);
+  color: var(--shadow-text);
+  position: relative;
+  overflow: hidden;
+}
+.shadow-section .eyebrow { color: var(--gold); }
+.shadow-section .section-title { color: var(--shadow-text); }
+.shadow-section .section-subtitle { color: var(--shadow-muted); }
+.shadow-section .story-body p { color: var(--shadow-muted); }
+.shadow-section .story-body p:first-of-type { color: var(--shadow-text); }
+.shadow-section .story-image { border-radius: 8px; }
+.shadow-glow {
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 60%;
+  height: 160%;
+  background: radial-gradient(ellipse at center, rgba(184,134,58,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.shadow-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 4rem auto 0;
+}
+.testimonial {
+  padding: 2.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+.testimonial::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+  font-family: var(--serif);
+  font-size: 5rem;
+  color: rgba(184,134,58,0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.testimonial-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(184,134,58,0.2);
+}
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-author {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.testimonial-role {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ===== CLOSING QUOTE ===== */
+.closing-quote {
+  padding: 6rem 4rem;
+}
+.closing-quote .manifesto-quote {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  text-align: center;
+  padding: 10rem 4rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--bg-warm) 0%, var(--bg-accent) 50%, var(--bg-warm) 100%);
+}
+.cta-inner {
+  position: relative;
+  z-index: 2;
+}
+.cta-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 3rem;
+  line-height: 1.85;
+}
+
+/* ===== CTA PROCESS STEPS ===== */
+.cta-process {
+  display: flex;
+  gap: 2.5rem;
+  margin: 3rem auto;
+  max-width: 700px;
+  justify-content: center;
+}
+.process-step {
+  flex: 1;
+  text-align: center;
+}
+.process-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  margin: 0 auto 1rem;
+  background: rgba(184,134,58,0.04);
+}
+.process-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 5rem 4rem 3rem;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+  background: var(--bg-primary);
+}
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.footer-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  transition: color 0.3s;
+}
+.footer-nav a:hover { color: var(--gold); }
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.footer-social a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  transition: color 0.3s;
+}
+.footer-social a:hover { color: var(--gold); }
+.footer-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+.footer-top-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-top-link:hover { color: var(--gold); }
+.footer-copy {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ===== ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  section { padding: 6rem 2.5rem; }
+  #navbar { padding: 1.2rem 2rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero { height: auto; max-height: none; min-height: 75vh; background-position: 65% center; }
+  .hero::before { background: linear-gradient(180deg, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 60%, rgba(10,8,5,0.6) 100%); }
+  .hero-content {
+    padding: 6rem 2.5rem 3rem;
+  }
+  .hero-text { max-width: 100%; }
+  .hero-scroll { display: none; }
+  .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .method-grid { grid-template-columns: 1fr; }
+  .offers-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .cta-process { flex-direction: column; gap: 1.5rem; }
+}
+@media (max-width: 600px) {
+  section { padding: 4rem 1.5rem; }
+  .hero { min-height: 65vh; background-position: 60% center; }
+  .hero-content { padding: 5rem 1.5rem 2rem; }
+  .hero-credentials { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+  .badge-img { width: 52px; height: 52px; }
+  .credential-label { font-size: 0.62rem; max-width: 70px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .full-bleed { height: 35vh; }
+  .manifesto { padding: 4rem 1.5rem; }
+  .nav-hamburger { min-width: 44px; min-height: 44px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Greg Pignataro</a>
+  <ul class="nav-links">
+    <li><a href="#story">Story</a></li>
+    <li><a href="#method">Method</a></li>
+    <li><a href="#work">The Work</a></li>
+    <li><a href="#content">Content</a></li>
+  </ul>
+  <a href="#apply" class="nav-cta">Begin</a>
+  <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('mobile-open');">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <!-- Greg is composited into the background image -->
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Radical Body Love</p>
+      <h1 class="hero-title">You were never <em>broken.</em></h1>
+      <p class="hero-subtitle">Your body is not the problem. It never was. The war you have been waging against yourself ends when you stop fighting and start remembering who you really are. What you find on the other side is freedom.</p>
+      <div class="hero-actions">
+        <a href="#apply" class="btn-primary">Start the Conversation</a>
+        <a href="#story" class="btn-ghost">Read the Story</a>
+      </div>
+      <p style="font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(253,251,248,0.5); text-transform: uppercase; margin-top: 0.5rem;">Guinness World Record Holder &nbsp;&bull;&nbsp; BA Psychology &nbsp;&bull;&nbsp; Gabor Mat&eacute; Trained</p>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-chevron"></div>
+  </div>
+</section>
+
+<!-- ===================== MANIFESTO ===================== -->
+<section class="manifesto reveal">
+  <p class="manifesto-quote">"Stop running from what is real in your body. Stop chasing what is not real in your mind. What is left is freedom."</p>
+  <p class="manifesto-attribution">The Radical Body Love Manifesto</p>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section id="story" style="background: var(--bg-primary);">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-body reveal">
+        <p class="eyebrow">Origin</p>
+        <h2 class="section-title">The same thing keeps <em>happening.</em></h2>
+        <div class="divider"></div>
+        <p>You keep hitting the same wall. Different year, different circumstance, same feeling. Something in your body tightens. Something in your chest goes quiet. You push through it because that is what you have always done. But the wall does not go away. It just waits for you somewhere else.</p>
+        <p>Greg knows this pattern because he lived it. A torn ACL at 18. A marriage that broke open old wounds. A body that held decades of grief until one afternoon it finally let go. Every breaking point turned out to be a door, not a dead end.</p>
+        <p>He is not a coach or a therapist in the normal sense. He studied psychology in college, competed as a Division I athlete, and then spent over a decade going deeper into the places where the body and the mind refuse to be separated. He is someone who has walked through what you are walking through and found something real on the other side. That is why this work hits different.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/headshots/greg_speaking_gesture.jpg" alt="Greg Pignataro speaking" class="story-image" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOCCER / ATHLETE IMAGE ===================== -->
+<section style="background: var(--bg-primary); padding: 0 4rem 4rem;">
+  <div class="container reveal" style="max-width: 900px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); position: relative;">
+    <img src="images/soccer/footy_hero_2.jpg" alt="Greg Pignataro, Division I soccer athlete at Marquette" loading="lazy" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+    <p style="position: absolute; bottom: 1rem; right: 1.5rem; font-family: var(--serif); font-size: 0.82rem; font-style: italic; color: rgba(253,251,248,0.7); text-shadow: 0 1px 6px rgba(0,0,0,0.5);">Division I, Marquette University</p>
+  </div>
+</section>
+
+<!-- ===================== PROOF BAR ===================== -->
+<section class="proof-bar">
+  <div class="proof-grid reveal">
+    <div class="proof-item">
+      <div class="proof-value">GWR</div>
+      <div class="proof-label">Guinness World Record</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-value">24</div>
+      <div class="proof-label">Nordic Curls in One Minute</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-value">D1</div>
+      <div class="proof-label">NCAA Division I Athlete</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-value">100+</div>
+      <div class="proof-label">Clients Transformed</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CREDENTIALS ===================== -->
+<section style="background: var(--bg-warm); padding: 4rem;">
+  <div class="container reveal" style="max-width: 900px; text-align: center;">
+    <p class="eyebrow" style="justify-content: center;">Credentials</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2.5rem; margin-top: 2rem;">
+      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
+        <span style="color: var(--gold); font-weight: 500;">BA Psychology</span> Carthage College
+      </div>
+      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
+        <span style="color: var(--gold); font-weight: 500;">Compassionate Inquiry</span> Dr. Gabor Mat&eacute;
+      </div>
+      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
+        <span style="color: var(--gold); font-weight: 500;">CSCS</span> Nat'l Strength &amp; Conditioning
+      </div>
+      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
+        <span style="color: var(--gold); font-weight: 500;">NeuFit</span> Certified Practitioner
+      </div>
+      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
+        <span style="color: var(--gold); font-weight: 500;">ATG</span> Certified Coach
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AS HEARD ON ===================== -->
+<section style="background: var(--bg-accent); padding: 3rem 4rem;">
+  <div class="container reveal" style="max-width: 800px; text-align: center;">
+    <p style="font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;">As Heard On</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 3rem; align-items: center;">
+      <a href="https://www.neu.fit/podcast/episode-59-atg-training-and-setting-the-world-record-in-nordic-hamstring-curls-with-greg-pignataro-cscs/" target="_blank" rel="noopener" style="font-family: var(--serif); font-size: 1.05rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-style: italic;">NeuFit Podcast</a>
+      <span style="color: var(--border-light);">|</span>
+      <a href="https://open.spotify.com/show/6JoH3BOJAlSW2hqWWzdvzV" target="_blank" rel="noopener" style="font-family: var(--serif); font-size: 1.05rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-style: italic;">Average to Athletic</a>
+    </div>
+    <p style="font-family: var(--sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem;">6 podcast episodes on pain, psychedelics, darkness retreats, and the body</p>
+  </div>
+</section>
+
+<!-- ===================== METHODOLOGY ===================== -->
+<section id="method" style="background: var(--bg-primary);">
+  <div class="container">
+    <p class="eyebrow reveal">The Method</p>
+    <h2 class="section-title reveal">Not fitness. Not therapy.<br>Something <em>deeper.</em></h2>
+    <p class="section-subtitle reveal">This work lives in the space between fitness and therapy, where nobody else is looking. It does not teach you to use your body better. It helps you remember that your body was never broken in the first place.</p>
+    <div class="method-grid">
+      <div class="method-card reveal">
+        <div class="method-num">01</div>
+        <div class="method-name">Body Listening</div>
+        <div class="method-desc">Your body stores every story your mind has been avoiding. Through NeuFit technology and nervous system work, you will finally hear what your body has been trying to say for years. This is not talk therapy. This is your body finally getting to speak.</div>
+      </div>
+      <div class="method-card reveal reveal-delay-1">
+        <div class="method-num">02</div>
+        <div class="method-name">Movement as Medicine</div>
+        <div class="method-desc">Every tight spot, every sore place, every part of you that will not move freely is holding a message. Here, pain is treated as a signal, not a sentence. The goal is not to push harder. The goal is to listen deeper. Your body already knows the way.</div>
+      </div>
+      <div class="method-card reveal reveal-delay-2">
+        <div class="method-num">03</div>
+        <div class="method-name">Remembering Who You Are</div>
+        <div class="method-desc">The real shift is not physical. It is the moment you stop performing a version of yourself and start living as who you actually are. Not fixed. Not optimized. Free.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHO THIS IS FOR ===================== -->
+<section style="background: var(--bg-warm);">
+  <div class="container">
+    <div class="story-grid">
+      <div class="reveal">
+        <img src="images/headshots/greg_warm_connect.jpg" alt="Greg Pignataro" class="story-image" loading="lazy">
+      </div>
+      <div class="story-body reveal reveal-delay-1">
+        <p class="eyebrow">Who This Is For</p>
+        <h2 class="section-title">You have tried <em>everything.</em></h2>
+        <div class="divider"></div>
+        <p>You are a high performer. Maybe a founder, an executive, an athlete, or someone searching for more. You have read the books. Done the retreats. Tracked the macros. Optimized the sleep. And still something feels off.</p>
+        <p>You have a feeling that your tension, your restlessness, your inability to truly rest has nothing to do with your training plan. It has everything to do with what your body has been holding for years.</p>
+        <p>You are ready to stop performing wellness and start actually living in your own skin. You are ready to meet your body not as a problem to solve, but as the most honest, intelligent thing you have ever been given.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHO THIS IS NOT FOR ===================== -->
+<section style="background: var(--bg-primary); padding-top: 0;">
+  <div class="container" style="max-width: 680px;">
+    <div class="reveal" style="border-top: 1px solid var(--border-light); padding-top: 3rem;">
+      <p class="eyebrow" style="justify-content: center;">A Necessary Honesty</p>
+      <h2 class="section-title" style="text-align: center;">This is not for <em>you</em> if...</h2>
+      <div style="margin-top: 2rem; font-family: var(--sans); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.9; text-align: center;">
+        <p>You want a quick fix. You want someone to hand you a meal plan and a training split. You want to skip the emotional part and just get lean. You want to be told what to do without being asked what you feel.</p>
+        <p style="margin-top: 1rem;">You believe your body is a machine that needs better programming. You think vulnerability is weakness. You are looking for motivation, not truth.</p>
+        <p style="margin-top: 1rem;">If that is where you are, there is no judgment. There are a thousand programs built for that. This is not one of them.</p>
+        <p style="margin-top: 1.25rem; color: var(--gold); font-family: var(--serif); font-size: 1.05rem; font-style: italic;">This is for the people who tried all of that and still feel like something is missing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SHADOW WORK SECTION (Dark) ===================== -->
+<section class="shadow-section" style="padding: 9rem 4rem;">
+  <div class="shadow-glow"></div>
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-body reveal">
+        <p class="eyebrow">The Shadow</p>
+        <h2 class="section-title">The parts you <em>hide.</em></h2>
+        <div class="divider"></div>
+        <p>This is where the real work lives. Underneath the goals, the achievements, the curated version of yourself, there are parts that got pushed away a long time ago. Anger. Grief. Shame. Fear. The body held them when the mind could not.</p>
+        <p>Shadow work is not about fixing what is wrong. It is about welcoming what has been exiled. When you stop running from these parts, something remarkable happens: the tension that lived in your body for decades can finally let go.</p>
+        <p>This is not comfortable work. But it is the most important work you will ever do. You do not do it alone. You do it with someone who has walked this path himself. Greg is a Certified Compassionate Inquiry Practitioner trained under Dr. Gabor Mat&eacute;, the world's leading voice on the connection between trauma and the body. He has sat in 7 days of complete darkness and 5 days of total silence, not because someone told him to, but because he needed to know what was underneath everything. That is the depth he brings to this work.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/brand/golden-smoke.jpg" alt="Golden light emerging from darkness" class="story-image" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOCIAL PROOF ===================== -->
+<section style="background: var(--bg-primary);">
+  <div class="container">
+    <p class="eyebrow reveal" style="justify-content: center;">Transformations</p>
+    <h2 class="section-title reveal" style="text-align: center;">People who stopped <em>performing.</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <p class="testimonial-text">"I have spent my entire career studying the body. Greg showed me the one thing I was missing: that the body does not just store pain, it stores the conversations you have been too afraid to have. One session changed how I approach everything."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" loading="lazy" src="images/testimonials/anthony.jpg" alt="Anthony Balduzzi">
+          <div class="testimonial-info">
+            <span class="testimonial-author">Anthony Balduzzi</span>
+            <span class="testimonial-role">Founder, Fit Father Project</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-1">
+        <p class="testimonial-text">"I thought I had dealt with everything. Built the business, stayed in shape, checked every box. Greg helped me see that the thing I was running from was not behind me. It was living in my chest. The afternoon I stopped running was the best afternoon of my life."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" loading="lazy" src="images/testimonials/john.jpg" alt="John Guldan">
+          <div class="testimonial-info">
+            <span class="testimonial-author">John Guldan</span>
+            <span class="testimonial-role">Entrepreneur</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-2">
+        <p class="testimonial-text">"Greg does not give you advice. He does not coach you through a framework. He puts you in your body and lets you feel the truth that has been waiting there. I have worked with a lot of people in the personal development space. Nobody works like this."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" loading="lazy" src="images/testimonials/james.jpg" alt="James Guldan">
+          <div class="testimonial-info">
+            <span class="testimonial-author">James Guldan</span>
+            <span class="testimonial-role">Entrepreneur</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-3">
+        <p class="testimonial-text">"I walked in skeptical. I am an analytical person and this sounded too abstract. Within an hour Greg helped me access something I had been suppressing for over a decade. My shoulders dropped, my breathing changed, and I felt a stillness I did not know was possible."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" loading="lazy" src="images/testimonials/rahul.jpg" alt="Rahul Sahota">
+          <div class="testimonial-info">
+            <span class="testimonial-author">Rahul Sahota</span>
+            <span class="testimonial-role">Restaurateur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OFFERS ===================== -->
+<section id="work" style="background: var(--bg-warm);">
+  <div class="container">
+    <p class="eyebrow reveal">The Work</p>
+    <h2 class="section-title reveal">Three ways <em>in.</em></h2>
+    <p class="section-subtitle reveal">Every path leads to the same place: a new relationship with your body. The question is how deep you are ready to go.</p>
+    <div class="offers-grid">
+
+      <div class="offer-card reveal">
+        <p class="offer-tier">The First Step</p>
+        <h3 class="offer-name">The Radical<br>Self Discovery</h3>
+        <p class="offer-price">$197</p>
+        <p class="offer-desc">An AI powered self assessment and starter course that gives you a real taste of this work. Real tools, real shifts, and a clear mirror showing you exactly where your body has been trying to get your attention.</p>
+        <ul class="offer-features">
+          <li>AI guided body awareness assessment</li>
+          <li>5 module introductory course</li>
+          <li>Somatic journaling framework</li>
+          <li>Community access</li>
+          <li>Qualifies you for deeper work</li>
+        </ul>
+        <a href="#apply" class="offer-btn">Get Started</a>
+      </div>
+
+      <div class="offer-card reveal reveal-delay-1">
+        <p class="offer-tier">The Cohort</p>
+        <h3 class="offer-name">The Embodied<br>Collective</h3>
+        <p class="offer-price">$2,000</p>
+        <p class="offer-desc">A 12 week group experience for people who are done performing wellness alone. Live sessions, body practices, and the shared experience of being in a room with others who finally get it.</p>
+        <ul class="offer-features">
+          <li>Weekly live group sessions</li>
+          <li>Guided somatic practices</li>
+          <li>Private community of peers</li>
+          <li>Live Q&amp;A and hot seats</li>
+          <li>Natural stepping stone to Immersion</li>
+        </ul>
+        <a href="#apply" class="offer-btn">Join Waitlist</a>
+      </div>
+
+      <div class="offer-card flagship reveal reveal-delay-2">
+        <p class="offer-tier">The Immersion</p>
+        <h3 class="offer-name">Radical Body Love<br>Intensive</h3>
+        <p class="offer-price">$15,000+</p>
+        <p class="offer-desc">A 12 month private transformation for people who are done with surface level answers. Deep body work, NeuFit technology, structural change, and identity level shifts. This is where you stop managing symptoms and start becoming who you actually are.</p>
+        <ul class="offer-features">
+          <li>Weekly private 1 on 1 sessions</li>
+          <li>NeuFit nervous system protocols</li>
+          <li>Custom movement architecture</li>
+          <li>Nutrition and metabolic guidance</li>
+          <li>Unlimited voice and text support</li>
+          <li>Only 4 to 6 clients at a time</li>
+        </ul>
+        <a href="#apply" class="offer-btn">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTENT PILLARS ===================== -->
+<section id="content" style="background: var(--bg-warm);">
+  <div class="container">
+    <p class="eyebrow reveal">Content World</p>
+    <h2 class="section-title reveal">Ideas that will <em>challenge you.</em></h2>
+    <p class="section-subtitle reveal">Long essays, bold thinking, and raw stories that take apart everything the wellness industry has sold you. If these resonate, you are in the right place. Published on Substack.</p>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-name">Radical Presence</div>
+        <div class="pillar-desc">The body as teacher. What happens when you stop trying to fix yourself and start listening. Presence is the medicine that hustle culture will not prescribe.</div>
+      </div>
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-name">Identity Dissolution</div>
+        <div class="pillar-desc">Why "who you think you are" is the actual injury. The stories we perform, the roles we confuse with reality, and the quiet freedom of letting them fall away.</div>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-name">Anti Shame Health</div>
+        <div class="pillar-desc">The fitness industry profits from your self hatred. Greg takes it apart. No more earning your food. No more punishing your body. A revolution in how we relate to health.</div>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <div class="pillar-name">Origin Stories</div>
+        <div class="pillar-desc">Raw, personal stories from the injuries, breakthroughs, and quiet moments that built this work. The torn ACL. The bachelor party. The 15 minute cry. The world record. All of it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING QUOTE ===================== -->
+<section class="manifesto closing-quote reveal" style="overflow: hidden;">
+  <p class="manifesto-quote">"You do not need to be fixed. You do not need to be optimized. You need to be met. Your body has been waiting for you to stop fighting it and start listening. That is all this is."</p>
+  <p class="manifesto-attribution">The Radical Body Love Promise</p>
+</section>
+
+<!-- ===================== APPLY CTA ===================== -->
+<section id="apply" class="cta-section">
+  <div class="cta-inner">
+    <p class="eyebrow reveal" style="justify-content: center;">Ready?</p>
+    <h2 class="section-title reveal" style="font-size: clamp(2.5rem, 4.5vw, 4rem);">This is not for everyone.<br>It might be for <em>you.</em></h2>
+    <p class="cta-desc reveal">The first step is a conversation. No pitch. No pressure. Just an honest look at where you are, where your body has been trying to take you, and whether this is the right path.</p>
+    <div class="cta-process reveal">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-text">You apply below with a short note about where you are and what brought you here.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-text">Greg reads every application himself and responds within 48 hours.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-text">If it feels right, you schedule a free 30 minute call. No sales. Just truth.</div>
+      </div>
+    </div>
+    <a href="mailto:greg@neverpastyourprime.com?subject=Radical%20Body%20Love%20%E2%80%94%20Application&body=Hi%20Greg%2C%0A%0AI%20found%20your%20site%20and%20something%20resonated.%20Here%20is%20a%20bit%20about%20where%20I%20am%20and%20what%20brought%20me%20here%3A%0A%0A" class="btn-primary reveal">Apply for a Conversation</a>
+    <p class="reveal" style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--text-muted); text-align: center; max-width: 400px; margin-left: auto; margin-right: auto;">Greg works with only 4 to 6 private clients at a time.<br>Availability is limited.</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <a href="#" class="footer-top-link">Back to Top</a>
+  <div class="footer-brand">Greg Pignataro</div>
+  <p class="footer-tagline">Your body was never the problem.</p>
+  <nav class="footer-nav">
+    <a href="#story">Story</a>
+    <a href="#method">Method</a>
+    <a href="#work">The Work</a>
+    <a href="#content">Content</a>
+    <a href="#apply">Begin</a>
+  </nav>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/neverpastyourprime/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.guinnessworldrecords.com/world-records/722570-most-nordic-hamstring-curls-in-one-minute" target="_blank" rel="noopener">Guinness Record</a>
+    <a href="https://www.neu.fit/podcast/episode-59-atg-training-and-setting-the-world-record-in-nordic-hamstring-curls-with-greg-pignataro-cscs/" target="_blank" rel="noopener">NeuFit Podcast</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Greg Pignataro. Radical Body Love. All rights reserved.</p>
+</footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+// Navbar scroll behavior
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Intersection Observer for reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Close mobile menu on scroll
+window.addEventListener('scroll', () => {
+  const navLinks = document.querySelector('.nav-links');
+  const hamburger = document.querySelector('.nav-hamburger');
+  if (navLinks && navLinks.classList.contains('mobile-open')) {
+    navLinks.classList.remove('mobile-open');
+    hamburger.classList.remove('open');
+  }
+}, { passive: true });
+
+// Smooth scroll + close mobile menu on nav click
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.nav-hamburger');
+    if (navLinks) navLinks.classList.remove('mobile-open');
+    if (hamburger) hamburger.classList.remove('open');
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
