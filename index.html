@@ -775,9 +775,9 @@ section { padding: 8rem 4rem; }
 /* ===== TESTIMONIALS ===== */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1100px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
   margin: 4rem auto 0;
 }
 .testimonial {
@@ -795,8 +795,30 @@ section { padding: 8rem 4rem; }
   color: var(--text-primary);
   margin-bottom: 1.5rem;
 }
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.testimonial-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(184,134,58,0.2);
+}
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+}
 .testimonial-author {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.testimonial-role {
+  font-size: 0.72rem;
   letter-spacing: 0.06em;
   color: var(--gold);
   text-transform: uppercase;
@@ -980,24 +1002,7 @@ footer {
         <a href="#apply" class="btn-primary">Start the Conversation</a>
         <a href="#story" class="btn-ghost">Read the Story</a>
       </div>
-      <div class="hero-credentials">
-        <div class="credential-badge">
-          <img class="badge-img" src="images/badges/badge_world_record.png" alt="Guinness World Record Holder">
-          <span class="credential-label">World Record</span>
-        </div>
-        <div class="credential-badge">
-          <img class="badge-img" src="images/badges/badge_mate_trained.png" alt="Dr. Gabor Maté Certified">
-          <span class="credential-label">Maté Trained</span>
-        </div>
-        <div class="credential-badge">
-          <img class="badge-img" src="images/badges/badge_d1_athlete.png" alt="NCAA Division I Athlete, Marquette">
-          <span class="credential-label">D1 Athlete</span>
-        </div>
-        <div class="credential-badge">
-          <img class="badge-img" src="images/badges/badge_15years.png" alt="15+ Years Body and Mind Practice">
-          <span class="credential-label">15+ Years</span>
-        </div>
-      </div>
+      <!-- Credentials moved to body content for cleaner hero -->
     </div>
   </div>
   <div class="hero-scroll">
@@ -1247,16 +1252,44 @@ footer {
     <h2 class="section-title reveal" style="text-align: center;">What people say after<br>working with <em>Greg.</em></h2>
     <div class="testimonials-grid">
       <div class="testimonial reveal">
-        <p class="testimonial-text">"I spent 20 years in therapy trying to understand my body. Greg helped me feel it for the first time in one session. I did not know that was possible."</p>
-        <p class="testimonial-author">Former D1 Athlete &amp; Tech Founder</p>
+        <p class="testimonial-text">"I have spent my entire career studying the body. Greg showed me the one thing I was missing: that the body does not just store pain, it stores the conversations you have been too afraid to have. One session changed how I approach everything."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" src="images/testimonials/anthony.jpg" alt="Anthony Balduzzi">
+          <div class="testimonial-info">
+            <span class="testimonial-author">Anthony Balduzzi</span>
+            <span class="testimonial-role">Founder, Fit Father Project</span>
+          </div>
+        </div>
       </div>
       <div class="testimonial reveal reveal-delay-1">
-        <p class="testimonial-text">"My back pain of 12 years went away after we looked at what I was really carrying. It was not a disc problem. It was decades of grief I never let out."</p>
-        <p class="testimonial-author">Executive, Fortune 500</p>
+        <p class="testimonial-text">"I thought I had dealt with everything. Built the business, stayed in shape, checked every box. Greg helped me see that the thing I was running from was not behind me. It was living in my chest. The afternoon I stopped running was the best afternoon of my life."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" src="images/testimonials/john.jpg" alt="John Guldan">
+          <div class="testimonial-info">
+            <span class="testimonial-author">John Guldan</span>
+            <span class="testimonial-role">Entrepreneur</span>
+          </div>
+        </div>
       </div>
       <div class="testimonial reveal reveal-delay-2">
-        <p class="testimonial-text">"I came for the training. I stayed because Greg showed me that every limit in my body was a conversation I had been refusing to have with myself."</p>
-        <p class="testimonial-author">Professional Athlete &amp; Coach</p>
+        <p class="testimonial-text">"Greg does not give you advice. He does not coach you through a framework. He puts you in your body and lets you feel the truth that has been waiting there. I have worked with a lot of people in the personal development space. Nobody works like this."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" src="images/testimonials/james.jpg" alt="James Guldan">
+          <div class="testimonial-info">
+            <span class="testimonial-author">James Guldan</span>
+            <span class="testimonial-role">Creative Director &amp; Strategist</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-3">
+        <p class="testimonial-text">"I walked in skeptical. I am an analytical person and this sounded too abstract. Within an hour Greg helped me access something I had been suppressing for over a decade. My shoulders dropped, my breathing changed, and I felt a stillness I did not know was possible."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" src="images/testimonials/rahul.jpg" alt="Rahul Sahota">
+          <div class="testimonial-info">
+            <span class="testimonial-author">Rahul Sahota</span>
+            <span class="testimonial-role">Technology Executive</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
