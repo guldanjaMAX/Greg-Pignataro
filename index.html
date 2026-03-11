@@ -223,7 +223,7 @@ body::after {
 .hero-subtitle {
   font-size: 1rem;
   color: rgba(253,251,248,0.85);
-  line-height: 1.7;
+  line-height: 1.85;
   margin-bottom: 1.5rem;
   max-width: 480px;
   text-shadow: 0 1px 6px rgba(0,0,0,0.2);
@@ -335,38 +335,55 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  color: rgba(253,251,248,0.5);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  gap: 0.5rem;
   opacity: 0.6;
   animation: scrollPulse 2.5s ease-in-out infinite;
 }
-.hero-scroll-line {
-  width: 1px;
-  height: 32px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scrollLine 2.5s ease-in-out infinite;
+.hero-scroll-chevron {
+  width: 20px;
+  height: 20px;
+  border-right: 1.5px solid var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  transform: rotate(45deg);
+  animation: chevronBounce 2s ease-in-out infinite;
 }
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.8; }
 }
-@keyframes scrollLine {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+@keyframes chevronBounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(6px); }
 }
 
 /* ===== MANIFESTO ===== */
 .manifesto {
   text-align: center;
-  padding: 9rem 4rem;
+  padding: 6rem 4rem;
   position: relative;
   background: var(--bg-warm);
   overflow: hidden;
+}
+.manifesto::before,
+.manifesto::after {
+  font-family: var(--serif);
+  font-size: 8rem;
+  color: rgba(184,134,58,0.08);
+  position: absolute;
+  z-index: 0;
+  line-height: 1;
+}
+.manifesto::before {
+  content: '\201C';
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateX(-340px);
+}
+.manifesto::after {
+  content: '\201D';
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateX(340px);
 }
 .manifesto-quote {
   font-family: var(--serif);
@@ -478,19 +495,20 @@ section { padding: 8rem 4rem; }
 }
 .tl-item {
   padding-left: 2.5rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.8rem;
   position: relative;
 }
 .tl-item::before {
   content: '';
   position: absolute;
-  left: -5px;
-  top: 0.6rem;
-  width: 11px;
-  height: 11px;
+  left: -7px;
+  top: 0.5rem;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: var(--bg-primary);
   border: 2px solid var(--gold);
+  box-shadow: 0 0 0 4px rgba(184,134,58,0.1);
 }
 .tl-year {
   font-family: var(--serif);
@@ -538,7 +556,7 @@ section { padding: 8rem 4rem; }
 .proof-item { text-align: center; }
 .proof-value {
   font-family: var(--serif);
-  font-size: 2.8rem;
+  font-size: 3.4rem;
   color: var(--gold);
   font-weight: 300;
 }
@@ -579,7 +597,7 @@ section { padding: 8rem 4rem; }
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0;
+  opacity: 0.4;
   transition: opacity 0.4s;
 }
 .method-card:hover::after { opacity: 1; }
@@ -697,7 +715,7 @@ section { padding: 8rem 4rem; }
   display: block;
   text-align: center;
   padding: 1rem 2rem;
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--gold);
   color: var(--gold);
   text-decoration: none;
   font-size: 0.78rem;
@@ -706,6 +724,7 @@ section { padding: 8rem 4rem; }
   transition: all 0.3s;
   font-weight: 500;
   border-radius: 4px;
+  margin-top: auto;
 }
 .offer-btn:hover {
   background: var(--gold);
@@ -736,7 +755,11 @@ section { padding: 8rem 4rem; }
   transition: all 0.3s;
   box-shadow: var(--shadow-soft);
 }
-.pillar:hover { box-shadow: var(--shadow-hover); }
+.pillar:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
 .pillar-name {
   font-family: var(--serif);
   font-size: 1.35rem;
@@ -771,6 +794,17 @@ section { padding: 8rem 4rem; }
   background: radial-gradient(ellipse at center, rgba(184,134,58,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
+.shadow-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  z-index: 1;
+  pointer-events: none;
+}
 
 /* ===== TESTIMONIALS ===== */
 .testimonials-grid {
@@ -786,6 +820,19 @@ section { padding: 8rem 4rem; }
   border-radius: 8px;
   background: var(--bg-card);
   box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+.testimonial::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+  font-family: var(--serif);
+  font-size: 5rem;
+  color: rgba(184,134,58,0.06);
+  line-height: 1;
+  pointer-events: none;
 }
 .testimonial-text {
   font-family: var(--serif);
@@ -824,6 +871,16 @@ section { padding: 8rem 4rem; }
   text-transform: uppercase;
 }
 
+/* ===== CLOSING QUOTE ===== */
+.closing-quote {
+  padding: 6rem 4rem;
+}
+.closing-quote .manifesto-quote {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
 /* ===== CTA SECTION ===== */
 .cta-section {
   text-align: center;
@@ -857,17 +914,18 @@ section { padding: 8rem 4rem; }
   text-align: center;
 }
 .process-num {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--gold);
+  border: 1.5px solid var(--gold);
   color: var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--serif);
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 0 auto 1rem;
+  background: rgba(184,134,58,0.04);
 }
 .process-text {
   font-size: 0.85rem;
@@ -920,6 +978,24 @@ footer {
   transition: color 0.3s;
 }
 .footer-social a:hover { color: var(--gold); }
+.footer-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+.footer-top-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-top-link:hover { color: var(--gold); }
 .footer-copy {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -1006,8 +1082,7 @@ footer {
     </div>
   </div>
   <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="hero-scroll-line"></div>
+    <div class="hero-scroll-chevron"></div>
   </div>
 </section>
 
@@ -1091,7 +1166,7 @@ footer {
     </div>
     <div class="proof-item">
       <div class="proof-value">15+</div>
-      <div class="proof-label">Years Practice</div>
+      <div class="proof-label">Years of Practice</div>
     </div>
   </div>
 </section>
@@ -1149,8 +1224,8 @@ footer {
       <h2 class="section-title" style="text-align: center;">This is not for <em>you</em> if...</h2>
       <div style="margin-top: 2rem; font-family: var(--sans); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.9; text-align: center;">
         <p>You want a quick fix. You want someone to hand you a meal plan and a training split. You want to skip the emotional part and just get lean. You want to be told what to do without being asked what you feel.</p>
-        <p style="margin-top: 1.25rem;">You believe your body is a machine that needs better programming. You think vulnerability is weakness. You are looking for motivation, not truth.</p>
-        <p style="margin-top: 1.25rem;">If that is where you are, there is no judgment. There are a thousand programs built for that. This is not one of them.</p>
+        <p style="margin-top: 1rem;">You believe your body is a machine that needs better programming. You think vulnerability is weakness. You are looking for motivation, not truth.</p>
+        <p style="margin-top: 1rem;">If that is where you are, there is no judgment. There are a thousand programs built for that. This is not one of them.</p>
         <p style="margin-top: 1.25rem; color: var(--gold); font-family: var(--serif); font-size: 1.05rem; font-style: italic;">This is for the people who tried all of that and still feel like something is missing.</p>
       </div>
     </div>
@@ -1312,7 +1387,7 @@ footer {
 </section>
 
 <!-- ===================== CLOSING QUOTE ===================== -->
-<section class="manifesto reveal" style="padding: 8rem 4rem; overflow: hidden;">
+<section class="manifesto closing-quote reveal" style="overflow: hidden;">
   <p class="manifesto-quote">"You do not need to be fixed. You do not need to be optimized. You need to be met. Your body has been waiting for you to stop fighting it and start listening. That is all this is."</p>
   <p class="manifesto-attribution">The Radical Body Love Promise</p>
 </section>
@@ -1344,7 +1419,9 @@ footer {
 
 <!-- ===================== FOOTER ===================== -->
 <footer>
+  <a href="#" class="footer-top-link">Back to Top</a>
   <div class="footer-brand">Greg Pignataro</div>
+  <p class="footer-tagline">Your body was never the problem.</p>
   <nav class="footer-nav">
     <a href="#story">Story</a>
     <a href="#method">Method</a>
