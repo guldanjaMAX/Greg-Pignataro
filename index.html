@@ -5,6 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Greg Pignataro | Radical Body Love</title>
 <meta name="description" content="Greg Pignataro helps you remember that your body was never the problem. Guinness World Record holder, Gabor Maté trained, psychology degree. What if you were never broken?">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Greg Pignataro | Radical Body Love">
+<meta property="og:description" content="Your body was never the problem. Guinness World Record holder, Gabor Maté trained, psychology degree. What if you were never broken?">
+<meta property="og:url" content="https://gregpignataro.com">
+<meta property="og:image" content="https://gregpignataro.com/images/hero_option_a.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Greg Pignataro">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Greg Pignataro | Radical Body Love">
+<meta name="twitter:description" content="Your body was never the problem. What if you were never broken?">
+<meta name="twitter:image" content="https://gregpignataro.com/images/hero_option_a.jpg">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://gregpignataro.com">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
@@ -156,6 +181,37 @@ body::after {
   height: 1.5px;
   background: var(--gold-light);
   transition: all 0.3s;
+}
+
+/* Mobile menu open state */
+.nav-links.mobile-open {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(253,251,248,0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 1.5rem 2rem 2rem;
+  gap: 1.2rem;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(44,37,32,0.08);
+}
+.nav-links.mobile-open a {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+.nav-links.mobile-open a:hover { color: var(--gold); }
+.nav-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
 }
 
 /* ===== HERO ===== */
@@ -475,52 +531,6 @@ section { padding: 8rem 4rem; }
 .story-body p:first-of-type {
   font-size: 1.1rem;
   color: var(--text-primary);
-}
-
-/* ===== TIMELINE ===== */
-.timeline {
-  position: relative;
-  max-width: 800px;
-  margin: 5rem auto 0;
-  padding-left: 2rem;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--gold), var(--gold), transparent);
-}
-.tl-item {
-  padding-left: 2.5rem;
-  margin-bottom: 2.8rem;
-  position: relative;
-}
-.tl-item::before {
-  content: '';
-  position: absolute;
-  left: -7px;
-  top: 0.5rem;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: var(--bg-primary);
-  border: 2px solid var(--gold);
-  box-shadow: 0 0 0 4px rgba(184,134,58,0.1);
-}
-.tl-year {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-  font-weight: 400;
-}
-.tl-event {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
 }
 
 /* ===== FULL BLEED IMAGE ===== */
@@ -1061,7 +1071,7 @@ footer {
     <li><a href="#content">Content</a></li>
   </ul>
   <a href="#apply" class="nav-cta">Begin</a>
-  <div class="nav-hamburger" onclick="this.classList.toggle('open')">
+  <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('mobile-open');">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -1078,7 +1088,7 @@ footer {
         <a href="#apply" class="btn-primary">Start the Conversation</a>
         <a href="#story" class="btn-ghost">Read the Story</a>
       </div>
-      <!-- Credentials moved to body content for cleaner hero -->
+      <p style="font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(253,251,248,0.5); text-transform: uppercase; margin-top: 0.5rem;">Guinness World Record Holder &nbsp;&bull;&nbsp; BA Psychology &nbsp;&bull;&nbsp; Gabor Mat&eacute; Trained</p>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1105,7 +1115,7 @@ footer {
         <p>He is not a coach or a therapist in the normal sense. He studied psychology in college, competed as a Division I athlete, and then spent over a decade going deeper into the places where the body and the mind refuse to be separated. He is someone who has walked through what you are walking through and found something real on the other side. That is why this work hits different.</p>
       </div>
       <div class="reveal reveal-delay-1">
-        <img src="images/headshots/greg_speaking_gesture.jpg" alt="Greg Pignataro speaking" class="story-image">
+        <img src="images/headshots/greg_speaking_gesture.jpg" alt="Greg Pignataro speaking" class="story-image" loading="lazy">
       </div>
     </div>
   </div>
@@ -1113,8 +1123,9 @@ footer {
 
 <!-- ===================== SOCCER / ATHLETE IMAGE ===================== -->
 <section style="background: var(--bg-primary); padding: 0 4rem 4rem;">
-  <div class="container reveal" style="max-width: 900px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft);">
+  <div class="container reveal" style="max-width: 900px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); position: relative;">
     <img src="images/soccer/footy_hero_2.jpg" alt="Greg Pignataro, Division I soccer athlete at Marquette" loading="lazy" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+    <p style="position: absolute; bottom: 1rem; right: 1.5rem; font-family: var(--serif); font-size: 0.82rem; font-style: italic; color: rgba(253,251,248,0.7); text-shadow: 0 1px 6px rgba(0,0,0,0.5);">Division I, Marquette University</p>
   </div>
 </section>
 
@@ -1164,6 +1175,19 @@ footer {
   </div>
 </section>
 
+<!-- ===================== AS HEARD ON ===================== -->
+<section style="background: var(--bg-accent); padding: 3rem 4rem;">
+  <div class="container reveal" style="max-width: 800px; text-align: center;">
+    <p style="font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;">As Heard On</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 3rem; align-items: center;">
+      <a href="https://www.neu.fit/podcast/episode-59-atg-training-and-setting-the-world-record-in-nordic-hamstring-curls-with-greg-pignataro-cscs/" target="_blank" rel="noopener" style="font-family: var(--serif); font-size: 1.05rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-style: italic;">NeuFit Podcast</a>
+      <span style="color: var(--border-light);">|</span>
+      <a href="https://open.spotify.com/show/6JoH3BOJAlSW2hqWWzdvzV" target="_blank" rel="noopener" style="font-family: var(--serif); font-size: 1.05rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-style: italic;">Average to Athletic</a>
+    </div>
+    <p style="font-family: var(--sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem;">6 podcast episodes on pain, psychedelics, darkness retreats, and the body</p>
+  </div>
+</section>
+
 <!-- ===================== METHODOLOGY ===================== -->
 <section id="method" style="background: var(--bg-primary);">
   <div class="container">
@@ -1195,7 +1219,7 @@ footer {
   <div class="container">
     <div class="story-grid">
       <div class="reveal">
-        <img src="images/headshots/greg_warm_connect.jpg" alt="Greg Pignataro" class="story-image">
+        <img src="images/headshots/greg_warm_connect.jpg" alt="Greg Pignataro" class="story-image" loading="lazy">
       </div>
       <div class="story-body reveal reveal-delay-1">
         <p class="eyebrow">Who This Is For</p>
@@ -1239,14 +1263,64 @@ footer {
         <p>This is not comfortable work. But it is the most important work you will ever do. You do not do it alone. You do it with someone who has walked this path himself. Greg is a Certified Compassionate Inquiry Practitioner trained under Dr. Gabor Mat&eacute;, the world's leading voice on the connection between trauma and the body. He has sat in 7 days of complete darkness and 5 days of total silence, not because someone told him to, but because he needed to know what was underneath everything. That is the depth he brings to this work.</p>
       </div>
       <div class="reveal reveal-delay-1">
-        <img src="images/brand/golden-smoke.jpg" alt="Golden light emerging from darkness" class="story-image">
+        <img src="images/brand/golden-smoke.jpg" alt="Golden light emerging from darkness" class="story-image" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOCIAL PROOF ===================== -->
+<section style="background: var(--bg-primary);">
+  <div class="container">
+    <p class="eyebrow reveal" style="justify-content: center;">Transformations</p>
+    <h2 class="section-title reveal" style="text-align: center;">People who stopped <em>performing.</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <p class="testimonial-text">"I have spent my entire career studying the body. Greg showed me the one thing I was missing: that the body does not just store pain, it stores the conversations you have been too afraid to have. One session changed how I approach everything."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" loading="lazy" src="images/testimonials/anthony.jpg" alt="Anthony Balduzzi">
+          <div class="testimonial-info">
+            <span class="testimonial-author">Anthony Balduzzi</span>
+            <span class="testimonial-role">Founder, Fit Father Project</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-1">
+        <p class="testimonial-text">"I thought I had dealt with everything. Built the business, stayed in shape, checked every box. Greg helped me see that the thing I was running from was not behind me. It was living in my chest. The afternoon I stopped running was the best afternoon of my life."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" loading="lazy" src="images/testimonials/john.jpg" alt="John Guldan">
+          <div class="testimonial-info">
+            <span class="testimonial-author">John Guldan</span>
+            <span class="testimonial-role">Entrepreneur</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-2">
+        <p class="testimonial-text">"Greg does not give you advice. He does not coach you through a framework. He puts you in your body and lets you feel the truth that has been waiting there. I have worked with a lot of people in the personal development space. Nobody works like this."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" loading="lazy" src="images/testimonials/james.jpg" alt="James Guldan">
+          <div class="testimonial-info">
+            <span class="testimonial-author">James Guldan</span>
+            <span class="testimonial-role">Entrepreneur</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-3">
+        <p class="testimonial-text">"I walked in skeptical. I am an analytical person and this sounded too abstract. Within an hour Greg helped me access something I had been suppressing for over a decade. My shoulders dropped, my breathing changed, and I felt a stillness I did not know was possible."</p>
+        <div class="testimonial-footer">
+          <img class="testimonial-photo" loading="lazy" src="images/testimonials/rahul.jpg" alt="Rahul Sahota">
+          <div class="testimonial-info">
+            <span class="testimonial-author">Rahul Sahota</span>
+            <span class="testimonial-role">Restaurateur</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== OFFERS ===================== -->
-<section id="work" style="background: var(--bg-primary);">
+<section id="work" style="background: var(--bg-warm);">
   <div class="container">
     <p class="eyebrow reveal">The Work</p>
     <h2 class="section-title reveal">Three ways <em>in.</em></h2>
@@ -1329,69 +1403,6 @@ footer {
   </div>
 </section>
 
-<!-- ===================== AS HEARD ON ===================== -->
-<section style="background: var(--bg-accent); padding: 3rem 4rem;">
-  <div class="container reveal" style="max-width: 800px; text-align: center;">
-    <p style="font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;">As Heard On</p>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 3rem; align-items: center;">
-      <a href="https://www.neu.fit/podcast/episode-59-atg-training-and-setting-the-world-record-in-nordic-hamstring-curls-with-greg-pignataro-cscs/" target="_blank" rel="noopener" style="font-family: var(--serif); font-size: 1.05rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-style: italic;">NeuFit Podcast</a>
-      <span style="color: var(--border-light);">|</span>
-      <a href="https://open.spotify.com/show/6JoH3BOJAlSW2hqWWzdvzV" target="_blank" rel="noopener" style="font-family: var(--serif); font-size: 1.05rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-style: italic;">Average to Athletic</a>
-    </div>
-    <p style="font-family: var(--sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem;">6 podcast episodes on pain, psychedelics, darkness retreats, and the body</p>
-  </div>
-</section>
-
-<!-- ===================== SOCIAL PROOF ===================== -->
-<section style="background: var(--bg-primary);">
-  <div class="container">
-    <p class="eyebrow reveal" style="justify-content: center;">Transformations</p>
-    <h2 class="section-title reveal" style="text-align: center;">People who stopped <em>performing.</em></h2>
-    <div class="testimonials-grid">
-      <div class="testimonial reveal">
-        <p class="testimonial-text">"I have spent my entire career studying the body. Greg showed me the one thing I was missing: that the body does not just store pain, it stores the conversations you have been too afraid to have. One session changed how I approach everything."</p>
-        <div class="testimonial-footer">
-          <img class="testimonial-photo" src="images/testimonials/anthony.jpg" alt="Anthony Balduzzi">
-          <div class="testimonial-info">
-            <span class="testimonial-author">Anthony Balduzzi</span>
-            <span class="testimonial-role">Founder, Fit Father Project</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial reveal reveal-delay-1">
-        <p class="testimonial-text">"I thought I had dealt with everything. Built the business, stayed in shape, checked every box. Greg helped me see that the thing I was running from was not behind me. It was living in my chest. The afternoon I stopped running was the best afternoon of my life."</p>
-        <div class="testimonial-footer">
-          <img class="testimonial-photo" src="images/testimonials/john.jpg" alt="John Guldan">
-          <div class="testimonial-info">
-            <span class="testimonial-author">John Guldan</span>
-            <span class="testimonial-role">Entrepreneur</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial reveal reveal-delay-2">
-        <p class="testimonial-text">"Greg does not give you advice. He does not coach you through a framework. He puts you in your body and lets you feel the truth that has been waiting there. I have worked with a lot of people in the personal development space. Nobody works like this."</p>
-        <div class="testimonial-footer">
-          <img class="testimonial-photo" src="images/testimonials/james.jpg" alt="James Guldan">
-          <div class="testimonial-info">
-            <span class="testimonial-author">James Guldan</span>
-            <span class="testimonial-role">Entrepreneur</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial reveal reveal-delay-3">
-        <p class="testimonial-text">"I walked in skeptical. I am an analytical person and this sounded too abstract. Within an hour Greg helped me access something I had been suppressing for over a decade. My shoulders dropped, my breathing changed, and I felt a stillness I did not know was possible."</p>
-        <div class="testimonial-footer">
-          <img class="testimonial-photo" src="images/testimonials/rahul.jpg" alt="Rahul Sahota">
-          <div class="testimonial-info">
-            <span class="testimonial-author">Rahul Sahota</span>
-            <span class="testimonial-role">Restaurateur</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== CLOSING QUOTE ===================== -->
 <section class="manifesto closing-quote reveal" style="overflow: hidden;">
   <p class="manifesto-quote">"You do not need to be fixed. You do not need to be optimized. You need to be met. Your body has been waiting for you to stop fighting it and start listening. That is all this is."</p>
@@ -1462,10 +1473,24 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// Smooth scroll
+// Close mobile menu on scroll
+window.addEventListener('scroll', () => {
+  const navLinks = document.querySelector('.nav-links');
+  const hamburger = document.querySelector('.nav-hamburger');
+  if (navLinks && navLinks.classList.contains('mobile-open')) {
+    navLinks.classList.remove('mobile-open');
+    hamburger.classList.remove('open');
+  }
+}, { passive: true });
+
+// Smooth scroll + close mobile menu on nav click
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.nav-hamburger');
+    if (navLinks) navLinks.classList.remove('mobile-open');
+    if (hamburger) hamburger.classList.remove('open');
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
