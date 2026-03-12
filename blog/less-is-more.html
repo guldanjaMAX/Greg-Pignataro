@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training and Less Is More | Greg Pignataro</title>
+  <meta name="description" content="The counterintuitive truth about getting stronger. Discover why the minimum effective dose and recovery are essential to real progress.">
+  <link rel="canonical" href="https://gregpignataro.com/blog/less-is-more.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FDFBF8;
+      --bg-warm: #F7F3EE;
+      --gold: #B8863A;
+      --gold-light: #C99B4F;
+      --text-primary: #2C2520;
+      --text-secondary: #6B5E52;
+      --text-muted: #9E9285;
+      --border-light: rgba(184, 134, 58, 0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 100;
+      padding: 1.5rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 120px auto 0;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      background: var(--bg-warm);
+      color: var(--gold);
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    article h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    article h1 em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .article-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .article-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-body blockquote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .takeaways {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+    }
+
+    .takeaways h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .takeaways p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .takeaways p strong {
+      color: var(--gold);
+    }
+
+    .article-cta {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .site-footer {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      main {
+        margin-top: 200px;
+        padding: 1rem;
+      }
+
+      article h1 {
+        font-size: 2rem;
+      }
+
+      .article-subtitle {
+        font-size: 1rem;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#story">Story</a></li>
+        <li><a href="../index.html#method">Method</a></li>
+        <li><a href="../blog.html" class="active">Writing</a></li>
+        <li><a href="../index.html#apply">Apply</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>October 11, 2022</span>
+          <span>6 min read</span>
+          <span class="pillar-tag">Movement & Training</span>
+        </div>
+        <h1>Training and <em>Less Is More</em></h1>
+        <p class="article-subtitle">The counterintuitive truth about getting stronger.</p>
+      </header>
+
+      <div class="article-body">
+        <p>The instinct is always to do more. More sets. More reps. More frequency. More intensity. If a little is good, more must be better. This is how we're wired. More always feels like progress. But strength doesn't work that way. More is usually the opposite of progress.</p>
+
+        <p>I spent years training more. I thought it was the answer. More volume meant more gains. I'd do 4 to 5 hour training sessions. I'd train each muscle group twice a week with high volume. I got bigger but not stronger. I got more fatigued but not more resilient. I was busy but I wasn't progressing.</p>
+
+        <p>Then I pulled back. I cut the volume in half. I focused only on productive sets. And everything changed. I got stronger faster with fewer sessions. I recovered better. I felt better. I became more resilient. Everything improved when I did less.</p>
+
+        <h2>The Minimum Effective Dose</h2>
+
+        <p>Every stimulus has a minimum effective dose. The smallest amount needed to create adaptation. Below this dose, nothing happens. At this dose, adaptation begins. Above this dose, you get more fatigue without more adaptation.</p>
+
+        <p>For strength, research suggests the minimum effective dose is approximately 3 to 5 sets per muscle group per week. Not 30 or 50. Not 100. Three to five sets. That's the threshold where adaptation begins.</p>
+
+        <p>But these have to be productive sets. Sets close to failure. Sets with good form. Sets that create stimulus. A set far from failure, done for time, doesn't count. It's below the minimum effective dose threshold even though you did the set.</p>
+
+        <p>So the question becomes, how many productive sets can you do per week? For most people, 6 to 15 per muscle per week is optimal. Below this and you're not providing enough stimulus. Above this and you're creating fatigue that interferes with recovery and progress.</p>
+
+        <h2>Recovery as Part of Training</h2>
+
+        <p>Recovery is not separate from training. Recovery is where adaptation happens. The stimulus is just the trigger. The workout is just the signal. Your body actually gets stronger when it recovers from the signal.</p>
+
+        <p>If you're in the gym 6 days a week doing high volume, your body never fully recovers. You're in a constant state of incompleteness. Your nervous system is fatigued. Your muscles are perpetually sore. Your hormonal system is dysregulated. You're not recovering. You're accumulating fatigue.</p>
+
+        <p>Less volume with better recovery beats more volume with poor recovery every single time. The body that trains 3 days a week with intention and recovers 4 days will get stronger faster than the body that trains 6 days a week with junk volume.</p>
+
+        <p>When you do less work, you recover fully. You come back to the next session fresh. Your nervous system is ready. Your hormones are balanced. You can push harder. You can be more intentional. You actually make progress.</p>
+
+        <h2>Simple Programs Compound</h2>
+
+        <p>Complex programs feel sophisticated. Multiple exercises. Multiple rep ranges. Wave loading. Periodization. They feel like the answer because they feel advanced. But simple programs are what actually work.</p>
+
+        <p>A simple program you can stick with for years beats a complex program you follow for 8 weeks. Consistency is where the real gains live. A basic strength program, done consistently, done properly, done with intention, will create dramatic results over years.</p>
+
+        <p>My own training now is simple. 3 days a week. One main lift per session. Some accessory work. Minimal equipment. Minimal complexity. But I'm stronger now than I've ever been. Because I'm consistent. Because I recover fully. Because I do what matters and skip the rest.</p>
+
+        <h2>The Mindset Shift</h2>
+
+        <p>This is hard to accept in a culture that worships more. More is not always better. Busy is not always productive. A packed calendar doesn't mean you're making progress. In fact, the opposite is usually true.</p>
+
+        <p>The strongest people I know train the least. They do the minimum effective dose. They recover fully. They're intentional about every set. They don't waste time. They get results.</p>
+
+        <p>The people spinning their wheels, not getting stronger, training constantly, they're doing the opposite. They're doing more than is needed. They're not recovering. They're spinning. They're busy but not progressive.</p>
+
+        <p>Ask yourself: what's the minimum I can do and still make progress? What can I cut? What's not working? What can I eliminate? Then do that. Recover. Do it again. The body responds to this. Progress is inevitable.</p>
+      </div>
+
+      <div class="takeaways">
+        <h3>Three Takeaways</h3>
+        <p><strong>The minimum effective dose drives adaptation.</strong> You need roughly 3 to 5 productive sets per muscle per week to trigger strength gains. Everything beyond 6 to 15 sets per week creates fatigue without additional adaptation.</p>
+        <p><strong>Recovery is where strength happens.</strong> The workout is just the trigger. Adaptation happens during recovery. More work without recovery means no progress; less work with full recovery means rapid gains.</p>
+        <p><strong>Simple programs compound over time.</strong> A basic, consistent program done for years outperforms complex programs done for months. Focus on what works, skip the rest, and stick with it relentlessly.</p>
+      </div>
+
+      <div class="article-cta">
+        <p>This essay is the map. Working together is the territory.</p>
+        <a href="../index.html#apply" class="btn-gold">Let's Work Together</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Greg Pignataro / Radical Body Love</p>
+  </footer>
+</body>
+</html>
