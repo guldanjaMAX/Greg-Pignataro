@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inner Game | Greg Pignataro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg-primary:#FDFBF8;--bg-warm:#F7F3EE;--gold:#B8863A;--gold-light:#C99B4F;--text-primary:#2C2520;--text-secondary:#6B5E52;--text-muted:#9E9285;--border-light:rgba(184,134,58,0.12);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,251,248,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+    .nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--text-primary);text-decoration:none;letter-spacing:0.04em}
+    .nav-links{display:flex;gap:2.4rem;list-style:none}
+    .nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color 0.3s}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .article-header{padding:8rem 2rem 3rem;text-align:center;background:var(--bg-warm);border-bottom:1px solid var(--border-light)}
+    .back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color 0.3s}
+    .back-link:hover{color:var(--gold)}
+    .article-meta{display:flex;justify-content:center;gap:1.2rem;margin-bottom:1.4rem;flex-wrap:wrap}
+    .article-meta span{font-size:0.68rem;font-weight:500;letter-spacing:0.06em;color:var(--text-muted);text-transform:uppercase}
+    .pillar-tag{color:var(--gold)!important;padding:0.2rem 0.7rem;border:1px solid rgba(184,134,58,0.2);border-radius:100px}
+    .article-header h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3rem);font-weight:300;color:var(--text-primary);line-height:1.15;max-width:700px;margin:0 auto 1rem}
+    .article-header h1 em{font-style:italic;color:var(--gold)}
+    .article-header .subtitle{font-size:1.05rem;color:var(--text-secondary);max-width:540px;margin:0 auto;line-height:1.7}
+    .article-body{max-width:720px;margin:0 auto;padding:3rem 2rem 4rem}
+    .article-body p{font-size:1rem;color:var(--text-secondary);line-height:1.85;margin-bottom:1.6rem}
+    .article-body h2{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--text-primary);margin:2.5rem 0 1rem;line-height:1.25}
+    .article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--text-primary);margin:2rem 0 0.8rem}
+    .article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--bg-warm);border-radius:0 8px 8px 0}
+    .article-body blockquote p{color:var(--text-primary);font-style:italic;margin-bottom:0}
+    .takeaways{background:var(--bg-warm);border:1px solid var(--border-light);border-radius:12px;padding:2rem 2.4rem;margin:2.5rem 0}
+    .takeaways h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--gold);margin-bottom:1rem}
+    .takeaways p{margin-bottom:0.8rem;font-size:0.92rem}
+    .takeaways p:last-child{margin-bottom:0}
+    .article-cta{text-align:center;padding:4rem 2rem;background:var(--bg-warm);border-top:1px solid var(--border-light)}
+    .article-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--text-primary);margin-bottom:0.8rem}
+    .article-cta h2 em{font-style:italic;color:var(--gold)}
+    .article-cta p{font-size:0.95rem;color:var(--text-secondary);max-width:440px;margin:0 auto 1.8rem;line-height:1.7}
+    .btn-gold{display:inline-block;padding:1rem 2.4rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;font-family:var(--sans);font-size:0.74rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all 0.3s;box-shadow:0 4px 20px rgba(184,134,58,0.25)}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,134,58,0.35)}
+    .site-footer{padding:3rem;text-align:center;border-top:1px solid var(--border-light)}
+    .site-footer .footer-name{font-family:var(--serif);font-size:1.1rem;color:var(--text-primary);letter-spacing:0.08em;margin-bottom:0.3rem}
+    .site-footer p{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em}
+    @media(max-width:768px){.site-nav{padding:1rem 1.5rem}.nav-links{gap:1.4rem}.nav-links a{font-size:0.65rem}.article-header{padding:6rem 1.5rem 2rem}.article-body{padding:2rem 1.5rem 3rem}}
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#story">Story</a></li>
+      <li><a href="../index.html#method">Method</a></li>
+      <li><a href="../blog.html" class="active">Writing</a></li>
+      <li><a href="../index.html#apply">Apply</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    <div class="article-meta">
+      <span>September 6, 2022</span>
+      <span>6 min read</span>
+      <span class="pillar-tag">Mindset & Identity</span>
+    </div>
+    <h1>Inner Game</h1>
+    <p class="subtitle">The game within the game. Why your relationship with yourself determines the ceiling of everything else.</p>
+  </header>
+
+  <article class="article-body">
+    <p>You can have perfect external technique and still perform poorly if your inner dialogue is working against you. You can have mediocre mechanics and perform at an elite level if your relationship with yourself is aligned. This is the inner game. And it determines everything.</p>
+
+    <p>The inner game isn't fancy. It's not mysterious. It's the conversation happening inside your head when you're under pressure. It's what your nervous system believes about your capacity. It's whether you're your own cheerleader or your own critic. And most people never pay attention to it because it feels like the truth.</p>
+
+    <h2>Self Talk and Performance</h2>
+
+    <p>Your self talk isn't just motivational. It's neurological. It shapes how your nervous system responds under stress. It determines whether your body has access to your full capacity or whether you're operating from a place of self doubt.</p>
+
+    <p>I spent years running commentary in my head. Things like you're not strong enough, you're falling apart, everyone's watching and judging. This commentary wasn't random. It was inherited from my athletic background, from my family patterns, from years of measuring myself against external standards.</p>
+
+    <p>The problem was that this voice was faster than my conscious mind. By the time I realized what I was telling myself, I'd already believed it. My nervous system had already contracted. My body had already limited its output.</p>
+
+    <blockquote>
+      <p>The voice in your head is not necessarily the truth. It's often just the oldest story you learned about yourself. Learning the difference changes everything.</p>
+    </blockquote>
+
+    <h2>The Inner Critic vs. The Inner Coach</h2>
+
+    <p>There's a difference between an inner critic and an inner coach. The critic judges. It compares. It tells you what you're doing wrong. The coach observes. It teaches. It tells you what you're learning.</p>
+
+    <p>Most of us were taught to develop a strong inner critic. That's how you stay motivated, right? That's how you catch your mistakes? But the critic is also the thing that contracts your nervous system. That makes you defensive. That prevents you from taking risks because failure feels like a referendum on your entire worth.</p>
+
+    <p>The inner coach is different. It's honest but not cruel. It teaches you to distinguish between the performance and the performer. It gives you information without judgment. It helps you improve without making you feel small.</p>
+
+    <h2>How the Internal Mirrors the External</h2>
+
+    <p>Your external results mirror your internal relationship with yourself. Not because of some mystical law. But because your nervous system is always broadcasting information about what you believe is possible. Your body reads this broadcast. Your performance reflects it.</p>
+
+    <p>If you don't believe you deserve success, you'll sabotage it. If you believe you're incapable, you'll move from a place of protection rather than presence. If you believe you're not enough, you'll create experiences that confirm that belief.</p>
+
+    <p>Changing external results without changing the inner conversation is like rearranging furniture on a sinking ship. It looks better but the ship is still sinking.</p>
+
+    <h2>Somatic Awareness as Self Relationship</h2>
+
+    <p>The work here is somatic. It's learning to feel what happens in your body when your inner dialogue shifts. When you say something kind to yourself, what changes? When you critique yourself, how does your breathing shift? When you're present versus defended?</p>
+
+    <p>This awareness is the foundation. Once you feel the difference, you can start choosing. You can interrupt the pattern. You can install a new conversation. Not through force or willpower. But through felt experience and repetition.</p>
+
+    <p>The inner game is the most important game you'll ever play. Because every external game is happening inside the context of your relationship with yourself. Get that right and everything else becomes possible.</p>
+  </article>
+
+  <div class="takeaways">
+    <h3>Three Takeaways</h3>
+    <p>Your self talk is not just motivational noise. It's neurological programming that determines your nervous system's access to full capacity under pressure.</p>
+    <p>The inner critic and inner coach are different. The critic contracts. The coach expands. Most of us were trained to develop a strong critic. Learning to install an inner coach is the real work.</p>
+    <p>External results mirror internal relationship with yourself. Changing what happens outside without addressing what's happening inside creates temporary shifts at best. The inner game determines the ceiling of everything else.</p>
+  </div>
+
+  <section class="article-cta">
+    <h2>This essay is the map. <em>Working together is the territory.</em></h2>
+    <p>Private, direct, built around how you actually live. No intake forms. Just a conversation.</p>
+    <a href="../index.html#apply" class="btn-gold">Start a Conversation</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-name">Greg Pignataro</div>
+    <p>Radical Body Love</p>
+  </footer>
+</body>
+</html>

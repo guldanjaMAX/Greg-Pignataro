@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identity Part 2 | Greg Pignataro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg-primary:#FDFBF8;--bg-warm:#F7F3EE;--gold:#B8863A;--gold-light:#C99B4F;--text-primary:#2C2520;--text-secondary:#6B5E52;--text-muted:#9E9285;--border-light:rgba(184,134,58,0.12);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,251,248,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+    .nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--text-primary);text-decoration:none;letter-spacing:0.04em}
+    .nav-links{display:flex;gap:2.4rem;list-style:none}
+    .nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color 0.3s}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .article-header{padding:8rem 2rem 3rem;text-align:center;background:var(--bg-warm);border-bottom:1px solid var(--border-light)}
+    .back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color 0.3s}
+    .back-link:hover{color:var(--gold)}
+    .article-meta{display:flex;justify-content:center;gap:1.2rem;margin-bottom:1.4rem;flex-wrap:wrap}
+    .article-meta span{font-size:0.68rem;font-weight:500;letter-spacing:0.06em;color:var(--text-muted);text-transform:uppercase}
+    .pillar-tag{color:var(--gold)!important;padding:0.2rem 0.7rem;border:1px solid rgba(184,134,58,0.2);border-radius:100px}
+    .article-header h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3rem);font-weight:300;color:var(--text-primary);line-height:1.15;max-width:700px;margin:0 auto 1rem}
+    .article-header h1 em{font-style:italic;color:var(--gold)}
+    .article-header .subtitle{font-size:1.05rem;color:var(--text-secondary);max-width:540px;margin:0 auto;line-height:1.7}
+    .article-body{max-width:720px;margin:0 auto;padding:3rem 2rem 4rem}
+    .article-body p{font-size:1rem;color:var(--text-secondary);line-height:1.85;margin-bottom:1.6rem}
+    .article-body h2{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--text-primary);margin:2.5rem 0 1rem;line-height:1.25}
+    .article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--text-primary);margin:2rem 0 0.8rem}
+    .article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--bg-warm);border-radius:0 8px 8px 0}
+    .article-body blockquote p{color:var(--text-primary);font-style:italic;margin-bottom:0}
+    .takeaways{background:var(--bg-warm);border:1px solid var(--border-light);border-radius:12px;padding:2rem 2.4rem;margin:2.5rem 0}
+    .takeaways h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--gold);margin-bottom:1rem}
+    .takeaways p{margin-bottom:0.8rem;font-size:0.92rem}
+    .takeaways p:last-child{margin-bottom:0}
+    .article-cta{text-align:center;padding:4rem 2rem;background:var(--bg-warm);border-top:1px solid var(--border-light)}
+    .article-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--text-primary);margin-bottom:0.8rem}
+    .article-cta h2 em{font-style:italic;color:var(--gold)}
+    .article-cta p{font-size:0.95rem;color:var(--text-secondary);max-width:440px;margin:0 auto 1.8rem;line-height:1.7}
+    .btn-gold{display:inline-block;padding:1rem 2.4rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;font-family:var(--sans);font-size:0.74rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all 0.3s;box-shadow:0 4px 20px rgba(184,134,58,0.25)}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,134,58,0.35)}
+    .site-footer{padding:3rem;text-align:center;border-top:1px solid var(--border-light)}
+    .site-footer .footer-name{font-family:var(--serif);font-size:1.1rem;color:var(--text-primary);letter-spacing:0.08em;margin-bottom:0.3rem}
+    .site-footer p{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em}
+    @media(max-width:768px){.site-nav{padding:1rem 1.5rem}.nav-links{gap:1.4rem}.nav-links a{font-size:0.65rem}.article-header{padding:6rem 1.5rem 2rem}.article-body{padding:2rem 1.5rem 3rem}}
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#story">Story</a></li>
+      <li><a href="../index.html#method">Method</a></li>
+      <li><a href="../blog.html" class="active">Writing</a></li>
+      <li><a href="../index.html#apply">Apply</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    <div class="article-meta">
+      <span>November 22, 2022</span>
+      <span>7 min read</span>
+      <span class="pillar-tag">Mindset & Identity</span>
+    </div>
+    <h1>Identity Part 2</h1>
+    <p class="subtitle">Going deeper into the stories we tell ourselves and the cost of living inside a narrative that no longer serves us.</p>
+  </header>
+
+  <article class="article-body">
+    <p>Stories are prisons that feel like homes. We don't notice the walls because they've always been there. The narrative you inherited about who you are, what you're capable of, what you deserve. These stories run deeper than any explicit belief. They live in your body. They live in the way you breathe when you enter certain rooms. They live in the automatic thoughts that arrive before you can examine them.</p>
+
+    <p>The problem is that narratives are sticky. Once they're installed, they're remarkably resistant to evidence. You can achieve the thing the story said was impossible and still carry the certainty that it was an accident, a fluke, something that won't happen again.</p>
+
+    <h2>The Prison of Narrative Identity</h2>
+
+    <p>I carried a narrative that I was broken. That something in my neurological wiring made me incapable of stillness, of listening, of slowing down. This wasn't a belief I could easily name. It lived in how I moved through the world. It showed up as urgency. As the constant feeling that I needed to be productive or I was wasting my potential.</p>
+
+    <p>This story wasn't random. It came from somewhere. From parents who valued achievement. From a culture that measures human worth in output. From years in athletics where stillness was interpreted as laziness.</p>
+
+    <p>The narrative became the cage. I couldn't rest without feeling guilty. I couldn't slow down without anxiety rising. The story had become so integrated into my sense of self that questioning it felt like questioning the fundamental truth of my existence.</p>
+
+    <blockquote>
+      <p>The stories we live inside are so normalized that we mistake them for reality. Seeing the difference is the first step toward freedom.</p>
+    </blockquote>
+
+    <h2>Updating Your Self Concept</h2>
+
+    <p>Changing a narrative isn't about affirmations or willpower. It's about gathering enough evidence that the old story no longer fits. It's about creating new experiences that contradict the narrative. It's about noticing when the story activates and choosing differently.</p>
+
+    <p>For me, it meant learning that I could be still. That stillness was where my actual power lived. That the urgency I'd mistaken for ambition was actually anxiety. That slowing down didn't diminish me. It revealed me.</p>
+
+    <p>This doesn't happen through intellectual understanding. You can know something intellectually and still have your nervous system completely convinced of the opposite. The real work is somatic. It's feeling your way into a different relationship with yourself.</p>
+
+    <h2>The Grief of Letting Go</h2>
+
+    <p>What's rarely discussed is the grief that comes with releasing an old identity. Even when the story was painful, it was familiar. It was something you knew how to navigate. It provided structure. It gave you a role. It simplified the world into something manageable.</p>
+
+    <p>Letting that go creates space. But space is unsettling. It's unstructured. You have to figure out who you are without the narrative scaffolding. And that's terrifying and necessary.</p>
+
+    <p>The process looks like small moments. Noticing when you default to the old story. Interrupting the pattern. Choosing something different. Feeling what arises. Repeating. Over time, the nervous system updates. The old narrative loses its grip. A new sense of self emerges. Not because you forced it, but because you created the conditions for something else to become possible.</p>
+
+    <h2>Evolution Is a Somatic Process</h2>
+
+    <p>You don't think your way to a new identity. You embody your way there. You create experiences that contradict the old story. You move differently. You speak differently. You make choices that the old narrative would have rejected. And slowly, your sense of who you are transforms.</p>
+
+    <p>The narrative identity is not your worst enemy. It's a survival mechanism that got you this far. Honoring that while releasing it is the real maturity. Not condemning the story. Not forcing it out. Simply acknowledging its function and creating something more aligned with who you're actually becoming.</p>
+  </article>
+
+  <div class="takeaways">
+    <h3>Three Takeaways</h3>
+    <p>The stories we live inside feel like truth. They're not. They're inherited narratives that live in your body and nervous system, automated to protect you.</p>
+    <p>Changing a self concept requires new experiences, not better thinking. The nervous system learns through embodied action, not intellectual argument.</p>
+    <p>Grief is part of the process of evolving your identity. Honoring what the old narrative provided while releasing what no longer serves requires tenderness and time.</p>
+  </div>
+
+  <section class="article-cta">
+    <h2>This essay is the map. <em>Working together is the territory.</em></h2>
+    <p>Private, direct, built around how you actually live. No intake forms. Just a conversation.</p>
+    <a href="../index.html#apply" class="btn-gold">Start a Conversation</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-name">Greg Pignataro</div>
+    <p>Radical Body Love</p>
+  </footer>
+</body>
+</html>

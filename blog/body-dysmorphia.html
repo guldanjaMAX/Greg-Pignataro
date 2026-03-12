@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Dysmorphia and the Mirror | Greg Pignataro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg-primary:#FDFBF8;--bg-warm:#F7F3EE;--gold:#B8863A;--gold-light:#C99B4F;--text-primary:#2C2520;--text-secondary:#6B5E52;--text-muted:#9E9285;--border-light:rgba(184,134,58,0.12);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,251,248,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+    .nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--text-primary);text-decoration:none;letter-spacing:0.04em}
+    .nav-links{display:flex;gap:2.4rem;list-style:none}
+    .nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color 0.3s}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .article-header{padding:8rem 2rem 3rem;text-align:center;background:var(--bg-warm);border-bottom:1px solid var(--border-light)}
+    .back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color 0.3s}
+    .back-link:hover{color:var(--gold)}
+    .article-meta{display:flex;justify-content:center;gap:1.2rem;margin-bottom:1.4rem;flex-wrap:wrap}
+    .article-meta span{font-size:0.68rem;font-weight:500;letter-spacing:0.06em;color:var(--text-muted);text-transform:uppercase}
+    .pillar-tag{color:var(--gold)!important;padding:0.2rem 0.7rem;border:1px solid rgba(184,134,58,0.2);border-radius:100px}
+    .article-header h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3rem);font-weight:300;color:var(--text-primary);line-height:1.15;max-width:700px;margin:0 auto 1rem}
+    .article-header h1 em{font-style:italic;color:var(--gold)}
+    .article-header .subtitle{font-size:1.05rem;color:var(--text-secondary);max-width:540px;margin:0 auto;line-height:1.7}
+    .article-body{max-width:720px;margin:0 auto;padding:3rem 2rem 4rem}
+    .article-body p{font-size:1rem;color:var(--text-secondary);line-height:1.85;margin-bottom:1.6rem}
+    .article-body h2{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--text-primary);margin:2.5rem 0 1rem;line-height:1.25}
+    .article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--text-primary);margin:2rem 0 0.8rem}
+    .article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--bg-warm);border-radius:0 8px 8px 0}
+    .article-body blockquote p{color:var(--text-primary);font-style:italic;margin-bottom:0}
+    .takeaways{background:var(--bg-warm);border:1px solid var(--border-light);border-radius:12px;padding:2rem 2.4rem;margin:2.5rem 0}
+    .takeaways h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--gold);margin-bottom:1rem}
+    .takeaways p{margin-bottom:0.8rem;font-size:0.92rem}
+    .takeaways p:last-child{margin-bottom:0}
+    .article-cta{text-align:center;padding:4rem 2rem;background:var(--bg-warm);border-top:1px solid var(--border-light)}
+    .article-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--text-primary);margin-bottom:0.8rem}
+    .article-cta h2 em{font-style:italic;color:var(--gold)}
+    .article-cta p{font-size:0.95rem;color:var(--text-secondary);max-width:440px;margin:0 auto 1.8rem;line-height:1.7}
+    .btn-gold{display:inline-block;padding:1rem 2.4rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;font-family:var(--sans);font-size:0.74rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all 0.3s;box-shadow:0 4px 20px rgba(184,134,58,0.25)}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,134,58,0.35)}
+    .site-footer{padding:3rem;text-align:center;border-top:1px solid var(--border-light)}
+    .site-footer .footer-name{font-family:var(--serif);font-size:1.1rem;color:var(--text-primary);letter-spacing:0.08em;margin-bottom:0.3rem}
+    .site-footer p{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em}
+    @media(max-width:768px){.site-nav{padding:1rem 1.5rem}.nav-links{gap:1.4rem}.nav-links a{font-size:0.65rem}.article-header{padding:6rem 1.5rem 2rem}.article-body{padding:2rem 1.5rem 3rem}}
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#story">Story</a></li>
+      <li><a href="../index.html#method">Method</a></li>
+      <li><a href="../blog.html" class="active">Writing</a></li>
+      <li><a href="../index.html#apply">Apply</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    <div class="article-meta">
+      <span>November 29, 2022</span>
+      <span>8 min read</span>
+      <span class="pillar-tag">Mindset & Identity</span>
+    </div>
+    <h1>Body Dysmorphia and the <em>Mirror</em></h1>
+    <p class="subtitle">The unsustainability of chasing a reflection that keeps moving.</p>
+  </header>
+
+  <article class="article-body">
+    <p>The mirror became my measuring stick. Not for health, but for worth. I would stand there and evaluate myself against an internalized standard that shifted constantly depending on my mood, the lighting, whether I'd eaten, what I'd seen online that morning. The mirror was never a neutral observer. It was a source of evidence for a narrative I was desperately trying to prove.</p>
+
+    <p>Body dysmorphia in men is largely undiscussed. We talk about women's body image, which is important work. But men have it too, and it often looks different. It looks like obsession with size and definition. It looks like the inability to see yourself accurately. It looks like a reflection that changes depending on the story you're telling yourself that day.</p>
+
+    <h2>Training for Aesthetics vs. Performance</h2>
+
+    <p>There's a fundamental difference between training for how your body performs and training for how your body looks. The first is sustainable. The second is a treadmill that only moves faster.</p>
+
+    <p>I trained for aesthetics for years. The goal was to build a specific look. To achieve a physique that would prove something about me. That I was disciplined. That I was impressive. That I was worth something. The problem is that the goal post never stops moving. You achieve the body you wanted and suddenly it's not enough. The definition needs to be sharper. The size needs to be bigger. The look needs to be more impressive.</p>
+
+    <blockquote>
+      <p>The mirror is not a neutral source of truth. It's a screen onto which you project your internal narrative. Change the story and the reflection changes.</p>
+    </blockquote>
+
+    <p>This is why post competition depression hits so hard. You've achieved the goal. You've hit the physique. And suddenly you realize it didn't deliver what you thought it would. The worth didn't materialize. The validation didn't arrive. The body you spent years building couldn't answer the question you were actually asking.</p>
+
+    <h2>The Mirror as Unreliable Narrator</h2>
+
+    <p>Your body changes throughout the day. It changes with your emotional state, your hydration, your hormones, the time of day. The mirror shows you a snapshot and you treat it as truth. You don't realize that what you're seeing says more about your internal state than about your actual body.</p>
+
+    <p>When I was depressed, I looked in the mirror and saw someone small, weak, unimpressive. When I was confident, the same body looked different. The muscles appeared larger. The definition appeared sharper. The reflection was identical. What changed was the story I was telling myself about who I was.</p>
+
+    <p>This is why body dysmorphia is so insidious. The mirror becomes a lie detector for your internal narrative. If you don't feel good about yourself, the reflection confirms it. No amount of external change will ever be enough because the problem isn't the body. It's the relationship with yourself.</p>
+
+    <h2>Body Image in Men</h2>
+
+    <p>We don't have language for this. We're told to be strong, to be impressive, to be worth looking at. We're given the message that our bodies are projects to be optimized. And we're not given permission to talk about the mental cost of that. The shame when we fall short. The dysphoria when our reflection doesn't match our internal image. The grief when we realize we've spent years building something for the wrong reason.</p>
+
+    <p>Male body dysmorphia is often dismissed as vanity. It's not. It's a deeper question about worth, about belonging, about whether you're enough. The body becomes a vehicle for answering these existential questions, and it can never provide a satisfying answer.</p>
+
+    <h2>Making Peace With What You See</h2>
+
+    <p>The work here is internal. It's changing your relationship with yourself so fundamentally that the mirror becomes less important. You still notice what you see, but you stop treating it as a referendum on your worth.</p>
+
+    <p>This happens through somatic practice. Through learning to feel your body from the inside rather than only observing it from the outside. Through distinguishing between the body you see and the body you inhabit. Through discovering that the most profound changes happen at a nervous system level, not at a muscle level.</p>
+
+    <p>I still look in the mirror. But I'm not asking it the questions I used to ask. I'm not asking it to confirm my worth or prove my discipline or prove that I'm impressive. I'm asking it to show me someone I'm making peace with. Someone I'm learning to love. And that's a completely different relationship.</p>
+  </article>
+
+  <div class="takeaways">
+    <h3>Three Takeaways</h3>
+    <p>Body dysmorphia in men is underreported but common. It looks like obsession with aesthetics, the inability to see yourself accurately, and the endless pursuit of an ever-moving goal post.</p>
+    <p>The mirror shows you a reflection of your internal state as much as your actual body. When your relationship with yourself changes, what you see in the mirror changes without any physical change occurring.</p>
+    <p>Making peace with your body requires shifting from external measurement to internal relationship. The work is somatic, not aesthetic. It's learning to inhabit your body rather than observe it.</p>
+  </div>
+
+  <section class="article-cta">
+    <h2>This essay is the map. <em>Working together is the territory.</em></h2>
+    <p>Private, direct, built around how you actually live. No intake forms. Just a conversation.</p>
+    <a href="../index.html#apply" class="btn-gold">Start a Conversation</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-name">Greg Pignataro</div>
+    <p>Radical Body Love</p>
+  </footer>
+</body>
+</html>
