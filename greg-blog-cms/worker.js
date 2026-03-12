@@ -285,7 +285,7 @@ label{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .search-box{position:relative;margin-bottom:1.5rem}
 .search-box input{padding-left:2.4rem;font-size:1rem}
-.search-box::before{content:"\1F50D";position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);font-size:1rem}
+.search-box::before{content:"\uD83D\uDD0D";position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);font-size:1rem}
 @media(max-width:768px){.container{padding:1rem}.form-grid{grid-template-columns:1fr}.topbar nav a{margin-left:1rem;font-size:0.68rem}}`;
 }
 
@@ -508,7 +508,7 @@ async function doSearch(q){
   document.getElementById('results').innerHTML=
     '<p style="font-size:0.82rem;color:#9E9285;margin-bottom:1rem;">'+data.count+' result'+(data.count!==1?'s':'')+' for "'+data.query+'"</p>'+
     data.results.map(p=>
-      '<div class="card" style="cursor:pointer;" onclick="window.open(\'https://gregpignataro.com/blog/'+p.slug+'.html\',\'_blank\')">'+ 
+      '<div class="card" style="cursor:pointer;" onclick="window.open(\'https://gregpignataro.com/blog/'+p.slug+'.html\',\'_blank\')">'+
       '<div style="display:flex;justify-content:space-between;align-items:start;">'+
       '<div><h3 style="font-family:Georgia,serif;font-weight:400;font-size:1.15rem;margin-bottom:0.3rem;">'+p.title+'</h3>'+
       '<p style="font-size:0.85rem;color:#6B5E52;margin-bottom:0.4rem;">'+p.subtitle+'</p>'+
