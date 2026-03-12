@@ -524,7 +524,7 @@ ${isEdit ? '<button type="button" class="btn btn-danger" onclick="archivePost()"
 </div>
 </form></div></div>
 
-<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"><\/script>
 <script>
 ${toastScript()}
 const postId=${isEdit ? postId : 'null'};
@@ -761,7 +761,7 @@ loadCategories().then(() => {
     loadPost();
   }
 });
-</script></body></html>`;
+<\/script></body></html>`;
 }
 
 function categoryManager() {
@@ -857,7 +857,7 @@ async function updateCat(){
 }
 async function deleteCat(id){if(!confirm('Delete this category? Posts will be unlinked but not deleted.'))return;await api('/api/categories/'+id,{method:'DELETE'});showToast('Category deleted','info');loadCats();}
 loadCats();
-</script></body></html>`;
+<\/script></body></html>`;
 }
 
 function searchPage() {
@@ -900,7 +900,7 @@ function highlightText(text, query) {
   const words = query.split(/\\s+/).filter(w => w.length > 1);
   let result = text;
   words.forEach(w => {
-    const regex = new RegExp('(' + w.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + ')', 'gi');
+    const regex = new RegExp('(' + w.replace(/[.*+?^()|[\\]\\\\]/g, '\\\\$&') + ')', 'gi');
     result = result.replace(regex, '<mark style="background:#fef3c7;padding:0 2px;border-radius:2px;">$1</mark>');
   });
   return result;
@@ -930,5 +930,5 @@ async function doSearch(q){
       '<span class="badge badge-'+p.status+'">'+p.status+'</span></div></div>'
     ).join('');
 }
-</script></body></html>`;
+<\/script></body></html>`;
 }
