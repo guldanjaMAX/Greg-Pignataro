@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tendon Training | Greg Pignataro</title>
+  <meta name="description" content="The most overlooked component of strength. Discover how tendons adapt differently than muscles and why heavy, slow resistance is essential for longevity.">
+  <link rel="canonical" href="https://gregpignataro.com/blog/tendon-training.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FDFBF8;
+      --bg-warm: #F7F3EE;
+      --gold: #B8863A;
+      --gold-light: #C99B4F;
+      --text-primary: #2C2520;
+      --text-secondary: #6B5E52;
+      --text-muted: #9E9285;
+      --border-light: rgba(184, 134, 58, 0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 100;
+      padding: 1.5rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 120px auto 0;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      background: var(--bg-warm);
+      color: var(--gold);
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    article h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    article h1 em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .article-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .article-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-body blockquote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .takeaways {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+    }
+
+    .takeaways h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .takeaways p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .takeaways p strong {
+      color: var(--gold);
+    }
+
+    .article-cta {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .site-footer {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      main {
+        margin-top: 200px;
+        padding: 1rem;
+      }
+
+      article h1 {
+        font-size: 2rem;
+      }
+
+      .article-subtitle {
+        font-size: 1rem;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#story">Story</a></li>
+        <li><a href="../index.html#method">Method</a></li>
+        <li><a href="../blog.html" class="active">Writing</a></li>
+        <li><a href="../index.html#apply">Apply</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>April 26, 2022</span>
+          <span>7 min read</span>
+          <span class="pillar-tag">Movement & Training</span>
+        </div>
+        <h1><em>Tendon</em> Training</h1>
+        <p class="article-subtitle">The most overlooked component of strength.</p>
+      </header>
+
+      <div class="article-body">
+        <p>Everyone talks about muscle. Build muscle. Tear down muscle fibers. Progressive overload for muscle. But almost nobody talks about what connects muscle to bone. The tendons. And this is a massive blind spot in how we train.</p>
+
+        <p>I learned this the hard way. Years of heavy lifting, proper form, consistent programming. My muscles grew. My strength increased. But my tendons didn't keep up. When I finally asked the right questions about tendon health, everything changed. Not just my training. My entire understanding of what strength actually means.</p>
+
+        <p>Tendons are not muscles. They adapt differently. They strengthen differently. And if you're not training them deliberately, you're building a house on sand.</p>
+
+        <h2>How Tendons Differ from Muscles</h2>
+
+        <p>Muscle tissue is metabolically active. It's living, dynamic, constantly breaking down and rebuilding. When you train hard, you damage muscle fibers. Your body repairs them. They come back stronger. This happens relatively quickly. Weeks. Maybe a few months.</p>
+
+        <p>Tendons are different. They're connective tissue. Much less metabolically active. Much less blood flow. And they adapt on a much slower timeline. Research suggests tendons need 12 to 18 weeks to meaningfully adapt to training stimulus. Not days. Not weeks. Months.</p>
+
+        <p>This is the problem. Most people train with intensity that demands the tendon adapt faster than it can. You're loading the tendon beyond its capacity to strengthen. This is why tendon injuries happen. Not because the tendon is weak. But because you built muscle strength faster than you built tendon strength. A mismatch.</p>
+
+        <p>Your muscles can get ahead of your tendons. Your nervous system can adapt fast. Your tendons lag behind. This gap is where injury lives.</p>
+
+        <h2>Isometric Loading and Heavy, Slow Resistance</h2>
+
+        <p>The best stimulus for tendon adaptation is heavy load, slow movement. Isometric holds. Heavy eccentric loading. Slow strength work. Not explosiveness. Not speed. Heavy. Slow. Sustained.</p>
+
+        <p>When you do a heavy deadlift slowly, holding at the bottom, your tendon is under tension for longer. The collagen fibers have time to align. The tendon learns to distribute force. This is what builds tendon strength.</p>
+
+        <p>Isometric holds are exceptional for this. Hold a heavy weight in a stretched position. Your tendon experiences sustained tension. No movement. No dynamism. Just load. This builds resilience in the tendon itself.</p>
+
+        <p>I program tendon work specifically now. Heavy holds. Heavy eccentrics. Slow strength work. Not for muscle building. For tendon building. And the results show up not just in strength but in resilience. Injuries decrease. Movement quality improves. Pain disappears.</p>
+
+        <h2>Why Tendon Injuries Are So Common</h2>
+
+        <p>Look around any gym. You'll see people doing too much too fast. Jumping into heavy squats after years off. Running intensity work without building aerobic base. Doing explosive movements without tendon readiness. The pattern is everywhere.</p>
+
+        <p>The tendon can't keep up. The muscle is ready. The nervous system is ready. But the tendon says no. And then you get pain. Tendinitis. Patellar tendon issues. Achilles problems. Rotator cuff pain. These aren't random. They're the result of a mismatch between muscle strength and tendon capacity.</p>
+
+        <p>Tendons also don't have pain fibers until they're damaged. You don't feel a tendon getting overused until it's too late. By then, the damage is done. This is why prehabilitation matters. You can't feel the problem developing. You have to build tendon capacity before you need it.</p>
+
+        <h2>A Practical Approach</h2>
+
+        <p>If you're new to training, or returning from time off, spend the first 4 to 6 weeks building tendon readiness. Heavy, slow work. Isometric holds. Eccentric loading. Let your tendons adapt. Give them time.</p>
+
+        <p>Then, as you add intensity and volume, include tendon work every week. Heavy holds at the end of your workout. Slow eccentric work. Isometric carries. This keeps your tendons developing as your muscles develop.</p>
+
+        <p>If you have a history of tendon issues, this is non negotiable. Your tendons need attention. They need heavy load. They need time under tension. They need to learn to handle the demands you're placing on them.</p>
+
+        <p>The body understands this when you listen. Train your tendons first. Everything else becomes easier.</p>
+      </div>
+
+      <div class="takeaways">
+        <h3>Three Takeaways</h3>
+        <p><strong>Tendons adapt slowly.</strong> While muscles adapt in weeks, tendons need 12 to 18 weeks to meaningfully strengthen. Building muscle faster than tendon strength creates injury risk.</p>
+        <p><strong>Heavy, slow resistance builds tendon strength.</strong> Isometric holds, heavy eccentrics, and slow strength work provide the right stimulus for collagen alignment and tendon resilience.</p>
+        <p><strong>Tendon work is prehabilitation.</strong> Since tendons lack pain signals until damaged, you must build tendon capacity proactively. Include tendon training every week to prevent injuries before they happen.</p>
+      </div>
+
+      <div class="article-cta">
+        <p>This essay is the map. Working together is the territory.</p>
+        <a href="../index.html#apply" class="btn-gold">Let's Work Together</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Greg Pignataro / Radical Body Love</p>
+  </footer>
+</body>
+</html>

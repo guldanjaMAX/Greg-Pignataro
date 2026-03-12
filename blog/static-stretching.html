@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superior to Static Stretching | Greg Pignataro</title>
+  <meta name="description" content="Everything you were taught about stretching before a workout is wrong. Discover why dynamic warmup science matters for your performance.">
+  <link rel="canonical" href="https://gregpignataro.com/blog/static-stretching.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FDFBF8;
+      --bg-warm: #F7F3EE;
+      --gold: #B8863A;
+      --gold-light: #C99B4F;
+      --text-primary: #2C2520;
+      --text-secondary: #6B5E52;
+      --text-muted: #9E9285;
+      --border-light: rgba(184, 134, 58, 0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 100;
+      padding: 1.5rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 120px auto 0;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      background: var(--bg-warm);
+      color: var(--gold);
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    article h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    article h1 em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .article-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .article-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-body blockquote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .takeaways {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+    }
+
+    .takeaways h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .takeaways p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .takeaways p strong {
+      color: var(--gold);
+    }
+
+    .article-cta {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .site-footer {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      main {
+        margin-top: 200px;
+        padding: 1rem;
+      }
+
+      article h1 {
+        font-size: 2rem;
+      }
+
+      .article-subtitle {
+        font-size: 1rem;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#story">Story</a></li>
+        <li><a href="../index.html#method">Method</a></li>
+        <li><a href="../blog.html" class="active">Writing</a></li>
+        <li><a href="../index.html#apply">Apply</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>March 15, 2022</span>
+          <span>6 min read</span>
+          <span class="pillar-tag">Movement & Training</span>
+        </div>
+        <h1>Superior to <em>Static Stretching</em></h1>
+        <p class="article-subtitle">Everything you were taught about stretching before a workout is wrong.</p>
+      </header>
+
+      <div class="article-body">
+        <p>You walk into a gym. What do you see? Rows of people hunched over, grabbing their toes, holding their hamstrings for 30 seconds. This is the warm-up everyone learned. This is what we all grew up doing. And almost all of it is backwards.</p>
+
+        <p>I spent years doing what I thought was right. Static stretching before lifting. It felt good. It felt like I was preparing my body. But the research tells a different story, and my own experience training thousands of athletes confirmed what the science shows: static stretching before explosive movement reduces your power output, weakens your strength, and leaves you more prone to injury.</p>
+
+        <p>The nervous system doesn't want to be relaxed before you demand power from it. Relaxation is the opposite of what you need.</p>
+
+        <h2>Why Static Stretching Reduces Power</h2>
+
+        <p>When you hold a static stretch, several things happen at the neurological level. Your muscles enter a reflex that actually dampens their ability to contract forcefully. The spindle fibers in your muscle, which are responsible for detecting stretch, send inhibitory signals to the muscle itself. This is protective. Your body is essentially saying, "Don't fire hard right now. We're lengthened out."</p>
+
+        <p>This response persists for minutes after you finish stretching. So when you walk to the squat rack after 5 minutes of stretching, your nervous system is still in a dampened state. Your muscles aren't as ready to produce force. Studies show power output drops anywhere from 3 to 8 percent. That doesn't sound like much until you realize that's the difference between a good lift and a missed rep. It's the difference between explosive movement and sluggish movement.</p>
+
+        <p>But there's a deeper issue. Static stretching, done before training, trains the wrong thing. It trains passivity. It tells your nervous system that the goal is relaxation, not power. You're essentially priming your body for the opposite of what you're about to ask it to do.</p>
+
+        <h2>Dynamic Warmup: What Science Actually Supports</h2>
+
+        <p>Dynamic movement is the answer. Not stretching. Movement.</p>
+
+        <p>Arm circles. Leg swings. Walking lunges. Inchworms. Jumping jacks. These are different. Dynamic movements take joints through their range of motion under control, activate the nervous system, and prepare muscles for the work ahead. They increase body temperature, enhance blood flow to working muscles, and most importantly, they wake up your nervous system.</p>
+
+        <p>When you move dynamically, you're teaching your body that movement is coming. You're activating the muscles that will do the work. You're turning on the nervous system. This is preparation in the truest sense.</p>
+
+        <p>The research is clear on this too. Athletes who perform dynamic warmups show increased strength, power, and flexibility compared to those doing static stretching. Your nervous system is primed. Your muscles are ready. Your body knows what's coming.</p>
+
+        <h2>The Practical Protocol</h2>
+
+        <p>Here's what a proper warmup looks like. Spend 3 to 5 minutes on general movement. Get your heart rate up. Walk, jog lightly, jump rope. Move.</p>
+
+        <p>Then spend 5 to 8 minutes on dynamic preparation specific to what you're about to do. If you're squatting, do leg swings, walking lunges, air squats. If you're benching, do arm circles, band pull-aparts, push-ups. The movement should match the movement you're about to demand.</p>
+
+        <p>Then do a few warm-up sets of your actual exercise with lighter weight. This is the final priming. Your nervous system now knows exactly what's coming.</p>
+
+        <p>Static stretching has its place. It belongs after your workout, when your body has finished the work. Or on rest days. Or before bed. But before hard movement? It's the opposite of what you need.</p>
+
+        <p>The body understands. Train it right.</p>
+      </div>
+
+      <div class="takeaways">
+        <h3>Three Takeaways</h3>
+        <p><strong>Static stretching dampens your nervous system.</strong> Holding stretches before exercise reduces power output by 3 to 8 percent and signals your body to prioritize relaxation, not force production.</p>
+        <p><strong>Dynamic warmups activate and prepare.</strong> Movement through range of motion, arm circles, leg swings, and light plyometrics prime your nervous system and muscles for the work ahead.</p>
+        <p><strong>Save stretching for after.</strong> Static stretching belongs post-workout or on rest days, not before explosive movement. Match your warmup to the demands you're about to make.</p>
+      </div>
+
+      <div class="article-cta">
+        <p>This essay is the map. Working together is the territory.</p>
+        <a href="../index.html#apply" class="btn-gold">Let's Work Together</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Greg Pignataro / Radical Body Love</p>
+  </footer>
+</body>
+</html>

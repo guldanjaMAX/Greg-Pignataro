@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short vs. Long Range | Greg Pignataro</title>
+  <meta name="description" content="The range of motion debate settled. Discover when partial and full range of motion are appropriate and how joint angle specificity impacts strength.">
+  <link rel="canonical" href="https://gregpignataro.com/blog/short-vs-long-range.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FDFBF8;
+      --bg-warm: #F7F3EE;
+      --gold: #B8863A;
+      --gold-light: #C99B4F;
+      --text-primary: #2C2520;
+      --text-secondary: #6B5E52;
+      --text-muted: #9E9285;
+      --border-light: rgba(184, 134, 58, 0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 100;
+      padding: 1.5rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 120px auto 0;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      background: var(--bg-warm);
+      color: var(--gold);
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    article h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    article h1 em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .article-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .article-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-body blockquote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .takeaways {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+    }
+
+    .takeaways h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .takeaways p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .takeaways p strong {
+      color: var(--gold);
+    }
+
+    .article-cta {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .site-footer {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      main {
+        margin-top: 200px;
+        padding: 1rem;
+      }
+
+      article h1 {
+        font-size: 2rem;
+      }
+
+      .article-subtitle {
+        font-size: 1rem;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#story">Story</a></li>
+        <li><a href="../index.html#method">Method</a></li>
+        <li><a href="../blog.html" class="active">Writing</a></li>
+        <li><a href="../index.html#apply">Apply</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>March 22, 2022</span>
+          <span>6 min read</span>
+          <span class="pillar-tag">Movement & Training</span>
+        </div>
+        <h1>Short vs. <em>Long Range</em></h1>
+        <p class="article-subtitle">The range of motion debate settled.</p>
+      </header>
+
+      <div class="article-body">
+        <p>The question shows up in every gym. Every training program. Every conversation about strength. Should you go full range? Is partial range acceptable? The answer, like most truth, lives in the nuance.</p>
+
+        <p>I've trained athletes who could move explosively through quarter squats but collapsed at the bottom of a deep squat. I've worked with people who had the flexibility for full range but lacked the strength to control it. Both situations are problems. Both reveal that the range of motion debate isn't binary. It's about matching the range to your goal, your readiness, and what your body is telling you.</p>
+
+        <h2>The Strength Curve and Joint Angles</h2>
+
+        <p>Here's the physiology. Your muscles produce different amounts of force at different joint angles. This is called the strength curve. You're not equally strong throughout a movement. There are parts of the range where you're powerful and parts where you're weak.</p>
+
+        <p>For most people, the middle range of a squat is where you're strongest. The bottom position is weaker. The top position is different. Your nervous system knows this. Your muscles know this. The joints know this too.</p>
+
+        <p>When you only train a partial range, you become strong in that range. Joint angle specificity means your strength gains are specific to the angles you train. Train quarter squats and you'll get very good at quarter squats. But move to full range? That weakness at the bottom becomes obvious.</p>
+
+        <p>This is why full range of motion matters. It builds strength through all angles. It prepares your joints, your muscles, your connective tissue for real movement. Real life doesn't happen in a narrow range. Your body needs to be strong everywhere it moves.</p>
+
+        <h2>When Partial Range Makes Sense</h2>
+
+        <p>But partial range isn't wrong. It has its place.</p>
+
+        <p>If you're returning from an injury, partial range might be where you start. Your body might not be ready for full range. Loading a restricted range while you rebuild can be intelligent. As your capacity increases, you expand the range. This is progression.</p>
+
+        <p>Partial range can also be useful as a supplemental movement. After you've done your full range work, doing extra volume in a partial range can add stimulus without extra stress. Heavy lockout work above the parallel in the squat is an example. It builds strength in the power range without the joint stress at the bottom.</p>
+
+        <p>Advanced athletes often use partial range strategically. But they've already built strength through full range. They understand their body. They're not hiding from the work. They're being intentional about stimulus.</p>
+
+        <h2>The Full Range Advantage</h2>
+
+        <p>Full range of motion builds something partial range cannot. It builds resiliency. It builds confidence. It builds real strength that translates to life.</p>
+
+        <p>When you squat to depth, when you bench to your chest, when you pull to your chin, you're training your body for movement that matters. You're building the neural pathways your body needs. You're strengthening tissues through their full length. You're becoming resilient.</p>
+
+        <p>This is why I coach full range first. Not because partial range is bad. But because full range is the foundation. Once you have that foundation, you can build layers. You can add intensity. You can use partial range strategically. But the base must be full range.</p>
+
+        <h2>Listen to Your Body</h2>
+
+        <p>The ultimate guide is your body. If full range causes pain (not discomfort, pain), you're not ready yet. Your tissues are signaling. Listen. Work on mobility. Build gradually. The goal is to expand your range as your body becomes capable.</p>
+
+        <p>If you can move through full range, you should. If you're choosing partial range for convenience or ease, that's avoidance. Real strength meets you where you are and expands from there.</p>
+
+        <p>The body understands. Train it completely.</p>
+      </div>
+
+      <div class="takeaways">
+        <h3>Three Takeaways</h3>
+        <p><strong>Strength is angle specific.</strong> Your body becomes strong in the ranges you train. Training only partial range creates gaps in strength that become obvious when you move into full range.</p>
+        <p><strong>Full range builds resilience.</strong> Moving through complete range of motion strengthens tissues throughout their length, builds neural pathways, and creates strength that translates to real life.</p>
+        <p><strong>Partial range has a place.</strong> It's useful as supplemental work, in injury recovery, or for advanced athletes being intentional. But the foundation should be full range movement.</p>
+      </div>
+
+      <div class="article-cta">
+        <p>This essay is the map. Working together is the territory.</p>
+        <a href="../index.html#apply" class="btn-gold">Let's Work Together</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Greg Pignataro / Radical Body Love</p>
+  </footer>
+</body>
+</html>
