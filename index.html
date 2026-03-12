@@ -1068,6 +1068,233 @@ footer {
   .manifesto { padding: 4rem 1.5rem; }
   .nav-hamburger { min-width: 44px; min-height: 44px; }
 }
+
+/* ===== PROOF BAR ===== */
+.proof-bar {
+  background: var(--shadow-bg);
+  padding: 4rem 2rem;
+}
+.proof-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.proof-stat {
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+.proof-number {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.proof-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--shadow-muted);
+}
+
+/* ===== ESSAYS SECTION ===== */
+.essay-filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+.essay-filter {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.essay-filter:hover,
+.essay-filter.active {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+
+/* Featured Essay */
+.featured-essay {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+.featured-essay-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 340px;
+}
+.featured-essay-content {
+  padding: 2.5rem 2.5rem 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.featured-essay-content h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin: 1rem 0 0.8rem;
+  line-height: 1.2;
+}
+.featured-essay-subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.featured-essay-excerpt {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Essay Tag */
+.essay-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* Essay Meta */
+.essay-meta {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: auto;
+  padding-top: 0.8rem;
+}
+
+/* Essay Grid */
+.essay-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.essay-card {
+  background: var(--bg-card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.essay-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+.essay-card-image {
+  height: 180px;
+  overflow: hidden;
+}
+.essay-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.essay-card:hover .essay-card-image img {
+  transform: scale(1.05);
+}
+.essay-card-body {
+  padding: 1.3rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.essay-card-body h4 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+  line-height: 1.25;
+}
+.essay-card-body p {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Show/Hide toggle for essays */
+.essay-card.hidden-essay {
+  display: none;
+}
+.essay-card.hidden-essay.show-all {
+  display: flex;
+}
+.essay-toggle-btn {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.8rem 2.5rem;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.essay-toggle-btn:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* Responsive essays */
+@media (max-width: 900px) {
+  .essay-grid { grid-template-columns: repeat(2, 1fr); }
+  .featured-essay { grid-template-columns: 1fr; }
+  .featured-essay-content { padding: 1.5rem; }
+  .proof-bar-inner { justify-content: center; }
+  .proof-stat { min-width: 100px; }
+}
+@media (max-width: 600px) {
+  .essay-grid { grid-template-columns: 1fr; }
+  .proof-bar { padding: 3rem 1.5rem; }
+  .proof-bar-inner { gap: 1.5rem; }
+  .proof-stat { min-width: 80px; }
+  .proof-number { font-size: 2rem; }
+  .essay-filters { gap: 0.4rem; }
+  .essay-filter { font-size: 0.7rem; padding: 0.4rem 0.9rem; }
+}
 </style>
 </head>
 <body>
@@ -1080,6 +1307,7 @@ footer {
     <li><a href="#method">Method</a></li>
     <li><a href="#work">The Work</a></li>
     <li><a href="#content">Content</a></li>
+    <li><a href="#essays">Essays</a></li>
   </ul>
   <a href="#apply" class="nav-cta">Begin</a>
   <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('mobile-open');">
@@ -1427,6 +1655,339 @@ footer {
   </div>
 </section>
 
+<!-- ===================== PROOF BAR ===================== -->
+<section class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-stat reveal">
+      <span class="proof-number">1,000+</span>
+      <span class="proof-label">Hours of Meditation</span>
+    </div>
+    <div class="proof-stat reveal reveal-delay-1">
+      <span class="proof-number">10</span>
+      <span class="proof-label">Days in Total Darkness</span>
+    </div>
+    <div class="proof-stat reveal reveal-delay-2">
+      <span class="proof-number">42</span>
+      <span class="proof-label">Published Essays</span>
+    </div>
+    <div class="proof-stat reveal reveal-delay-3">
+      <span class="proof-number">1</span>
+      <span class="proof-label">Guinness World Record</span>
+    </div>
+    <div class="proof-stat reveal reveal-delay-1">
+      <span class="proof-number">20+</span>
+      <span class="proof-label">Years of Practice</span>
+    </div>
+    <div class="proof-stat reveal reveal-delay-2">
+      <span class="proof-number">5</span>
+      <span class="proof-label">Days of Silence</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESSAYS / BLOG ===================== -->
+<section id="essays" style="background: var(--bg-primary); padding: 6rem 0;">
+  <div class="container">
+    <p class="eyebrow reveal">The Writing</p>
+    <h2 class="section-title reveal">150,000+ words. 42 essays.<br><em>Years of thinking out loud.</em></h2>
+    <p class="section-subtitle reveal">This is not content marketing. This is the work itself. Long form essays on pain, identity, nutrition, movement, darkness, and what it actually means to love the body you are in.</p>
+
+    <!-- Essay Category Filters -->
+    <div class="essay-filters reveal">
+      <button class="essay-filter active" data-filter="all">All Essays</button>
+      <button class="essay-filter" data-filter="inner-work">Inner Work</button>
+      <button class="essay-filter" data-filter="movement">Movement Science</button>
+      <button class="essay-filter" data-filter="nutrition">Nutrition</button>
+      <button class="essay-filter" data-filter="psychology">Psychology</button>
+      <button class="essay-filter" data-filter="philosophy">Philosophy</button>
+    </div>
+
+    <!-- Featured Essay -->
+    <div class="featured-essay reveal" data-category="inner-work">
+      <div class="featured-essay-image">
+        <img src="blog-images/darkness-retreat.jpg" alt="10 Days in Total Darkness" loading="lazy">
+      </div>
+      <div class="featured-essay-content">
+        <span class="essay-tag">Featured</span>
+        <h3>10 Days in Total Darkness</h3>
+        <p class="featured-essay-subtitle">What happens when you remove every external stimulus and sit alone with yourself for ten days straight.</p>
+        <p class="featured-essay-excerpt">What happens when you remove every external stimulus and sit with yourself for ten days straight? A raw account of fear, boredom, revelation, and what was waiting underneath it all.</p>
+        <span class="essay-meta">12 min read</span>
+      </div>
+    </div>
+
+    <!-- Essay Grid -->
+    <div class="essay-grid">
+      <div class="essay-card reveal" data-category="inner-work">
+        <div class="essay-card-image"><img src="blog-images/into-the-darkness.jpg" alt="Why Are We Scared of the Dark?" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Inner Work</span>
+          <h4>Why Are We Scared of the Dark?</h4>
+          <p>Before entering the darkness retreat, a reflection on what we actually fear when the lights go out.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="inner-work">
+        <div class="essay-card-image"><img src="blog-images/hurricane.jpg" alt="Out of the Darkness and Into a Hurricane" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Inner Work</span>
+          <h4>Out of the Darkness and Into a Hurricane</h4>
+          <p>Emerging from ten days of total darkness only to be stranded in Mexico by a hurricane.</p>
+          <span class="essay-meta">8 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/emotional-homeostasis.jpg" alt="Emotional Homeostasis" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>Emotional Homeostasis</h4>
+          <p>Your body has a set point for temperature. It also has one for emotion.</p>
+          <span class="essay-meta">7 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/meditation-misconceptions.jpg" alt="Meditation Misconceptions" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>Meditation Misconceptions</h4>
+          <p>Most people think meditation is about quieting the mind. It is not.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="philosophy">
+        <div class="essay-card-image"><img src="blog-images/what-is-woo.jpg" alt="What Is Woo?" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Philosophy</span>
+          <h4>What Is Woo?</h4>
+          <p>Where is the line between open minded and gullible?</p>
+          <span class="essay-meta">5 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/mind-body.jpg" alt="Don't Separate Mind and Body" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>Don't Separate Mind and Body</h4>
+          <p>The Cartesian split is one of the most damaging ideas in Western culture.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/you-are-not-your-thoughts.jpg" alt="You Are Not Your Thoughts" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>You Are Not Your Thoughts</h4>
+          <p>The single most important distinction you can make for your mental health.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/all-or-nothing.jpg" alt="The All or Nothing Mindset" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>The All or Nothing Mindset</h4>
+          <p>The most destructive pattern in fitness, nutrition, and life.</p>
+          <span class="essay-meta">7 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/identity.jpg" alt="Identity" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>Identity</h4>
+          <p>Who are you when you strip away the titles, the achievements, and the roles?</p>
+          <span class="essay-meta">7 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/identity-part-2.jpg" alt="Identity Part 2" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>Identity Part 2</h4>
+          <p>Going deeper into the stories we tell ourselves and the cost of living inside a narrative that no longer serves us.</p>
+          <span class="essay-meta">7 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="philosophy">
+        <div class="essay-card-image"><img src="blog-images/coaches-got-wrong.jpg" alt="Things Your Coaches Got Wrong" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Philosophy</span>
+          <h4>Things Your Coaches Got Wrong</h4>
+          <p>The well intentioned advice that caused the most damage.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/body-dysmorphia.jpg" alt="Body Dysmorphia and the Mirror" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>Body Dysmorphia and the Mirror</h4>
+          <p>The unsustainability of chasing a reflection that keeps moving.</p>
+          <span class="essay-meta">8 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="psychology">
+        <div class="essay-card-image"><img src="blog-images/inner-game.jpg" alt="Inner Game" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Psychology</span>
+          <h4>Inner Game</h4>
+          <p>The game within the game. Why your relationship with yourself determines the ceiling of everything else.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="philosophy">
+        <div class="essay-card-image"><img src="blog-images/common-ground.jpg" alt="Finding Common Ground" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Philosophy</span>
+          <h4>Finding Common Ground in an Argument</h4>
+          <p>How to actually listen when you disagree.</p>
+          <span class="essay-meta">5 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/nordic-curls.jpg" alt="Why You Need Nordic Curls" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Why You Need Nordic Curls</h4>
+          <p>The exercise that earned a Guinness World Record.</p>
+          <span class="essay-meta">7 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/static-stretching.jpg" alt="Superior to Static Stretching" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Superior to Static Stretching</h4>
+          <p>Everything you were taught about stretching before a workout is wrong.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/short-vs-long-range.jpg" alt="Short vs. Long Range" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Short vs. Long Range</h4>
+          <p>The range of motion debate settled.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/tendon-training.jpg" alt="Tendon Training" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Tendon Training</h4>
+          <p>The most overlooked component of strength.</p>
+          <span class="essay-meta">7 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/hard-sets.jpg" alt="Hard Sets" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Hard Sets</h4>
+          <p>Intensity versus volume, and why most people are working hard at the wrong things.</p>
+          <span class="essay-meta">5 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/rice-is-out.jpg" alt="RICE is Out" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>RICE is Out</h4>
+          <p>The injury protocol everyone learned is now being questioned.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/less-is-more.jpg" alt="Training and Less Is More" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Training and Less Is More</h4>
+          <p>The counterintuitive truth about getting stronger.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/shoes-feet.jpg" alt="Why Aren't Shoes Shaped Like Feet?" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Why Aren't Shoes Shaped Like Feet?</h4>
+          <p>A question so obvious nobody asks it.</p>
+          <span class="essay-meta">5 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/sports-good-for-you.jpg" alt="Nobody Said Sports Were Good for You" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Nobody Said Sports Were Good for You</h4>
+          <p>The uncomfortable truth about competitive athletics.</p>
+          <span class="essay-meta">7 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/bench-press.jpg" alt="The Bench Press Example" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>The Bench Press Example</h4>
+          <p>The most popular exercise in the gym is also the most poorly understood.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/what-is-pain.jpg" alt="What Is Pain" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>What Is Pain: Neuromuscular Re education</h4>
+          <p>Pain is not a measure of tissue damage. It is a protective output from your brain.</p>
+          <span class="essay-meta">8 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="movement">
+        <div class="essay-card-image"><img src="blog-images/skill-vs-athleticism.jpg" alt="Skill vs. Athleticism" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Movement</span>
+          <h4>Skill vs. Athleticism Continuum</h4>
+          <p>Where does raw athleticism end and skill begin?</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="nutrition">
+        <div class="essay-card-image"><img src="blog-images/counting-calories.jpg" alt="Counting Calories" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Nutrition</span>
+          <h4>A Complicated Relationship with Counting Calories</h4>
+          <p>When it helps, when it hurts, and why the answer is personal.</p>
+          <span class="essay-meta">7 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="nutrition">
+        <div class="essay-card-image"><img src="blog-images/hungry-time.jpg" alt="Hungry Time" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Nutrition</span>
+          <h4>Hungry Time and Maintenance Mode</h4>
+          <p>Maintenance is a skill, not a resting state.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+      <div class="essay-card reveal" data-category="philosophy">
+        <div class="essay-card-image"><img src="blog-images/coaches-got-wrong.jpg" alt="What Does It Mean to Be Healthy?" loading="lazy"></div>
+        <div class="essay-card-body">
+          <span class="essay-tag">Philosophy</span>
+          <h4>What Does It Mean to Be Healthy?</h4>
+          <p>A question that sounds simple until you sit with it.</p>
+          <span class="essay-meta">6 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Show More -->
+    <div class="essay-show-more reveal" style="text-align: center; margin-top: 3rem;">
+      <button class="essay-toggle-btn" id="essayToggle">Show All 42 Essays</button>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== CLOSING QUOTE ===================== -->
 <section class="manifesto closing-quote reveal" style="overflow: hidden;">
   <p class="manifesto-quote">"You do not need to be fixed. You do not need to be optimized. You need to be met. Your body has been waiting for you to stop fighting it and start listening. That is all this is."</p>
@@ -1468,6 +2029,7 @@ footer {
     <a href="#method">Method</a>
     <a href="#work">The Work</a>
     <a href="#content">Content</a>
+    <a href="#essays">Essays</a>
     <a href="#apply">Begin</a>
   </nav>
   <div class="footer-social">
@@ -1521,6 +2083,69 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Essay filter functionality
+const filterBtns = document.querySelectorAll('.essay-filter');
+const essayCards = document.querySelectorAll('.essay-card');
+const featuredEssay = document.querySelector('.featured-essay');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+
+    essayCards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (featuredEssay) {
+      if (filter === 'all' || featuredEssay.dataset.category === 'inner-work' && filter === 'inner-work') {
+        featuredEssay.style.display = 'grid';
+      } else if (filter !== 'all') {
+        featuredEssay.style.display = 'none';
+      }
+    }
+  });
+});
+
+// Show more/fewer essays
+const essayToggle = document.getElementById('essayToggle');
+const essayGrid = document.querySelector('.essay-grid');
+let showingAll = false;
+
+// Initially show only first 9
+function initEssays() {
+  const cards = essayGrid.querySelectorAll('.essay-card');
+  cards.forEach((card, i) => {
+    if (i >= 9) {
+      card.classList.add('hidden-essay');
+    }
+  });
+}
+initEssays();
+
+if (essayToggle) {
+  essayToggle.addEventListener('click', () => {
+    showingAll = !showingAll;
+    const cards = essayGrid.querySelectorAll('.essay-card');
+    cards.forEach((card, i) => {
+      if (i >= 9) {
+        if (showingAll) {
+          card.classList.add('show-all');
+          revealObserver.observe(card);
+        } else {
+          card.classList.remove('show-all');
+        }
+      }
+    });
+    essayToggle.textContent = showingAll ? 'Show Fewer' : 'Show All 42 Essays';
+  });
+}
 </script>
 </body>
 </html>
