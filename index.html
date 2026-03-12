@@ -1195,6 +1195,210 @@ footer {
   .proof-grid { grid-template-columns: repeat(2, 1fr); }
   .proof-value { font-size: 2.4rem; }
 }
+
+/* ===== GWR FEATURE SECTION ===== */
+.gwr-section {
+  background: var(--bg-accent);
+  padding: 5rem 4rem;
+  text-align: center;
+}
+.gwr-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.gwr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(184,134,58,0.08);
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.25rem 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.gwr-badge-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.gwr-badge-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--bg-primary);
+}
+.gwr-badge-text {
+  text-align: left;
+}
+.gwr-badge-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+.gwr-badge-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+.gwr-headline {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+.gwr-desc {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+}
+.gwr-record-detail {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.gwr-link {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184,134,58,0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.3s;
+}
+.gwr-link:hover {
+  border-color: var(--gold);
+}
+.gwr-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+.gwr-stat {
+  text-align: center;
+}
+.gwr-stat-value {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  font-weight: 300;
+}
+.gwr-stat-label {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* ===== HERO CREDENTIALS BAR ===== */
+.hero-credentials {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+.hero-cred-item {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: rgba(253,251,248,0.7);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.hero-cred-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ===== WRITING SECTION (replaces essays) ===== */
+.writing-topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 2.5rem;
+}
+.writing-topic {
+  background: rgba(184,134,58,0.04);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: border-color 0.3s, background 0.3s;
+}
+.writing-topic:hover {
+  border-color: var(--gold);
+  background: rgba(184,134,58,0.08);
+}
+.writing-topic-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+.writing-topic-count {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ===== CONDENSED ABOUT STRIP ===== */
+.about-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+  padding: 1.5rem 0;
+}
+.about-strip-item {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+.about-strip-item strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .gwr-section { padding: 3rem 1.5rem; }
+  .gwr-badge { padding: 1rem 1.5rem; flex-direction: column; text-align: center; }
+  .gwr-badge-text { text-align: center; }
+  .gwr-stats { gap: 2rem; }
+  .hero-credentials { justify-content: center; gap: 0.75rem; }
+  .writing-topics { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .writing-topics { grid-template-columns: 1fr; }
+  .gwr-stats { flex-direction: column; gap: 1.5rem; }
+}
 </style>
 </head>
 <body>
@@ -1203,13 +1407,12 @@ footer {
 <nav id="navbar">
   <a href="#" class="nav-logo">Greg Pignataro</a>
   <ul class="nav-links">
-    <li><a href="#story">Story</a></li>
-    <li><a href="#method">Method</a></li>
-    <li><a href="#work">The Work</a></li>
-    <li><a href="#content">Content</a></li>
-    <li><a href="#content">Essays</a></li>
+    <li><a href="#story">His Story</a></li>
+    <li><a href="#method">The Method</a></li>
+    <li><a href="#work">Work With Greg</a></li>
+    <li><a href="#writing">Writing</a></li>
   </ul>
-  <a href="#apply" class="nav-cta">Begin</a>
+  <a href="#apply" class="nav-cta">Book a Call</a>
   <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('mobile-open');">
     <span></span><span></span><span></span>
   </div>
@@ -1222,12 +1425,17 @@ footer {
     <div class="hero-text">
       <p class="hero-eyebrow">Radical Body Love</p>
       <h1 class="hero-title">You were never <em>broken.</em></h1>
-      <p class="hero-subtitle">Your body is not the problem. It never was. Do you truly love your body, or do you consistently tell it and show it that it is not good enough? The war you have been waging against yourself ends when you stop fighting and start remembering who you really are.</p>
+      <p class="hero-subtitle">Your body is not the problem. It never was. The war you have been waging against yourself ends when you stop fighting and start remembering who you really are.</p>
       <div class="hero-actions">
-        <a href="#apply" class="btn-primary">Start the Conversation</a>
-        <a href="#story" class="btn-ghost">Read the Story</a>
+        <a href="#apply" class="btn-primary">Book a Conversation</a>
+        <a href="#story" class="btn-ghost">Read His Story</a>
       </div>
-      <p style="font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(253,251,248,0.5); text-transform: uppercase; margin-top: 0.5rem;">Guinness World Record Holder &nbsp;&bull;&nbsp; BA Psychology &nbsp;&bull;&nbsp; Gabor Mat&eacute; Trained</p>
+      <div class="hero-credentials">
+        <span class="hero-cred-item"><span class="hero-cred-dot"></span>Guinness World Record Holder</span>
+        <span class="hero-cred-item"><span class="hero-cred-dot"></span>Gabor Mat&eacute; Trained</span>
+        <span class="hero-cred-item"><span class="hero-cred-dot"></span>Division I Athlete</span>
+        <span class="hero-cred-item"><span class="hero-cred-dot"></span>BA Psychology</span>
+      </div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1235,133 +1443,37 @@ footer {
   </div>
 </section>
 
-<!-- ===================== MANIFESTO ===================== -->
-<section class="manifesto reveal">
-  <p class="manifesto-quote">"Stop running from what is real in your body. Stop chasing what is not real in your mind. What is left is freedom."</p>
-  <p class="manifesto-attribution">The Radical Body Love Manifesto</p>
-</section>
-
-<!-- ===================== STORY ===================== -->
-<section id="story" style="background: var(--bg-primary);">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-body reveal">
-        <p class="eyebrow">Origin</p>
-        <h2 class="section-title">The same thing keeps <em>happening.</em></h2>
-        <div class="divider"></div>
-        <h3 style="font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--gold); margin-bottom: 0.6rem; font-style: italic;">The Wall That Follows You</h3>
-        <p>You keep hitting the same wall. Different year, different circumstance, same feeling. Something in your body tightens. Something in your chest goes quiet. You push through it because that is what you have always done. But the wall does not go away.</p>
-        <h3 style="font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--gold); margin-bottom: 0.6rem; margin-top: 2rem; font-style: italic;">Every Breaking Point Was a Door</h3>
-        <p>Greg knows this pattern because he lived it. A torn ACL at 18. A broken back that doctors said would limit him forever. A marriage that broke open old wounds. A body that held decades of grief until one afternoon it finally let go. He deliberately gained 20 pounds and gave up his abs just to see if he could still love himself without them. He loved himself more.</p>
-        <h3 style="font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--gold); margin-bottom: 0.6rem; margin-top: 2rem; font-style: italic;">Not a Coach in the Normal Sense</h3>
-        <p>He studied psychology in college, competed as a Division I athlete, sat in complete darkness for eight days and total silence for five, logged over a thousand hours of meditation, and then spent over a decade going deeper into the places where the body and the mind refuse to be separated. He is not here to tell you what to do. He is someone who has walked through what you are walking through and found something real on the other side.</p>
+<!-- ===================== GUINNESS WORLD RECORD FEATURE ===================== -->
+<section class="gwr-section">
+  <div class="gwr-inner reveal">
+    <div class="gwr-badge">
+      <div class="gwr-badge-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
       </div>
-      <div class="reveal reveal-delay-1">
-        <img src="images/headshots/greg_speaking_gesture.jpg" alt="Greg Pignataro speaking" class="story-image" loading="lazy">
+      <div class="gwr-badge-text">
+        <div class="gwr-badge-label">Official Guinness World Records&reg; Title Holder</div>
+        <div class="gwr-badge-title">Most Nordic Hamstring Curls in One Minute</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===================== SOCCER / ATHLETE IMAGE ===================== -->
-<section style="background: var(--bg-primary); padding: 0 4rem 4rem;">
-  <div class="container reveal" style="max-width: 900px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); position: relative;">
-    <img src="images/soccer/footy_hero_2.jpg" alt="Greg Pignataro, Division I soccer athlete at Marquette" loading="lazy" style="width: 100%; height: 320px; object-fit: cover; display: block;">
-    <p style="position: absolute; bottom: 1rem; right: 1.5rem; font-family: var(--serif); font-size: 0.82rem; font-style: italic; color: rgba(253,251,248,0.7); text-shadow: 0 1px 6px rgba(0,0,0,0.5);">Division I, Marquette University</p>
-  </div>
-</section>
-
-<!-- ===================== PROOF BAR ===================== -->
-<section class="proof-bar proof-bar-top">
-  <div class="proof-grid reveal">
-    <div class="proof-item">
-      <div class="proof-value">GWR</div>
-      <div class="proof-label">Guinness World Record</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">D1</div>
-      <div class="proof-label">NCAA Division I Athlete</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">1,000+</div>
-      <div class="proof-label">Hours of Meditation</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">42</div>
-      <div class="proof-label">Published Essays</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">10</div>
-      <div class="proof-label">Days in Total Darkness</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">20+</div>
-      <div class="proof-label">Years of Practice</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CREDENTIALS ===================== -->
-<section style="background: var(--bg-warm); padding: 4rem;">
-  <div class="container reveal" style="max-width: 900px; text-align: center;">
-    <p class="eyebrow" style="justify-content: center;">Credentials</p>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2.5rem; margin-top: 2rem;">
-      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
-        <span style="color: var(--gold); font-weight: 500;">BA Psychology</span> Carthage College
+    <h2 class="gwr-headline">A world record built on the same discipline<br>he brings to <em>every client.</em></h2>
+    <p class="gwr-desc">Greg did not chase this record for the title. He chased it to prove something to himself: that a body doctors said was broken could become the strongest version of itself. A torn ACL at 18. A broken back they said would limit him forever. Then a Guinness World Record.</p>
+    <a href="https://www.guinnessworldrecords.com/world-records/722570-most-nordic-hamstring-curls-in-one-minute" target="_blank" rel="noopener" class="gwr-link">View Official Record &rarr;</a>
+    <div class="gwr-stats">
+      <div class="gwr-stat">
+        <div class="gwr-stat-value">D1</div>
+        <div class="gwr-stat-label">NCAA Athlete, Marquette</div>
       </div>
-      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
-        <span style="color: var(--gold); font-weight: 500;">Compassionate Inquiry</span> Dr. Gabor Mat&eacute;
+      <div class="gwr-stat">
+        <div class="gwr-stat-value">20+</div>
+        <div class="gwr-stat-label">Years of Practice</div>
       </div>
-      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
-        <span style="color: var(--gold); font-weight: 500;">CSCS</span> Nat'l Strength &amp; Conditioning
+      <div class="gwr-stat">
+        <div class="gwr-stat-value">1,000+</div>
+        <div class="gwr-stat-label">Hours of Meditation</div>
       </div>
-      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
-        <span style="color: var(--gold); font-weight: 500;">NeuFit</span> Certified Practitioner
-      </div>
-      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
-        <span style="color: var(--gold); font-weight: 500;">ATG</span> Certified Coach
-      </div>
-      <div style="font-family: var(--sans); font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.04em;">
-        <span style="color: var(--gold); font-weight: 500;">1,000+</span> Hours of Meditation
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== AS HEARD ON ===================== -->
-<section style="background: var(--bg-accent); padding: 3rem 4rem;">
-  <div class="container reveal" style="max-width: 800px; text-align: center;">
-    <p style="font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;">As Heard On</p>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 3rem; align-items: center;">
-      <a href="https://www.neu.fit/podcast/episode-59-atg-training-and-setting-the-world-record-in-nordic-hamstring-curls-with-greg-pignataro-cscs/" target="_blank" rel="noopener" style="font-family: var(--serif); font-size: 1.05rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-style: italic;">NeuFit Podcast</a>
-      <span style="color: var(--border-light);">|</span>
-      <a href="https://open.spotify.com/show/6JoH3BOJAlSW2hqWWzdvzV" target="_blank" rel="noopener" style="font-family: var(--serif); font-size: 1.05rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-style: italic;">Average to Athletic</a>
-    </div>
-    <p style="font-family: var(--sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem;">6 podcast episodes on pain, psychedelics, darkness retreats, and the body</p>
-  </div>
-</section>
-
-<!-- ===================== METHODOLOGY ===================== -->
-<section id="method" style="background: var(--bg-primary);">
-  <div class="container">
-    <p class="eyebrow reveal">The Method</p>
-    <h2 class="section-title reveal">Not fitness. Not therapy.<br>Something <em>deeper.</em></h2>
-    <p class="section-subtitle reveal">This work lives in the space between fitness and therapy, where nobody else is looking. It does not teach you to use your body better. It helps you remember that your body was never broken in the first place.</p>
-    <div class="method-grid">
-      <div class="method-card reveal">
-        <div class="method-num">01</div>
-        <div class="method-name">Body Listening</div>
-        <div class="method-desc">There is a reason that shoulder has not let go in three years. There is a reason your back pain keeps coming back no matter what you try. Greg calls it pain hunting: the moment the pain disappears, most people go looking for it again because their identity is built on it. Through NeuFit technology and nervous system work, you finally hear what your body has been saying. This is not talk therapy. This is your body finally getting to speak.</div>
-      </div>
-      <div class="method-card reveal reveal-delay-1">
-        <div class="method-num">02</div>
-        <div class="method-name">Movement as Medicine</div>
-        <div class="method-desc">Every tight spot, every sore place, every part of you that will not move freely is holding a message. Here, pain is treated as a signal, not a sentence. The goal is not to push harder. The goal is to listen deeper. Your body already knows the way.</div>
-      </div>
-      <div class="method-card reveal reveal-delay-2">
-        <div class="method-num">03</div>
-        <div class="method-name">Remembering Who You Are</div>
-        <div class="method-desc">The real shift is not physical. It is the moment you stop performing a version of yourself and start living as who you actually are. Not fixed. Not optimized. Free.</div>
+      <div class="gwr-stat">
+        <div class="gwr-stat-value">10</div>
+        <div class="gwr-stat-label">Days in Total Darkness</div>
       </div>
     </div>
   </div>
@@ -1382,57 +1494,75 @@ footer {
         <p>You are a founder, an executive, an athlete, or someone searching for more. You have read the books. Done the retreats. Tried the talk therapy. Maybe sat with ayahuasca. Tracked the macros. Optimized the sleep. And still something feels off. This is not the beginner step. This is for people who have done everything else and know there is something deeper they have not touched.</p>
         <h3 style="font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--gold); margin-bottom: 0.6rem; margin-top: 2rem; font-style: italic;">The Deeper Signal</h3>
         <p>Your tension, your restlessness, your inability to truly rest has nothing to do with your training plan. It has everything to do with what your body has been holding for years.</p>
-        <h3 style="font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--gold); margin-bottom: 0.6rem; margin-top: 2rem; font-style: italic;">Ready to Stop Performing</h3>
-        <p>Do you truly love your body, or do you consistently tell it and show it that it is not good enough? If that question landed somewhere real, you are ready to meet your body not as a problem to solve, but as the most honest, intelligent thing you have ever been given.</p>
+        <p style="margin-top: 1.5rem; color: var(--gold); font-family: var(--serif); font-size: 1.05rem; font-style: italic;">This is not for everyone. If you want a quick fix, a meal plan, or someone to tell you what to do without asking what you feel, there are a thousand programs for that. This is not one of them.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== WHO THIS IS NOT FOR ===================== -->
-<section style="background: var(--bg-primary); padding-top: 0;">
-  <div class="container" style="max-width: 680px;">
-    <div class="reveal" style="border-top: 1px solid var(--border-light); padding-top: 3rem;">
-      <p class="eyebrow" style="justify-content: center;">A Necessary Honesty</p>
-      <h2 class="section-title" style="text-align: center;">This is not for <em>you</em> if...</h2>
-      <div style="margin-top: 2rem; font-family: var(--sans); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.9; text-align: center;">
-        <p>You want a quick fix. You want someone to hand you a meal plan and a training split. You want to skip the emotional part and just get lean. You want to be told what to do without being asked what you feel.</p>
-        <p style="margin-top: 1rem;">You believe your body is a machine that needs better programming. You think vulnerability is weakness. You are looking for motivation, not truth.</p>
-        <p style="margin-top: 1rem;">If that is where you are, there is no judgment. There are a thousand programs built for that. This is not one of them.</p>
-        <p style="margin-top: 1.25rem; color: var(--gold); font-family: var(--serif); font-size: 1.05rem; font-style: italic;">This is for the people who tried all of that and still feel like something is missing.</p>
+<!-- ===================== METHODOLOGY ===================== -->
+<section id="method" style="background: var(--bg-primary);">
+  <div class="container">
+    <p class="eyebrow reveal">The Method</p>
+    <h2 class="section-title reveal">Not fitness. Not therapy.<br>Something <em>deeper.</em></h2>
+    <p class="section-subtitle reveal">This work lives in the space between fitness and therapy, where nobody else is looking. It does not teach you to use your body better. It helps you remember that your body was never broken in the first place.</p>
+    <div class="method-grid">
+      <div class="method-card reveal">
+        <div class="method-num">01</div>
+        <div class="method-name">Body Listening</div>
+        <div class="method-desc">There is a reason that shoulder has not let go in three years. There is a reason your back pain keeps coming back no matter what you try. Through NeuFit technology and nervous system work, you finally hear what your body has been saying. This is not talk therapy. This is your body finally getting to speak.</div>
+      </div>
+      <div class="method-card reveal reveal-delay-1">
+        <div class="method-num">02</div>
+        <div class="method-name">Movement as Medicine</div>
+        <div class="method-desc">Every tight spot, every sore place, every part of you that will not move freely is holding a message. Here, pain is treated as a signal, not a sentence. The goal is not to push harder. The goal is to listen deeper. Your body already knows the way.</div>
+      </div>
+      <div class="method-card reveal reveal-delay-2">
+        <div class="method-num">03</div>
+        <div class="method-name">Remembering Who You Are</div>
+        <div class="method-desc">The real shift is not physical. It is the moment you stop performing a version of yourself and start living as who you actually are. Not fixed. Not optimized. Free.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== SHADOW WORK SECTION (Dark) ===================== -->
-<section class="shadow-section" style="padding: 9rem 4rem;">
-  <div class="shadow-glow"></div>
+<!-- ===================== GREG'S STORY ===================== -->
+<section id="story" style="background: var(--bg-warm);">
   <div class="container">
     <div class="story-grid">
       <div class="story-body reveal">
-        <p class="eyebrow">The Shadow</p>
-        <h2 class="section-title">The parts you <em>hide.</em></h2>
+        <p class="eyebrow">His Story</p>
+        <h2 class="section-title">He walked through it <em>first.</em></h2>
         <div class="divider"></div>
-        <h3 style="font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--gold); margin-bottom: 0.6rem; font-style: italic;">What Lives Underneath</h3>
-        <p>Underneath the goals, the achievements, the curated version of yourself, there are parts that got pushed away a long time ago. Anger. Grief. Shame. Fear. The body held them when the mind could not.</p>
-        <h3 style="font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--gold); margin-bottom: 0.6rem; margin-top: 2rem; font-style: italic;">Welcoming What Was Exiled</h3>
-        <p>Shadow work is not about fixing what is wrong. It is about welcoming what has been exiled. When you stop running from these parts, something remarkable happens: the tension that lived in your body for decades can finally let go.</p>
-        <h3 style="font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--gold); margin-bottom: 0.6rem; margin-top: 2rem; font-style: italic;">8 Days of Darkness. 5 Days of Silence. 1,000+ Hours of Meditation.</h3>
-        <p>You do not do this alone. Greg is a Certified Compassionate Inquiry Practitioner trained under Dr. Gabor Mat&eacute;, the world's leading voice on the connection between trauma and the body. He sat in complete darkness for eight days and total silence for five, not because someone told him to, but because he needed to know what was underneath everything. He has logged over a thousand hours of meditation and written over 150,000 words about the journeys that shaped this work.</p>
-        <p style="margin-top: 1rem; color: var(--gold); font-family: var(--serif); font-size: 1.05rem; font-style: italic;">That is the depth he brings to this work.</p>
+        <p>Greg knows the wall you keep hitting because he lived it. A torn ACL at 18. A broken back that doctors said would limit him forever. A marriage that broke open old wounds. A body that held decades of grief until one afternoon it finally let go.</p>
+        <p style="margin-top: 1rem;">He deliberately gained 20 pounds and gave up his abs just to see if he could still love himself without them. He loved himself more.</p>
+        <p style="margin-top: 1rem;">He sat in complete darkness for eight days and total silence for five, not because someone told him to, but because he needed to know what was underneath everything. He has logged over a thousand hours of meditation and written over 150,000 words about what he found there.</p>
+        <p style="margin-top: 1rem;">He is not here to tell you what to do. He is someone who has walked through what you are walking through and found something real on the other side.</p>
+        <div class="about-strip" style="margin-top: 2rem; border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
+          <span class="about-strip-item"><strong>BA Psychology</strong> Carthage College</span>
+          <span class="about-strip-item"><strong>Compassionate Inquiry</strong> Dr. Gabor Mat&eacute;</span>
+          <span class="about-strip-item"><strong>CSCS</strong> Nat'l Strength &amp; Conditioning</span>
+          <span class="about-strip-item"><strong>NeuFit</strong> Certified Practitioner</span>
+          <span class="about-strip-item"><strong>ATG</strong> Certified Coach</span>
+        </div>
       </div>
       <div class="reveal reveal-delay-1">
-        <img src="images/brand/golden-smoke.jpg" alt="Golden light emerging from darkness" class="story-image" loading="lazy">
+        <img src="images/headshots/greg_speaking_gesture.jpg" alt="Greg Pignataro speaking" class="story-image" loading="lazy">
       </div>
     </div>
   </div>
+</section>
+
+<!-- ===================== QUOTE DIVIDER ===================== -->
+<section class="manifesto reveal">
+  <p class="manifesto-quote">"Stop running from what is real in your body. Stop chasing what is not real in your mind. What is left is freedom."</p>
+  <p class="manifesto-attribution">Greg Pignataro</p>
 </section>
 
 <!-- ===================== SOCIAL PROOF ===================== -->
 <section style="background: var(--bg-primary);">
   <div class="container">
-    <p class="eyebrow reveal" style="justify-content: center;">Transformations</p>
+    <p class="eyebrow reveal" style="justify-content: center;">What Clients Say</p>
     <h2 class="section-title reveal" style="text-align: center;">People who stopped <em>performing.</em></h2>
     <div class="testimonials-grid">
       <div class="testimonial reveal">
@@ -1536,20 +1666,44 @@ footer {
   </div>
 </section>
 
-<!-- ===================== ESSAYS / START HERE ===================== -->
-<section id="content" style="background: var(--bg-warm); padding: 6rem 4rem;">
+<!-- ===================== THE WRITING ===================== -->
+<section id="writing" style="background: var(--bg-warm); padding: 6rem 4rem;">
   <div class="container">
     <p class="eyebrow reveal">The Writing</p>
-    <h2 class="section-title reveal">150,000+ words. 42 essays.<br><em>Start here.</em></h2>
-    <p class="section-subtitle reveal">This is not content marketing. This is the work itself. Long form essays on pain, identity, nutrition, movement, darkness, and what it actually means to love the body you are in. These eight essays are where Greg's clients say to begin.</p>
+    <h2 class="section-title reveal">Over 150,000 words on what it actually means<br><em>to live in your body.</em></h2>
+    <p class="section-subtitle reveal">Greg writes the way he coaches: honestly, deeply, and without shortcuts. These are not blog posts. They are real explorations of pain, identity, nutrition, movement, and what happens when you stop performing wellness and start practicing it. Here is where his clients say to begin.</p>
 
-    <!-- Featured Essay -->
+    <!-- Topic Clusters -->
+    <div class="writing-topics reveal">
+      <a href="https://admin.gregpignataro.com" class="writing-topic">
+        <span class="writing-topic-name">Inner Work</span>
+        <span class="writing-topic-count">Darkness retreats, silence, meditation, shadow work</span>
+      </a>
+      <a href="https://admin.gregpignataro.com" class="writing-topic">
+        <span class="writing-topic-name">Movement &amp; Pain</span>
+        <span class="writing-topic-count">Neuromuscular re education, Nordic curls, injury recovery</span>
+      </a>
+      <a href="https://admin.gregpignataro.com" class="writing-topic">
+        <span class="writing-topic-name">Nutrition</span>
+        <span class="writing-topic-count">Calories, fasting, supplements, body composition</span>
+      </a>
+      <a href="https://admin.gregpignataro.com" class="writing-topic">
+        <span class="writing-topic-name">Psychology</span>
+        <span class="writing-topic-count">Body dysmorphia, thoughts, identity, trauma</span>
+      </a>
+      <a href="https://admin.gregpignataro.com" class="writing-topic">
+        <span class="writing-topic-name">Philosophy</span>
+        <span class="writing-topic-count">Health, meaning, masculinity, what it means to be whole</span>
+      </a>
+    </div>
+
+    <!-- Featured Piece -->
     <div class="featured-essay reveal" data-category="inner-work">
       <div class="featured-essay-image">
         <img src="blog-images/darkness-retreat.jpg" alt="10 Days in Total Darkness" loading="lazy">
       </div>
       <div class="featured-essay-content">
-        <span class="essay-tag">Featured</span>
+        <span class="essay-tag">Start Here</span>
         <h3>10 Days in Total Darkness</h3>
         <p class="featured-essay-subtitle">What happens when you remove every external stimulus and sit alone with yourself for ten days straight.</p>
         <p class="featured-essay-excerpt">A raw account of fear, boredom, revelation, and what was waiting underneath it all. No phone. No light. No distraction. Just everything you have been avoiding.</p>
@@ -1557,7 +1711,7 @@ footer {
       </div>
     </div>
 
-    <!-- Curated Start Here Grid: 7 best essays across all categories -->
+    <!-- Curated Reads -->
     <div class="essay-grid">
       <div class="essay-card reveal" data-category="inner-work">
         <div class="essay-card-image"><img src="blog-images/into-the-darkness.jpg" alt="Into the Darkness" loading="lazy"></div>
@@ -1625,7 +1779,7 @@ footer {
     </div>
 
     <div class="reveal" style="text-align: center; margin-top: 3rem;">
-      <a href="https://admin.gregpignataro.com" class="essay-toggle-btn" style="text-decoration: none;">Read All 42 Essays</a>
+      <a href="https://admin.gregpignataro.com" class="essay-toggle-btn" style="text-decoration: none;">Explore All 42 Pieces</a>
     </div>
   </div>
 </section>
@@ -1645,15 +1799,15 @@ footer {
     <div class="cta-process reveal">
       <div class="process-step">
         <div class="process-num">1</div>
-        <div class="process-text">You apply below with a short note about where you are and what brought you here.</div>
+        <div class="process-text">You book a conversation using the link below. Pick a time that works for you.</div>
       </div>
       <div class="process-step">
         <div class="process-num">2</div>
-        <div class="process-text">Greg reads every application himself and responds within 48 hours.</div>
+        <div class="process-text">Greg shows up fully present. 30 minutes. No pitch. Just an honest conversation about where you are.</div>
       </div>
       <div class="process-step">
         <div class="process-num">3</div>
-        <div class="process-text">If it feels right, you schedule a free 30 minute call. No sales. Just truth.</div>
+        <div class="process-text">If it feels right for both of you, Greg will share what working together looks like.</div>
       </div>
     </div>
     <a href="https://calendly.com/greg-enlightened/necker-continue-the-conversation" target="_blank" rel="noopener" class="btn-primary reveal">Book a Conversation</a>
@@ -1667,12 +1821,11 @@ footer {
   <div class="footer-brand">Greg Pignataro</div>
   <p class="footer-tagline">Your body was never the problem.</p>
   <nav class="footer-nav">
-    <a href="#story">Story</a>
-    <a href="#method">Method</a>
-    <a href="#work">The Work</a>
-    <a href="#content">Content</a>
-    <a href="#content">Essays</a>
-    <a href="#apply">Begin</a>
+    <a href="#story">His Story</a>
+    <a href="#method">The Method</a>
+    <a href="#work">Work With Greg</a>
+    <a href="#writing">Writing</a>
+    <a href="#apply">Book a Call</a>
   </nav>
   <div class="footer-social">
     <a href="https://www.instagram.com/neverpastyourprime/" target="_blank" rel="noopener">Instagram</a>
