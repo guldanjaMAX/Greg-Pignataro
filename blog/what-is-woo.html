@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Woo? | Greg Pignataro</title>
+<meta name="description" content="Where is the line between open minded and gullible?">
+<link rel="canonical" href="https://gregpignataro.com/blog/what-is-woo.html">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X73WCJRFHT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X73WCJRFHT');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-primary:#FDFBF8;--bg-warm:#F7F3EE;--gold:#B8863A;--gold-light:#C99B4F;--text-primary:#2C2520;--text-secondary:#6B5E52;--text-muted:#9E9285;--border-light:rgba(184,134,58,0.12);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,251,248,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--text-primary);text-decoration:none;letter-spacing:0.04em}
+.nav-links{display:flex;gap:2.4rem;list-style:none}
+.nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color 0.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.article-header{padding:8rem 2rem 3rem;text-align:center;background:var(--bg-warm);border-bottom:1px solid var(--border-light)}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color 0.3s}
+.back-link:hover{color:var(--gold)}
+.article-meta{display:flex;justify-content:center;gap:1.2rem;margin-bottom:1.4rem;flex-wrap:wrap}
+.article-meta span{font-size:0.68rem;font-weight:500;letter-spacing:0.06em;color:var(--text-muted);text-transform:uppercase}
+.pillar-tag{color:var(--gold)!important;padding:0.2rem 0.7rem;border:1px solid rgba(184,134,58,0.2);border-radius:100px}
+.article-header h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3rem);font-weight:300;color:var(--text-primary);line-height:1.15;max-width:700px;margin:0 auto 1rem}
+.article-header h1 em{font-style:italic;color:var(--gold)}
+.article-header .subtitle{font-size:1.05rem;color:var(--text-secondary);max-width:540px;margin:0 auto;line-height:1.7}
+.article-body{max-width:720px;margin:0 auto;padding:3rem 2rem 4rem}
+.article-body p{font-size:1rem;color:var(--text-secondary);line-height:1.85;margin-bottom:1.6rem}
+.article-body h2{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--text-primary);margin:2.5rem 0 1rem;line-height:1.25}
+.article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--text-primary);margin:2rem 0 0.8rem}
+.article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--bg-warm);border-radius:0 8px 8px 0}
+.article-body blockquote p{color:var(--text-primary);font-style:italic;margin-bottom:0}
+.takeaways{background:var(--bg-warm);border:1px solid var(--border-light);border-radius:12px;padding:2rem 2.4rem;margin:2.5rem 0}
+.takeaways h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--gold);margin-bottom:1rem}
+.takeaways p{margin-bottom:0.8rem;font-size:0.92rem}
+.takeaways p:last-child{margin-bottom:0}
+.article-cta{text-align:center;padding:4rem 2rem;background:var(--bg-warm);border-top:1px solid var(--border-light)}
+.article-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--text-primary);margin-bottom:0.8rem}
+.article-cta h2 em{font-style:italic;color:var(--gold)}
+.article-cta p{font-size:0.95rem;color:var(--text-secondary);max-width:440px;margin:0 auto 1.8rem;line-height:1.7}
+.btn-gold{display:inline-block;padding:1rem 2.4rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;font-family:var(--sans);font-size:0.74rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all 0.3s;box-shadow:0 4px 20px rgba(184,134,58,0.25)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,134,58,0.35)}
+.site-footer{padding:3rem;text-align:center;border-top:1px solid var(--border-light)}
+.site-footer .footer-name{font-family:var(--serif);font-size:1.1rem;color:var(--text-primary);letter-spacing:0.08em;margin-bottom:0.3rem}
+.site-footer p{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em}
+@media(max-width:768px){.site-nav{padding:1rem 1.5rem}.nav-links{gap:1.4rem}.nav-links a{font-size:0.65rem}.article-header{padding:6rem 1.5rem 2rem}.article-body{padding:2rem 1.5rem 3rem}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#story">Story</a></li>
+    <li><a href="../index.html#method">Method</a></li>
+    <li><a href="../blog.html" class="active">Writing</a></li>
+    <li><a href="../index.html#apply">Apply</a></li>
+  </ul>
+</nav>
+
+<section class="article-header">
+  <a href="../blog.html" class="back-link">← Back to Writing</a>
+  <div class="article-meta">
+    <span>November 15, 2022</span>
+    <span>5 min read</span>
+    <span class="pillar-tag">Inner Work</span>
+  </div>
+  <h1>What Is <em>Woo</em>?</h1>
+  <p class="subtitle">Where is the line between open minded and gullible?</p>
+</section>
+
+<section class="article-body">
+  <p>I've spent the last few years deep in territory that a lot of people would call woo. I did a ten day darkness retreat. I train extensively in somatic work. I study the intersection of trauma and the nervous system. I believe that healing happens in the body, not just in the mind.</p>
+
+  <p>I also read the research. I think critically. I don't believe in anything just because it sounds good.</p>
+
+  <p>So where's the line? When does open mindedness become gullibility?</p>
+
+  <h2>Science Is Not the Only Valid Knowledge System</h2>
+
+  <p>This is the crucial piece. In the Western world, we've been trained to believe that something is only real if it can be measured and replicated in a lab. Everything else is woo.</p>
+
+  <p>But that's not how knowledge actually works. There are things that are true and real that don't fit neatly into the scientific method. Personal experience, cultural wisdom, somatic knowledge. These are valid sources of information.</p>
+
+  <p>The problem isn't that we honor these ways of knowing. The problem is thinking they're the only way of knowing. It's a both/and situation. Yes, I want to understand the neuroscience of trauma. And I also want to trust the direct somatic knowledge I gain in my body when I'm doing the work.</p>
+
+  <h2>Real Woo Has Certain Characteristics</h2>
+
+  <p>So what actually makes something woo? For me, it's when claims become unfalsifiable. When someone is making promises that can't be tested. When the person making the claim profits if you believe them and has no incentive to tell you if it's not working.</p>
+
+  <p>Genuine somatic work requires feedback from your nervous system. You can feel whether something is working. If a facilitator is making claims that can't be tested in your own direct experience, that's a red flag.</p>
+
+  <p>If someone is selling you something and simultaneously telling you that your skepticism is the problem, that you just need to believe harder, that's woo. Real practices don't require you to suspend your critical thinking.</p>
+
+  <h2>My Own Journey Through Woo</h2>
+
+  <p>I've been skeptical of a lot of things that I now do regularly. Darkness retreats sounded completely crazy to me. Why would you pay money to sit in the dark for ten days? That's not health. That's punishment.</p>
+
+  <p>But I also knew people who had done it. Real people. Smart people. People whose nervous systems and lives had genuinely changed. So I was curious. I didn't just believe the claims. I tested it myself.</p>
+
+  <p>Same with somatic work. I was trained under Gabor Maté and other serious practitioners. The foundation is neuroscience. The practice is embodied. It's measurable. My own body tells me when it's working. That's not woo. That's real.</p>
+
+  <h2>Hold Both Skepticism and Curiosity</h2>
+
+  <p>The sweet spot is holding both. You can be skeptical of claims without dismissing practices entirely. You can be curious about alternative approaches without believing everything you're told.</p>
+
+  <p>The question isn't whether something sounds woo. The question is whether it actually works in your own direct experience. Whether you can feel the changes in your body. Whether your nervous system is more regulated. Whether your relationships are improving.</p>
+
+  <p>Those are the real measures. Not whether the mechanism can be explained scientifically. Not whether mainstream institutions have approved it. But whether it actually changes your life.</p>
+
+  <h2>Be a Responsible Consumer</h2>
+
+  <p>If you're exploring alternative practices, here's what I'd ask you to pay attention to. Does the facilitator welcome your questions? Do they have accountability? Are they transparent about what they know and don't know? Can you feel the results in your own body?</p>
+
+  <p>Does the practice require you to believe things that contradict your own experience? Are there financial incentives for them to keep you dependent on their work? Are they making claims they can't back up?</p>
+
+  <p>Real practitioners want you to become independent. They want you to develop the skills and awareness to regulate yourself. They're not interested in creating dependency.</p>
+
+  <p>That's the line for me. Not whether it's mainstream. Not whether it's scientifically validated. But whether it's trustworthy and whether you can feel it working in your own body.</p>
+
+  <div class="takeaways">
+    <h3>Three Takeaways</h3>
+    <p><strong>1. Open mindedness and critical thinking aren't opposites.</strong> You can honor non scientific knowledge systems while still thinking critically about claims.</p>
+    <p><strong>2. Real woo has red flags.</strong> Unfalsifiable claims, financial incentives, discouragement of skepticism. These indicate a practice worth questioning.</p>
+    <p><strong>3. Your own experience is the best measure.</strong> If something works in your body, if your nervous system is more regulated, if your life actually changes, that's valid evidence. Trust that.</p>
+  </div>
+</section>
+
+<section class="article-cta">
+  <h2>Ready to Explore What's <em>Actually Real</em> for You?</h2>
+  <p>I work with people who want to go deeper, but also want to stay grounded in reality. If you're curious about somatic work and want to test it in your own body, let's talk.</p>
+  <a href="../index.html#apply" class="btn-gold">Start a Conversation</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-name">Greg Pignataro</div>
+  <p>Radical Body Love</p>
+</footer>
+</body>
+</html>

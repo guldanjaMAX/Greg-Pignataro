@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don't Separate Mind and Body | Greg Pignataro</title>
+<meta name="description" content="The Cartesian split is one of the most damaging ideas in Western culture.">
+<link rel="canonical" href="https://gregpignataro.com/blog/mind-body.html">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X73WCJRFHT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X73WCJRFHT');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-primary:#FDFBF8;--bg-warm:#F7F3EE;--gold:#B8863A;--gold-light:#C99B4F;--text-primary:#2C2520;--text-secondary:#6B5E52;--text-muted:#9E9285;--border-light:rgba(184,134,58,0.12);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,251,248,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--text-primary);text-decoration:none;letter-spacing:0.04em}
+.nav-links{display:flex;gap:2.4rem;list-style:none}
+.nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color 0.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.article-header{padding:8rem 2rem 3rem;text-align:center;background:var(--bg-warm);border-bottom:1px solid var(--border-light)}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color 0.3s}
+.back-link:hover{color:var(--gold)}
+.article-meta{display:flex;justify-content:center;gap:1.2rem;margin-bottom:1.4rem;flex-wrap:wrap}
+.article-meta span{font-size:0.68rem;font-weight:500;letter-spacing:0.06em;color:var(--text-muted);text-transform:uppercase}
+.pillar-tag{color:var(--gold)!important;padding:0.2rem 0.7rem;border:1px solid rgba(184,134,58,0.2);border-radius:100px}
+.article-header h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3rem);font-weight:300;color:var(--text-primary);line-height:1.15;max-width:700px;margin:0 auto 1rem}
+.article-header h1 em{font-style:italic;color:var(--gold)}
+.article-header .subtitle{font-size:1.05rem;color:var(--text-secondary);max-width:540px;margin:0 auto;line-height:1.7}
+.article-body{max-width:720px;margin:0 auto;padding:3rem 2rem 4rem}
+.article-body p{font-size:1rem;color:var(--text-secondary);line-height:1.85;margin-bottom:1.6rem}
+.article-body h2{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--text-primary);margin:2.5rem 0 1rem;line-height:1.25}
+.article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--text-primary);margin:2rem 0 0.8rem}
+.article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--bg-warm);border-radius:0 8px 8px 0}
+.article-body blockquote p{color:var(--text-primary);font-style:italic;margin-bottom:0}
+.takeaways{background:var(--bg-warm);border:1px solid var(--border-light);border-radius:12px;padding:2rem 2.4rem;margin:2.5rem 0}
+.takeaways h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--gold);margin-bottom:1rem}
+.takeaways p{margin-bottom:0.8rem;font-size:0.92rem}
+.takeaways p:last-child{margin-bottom:0}
+.article-cta{text-align:center;padding:4rem 2rem;background:var(--bg-warm);border-top:1px solid var(--border-light)}
+.article-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--text-primary);margin-bottom:0.8rem}
+.article-cta h2 em{font-style:italic;color:var(--gold)}
+.article-cta p{font-size:0.95rem;color:var(--text-secondary);max-width:440px;margin:0 auto 1.8rem;line-height:1.7}
+.btn-gold{display:inline-block;padding:1rem 2.4rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;font-family:var(--sans);font-size:0.74rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all 0.3s;box-shadow:0 4px 20px rgba(184,134,58,0.25)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,134,58,0.35)}
+.site-footer{padding:3rem;text-align:center;border-top:1px solid var(--border-light)}
+.site-footer .footer-name{font-family:var(--serif);font-size:1.1rem;color:var(--text-primary);letter-spacing:0.08em;margin-bottom:0.3rem}
+.site-footer p{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em}
+@media(max-width:768px){.site-nav{padding:1rem 1.5rem}.nav-links{gap:1.4rem}.nav-links a{font-size:0.65rem}.article-header{padding:6rem 1.5rem 2rem}.article-body{padding:2rem 1.5rem 3rem}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#story">Story</a></li>
+    <li><a href="../index.html#method">Method</a></li>
+    <li><a href="../blog.html" class="active">Writing</a></li>
+    <li><a href="../index.html#apply">Apply</a></li>
+  </ul>
+</nav>
+
+<section class="article-header">
+  <a href="../blog.html" class="back-link">← Back to Writing</a>
+  <div class="article-meta">
+    <span>September 20, 2022</span>
+    <span>6 min read</span>
+    <span class="pillar-tag">Inner Work</span>
+  </div>
+  <h1>Don't Separate <em>Mind and Body</em></h1>
+  <p class="subtitle">The Cartesian split is one of the most damaging ideas in Western culture.</p>
+</section>
+
+<section class="article-body">
+  <p>When you go to the doctor with a physical ailment, they examine your body. When you go to a therapist with an emotional problem, they work with your thoughts and beliefs. We've split ourselves into parts. The mind over here, handling psychology. The body over there, handling physiology. Never the two shall meet.</p>
+
+  <p>This split is destroying us.</p>
+
+  <h2>Where the Split Came From</h2>
+
+  <p>We can trace this back to Descartes. In the 1600s, he made a philosophical distinction between res cogitans (thinking substance) and res extensa (extended substance). Mind and body as separate things. This idea became the foundation of Western medicine and psychology.</p>
+
+  <p>For the purposes of research and categorization, this was useful. But we made it literal. We started treating humans as if we actually were split beings. A mind that thinks and controls, and a body that just obeys commands.</p>
+
+  <p>The problem is that you are not split. You are one unified system.</p>
+
+  <h2>How This Shows Up in Modern Fitness Culture</h2>
+
+  <p>Look at how we talk about fitness. We use language of control and domination. You have to push through pain. You have to force your body to comply with your mind's intentions. No pain, no gain.</p>
+
+  <p>Your body becomes an object to be conquered. Your mind is the authority. The body is the rebel that needs to be controlled.</p>
+
+  <p>This is insane. Your body isn't your enemy. Your body is giving you information constantly. When you feel pain, that's not weakness. That's wisdom. Your nervous system is telling you something matters. That you need to adjust. That you're at your edge.</p>
+
+  <p>If you're training in constant pain, you're not getting stronger. You're training your nervous system to ignore its own signals. You're dissociating from yourself. And that creates a cascade of problems down the line.</p>
+
+  <h2>The Body Holds What the Mind Forgets</h2>
+
+  <p>One of the most powerful things I learned from working with trauma is that the nervous system remembers. Your body holds memories that your conscious mind has long forgotten. A particular smell can trigger panic. A certain kind of touch can activate protective responses. A tone of voice can take you right back to childhood.</p>
+
+  <p>None of this is happening in your conscious mind. It's happening in your body. And you can't think your way out of it. Logic won't help. Willpower won't help. Your body won't believe your rational arguments.</p>
+
+  <p>What helps is somatic awareness. Learning to feel and regulate your nervous system directly. Teaching your body that it's safe. That's not a cognitive process. That's an embodied process.</p>
+
+  <h2>What Integrated Health Actually Looks Like</h2>
+
+  <p>When you stop splitting mind and body, everything changes. Your emotions are not separate from your physiology. Your thoughts create nervous system states. Your body position influences how you think. They're one unified system.</p>
+
+  <p>Real health means your mind and body are in conversation. You listen to physical sensations. You let them inform your decisions. You notice when your nervous system is dysregulated and you address it through your body, not just through thinking.</p>
+
+  <p>You exercise in ways that feel good to your nervous system, not in ways that punish it. You eat in ways that nourish you, not in ways that follow rules your mind has imposed against your body's actual needs.</p>
+
+  <p>Your emotions matter. Your body matters. They're not in conflict. They're two expressions of the same unified you.</p>
+
+  <h2>The Price of the Split</h2>
+
+  <p>The Cartesian split has given us incredible advances in certain areas. Medical specialization. Cognitive science. But the cost has been enormous. We've created generations of people who are literally dissociated from themselves. Who can't feel their own bodies. Who believe their thoughts over their somatic wisdom.</p>
+
+  <p>This is why so much of the world's suffering exists. We divorce ourselves from our own bodies. We override our own signals. We treat ourselves as objects to be controlled rather than unified beings to be inhabited and respected.</p>
+
+  <p>Healing starts when you stop dividing yourself. When you become aware of your body again. When you start trusting the wisdom that lives in your nervous system. When you stop trying to control yourself and start communicating with yourself.</p>
+
+  <p>That's integrated health. That's where real change becomes possible.</p>
+
+  <div class="takeaways">
+    <h3>Three Takeaways</h3>
+    <p><strong>1. You are not split into mind and body.</strong> You're a unified system where thoughts, emotions, and physical sensations are all expressions of the same you.</p>
+    <p><strong>2. Your body's signals are wisdom, not weakness.</strong> Pain, discomfort, and emotional responses are information. Your nervous system is trying to protect and guide you.</p>
+    <p><strong>3. Real health requires listening to your body.</strong> You can't think your way to health if you're dissociated from your physical experience. Integration happens through somatic awareness.</p>
+  </div>
+</section>
+
+<section class="article-cta">
+  <h2>Ready to Reunite Your <em>Mind and Body</em>?</h2>
+  <p>If you're tired of fighting yourself, if you want to build an integrated relationship with your own nervous system, that's exactly what I work with people on. Let's start.</p>
+  <a href="../index.html#apply" class="btn-gold">Start a Conversation</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-name">Greg Pignataro</div>
+  <p>Radical Body Love</p>
+</footer>
+</body>
+</html>
