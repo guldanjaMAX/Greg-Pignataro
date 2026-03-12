@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bench Press Example | Greg Pignataro</title>
+  <meta name="description" content="The most popular exercise in the gym is also the most poorly understood. Discover proper bench press setup, scapular mechanics, and why injuries are so common.">
+  <link rel="canonical" href="https://gregpignataro.com/blog/bench-press.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FDFBF8;
+      --bg-warm: #F7F3EE;
+      --gold: #B8863A;
+      --gold-light: #C99B4F;
+      --text-primary: #2C2520;
+      --text-secondary: #6B5E52;
+      --text-muted: #9E9285;
+      --border-light: rgba(184, 134, 58, 0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 100;
+      padding: 1.5rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 120px auto 0;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      background: var(--bg-warm);
+      color: var(--gold);
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    article h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    article h1 em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .article-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .article-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-body blockquote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .takeaways {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+    }
+
+    .takeaways h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .takeaways p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .takeaways p strong {
+      color: var(--gold);
+    }
+
+    .article-cta {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .site-footer {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      main {
+        margin-top: 200px;
+        padding: 1rem;
+      }
+
+      article h1 {
+        font-size: 2rem;
+      }
+
+      .article-subtitle {
+        font-size: 1rem;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#story">Story</a></li>
+        <li><a href="../index.html#method">Method</a></li>
+        <li><a href="../blog.html" class="active">Writing</a></li>
+        <li><a href="../index.html#apply">Apply</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>December 6, 2022</span>
+          <span>6 min read</span>
+          <span class="pillar-tag">Movement & Training</span>
+        </div>
+        <h1>The <em>Bench Press</em> Example</h1>
+        <p class="article-subtitle">The most popular exercise in the gym is also the most poorly understood.</p>
+      </header>
+
+      <div class="article-body">
+        <p>Walk into any gym. Look at the bench press stations. Almost everyone is doing it wrong. Almost. The shoulders are shrugged. The scapula is not retracted. The bar path is unstable. The form is a disaster. But because everyone around them is also doing it wrong, nobody sees the problem.</p>
+
+        <p>The bench press is the most popular upper body exercise. But it's also the most commonly injured. Rotator cuff pain. Shoulder impingement. Elbow tendinitis. These injuries are almost always the result of poor setup and scapular mechanics, not the exercise itself.</p>
+
+        <p>This is the perfect example of what happens in training culture. An exercise becomes popular. Bad form becomes normal. Everyone copies the bad form. Then injuries start appearing and people blame the exercise. But the exercise isn't the problem. The lack of understanding is.</p>
+
+        <h2>Scapular Retraction and Shoulder Stability</h2>
+
+        <p>The bench press is not a chest exercise. It's a shoulder stability exercise. The chest is involved, yes. But the foundation is shoulder position. If your shoulders aren't set, everything falls apart.</p>
+
+        <p>Set looks like this. You lie on the bench. Your shoulder blades are squeezed together. They're pulled down. They're pinned against the bench. This is scapular retraction. Your shoulders are packed. Your chest is up. You have a solid foundation.</p>
+
+        <p>From this position, you maintain scapular retraction throughout the entire lift. You do not let your shoulders round forward. You do not let your scapula come off the bench. You maintain the pack. This is what keeps the shoulder joint safe. This is what distributes force properly.</p>
+
+        <p>Most people never achieve this setup. They sit down. They grab the bar. They push. Their shoulders shrug. Their scapula slides forward. They've created an unstable joint position. Injury is inevitable.</p>
+
+        <h2>Volume versus Technique</h2>
+
+        <p>Because the bench press is so popular, people do a lot of it. High volume. Multiple times per week. But if the technique is wrong, high volume is just repeating the injury pattern over and over.</p>
+
+        <p>I see people doing 30 sets of bench press per week with terrible form. Their shoulders are getting destroyed. Their rotator cuffs are inflaming. But they keep pushing because that's what they've always done. They're confusing volume with progress.</p>
+
+        <p>Better approach is low volume with perfect technique. Five to ten sets of bench press per week, done with scapular retraction, with control, with good form. Your shoulders will respond. You'll get stronger. You'll stay healthy.</p>
+
+        <h2>The Ego Lifting Problem</h2>
+
+        <p>There's a culture around the bench press of lifting heavy. It's the marquee exercise. It's what people brag about. How much do you bench? Everyone wants to know. So people load weight they can't handle with good form. They sacrifice technique for numbers. They post videos of themselves moving heavy weight with terrible form.</p>
+
+        <p>This is ego lifting. And it always ends in injury. Your shoulder can only handle the weight if your form is correct. Load the weight your form can manage. Build from there. Your strength will follow good technique, not the other way around.</p>
+
+        <h2>Proper Setup Protocol</h2>
+
+        <p>Here's what proper bench setup looks like. Lie on the bench. Feet flat on the floor. Grab the bar with a grip slightly wider than shoulder width. Pull the bar down toward your body to create tension. Feel that? That tension comes from your scapula being retracted.</p>
+
+        <p>Now lower the bar to your chest in a controlled manner. Your elbows should track at roughly a 45 degree angle from your body, not flared out to 90 degrees. Touch your chest lightly. Then drive the bar back up, maintaining the same elbow position and scapular retraction throughout.</p>
+
+        <p>That's it. That's the proper movement. Now do it with weight you can actually control. Do it with perfect form. Do it for five to ten sets per week. Your shoulders will be healthy and strong.</p>
+
+        <p>Stop chasing the number. Start chasing the movement. Your body will respond.</p>
+      </div>
+
+      <div class="takeaways">
+        <h3>Three Takeaways</h3>
+        <p><strong>The bench press is a shoulder stability exercise.</strong> Proper technique begins with scapular retraction and a packed shoulder position maintained throughout the lift. Most bench press injuries come from poor setup, not the exercise itself.</p>
+        <p><strong>High volume with poor form creates injury.</strong> Twenty sets per week of sloppy bench press beats your shoulders into submission. Five sets with perfect technique builds strength without destruction.</p>
+        <p><strong>Ego lifting always ends badly.</strong> Load the weight your form can handle, not the weight your ego wants to move. Master the movement first, then increase weight gradually. Your strength will follow good technique.</p>
+      </div>
+
+      <div class="article-cta">
+        <p>This essay is the map. Working together is the territory.</p>
+        <a href="../index.html#apply" class="btn-gold">Let's Work Together</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Greg Pignataro / Radical Body Love</p>
+  </footer>
+</body>
+</html>

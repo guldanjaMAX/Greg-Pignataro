@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Pain: Neuromuscular Reeducation | Greg Pignataro</title>
+  <meta name="description" content="Pain is not a measure of tissue damage. It is a protective output from your brain. Discover how beliefs about pain change the experience itself.">
+  <link rel="canonical" href="https://gregpignataro.com/blog/what-is-pain.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FDFBF8;
+      --bg-warm: #F7F3EE;
+      --gold: #B8863A;
+      --gold-light: #C99B4F;
+      --text-primary: #2C2520;
+      --text-secondary: #6B5E52;
+      --text-muted: #9E9285;
+      --border-light: rgba(184, 134, 58, 0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 100;
+      padding: 1.5rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 120px auto 0;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      background: var(--bg-warm);
+      color: var(--gold);
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    article h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    article h1 em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .article-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .article-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-body blockquote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .takeaways {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+    }
+
+    .takeaways h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .takeaways p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .takeaways p strong {
+      color: var(--gold);
+    }
+
+    .article-cta {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .site-footer {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      main {
+        margin-top: 200px;
+        padding: 1rem;
+      }
+
+      article h1 {
+        font-size: 2rem;
+      }
+
+      .article-subtitle {
+        font-size: 1rem;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#story">Story</a></li>
+        <li><a href="../index.html#method">Method</a></li>
+        <li><a href="../blog.html" class="active">Writing</a></li>
+        <li><a href="../index.html#apply">Apply</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>January 9, 2023</span>
+          <span>8 min read</span>
+          <span class="pillar-tag">Movement & Training</span>
+        </div>
+        <h1>What Is <em>Pain</em>: Neuromuscular Reeducation</h1>
+        <p class="article-subtitle">Pain is not a measure of tissue damage. It is a protective output from your brain.</p>
+      </header>
+
+      <div class="article-body">
+        <p>For most of my life, I thought pain meant tissue damage. Hurt equals broken. Hurt equals dangerous. You need to protect. You need to rest. This is how we learn to think about pain. It's how we're taught. But this understanding is incomplete at best and harmful at worst.</p>
+
+        <p>Pain is not a measure of tissue damage. I know people with significant structural damage who have zero pain. And I know people with minimal tissue damage who are in agony. The disconnect is revealing. Pain is not an accurate indicator of what's happening in your tissues.</p>
+
+        <p>Pain is a protective output from your brain. It's a message. Your nervous system is saying: this is a threat. Protect yourself. But the threat might be physical damage, emotional stress, fear, belief about damage, past experience, or a dozen other inputs. Your brain synthesizes all of this information and outputs pain.</p>
+
+        <p>This is where everything changes.</p>
+
+        <h2>The Biopsychosocial Model of Pain</h2>
+
+        <p>Pain has biological components. Tissue can be damaged. Nerves can be irritated. But pain also has psychological components. Your beliefs about pain. Your fear. Your stress. Your past experiences. And pain has social components. Your culture's beliefs about pain. Your family's beliefs. The language people use around you.</p>
+
+        <p>All of these feed into the equation. They all influence the output your nervous system generates. They all influence whether you feel pain.</p>
+
+        <p>This is why the same movement causes pain in one person and none in another. Not because their tissues are different. But because their beliefs, their stress levels, their fear, their past experiences are different. The pain is real. But it's not because of tissue damage. It's because of the full context.</p>
+
+        <h2>Threat Perception versus Actual Damage</h2>
+
+        <p>Your brain is constantly asking one question: is this a threat? If your brain perceives a threat, pain is output. If your brain doesn't perceive a threat, no pain. This is the critical distinction.</p>
+
+        <p>You can have significant tissue damage with no pain if your brain doesn't perceive a threat. Athletes often don't feel torn ligaments in the moment because their brain is focused on performance, not threat. The tissue is damaged. But the pain isn't there.</p>
+
+        <p>You can have minimal tissue damage with massive pain if your brain perceives a threat. Someone stressed, anxious, with negative beliefs about their body, can have severe pain from a minor injury. The tissue damage is minimal. But the pain is real because the brain perceives threat.</p>
+
+        <p>This is not to say pain is fake. It's not. Pain is neurologically real. It's just not a measure of tissue damage. Understanding this changes everything about how you approach pain.</p>
+
+        <h2>Neuromuscular Reeducation</h2>
+
+        <p>If pain is an output from your nervous system based on threat perception, then changing pain means changing what your nervous system perceives as a threat. This is neuromuscular reeducation.</p>
+
+        <p>It's not about ignoring pain. It's about recognizing that your nervous system is being overprotective. It's perceiving threat where there isn't one. Your job is to gradually teach your nervous system that the movement is safe. That the area isn't damaged. That threat is not present.</p>
+
+        <p>You do this through gradual exposure. Gentle movement in the area that hurts. Light loading. Gradual increase in activity. As you move the area repeatedly without the negative consequence your nervous system predicted, the nervous system updates. It recalibrates. It stops perceiving threat. Pain decreases.</p>
+
+        <p>This takes time. Your nervous system doesn't update overnight. It's more like retraining. You're literally teaching your brain that the area is safe. But once that message gets through, pain disappears.</p>
+
+        <h2>Beliefs and Expectation</h2>
+
+        <p>Your beliefs about pain literally change how much pain you feel. If you believe an injury is serious, you feel more pain. If you believe you're healing well, you feel less. If you believe you're fragile, you hurt more. If you believe you're resilient, you hurt less.</p>
+
+        <p>This is not placebo. This is neurobiology. Your brain literally outputs different pain signals based on your expectations. The tissue is the same. But the pain experience is different.</p>
+
+        <p>This is why education matters so much in pain management. Understanding pain science. Understanding that pain is not a measure of damage. Understanding that your nervous system can be overprotective. All of this changes your beliefs. And changed beliefs change pain output.</p>
+
+        <h2>Moving Through Pain</h2>
+
+        <p>The old advice to rest and avoid pain made sense when we thought pain meant damage. But if pain is a nervous system output, avoidance makes things worse. Avoiding movement teaches your nervous system that the area is dangerous. That it should stay more protective. Pain increases.</p>
+
+        <p>Better approach is gentle movement. Graded activity. Gradually increasing load. Moving in ways that don't trigger your nervous system's threat response. As you move safely and repeatedly, the nervous system updates. It learns the area is safe. Pain decreases.</p>
+
+        <p>This is the somatic approach I use. Understanding the nervous system. Understanding threat perception. Gradually teaching the nervous system that the body is safe. Not through forcing. Not through ignoring pain. But through intelligent, gradual exposure.</p>
+
+        <p>Pain is real. It's just not what we thought it was. Once you understand that, everything changes about how you work with it.</p>
+      </div>
+
+      <div class="takeaways">
+        <h3>Three Takeaways</h3>
+        <p><strong>Pain is a nervous system output, not tissue damage.</strong> Your brain synthesizes biological, psychological, and social information to decide whether to output pain. Pain can exist without damage, and damage can exist without pain.</p>
+        <p><strong>Threat perception drives pain experience.</strong> Your beliefs, stress, fears, and past experiences all influence what your nervous system perceives as a threat. Changed beliefs change pain output neurologically.</p>
+        <p><strong>Neuromuscular reeducation teaches safety.</strong> Gentle, gradual movement in painful areas teaches your nervous system that the area is safe. This reduces threat perception and decreases pain over time without ignoring it.</p>
+      </div>
+
+      <div class="article-cta">
+        <p>This essay is the map. Working together is the territory.</p>
+        <a href="../index.html#apply" class="btn-gold">Let's Work Together</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Greg Pignataro / Radical Body Love</p>
+  </footer>
+</body>
+</html>

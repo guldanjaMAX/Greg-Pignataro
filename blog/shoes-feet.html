@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Aren't Shoes Shaped Like Feet? | Greg Pignataro</title>
+  <meta name="description" content="A question so obvious nobody asks it. Discover how modern shoes deform natural foot structure and why barefoot movement matters.">
+  <link rel="canonical" href="https://gregpignataro.com/blog/shoes-feet.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FDFBF8;
+      --bg-warm: #F7F3EE;
+      --gold: #B8863A;
+      --gold-light: #C99B4F;
+      --text-primary: #2C2520;
+      --text-secondary: #6B5E52;
+      --text-muted: #9E9285;
+      --border-light: rgba(184, 134, 58, 0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 100;
+      padding: 1.5rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 120px auto 0;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      background: var(--bg-warm);
+      color: var(--gold);
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    article h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    article h1 em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .article-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .article-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-body blockquote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .takeaways {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+    }
+
+    .takeaways h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .takeaways p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .takeaways p strong {
+      color: var(--gold);
+    }
+
+    .article-cta {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .site-footer {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      main {
+        margin-top: 200px;
+        padding: 1rem;
+      }
+
+      article h1 {
+        font-size: 2rem;
+      }
+
+      .article-subtitle {
+        font-size: 1rem;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Greg Pignataro</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#story">Story</a></li>
+        <li><a href="../index.html#method">Method</a></li>
+        <li><a href="../blog.html" class="active">Writing</a></li>
+        <li><a href="../index.html#apply">Apply</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <a href="../blog.html" class="back-link">← Back to Writing</a>
+    
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>October 18, 2022</span>
+          <span>5 min read</span>
+          <span class="pillar-tag">Movement & Training</span>
+        </div>
+        <h1>Why Aren't Shoes <em>Shaped Like Feet</em>?</h1>
+        <p class="article-subtitle">A question so obvious nobody asks it.</p>
+      </header>
+
+      <div class="article-body">
+        <p>Look at your foot. Really look at it. It's wide at the base. Your toes splay out. There's structure and space between each toe. It's designed for balance, for feeling the ground, for fine motor control.</p>
+
+        <p>Now look at the shoe you're wearing. It's narrow. It pinches your toes together. It constricts your midfoot. It elevates your heel. It's shaped like nothing a foot actually is.</p>
+
+        <p>The question is so obvious nobody asks it anymore. Why? Why don't shoes match the shape of the foot? Why are we constantly deforming the structure nature gave us? And what happens to our feet, our ankles, our knees when we spend 40 years in shoes that don't fit our actual shape?</p>
+
+        <h2>Foot Anatomy and Natural Shape</h2>
+
+        <p>Your foot is a marvel of engineering. 26 bones. 33 muscles. Intricate arches. Subtle alignment. It's designed to feel the ground, to adjust to terrain, to distribute weight across a wide base. The toes are meant to splay. To grip. To feel. To provide feedback.</p>
+
+        <p>But modern shoes don't allow this. They're built on a narrow last. They force the toes together. They restrict midfoot movement. They create a tapered shape that has nothing to do with the actual human foot.</p>
+
+        <p>When you spend years in narrow shoes, your foot adapts. Not because it should. But because the tissue is plastic. Your foot deforms. Your toes angle inward. Your midfoot tightens. Your arches collapse. You're literally reshaping your foot to fit the shoe, not the other way around.</p>
+
+        <h2>The Ground Connection Is Lost</h2>
+
+        <p>Feet are sensory organs. They feel the ground. They send information to your nervous system. That information drives stability, balance, and coordination. Thick cushioned shoes with arch supports block this feedback. You lose connection. Your proprioception decreases. Your body compensates by tightening muscles. By gripping. By tensing.</p>
+
+        <p>This is why people in modern shoes have weaker feet. Why they get more ankle sprains. Why flat feet and fallen arches are epidemic. The feet aren't weak by nature. They're weak because they've been trapped and unsensed for years.</p>
+
+        <p>When you let your feet feel the ground, everything changes. The small intrinsic muscles wake up. The proprioception returns. Your balance improves. Your body stops compensating. You become more stable with less effort.</p>
+
+        <h2>Barefoot Movement and Toe Splay</h2>
+
+        <p>Barefoot movement is how humans evolved to move. Our feet shaped themselves over millions of years to function without shoes. When you go barefoot, your foot does what it's designed to do. The toes splay. The arches adjust. The foot flattens and rises as needed. The muscles engage.</p>
+
+        <p>This doesn't mean you need to go completely barefoot. But it means seeking out opportunities. Walk barefoot at home. On the beach. On grass. Let your feet move the way they're shaped to move. Let them feel. Let them grip. Let them adjust.</p>
+
+        <p>Even spending 30 minutes a week barefoot will wake up your feet. The muscles will start activating. The proprioception will return. The shape will begin to normalize.</p>
+
+        <h2>Minimalist Footwear as a Bridge</h2>
+
+        <p>If you're not ready for barefoot, minimalist footwear is a bridge. Wide toe box. Thin sole. No arch support. No heel lift. Shoes that allow your foot to be a foot. To move. To feel. To function as designed.</p>
+
+        <p>The transition takes time. Your feet are weak from years of support. They're numb from thick cushioning. Gradually returning to minimal footwear wakes them up. It's uncomfortable at first. But that discomfort is your foot remembering how to work.</p>
+
+        <p>After weeks of minimal footwear, your feet will be different. Stronger. More responsive. More stable. More alive.</p>
+
+        <h2>Let Your Body Be Natural</h2>
+
+        <p>The broader theme is this. Your body wants to be natural. It wants to move the way it's designed. It wants to feel. It wants to be shaped like itself, not like some shoe factory's idea of what a foot should be.</p>
+
+        <p>Don't force your feet into narrow shoes. Don't support your arches artificially. Don't block the sensory feedback your feet are meant to provide. Let them be feet. Let them function. Let them feel the ground.</p>
+
+        <p>The body understands this when you listen. Your feet know their shape. Give them the space to express it.</p>
+      </div>
+
+      <div class="takeaways">
+        <h3>Three Takeaways</h3>
+        <p><strong>Modern shoes deform foot structure.</strong> Narrow toe boxes, arch supports, and heel elevation force feet into unnatural shapes. Over years, tissue adapts and feet deform permanently.</p>
+        <p><strong>Feet are sensory organs.</strong> Thick cushioning and support block proprioceptive feedback. This weakens intrinsic foot muscles and decreases balance and stability through loss of ground connection.</p>
+        <p><strong>Barefoot and minimalist movement restores function.</strong> Allowing toes to splay, arches to adjust, and feet to feel activates dormant muscles and returns proprioception. Your feet become stronger and more capable naturally.</p>
+      </div>
+
+      <div class="article-cta">
+        <p>This essay is the map. Working together is the territory.</p>
+        <a href="../index.html#apply" class="btn-gold">Let's Work Together</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Greg Pignataro / Radical Body Love</p>
+  </footer>
+</body>
+</html>
