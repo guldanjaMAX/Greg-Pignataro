@@ -1398,6 +1398,105 @@ footer {
   color: var(--text-muted);
   margin: 3rem 0 0;
 }
+
+/* ===== VIDEO TESTIMONIAL MINI CARDS ===== */
+.video-testimonials-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+}
+.video-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+}
+.video-card-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/16;
+  background: #1a1410;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.video-card-player video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.video-card-cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+.video-card-cover.hidden { opacity: 0; pointer-events: none; }
+.video-card-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.video-card-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,8,5,0.1) 0%, rgba(10,8,5,0.45) 100%);
+  z-index: 1;
+}
+.video-card-play {
+  position: relative;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+.video-card-play:hover { transform: scale(1.08); }
+.video-card-play svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+  margin-left: 3px;
+  position: relative;
+  z-index: 3;
+}
+.video-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+.video-card-content .testimonial-text {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+.video-card-content .wendy-badge { margin-bottom: 0; }
+.video-card-content .wendy-cta-hint { margin-top: 0.25rem; }
+@media (max-width: 700px) {
+  .video-testimonials-row { grid-template-columns: 1fr; }
+}
 @media (max-width: 700px) {
   .wendy-marquee { flex-direction: column; border-radius: 10px; }
   .wendy-player-col { width: 100%; }
@@ -1651,6 +1750,80 @@ footer {
     </div>
 
     <p class="more-voices-label reveal">More from the people Greg has worked with</p>
+
+    <!-- Video testimonial mini-cards: Lee + Ray -->
+    <div class="video-testimonials-row">
+
+      <!-- LEE RICHTER -->
+      <div class="video-card reveal" id="leeCardWrap">
+        <div class="video-card-player" onclick="videoCardToggle('lee')">
+          <video id="leeVideo" playsinline preload="none">
+            <source src="videos/lee-richter.mov" type="video/mp4">
+          </video>
+          <div class="video-card-cover" id="leeCover">
+            <img src="images/testimonials/lee-cover.jpg" alt="Lee Richter" loading="lazy">
+            <div class="video-card-play">
+              <span class="wendy-pulse"></span>
+              <span class="wendy-pulse wendy-pulse-2"></span>
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="wendy-progress"><div class="wendy-progress-fill" id="leeProgressFill"></div></div>
+          <span class="wendy-time" id="leeTime">2:00</span>
+        </div>
+        <div class="video-card-content">
+          <span class="wendy-badge">Video Testimonial</span>
+          <p class="testimonial-text">"Within 24 hours my knee felt so much better. He is genuine in his way of wanting to help people. My entire vacation was saved because I was able to participate instead of staying on the sidelines."</p>
+          <div class="testimonial-footer">
+            <img class="testimonial-photo" src="images/testimonials/lee-avatar.jpg" alt="Lee Richter" loading="lazy">
+            <div class="testimonial-info">
+              <span class="testimonial-author">Lee Richter</span>
+              <span class="testimonial-role">CEO, Pinnacle Global Network &middot; San Francisco</span>
+            </div>
+          </div>
+          <p class="wendy-cta-hint" onclick="videoCardToggle('lee')">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
+            Watch her full story &nbsp;&bull;&nbsp; 2 min
+          </p>
+        </div>
+      </div>
+
+      <!-- RAY TAGGART -->
+      <div class="video-card reveal reveal-delay-1" id="rayCardWrap">
+        <div class="video-card-player" onclick="videoCardToggle('ray')">
+          <video id="rayVideo" playsinline preload="none">
+            <source src="videos/ray-taggart.mov" type="video/mp4">
+          </video>
+          <div class="video-card-cover" id="rayCover">
+            <img src="images/testimonials/ray-cover.jpg" alt="Ray Taggart" loading="lazy">
+            <div class="video-card-play">
+              <span class="wendy-pulse"></span>
+              <span class="wendy-pulse wendy-pulse-2"></span>
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="wendy-progress"><div class="wendy-progress-fill" id="rayProgressFill"></div></div>
+          <span class="wendy-time" id="rayTime">3:26</span>
+        </div>
+        <div class="video-card-content">
+          <span class="wendy-badge">Video Testimonial</span>
+          <p class="testimonial-text">"I did a backward lunge — it always gives me pain every single time. We put the pads on and it was amazing. I actually had zero pain. My brain recalculated what this injury is. He has such a heart for humans."</p>
+          <div class="testimonial-footer">
+            <img class="testimonial-photo" src="images/testimonials/ray-avatar.jpg" alt="Ray Taggart" loading="lazy">
+            <div class="testimonial-info">
+              <span class="testimonial-author">Ray Taggart</span>
+              <span class="testimonial-role">Co-Founder, Evolved Podcasting &middot; Performer</span>
+            </div>
+          </div>
+          <p class="wendy-cta-hint" onclick="videoCardToggle('ray')">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
+            Watch her full story &nbsp;&bull;&nbsp; 3 min 26 sec
+          </p>
+        </div>
+      </div>
+
+    </div>
+
     <div class="testimonials-grid">
       <div class="testimonial reveal">
         <p class="testimonial-text">"I have spent my entire career studying the body. Greg showed me the one thing I was missing: that the body does not just store pain, it stores the conversations you have been too afraid to have. One session changed how I approach everything."</p>
@@ -2113,6 +2286,35 @@ function declineCookies() {
   localStorage.setItem('cookie_consent', 'declined');
   window['ga-disable-G-X73WCJRFHT'] = true;
   document.getElementById('cookieConsent').style.display = 'none';
+}
+
+/* ===== VIDEO CARD TOGGLE (Lee, Ray) ===== */
+function videoCardToggle(name) {
+  var video   = document.getElementById(name + 'Video');
+  var cover   = document.getElementById(name + 'Cover');
+  var fill    = document.getElementById(name + 'ProgressFill');
+  var timeEl  = document.getElementById(name + 'Time');
+  if (!video) return;
+
+  if (video.paused) {
+    video.play().catch(function(e){ console.log(e); });
+    cover.classList.add('hidden');
+  } else {
+    video.pause();
+    cover.classList.remove('hidden');
+  }
+
+  video.addEventListener('timeupdate', function() {
+    if (!video.duration) return;
+    fill.style.width = (video.currentTime / video.duration * 100) + '%';
+    var r = video.duration - video.currentTime;
+    timeEl.textContent = Math.floor(r/60) + ':' + (Math.floor(r%60)<10?'0':'') + Math.floor(r%60);
+  });
+
+  video.addEventListener('ended', function() {
+    cover.classList.remove('hidden');
+    fill.style.width = '0%';
+  });
 }
 
 /* ===== WENDY VIDEO PLAYER ===== */
