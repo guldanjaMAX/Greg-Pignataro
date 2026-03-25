@@ -896,6 +896,21 @@ footer {
   transition: color 0.3s;
 }
 .footer-top-link:hover { color: var(--gold); }
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.footer-legal a {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+.footer-legal a:hover { color: var(--gold); }
 .footer-copy {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -1167,6 +1182,229 @@ footer {
   font-weight: 500;
 }
 
+/* ===== WENDY MARQUEE ===== */
+.wendy-marquee {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 3.5rem auto 0;
+  box-shadow: 0 8px 48px rgba(44,37,32,0.10);
+}
+.wendy-player-col {
+  flex-shrink: 0;
+  width: 220px;
+}
+.wendy-player {
+  position: relative;
+  width: 220px;
+  aspect-ratio: 9/16;
+  background: #1a1410;
+  overflow: hidden;
+  cursor: pointer;
+}
+.wendy-player video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+.wendy-cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1410;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+.wendy-cover.hidden { opacity: 0; pointer-events: none; }
+.wendy-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.wendy-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,8,5,0.15) 0%, rgba(10,8,5,0.4) 100%);
+  z-index: 1;
+}
+.wendy-play-btn {
+  position: relative;
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.wendy-play-btn:hover { transform: scale(1.08); background: var(--gold-bright); }
+.wendy-play-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  margin-left: 3px;
+}
+.wendy-pulse {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  opacity: 0;
+  animation: wendyPulse 2.2s ease-out infinite;
+  z-index: 1;
+}
+.wendy-pulse-2 {
+  inset: -16px;
+  animation-delay: 0.7s;
+}
+.wendy-pulse-3 {
+  inset: -26px;
+  animation-delay: 1.4s;
+}
+@keyframes wendyPulse {
+  0%   { transform: scale(0.95); opacity: 0.7; }
+  100% { transform: scale(1.4);  opacity: 0; }
+}
+.wendy-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255,255,255,0.12);
+  z-index: 3;
+}
+.wendy-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  transition: width 0.3s linear;
+  border-radius: 0 2px 2px 0;
+}
+.wendy-time {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--sans);
+  z-index: 3;
+  letter-spacing: 0.04em;
+  background: rgba(0,0,0,0.3);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+.wendy-quote-col {
+  flex: 1;
+  padding: 2.5rem 2.5rem 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 390px;
+}
+.wendy-badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(184,134,58,0.3);
+  background: rgba(184,134,58,0.06);
+  border-radius: 3px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+.wendy-quote-text {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.85;
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+}
+.wendy-person {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+.wendy-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(184,134,58,0.25);
+  flex-shrink: 0;
+}
+.wendy-name {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+.wendy-role {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.wendy-cta-hint {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  margin-top: 0.25rem;
+}
+.wendy-cta-hint svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+.more-voices-label {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 3rem 0 0;
+}
+@media (max-width: 700px) {
+  .wendy-marquee { flex-direction: column; border-radius: 10px; }
+  .wendy-player-col { width: 100%; }
+  .wendy-player { width: 100%; aspect-ratio: 9/16; max-height: 360px; }
+  .wendy-quote-col { padding: 1.75rem; min-height: unset; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   section { padding: 6rem 2.5rem; }
@@ -1372,6 +1610,47 @@ footer {
   <div class="container">
     <p class="eyebrow reveal" style="justify-content: center;">Real Results</p>
     <h2 class="section-title reveal" style="text-align: center;">From people who stopped <em>pretending.</em></h2>
+
+    <!-- ===== WENDY STARLAND FEATURED VIDEO TESTIMONIAL ===== -->
+    <div class="wendy-marquee reveal">
+      <div class="wendy-player-col">
+        <div class="wendy-player" id="wendyPlayerWrap" onclick="wendyToggle()">
+          <video id="wendyVideo" playsinline preload="none">
+            <source src="videos/wendy-starland.mov" type="video/mp4">
+          </video>
+          <div class="wendy-cover" id="wendyCover">
+            <img src="images/testimonials/wendy-cover.jpg" alt="Wendy Starland" loading="lazy">
+            <div class="wendy-play-btn" id="wendyPlayBtn">
+              <span class="wendy-pulse"></span>
+              <span class="wendy-pulse wendy-pulse-2"></span>
+              <span class="wendy-pulse wendy-pulse-3"></span>
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="wendy-progress" id="wendyProgressBar">
+            <div class="wendy-progress-fill" id="wendyProgressFill"></div>
+          </div>
+          <span class="wendy-time" id="wendyTime">1:14</span>
+        </div>
+      </div>
+      <div class="wendy-quote-col">
+        <span class="wendy-badge">Video Testimonial</span>
+        <p class="wendy-quote-text">"Working with Greg was unlike anything I have experienced in over two decades in the music industry. I came in carrying more than I realized. What I left with was a stillness I did not know was still available to me."</p>
+        <div class="wendy-person">
+          <img class="wendy-thumb" src="images/testimonials/wendy-cover.jpg" alt="Wendy Starland" loading="lazy">
+          <div>
+            <span class="wendy-name">Wendy Starland</span>
+            <span class="wendy-role">Grammy-Winning Music Producer &middot; Discovered Lady Gaga</span>
+          </div>
+        </div>
+        <p class="wendy-cta-hint" onclick="wendyToggle()">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
+          Watch her full story &nbsp;&bull;&nbsp; 1 min 14 sec
+        </p>
+      </div>
+    </div>
+
+    <p class="more-voices-label reveal">More from the people Greg has worked with</p>
     <div class="testimonials-grid">
       <div class="testimonial reveal">
         <p class="testimonial-text">"I have spent my entire career studying the body. Greg showed me the one thing I was missing: that the body does not just store pain, it stores the conversations you have been too afraid to have. One session changed how I approach everything."</p>
@@ -1706,8 +1985,23 @@ footer {
     <a href="https://www.guinnessworldrecords.com/world-records/722570-most-nordic-hamstring-curls-in-one-minute" target="_blank" rel="noopener">Guinness Record</a>
     <a href="https://www.neu.fit/podcast/episode-59-atg-training-and-setting-the-world-record-in-nordic-hamstring-curls-with-greg-pignataro-cscs/" target="_blank" rel="noopener">NeuFit Podcast</a>
   </div>
+  <div class="footer-legal">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+  </div>
   <p class="footer-copy">&copy; 2026 Greg Pignataro. All rights reserved.</p>
 </footer>
+
+<!-- ===================== COOKIE CONSENT ===================== -->
+<div id="cookieConsent" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:10000; background:rgba(44,37,32,0.95); backdrop-filter:blur(12px); padding:1.2rem 2rem; font-family:var(--sans); font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.5;">
+  <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;">
+    <p style="margin:0; flex:1; min-width:280px;">This site uses cookies (Google Analytics) to understand how visitors interact with the content. No personal data is sold or shared. <a href="/privacy" style="color:#C99B4F; text-decoration:underline;">Privacy Policy</a></p>
+    <div style="display:flex; gap:0.8rem; flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#B8863A; color:#fff; border:none; padding:0.6rem 1.4rem; border-radius:100px; font-family:var(--sans); font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); padding:0.6rem 1.4rem; border-radius:100px; font-family:var(--sans); font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
 
 <!-- ===================== SCRIPTS ===================== -->
 <script>
@@ -1795,6 +2089,69 @@ function showAllEssays() {
   btn.textContent = 'Full archive coming soon';
   btn.style.pointerEvents = 'none';
   btn.style.opacity = '0.6';
+}
+
+// ===== COOKIE CONSENT =====
+(function() {
+  const consent = localStorage.getItem('cookie_consent');
+  if (!consent) {
+    setTimeout(function() {
+      document.getElementById('cookieConsent').style.display = 'block';
+    }, 1500);
+  } else if (consent === 'declined') {
+    // Disable GA if declined
+    window['ga-disable-G-X73WCJRFHT'] = true;
+  }
+})();
+
+function acceptCookies() {
+  localStorage.setItem('cookie_consent', 'accepted');
+  document.getElementById('cookieConsent').style.display = 'none';
+}
+
+function declineCookies() {
+  localStorage.setItem('cookie_consent', 'declined');
+  window['ga-disable-G-X73WCJRFHT'] = true;
+  document.getElementById('cookieConsent').style.display = 'none';
+}
+
+/* ===== WENDY VIDEO PLAYER ===== */
+function wendyToggle() {
+  var video   = document.getElementById('wendyVideo');
+  var cover   = document.getElementById('wendyCover');
+  var fill    = document.getElementById('wendyProgressFill');
+  var timeEl  = document.getElementById('wendyTime');
+  var playBtn = document.getElementById('wendyPlayBtn');
+
+  if (!video) return;
+
+  if (video.paused) {
+    video.play();
+    cover.classList.add('hidden');
+    /* hide pulse rings while playing */
+    playBtn.querySelectorAll('.wendy-pulse').forEach(function(el){ el.style.animationPlayState = 'paused'; el.style.opacity = '0'; });
+  } else {
+    video.pause();
+    cover.classList.remove('hidden');
+    playBtn.querySelectorAll('.wendy-pulse').forEach(function(el){ el.style.animationPlayState = 'running'; el.style.opacity = ''; });
+  }
+
+  video.addEventListener('timeupdate', function() {
+    if (!video.duration) return;
+    var pct = (video.currentTime / video.duration) * 100;
+    fill.style.width = pct + '%';
+    var remaining = video.duration - video.currentTime;
+    var m = Math.floor(remaining / 60);
+    var s = Math.floor(remaining % 60);
+    timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+  }, { once: false });
+
+  video.addEventListener('ended', function() {
+    cover.classList.remove('hidden');
+    fill.style.width = '0%';
+    timeEl.textContent = '1:14';
+    playBtn.querySelectorAll('.wendy-pulse').forEach(function(el){ el.style.animationPlayState = 'running'; el.style.opacity = ''; });
+  });
 }
 </script>
 </body>
