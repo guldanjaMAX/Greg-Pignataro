@@ -1067,45 +1067,55 @@ footer {
   border-color: var(--gold);
 }
 
-/* Essay Grid & Cards */
+/* Essay Rows — The Long Read layout */
 .essay-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-light);
 }
 .essay-card {
-  background: var(--bg-card);
-  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 44% 1fr;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid var(--border-light);
+  cursor: default;
   overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: none;
+}
+.essay-card:nth-child(even) {
+  grid-template-columns: 1fr 44%;
+}
+.essay-card:nth-child(even) .essay-card-img {
+  grid-column: 2;
+  grid-row: 1;
+}
+.essay-card:nth-child(even) .essay-card-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+.essay-card-img {
+  overflow: hidden;
+  position: relative;
+}
+.essay-card-img img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85);
+  transition: transform 0.6s ease;
+}
+.essay-card:hover .essay-card-img img {
+  transform: scale(1.04);
+}
+.essay-card-text {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-}
-.essay-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-}
-.essay-card-body {
-  padding: 1.3rem 1.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.essay-card-body h4 {
-  font-family: var(--serif);
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--text-primary);
-  margin: 0.5rem 0;
-  line-height: 1.25;
-}
-.essay-card-body p {
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  justify-content: center;
+  padding: 3rem 3.5rem;
 }
 .essay-tag {
   display: inline-block;
@@ -1115,35 +1125,47 @@ footer {
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 500;
+  margin-bottom: 0.7rem;
 }
-.essay-meta {
-  display: block;
+.essay-card-text h4 {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+.essay-card-text p {
   font-family: var(--sans);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: auto;
-  padding-top: 0.8rem;
-}
-.essay-card-expand {
-  display: none;
-  padding: 0 1.5rem 1.5rem;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.75;
-  border-top: 1px solid var(--border-light);
-  margin-top: 0.5rem;
-  padding-top: 1rem;
+  margin-bottom: 1.4rem;
 }
-.essay-card.expanded .essay-card-expand {
-  display: block;
+.essay-meta {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
 }
-.essay-card-expand .read-indicator {
+.essay-read-link {
   display: inline-block;
-  margin-top: 0.8rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.essay-read-link:hover { opacity: 0.7; }
+.essay-coming-soon {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 400;
 }
 .essay-toggle-btn {
   font-family: var(--sans);
@@ -1157,10 +1179,28 @@ footer {
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 .essay-toggle-btn:hover {
   background: var(--gold);
   color: #fff;
+}
+@media (max-width: 900px) {
+  .essay-card,
+  .essay-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  .essay-card:nth-child(even) .essay-card-img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .essay-card:nth-child(even) .essay-card-text {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .essay-card-img img { min-height: 200px; }
+  .essay-card-text { padding: 2rem 2rem; }
 }
 
 /* ===== CONDENSED ABOUT STRIP ===== */
@@ -1943,162 +1983,162 @@ footer {
       <button class="writing-filter-btn" data-filter="philosophy">Philosophy</button>
     </div>
 
-    <!-- Essay Cards -->
+    <!-- Essay Cards — The Long Read -->
     <div class="essay-grid" id="essayGrid">
 
       <div class="essay-card reveal" data-category="inner-work">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/darkness-retreat.jpg" alt="10 Days in Total Darkness">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Inner Work</span>
           <h4>10 Days in Total Darkness</h4>
-          <p>What happens when you remove every external stimulus and sit alone with yourself for ten days straight.</p>
+          <p>A raw account of fear, boredom, revelation, and what was waiting underneath it all. No phone. No light. No distraction. Just everything you have been avoiding. Greg entered a darkness retreat to find out what was left when the noise stopped.</p>
           <span class="essay-meta">12 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          A raw account of fear, boredom, revelation, and what was waiting underneath it all. No phone. No light. No distraction. Just everything you have been avoiding. Greg entered a darkness retreat to find out what was left when the noise stopped. What he found changed how he works with every client.
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/darkness-retreat" class="read-indicator" style="color:var(--gold);">Read the full piece &rarr;</a>
+          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/darkness-retreat" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="inner-work">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/into-the-darkness.jpg" alt="Into the Darkness">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Inner Work</span>
           <h4>Into the Darkness</h4>
-          <p>Before entering the darkness retreat, a reflection on what we actually fear when the lights go out.</p>
+          <p>Most people are not afraid of the dark. They are afraid of what shows up when there is nothing left to distract them. Written the night before Greg entered eight days of total darkness.</p>
           <span class="essay-meta">6 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          Most people are not afraid of the dark. They are afraid of what shows up when there is nothing left to distract them. This piece was written the night before Greg entered eight days of total darkness, and it captures the raw honesty of someone about to face everything they have been avoiding.
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/into-the-darkness" class="read-indicator" style="color:var(--gold);">Read the full piece &rarr;</a>
+          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/into-the-darkness" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="psychology">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/body-dysmorphia.jpg" alt="Body Dysmorphia and the Mirror">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Psychology</span>
           <h4>Body Dysmorphia and the Mirror</h4>
-          <p>The unsustainability of chasing a reflection that keeps moving.</p>
+          <p>You have hit every goal you set for your body and still cannot stand what you see. That is not a discipline problem. That is a perception problem, and no amount of training will fix it.</p>
           <span class="essay-meta">8 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          You have hit every goal you set for your body and still cannot stand what you see. That is not a discipline problem. That is a perception problem, and no amount of training will fix it. Greg unpacks what body dysmorphia actually looks like in high performers and why the mirror is the last place you should be looking for answers.
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/body-dysmorphia" class="read-indicator" style="color:var(--gold);">Read the full piece &rarr;</a>
+          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/body-dysmorphia" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="psychology">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/you-are-not-your-thoughts.jpg" alt="You Are Not Your Thoughts">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Psychology</span>
           <h4>You Are Not Your Thoughts</h4>
-          <p>The single most important distinction you can make for your mental health.</p>
+          <p>The voice in your head that tells you that you are not doing enough, not lean enough, not disciplined enough — it is not you. It is a pattern. Understanding this distinction changes everything about how you make decisions under pressure.</p>
           <span class="essay-meta">6 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          The voice in your head that tells you that you are not doing enough, not lean enough, not disciplined enough is not you. It is a pattern. Understanding this distinction is not a concept. It is the most practical skill Greg teaches, and it changes everything about how you make decisions under pressure.
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/you-are-not-your-thoughts" class="read-indicator" style="color:var(--gold);">Read the full piece &rarr;</a>
+          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/you-are-not-your-thoughts" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="movement">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/nordic-curls.jpg" alt="Why You Need Nordic Curls">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Movement</span>
           <h4>Why You Need Nordic Curls</h4>
-          <p>The exercise that earned a Guinness World Record and why it matters for your knees.</p>
+          <p>Nordic curls are the single most effective exercise for hamstring strength and knee resilience. Greg did not just study them. He set a world record doing them after doctors told him his knee would never fully recover.</p>
           <span class="essay-meta">7 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          Nordic curls are the single most effective exercise for hamstring strength and knee resilience. Greg did not just study them. He set a world record doing them after doctors told him his knee would never fully recover. This piece breaks down the science, the technique, and why most people are doing them wrong.
-          <span class="read-indicator">Full piece coming soon &rarr;</span>
+          <span class="essay-coming-soon">Coming soon</span>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="movement">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/what-is-pain.jpg" alt="What Is Pain">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Movement</span>
           <h4>What Is Pain: A New Understanding</h4>
-          <p>Pain is not a measure of tissue damage. It is a protective output from your brain.</p>
+          <p>Everything you have been told about pain is probably wrong. Pain is not damage. It is your nervous system making a prediction about danger. Understanding this changes how you train, how you recover, and how you stop being afraid of your own body.</p>
           <span class="essay-meta">8 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          Everything you have been told about pain is probably wrong. Pain is not damage. It is your nervous system making a prediction about danger. Understanding this changes how you train, how you recover, and how you stop being afraid of your own body. Greg breaks down the neuroscience in plain language.
-          <span class="read-indicator">Full piece coming soon &rarr;</span>
+          <span class="essay-coming-soon">Coming soon</span>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="nutrition">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/counting-calories.jpg" alt="A Complicated Relationship with Counting Calories">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Nutrition</span>
           <h4>A Complicated Relationship with Counting Calories</h4>
-          <p>When tracking helps, when it hurts, and why the answer is deeply personal.</p>
+          <p>Calorie counting works until it does not. For some people it creates clarity. For others it creates obsession. This three-part series explores the psychology of tracking and when to put it down before it starts using you.</p>
           <span class="essay-meta">7 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          Calorie counting works until it does not. For some people it creates clarity. For others it creates obsession. Greg has been on both sides and this three part series explores the psychology of tracking, when to use it as a tool, and when to put it down before it starts using you.
-          <span class="read-indicator">Full piece coming soon &rarr;</span>
+          <span class="essay-coming-soon">Coming soon</span>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="nutrition">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/mastering-mild-hunger.jpg" alt="Mastering Mild Hunger">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Nutrition</span>
           <h4>Mastering Mild Hunger</h4>
-          <p>The skill nobody teaches that changes your entire relationship with food.</p>
+          <p>You do not need another diet. You need to learn how to sit with mild hunger without panicking, without bingeing, and without turning it into a moral issue. This is the most practical nutrition skill Greg teaches, and it has nothing to do with willpower.</p>
           <span class="essay-meta">6 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          You do not need another diet. You need to learn how to sit with mild hunger without panicking, without bingeing, and without turning it into a moral issue. This is the most practical nutrition skill Greg teaches, and it has nothing to do with willpower.
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/mastering-mild-hunger" class="read-indicator" style="color:var(--gold);">Read the full piece &rarr;</a>
+          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/mastering-mild-hunger" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="philosophy">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/what-is-healthy.jpg" alt="What Does It Mean to Be Healthy?">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Philosophy</span>
           <h4>What Does It Mean to Be Healthy?</h4>
-          <p>A question that sounds simple until you sit with it for more than five seconds.</p>
+          <p>Health is not a number on a scale, a blood panel, or a body fat percentage. It is not the absence of disease. Greg asks the question that the entire fitness industry avoids because the answer would put most of them out of business.</p>
           <span class="essay-meta">6 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          Health is not a number on a scale, a blood panel, or a body fat percentage. It is not the absence of disease. So what is it? Greg asks the question that the entire fitness industry avoids because the answer would put most of them out of business.
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/what-is-healthy" class="read-indicator" style="color:var(--gold);">Read the full piece &rarr;</a>
+          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/what-is-healthy" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="psychology">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/all-or-nothing.jpg" alt="The All or Nothing Mindset">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Psychology</span>
           <h4>The All or Nothing Trap</h4>
-          <p>Why the most disciplined people are often the most stuck.</p>
+          <p>You are either all in or completely off the rails. There is no middle. All or nothing thinking is the hallmark of high performers — and the thing that keeps them from ever actually resting, recovering, or feeling enough.</p>
           <span class="essay-meta">7 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          You are either all in or completely off the rails. There is no middle. Sound familiar? All or nothing thinking is the hallmark of high performers and it is also the thing that keeps them from ever actually resting, recovering, or feeling enough. Greg unpacks the pattern and what it costs you.
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/all-or-nothing" class="read-indicator" style="color:var(--gold);">Read the full piece &rarr;</a>
+          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/all-or-nothing" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="movement">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/less-is-more.jpg" alt="Less Is More">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Movement</span>
           <h4>Less Is More</h4>
-          <p>Why doing less in the gym might be the hardest and most important thing you do.</p>
+          <p>You do not need more volume. You need more intention. The people who make the most progress are almost always the ones who learn to do less with more focus. Greg explains why this is so hard for driven people and how to actually make the shift.</p>
           <span class="essay-meta">5 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          You do not need more volume. You need more intention. The people who make the most progress are almost always the ones who learn to do less with more focus. Greg explains why this is so hard for driven people and how to actually make the shift.
-          <span class="read-indicator">Full piece coming soon &rarr;</span>
+          <span class="essay-coming-soon">Coming soon</span>
         </div>
       </div>
 
       <div class="essay-card reveal" data-category="philosophy">
-        <div class="essay-card-body">
+        <div class="essay-card-img">
+          <img src="https://assets.jamesguldan.com/greg/blog-images/coaches-got-wrong.jpg" alt="What the Coaches Got Wrong">
+        </div>
+        <div class="essay-card-text">
           <span class="essay-tag">Philosophy</span>
           <h4>What the Coaches Got Wrong</h4>
-          <p>The fitness industry sold you a lie. Here is what they left out.</p>
+          <p>The fitness industry taught you that discipline equals results, that pain equals progress, and that your body is a machine to be optimized. Greg spent 20 years inside that world before realizing almost all of it was backwards.</p>
           <span class="essay-meta">8 min read</span>
-        </div>
-        <div class="essay-card-expand">
-          The fitness industry taught you that discipline equals results, that pain equals progress, and that your body is a machine to be optimized. Greg spent 20 years inside that world before realizing almost all of it was backwards. This piece names the lies and offers something better.
-          <span class="read-indicator">Full piece coming soon &rarr;</span>
+          <span class="essay-coming-soon">Coming soon</span>
         </div>
       </div>
 
@@ -2222,47 +2262,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== ESSAY CARD EXPAND/COLLAPSE =====
-document.querySelectorAll('.essay-card').forEach(card => {
-  card.addEventListener('click', function() {
-    const wasExpanded = this.classList.contains('expanded');
-    // Close all others
-    document.querySelectorAll('.essay-card.expanded').forEach(c => c.classList.remove('expanded'));
-    // Toggle clicked
-    if (!wasExpanded) {
-      this.classList.add('expanded');
-    }
-  });
-});
-
 // ===== CATEGORY FILTER =====
 document.querySelectorAll('.writing-filter-btn').forEach(btn => {
   btn.addEventListener('click', function() {
-    // Update active state
     document.querySelectorAll('.writing-filter-btn').forEach(b => b.classList.remove('active'));
     this.classList.add('active');
-
     const filter = this.dataset.filter;
-    const cards = document.querySelectorAll('.essay-card');
-
-    cards.forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-        card.classList.remove('expanded');
-      }
+    document.querySelectorAll('.essay-card').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
     });
   });
 });
-
-// ===== SHOW ALL ESSAYS =====
-function showAllEssays() {
-  const btn = document.getElementById('showMoreBtn');
-  btn.textContent = 'Full archive coming soon';
-  btn.style.pointerEvents = 'none';
-  btn.style.opacity = '0.6';
-}
 
 // ===== COOKIE CONSENT =====
 (function() {
