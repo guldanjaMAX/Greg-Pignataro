@@ -1253,7 +1253,7 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: left center;
+  object-position: center top;
   display: block;
 }
 .wendy-cover {
@@ -2300,12 +2300,9 @@ function declineCookies() {
 
 /* ===== VIDEO CARD TOGGLE (Lee, Ray) ===== */
 function videoCardToggle(name) {
-  var video   = document.getElementById(name + 'Video');
-  var cover   = document.getElementById(name + 'Cover');
-  var fill    = document.getElementById(name + 'ProgressFill');
-  var timeEl  = document.getElementById(name + 'Time');
+  var video = document.getElementById(name + 'Video');
+  var cover = document.getElementById(name + 'Cover');
   if (!video) return;
-
   if (video.paused) {
     video.play().catch(function(e){ console.log(e); });
     cover.classList.add('hidden');
@@ -2313,58 +2310,74 @@ function videoCardToggle(name) {
     video.pause();
     cover.classList.remove('hidden');
   }
-
-  video.addEventListener('timeupdate', function() {
-    if (!video.duration) return;
-    fill.style.width = (video.currentTime / video.duration * 100) + '%';
-    var r = video.duration - video.currentTime;
-    timeEl.textContent = Math.floor(r/60) + ':' + (Math.floor(r%60)<10?'0':'') + Math.floor(r%60);
-  });
-
-  video.addEventListener('ended', function() {
-    cover.classList.remove('hidden');
-    fill.style.width = '0%';
-  });
 }
 
 /* ===== WENDY VIDEO PLAYER ===== */
 function wendyToggle() {
   var video   = document.getElementById('wendyVideo');
   var cover   = document.getElementById('wendyCover');
-  var fill    = document.getElementById('wendyProgressFill');
-  var timeEl  = document.getElementById('wendyTime');
   var playBtn = document.getElementById('wendyPlayBtn');
-
   if (!video) return;
-
   if (video.paused) {
     video.play();
     cover.classList.add('hidden');
-    /* hide pulse rings while playing */
     playBtn.querySelectorAll('.wendy-pulse').forEach(function(el){ el.style.animationPlayState = 'paused'; el.style.opacity = '0'; });
   } else {
     video.pause();
     cover.classList.remove('hidden');
     playBtn.querySelectorAll('.wendy-pulse').forEach(function(el){ el.style.animationPlayState = 'running'; el.style.opacity = ''; });
   }
-
-  video.addEventListener('timeupdate', function() {
-    if (!video.duration) return;
-    var pct = (video.currentTime / video.duration) * 100;
-    fill.style.width = pct + '%';
-    var remaining = video.duration - video.currentTime;
-    var m = Math.floor(remaining / 60);
-    var s = Math.floor(remaining % 60);
-    timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
-  }, { once: false });
-
-  video.addEventListener('ended', function() {
-    cover.classList.remove('hidden');
-    fill.style.width = '0%';
-    timeEl.textContent = '1:14';
-    playBtn.querySelectorAll('.wendy-pulse').forEach(function(el){ el.style.animationPlayState = 'running'; el.style.opacity = ''; });
-  });
 }
+
+/* ===== VIDEO EVENT LISTENERS — registered once at load ===== */
+(function() {
+  // Wendy
+  var wv = document.getElementById('wendyVideo');
+  if (wv) {
+    wv.addEventListener('timeupdate', function() {
+      if (!wv.duration) return;
+      var fill = document.getElementById('wendyProgressFill');
+      var timeEl = document.getElementById('wendyTime');
+      fill.style.width = (wv.currentTime / wv.duration * 100) + '%';
+      var r = wv.duration - wv.currentTime;
+      timeEl.textContent = Math.floor(r/60) + ':' + (Math.floor(r%60)<10?'0':'') + Math.floor(r%60);
+    });
+    wv.addEventListener('ended', function() {
+      document.getElementById('wendyCover').classList.remove('hidden');
+      document.getElementById('wendyProgressFill').style.width = '0%';
+      document.getElementById('wendyTime').textContent = '1:14';
+      document.getElementById('wendyPlayBtn').querySelectorAll('.wendy-pulse').forEach(function(el){ el.style.animationPlayState = 'running'; el.style.opacity = ''; });
+    });
+  }
+  // Lee
+  var lv = document.getElementById('leeVideo');
+  if (lv) {
+    lv.addEventListener('timeupdate', function() {
+      if (!lv.duration) return;
+      document.getElementById('leeProgressFill').style.width = (lv.currentTime / lv.duration * 100) + '%';
+      var r = lv.duration - lv.currentTime;
+      document.getElementById('leeTime').textContent = Math.floor(r/60) + ':' + (Math.floor(r%60)<10?'0':'') + Math.floor(r%60);
+    });
+    lv.addEventListener('ended', function() {
+      document.getElementById('leeCover').classList.remove('hidden');
+      document.getElementById('leeProgressFill').style.width = '0%';
+    });
+  }
+  // Ray
+  var rv = document.getElementById('rayVideo');
+  if (rv) {
+    rv.addEventListener('timeupdate', function() {
+      if (!rv.duration) return;
+      document.getElementById('rayProgressFill').style.width = (rv.currentTime / rv.duration * 100) + '%';
+      var r = rv.duration - rv.currentTime;
+      document.getElementById('rayTime').textContent = Math.floor(r/60) + ':' + (Math.floor(r%60)<10?'0':'') + Math.floor(r%60);
+    });
+    rv.addEventListener('ended', function() {
+      document.getElementById('rayCover').classList.remove('hidden');
+      document.getElementById('rayProgressFill').style.width = '0%';
+    });
+  }
+})();
 </script>
 </body>
 </html>
