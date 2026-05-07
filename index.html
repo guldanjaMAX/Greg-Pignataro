@@ -371,15 +371,15 @@ body::after {
 /* ===== FULL-BLEED IMMERSIVE SECTIONS ===== */
 .immersive-section {
   position: relative;
-  height: 100vh;
-  min-height: 720px;
-  max-height: 1100px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   background-color: #0a0805;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  padding: 6rem 0;
 }
 .immersive-section::before {
   content: '';
@@ -388,10 +388,10 @@ body::after {
   z-index: 1;
 }
 .immersive-section.left-text::before {
-  background: linear-gradient(90deg, rgba(8,6,3,0.92) 0%, rgba(8,6,3,0.78) 25%, rgba(8,6,3,0.4) 50%, rgba(8,6,3,0.1) 80%, rgba(8,6,3,0) 100%);
+  background: linear-gradient(90deg, rgba(8,6,3,0.96) 0%, rgba(8,6,3,0.88) 30%, rgba(8,6,3,0.6) 50%, rgba(8,6,3,0.25) 75%, rgba(8,6,3,0) 100%);
 }
 .immersive-section.right-text::before {
-  background: linear-gradient(270deg, rgba(8,6,3,0.92) 0%, rgba(8,6,3,0.78) 25%, rgba(8,6,3,0.4) 50%, rgba(8,6,3,0.1) 80%, rgba(8,6,3,0) 100%);
+  background: linear-gradient(270deg, rgba(8,6,3,0.96) 0%, rgba(8,6,3,0.88) 30%, rgba(8,6,3,0.6) 50%, rgba(8,6,3,0.25) 75%, rgba(8,6,3,0) 100%);
 }
 .immersive-section.bottom-text::before {
   background: linear-gradient(0deg, rgba(8,6,3,0.95) 0%, rgba(8,6,3,0.7) 25%, rgba(8,6,3,0.25) 55%, rgba(8,6,3,0) 90%);
@@ -436,12 +436,12 @@ body::after {
 .immersive-text h2 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(2.4rem, 4.6vw, 4rem);
-  line-height: 1.04;
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  line-height: 1.06;
   letter-spacing: -0.018em;
   color: #FDFBF8;
-  margin-bottom: 1.4rem;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.4);
+  margin-bottom: 1.3rem;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.55);
 }
 .immersive-text h2 em {
   font-style: italic;
@@ -449,27 +449,27 @@ body::after {
   font-weight: 400;
 }
 .immersive-text p {
-  font-size: 1.04rem;
-  line-height: 1.7;
-  color: rgba(253,251,248,0.88);
-  margin-bottom: 1rem;
+  font-size: 1.0rem;
+  line-height: 1.65;
+  color: rgba(253,251,248,0.92);
+  margin-bottom: 0.95rem;
   max-width: 480px;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.6);
 }
 .immersive-text p em { color: rgba(253,251,248,1); font-style: italic; }
 .immersive-text .quotes-list {
-  margin-top: 1.8rem;
+  margin-top: 1.4rem;
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.1rem;
 }
 .immersive-text .quotes-list .q {
   font-family: var(--serif);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   line-height: 1.4;
   font-style: italic;
   color: #fff;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 14px rgba(0,0,0,0.65);
 }
 .immersive-text .quotes-list .a {
   margin-top: 0.4rem;
