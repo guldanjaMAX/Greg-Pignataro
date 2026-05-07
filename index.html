@@ -367,6 +367,160 @@ body::after {
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
+
+/* ===== FULL-BLEED IMMERSIVE SECTIONS ===== */
+.immersive-section {
+  position: relative;
+  height: 100vh;
+  min-height: 720px;
+  max-height: 1100px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #0a0805;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.immersive-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+.immersive-section.left-text::before {
+  background: linear-gradient(90deg, rgba(8,6,3,0.92) 0%, rgba(8,6,3,0.78) 25%, rgba(8,6,3,0.4) 50%, rgba(8,6,3,0.1) 80%, rgba(8,6,3,0) 100%);
+}
+.immersive-section.right-text::before {
+  background: linear-gradient(270deg, rgba(8,6,3,0.92) 0%, rgba(8,6,3,0.78) 25%, rgba(8,6,3,0.4) 50%, rgba(8,6,3,0.1) 80%, rgba(8,6,3,0) 100%);
+}
+.immersive-section.bottom-text::before {
+  background: linear-gradient(0deg, rgba(8,6,3,0.95) 0%, rgba(8,6,3,0.7) 25%, rgba(8,6,3,0.25) 55%, rgba(8,6,3,0) 90%);
+}
+.immersive-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.immersive-section.right-text .immersive-content { justify-content: flex-end; }
+.immersive-section.bottom-text .immersive-content { align-items: flex-end; padding-bottom: 4.5rem; }
+.immersive-text {
+  max-width: 540px;
+  color: var(--cream, #f3e7cf);
+}
+.immersive-section.bottom-text .immersive-text { max-width: 720px; }
+.immersive-text .eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.immersive-text .eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.immersive-text h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4.6vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+  color: #FDFBF8;
+  margin-bottom: 1.4rem;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.4);
+}
+.immersive-text h2 em {
+  font-style: italic;
+  color: var(--gold-light, #d9b07d);
+  font-weight: 400;
+}
+.immersive-text p {
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: rgba(253,251,248,0.88);
+  margin-bottom: 1rem;
+  max-width: 480px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+}
+.immersive-text p em { color: rgba(253,251,248,1); font-style: italic; }
+.immersive-text .quotes-list {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.immersive-text .quotes-list .q {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+.immersive-text .quotes-list .a {
+  margin-top: 0.4rem;
+  color: var(--gold-light, #d9b07d);
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.immersive-text .immersive-cta {
+  display: inline-block;
+  margin-top: 1.6rem;
+  padding: 0.95rem 2rem;
+  background: var(--gold);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.immersive-text .immersive-cta:hover {
+  background: var(--gold-bright, #c5915b);
+  transform: translateY(-2px);
+}
+.immersive-text .credentials-strip {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(253,251,248,0.15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: rgba(253,251,248,0.72);
+}
+.immersive-text .credentials-strip strong { color: var(--gold-light, #d9b07d); font-weight: 500; margin-right: 0.4rem; }
+
+@media (max-width: 980px) {
+  .immersive-section { min-height: 100vh; }
+  .immersive-section::before {
+    background: linear-gradient(180deg, rgba(8,6,3,0.5) 0%, rgba(8,6,3,0.85) 100%) !important;
+  }
+  .immersive-content { padding: 0 1.5rem; align-items: flex-end; padding-bottom: 4rem; }
+  .immersive-section .immersive-content { justify-content: flex-start; }
+  .immersive-text { max-width: 100%; }
+  .immersive-text h2 { font-size: 2.4rem; }
+}
+
 /* ===== HERO ===== */
 .hero {
   height: 100vh;
@@ -1871,33 +2025,26 @@ footer {
   </div>
 </section>
 
-<!-- ===================== IS THIS YOU ===================== -->
-<section id="who" style="background: var(--bg-warm);">
-  <div class="container">
-    <div class="story-grid">
-      <div class="reveal">
-        <img src="images/photos-may2026/somatic-hand.jpg" alt="Greg Pignataro" class="story-image" loading="lazy">
-      </div>
-      <div class="story-body reveal reveal-delay-1">
-        <p class="eyebrow">Is This You</p>
-        <h2 class="section-title">You have done <em>everything right.</em><br>So why does something still feel off?</h2>
-        <div class="divider"></div>
-        <p>If you have been high performing long enough to build a life most people would envy, and you are now somewhere in the middle of a transition nobody prepared you for (a divorce, a sale, a retirement, a last child leaving, a diagnosis, a reckoning), there are probably three sentences you have said out loud to a friend, or to a therapist, or to the ceiling at three in the morning.</p>
-        <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.8rem;">
-          <div>
-            <p style="font-family: var(--serif); font-size: 1.55rem; line-height: 1.4; font-style: italic; color: var(--text-primary);">&ldquo;I feel like I should be further along by now.&rdquo;</p>
-            <p style="margin-top: 0.5rem; color: var(--gold); font-family: var(--sans); font-size: 0.95rem;">That is not a goal. That is a verdict you already delivered on yourself.</p>
-          </div>
-          <div>
-            <p style="font-family: var(--serif); font-size: 1.55rem; line-height: 1.4; font-style: italic; color: var(--text-primary);">&ldquo;What is wrong with me that I can&rsquo;t just be happy?&rdquo;</p>
-            <p style="margin-top: 0.5rem; color: var(--gold); font-family: var(--sans); font-size: 0.95rem;">Nothing. You are asking the wrong question.</p>
-          </div>
-          <div>
-            <p style="font-family: var(--serif); font-size: 1.55rem; line-height: 1.4; font-style: italic; color: var(--text-primary);">&ldquo;Is this all there is?&rdquo;</p>
-            <p style="margin-top: 0.5rem; color: var(--gold); font-family: var(--sans); font-size: 0.95rem;">No. But the thing you are missing is not something you need to acquire.</p>
-          </div>
+<!-- ===================== IS THIS YOU (immersive) ===================== -->
+<section id="who" class="immersive-section left-text" style="background-image: url('images/photos-may2026/somatic-fullbleed.jpg');">
+  <div class="immersive-content">
+    <div class="immersive-text reveal">
+      <p class="eyebrow">Is This You</p>
+      <h2>You have done <em>everything right.</em><br>So why does something still feel <em>off?</em></h2>
+      <p>If you have been high performing long enough to build a life most people would envy, and you are now somewhere in the middle of a transition nobody prepared you for (a divorce, a sale, a retirement, a last child leaving, a diagnosis, a reckoning), there are probably three sentences you have said to a friend, to a therapist, or to the ceiling at three in the morning.</p>
+      <div class="quotes-list">
+        <div>
+          <div class="q">&ldquo;I feel like I should be further along by now.&rdquo;</div>
+          <div class="a">That is not a goal. That is a verdict you already delivered on yourself.</div>
         </div>
-        <p style="margin-top: 2rem;">If you want a quick fix, a meal plan, a new morning routine, a program that promises you will finally feel like yourself again in ninety days, there are a thousand of those. This is not one of them. This is for people who have already tried those and can feel in their body that the next thing cannot be more of the same.</p>
+        <div>
+          <div class="q">&ldquo;What is wrong with me that I can&rsquo;t just be happy?&rdquo;</div>
+          <div class="a">Nothing. You are asking the wrong question.</div>
+        </div>
+        <div>
+          <div class="q">&ldquo;Is this all there is?&rdquo;</div>
+          <div class="a">No. But the thing you are missing is not something you need to acquire.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1945,27 +2092,20 @@ footer {
 </section>
 
 <!-- ===================== GREG'S STORY ===================== -->
-<section id="story" style="background: var(--bg-warm);">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-body reveal">
-        <p class="eyebrow">His Story</p>
-        <h2 class="section-title">He walked through it <em>first.</em></h2>
-        <div class="divider"></div>
-        <p>In February 2020, Greg was on a phone call with a close friend when something happened he had no framework for. Ten thousand pounds lifted. Decades of ambient anxiety, the quiet voice of not enough, the background weight of being a person, all of it went quiet at once. He had grown up atheist. He was not meditating. He had not read the books. It just happened. And instead of turning it into a brand, he spent the next five years actually doing the work.</p>
-        <p style="margin-top: 1rem;">That work looked like meditating every day for three years without missing a day. It looked like excavating childhood wounds he had spent decades not looking at. It looked like deliberately gaining twenty pounds to prove to himself that he did not need a six pack to be lovable. It looked like eight days alone in total darkness, five days in total silence, dozens of ceremonies, hundreds of pages of journaling, and a long slow unraveling of every identity he had built his life on top of.</p>
-        <p style="margin-top: 1rem;">At the peak of his personal training career, Greg was earning over ten thousand dollars a month working twenty hours a week with clients he loved. He walked away from it. Not because it stopped working. Because it was not true enough. He is not guessing about what it takes to rebuild a life from the inside. He did it. He is still doing it. That is the point.</p>
-        <div class="about-strip" style="margin-top: 2rem; border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
-          <span class="about-strip-item"><strong>BA Psychology</strong> Carthage College</span>
-          <span class="about-strip-item"><strong>Compassionate Inquiry</strong> Dr. Gabor Mat&eacute;</span>
-          <span class="about-strip-item"><strong>CSCS</strong> Nat'l Strength &amp; Conditioning</span>
-          <span class="about-strip-item"><strong>NeuFit</strong> Certified Practitioner</span>
-          <span class="about-strip-item"><strong>ATG</strong> Certified Coach</span>
-          <span class="about-strip-item"><strong>Necker Island</strong> Retreat Facilitator</span>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <img src="images/photos-may2026/story-mountain.jpg" alt="Greg Pignataro" class="story-image" loading="lazy">
+<section id="story" class="immersive-section right-text" style="background-image: url('images/photos-may2026/story-fullbleed.jpg');">
+  <div class="immersive-content">
+    <div class="immersive-text reveal">
+      <p class="eyebrow">His Story</p>
+      <h2>He walked through it <em>first.</em></h2>
+      <p>In February 2020, Greg was on a phone call with a close friend when something happened he had no framework for. Ten thousand pounds lifted. Decades of ambient anxiety went quiet at once. He had grown up atheist. He was not meditating. It just happened. And instead of turning it into a brand, he spent the next five years actually doing the work.</p>
+      <p>Three years of meditation without missing a day. Eight days alone in total darkness. Five days in silence. He walked away from a ten thousand dollar a month training career because it was not true enough. He is not guessing about what it takes to rebuild a life from the inside. He did it. He is still doing it.</p>
+      <div class="credentials-strip">
+        <span><strong>BA Psychology</strong> Carthage College</span>
+        <span><strong>Compassionate Inquiry</strong> Dr. Gabor Mat&eacute;</span>
+        <span><strong>CSCS</strong> Nat'l Strength &amp; Conditioning</span>
+        <span><strong>NeuFit</strong> Certified Practitioner</span>
+        <span><strong>ATG</strong> Certified Coach</span>
+        <span><strong>Necker Island</strong> Retreat Facilitator</span>
       </div>
     </div>
   </div>
@@ -2011,20 +2151,14 @@ footer {
 </section>
 
 
-<!-- ===================== WHAT WORKING WITH GREG LOOKS LIKE ===================== -->
-<section style="background: var(--bg-warm);">
-  <div class="container">
-    <div class="story-grid">
-      <div class="reveal">
-        <img src="images/photos-may2026/working-with-greg.jpg" alt="A real session with Greg" class="story-image" loading="lazy">
-      </div>
-      <div class="story-body reveal reveal-delay-1">
-        <p class="eyebrow">What working with Greg actually looks like</p>
-        <h2 class="section-title">One person at a time. <em>For twelve months.</em></h2>
-        <div class="divider"></div>
-        <p>This is not a group program. It is not a course. It is not a series of pre-recorded calls you watch on your phone in the kitchen. It is a private practice. One person. Twelve months. Weekly touchpoints between us. Two in person intensives.</p>
-        <p style="margin-top: 1rem;">What happens between us is uncluttered. There is no funnel after this. No upsell, no certification, no community to manage. The relationship is the work. The frequency is the work. The patience is the work. If you have done a hundred coaches and a hundred therapists and a hundred programs and walked away with another method bolted onto an already exhausted nervous system, this is the inverse pattern. We slow down. We stay. We do not start over.</p>
-      </div>
+<!-- ===================== WHAT WORKING WITH GREG LOOKS LIKE (immersive) ===================== -->
+<section class="immersive-section left-text" style="background-image: url('images/photos-may2026/working-fullbleed.jpg');">
+  <div class="immersive-content">
+    <div class="immersive-text reveal">
+      <p class="eyebrow">What working with Greg actually looks like</p>
+      <h2>One person at a time. <em>For twelve months.</em></h2>
+      <p>This is not a group program. It is not a course. It is not a series of pre recorded calls you watch in the kitchen. It is a private practice. One person. Twelve months. Weekly touchpoints. Two in person intensives.</p>
+      <p>What happens between us is uncluttered. No funnel. No upsell, no certification, no community to manage. The relationship is the work. The frequency is the work. The patience is the work. We slow down. We stay. We do not start over.</p>
     </div>
   </div>
 </section>
