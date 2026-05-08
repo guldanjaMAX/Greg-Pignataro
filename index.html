@@ -307,8 +307,9 @@ body::after {
 }
 .nav-links a:hover { color: var(--gold-light); }
 .nav-links a:hover::after { width: 100%; }
+.navbar-minimal { display: flex; justify-content: space-between; align-items: center; }
 .nav-cta {
-  padding: 0.65rem 2rem;
+  padding: 0.65rem 1.4rem;
   border: 1px solid var(--gold);
   color: var(--gold);
   font-size: 0.72rem;
@@ -529,7 +530,7 @@ body::after {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: url('images/photos-may2026/hero-lake-bg.jpg') center center / cover no-repeat;
+  background: url('images/photos-may2026/hero-lake-bg.webp') center center / cover no-repeat;
   background-color: #0a0805;
 }
 .hero::before {
@@ -543,7 +544,7 @@ body::after {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 2;
-  background: url('images/photos-may2026/hero-gold-dust.png') center center / cover no-repeat;
+  background: url('images/photos-may2026/hero-gold-dust.webp') center center / cover no-repeat;
   mix-blend-mode: screen;
   opacity: 0.4;
   pointer-events: none;
@@ -630,9 +631,21 @@ body::after {
   font-size: 1rem;
   color: rgba(253,251,248,0.85);
   line-height: 1.85;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   max-width: 480px;
   text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+}
+.hero-frame {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(253,251,248,0.78);
+  margin-bottom: 1.6rem;
+  max-width: 460px;
+  padding-left: 1rem;
+  border-left: 1px solid var(--gold);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
 }
 .hero-actions {
   display: flex;
@@ -1946,40 +1959,65 @@ footer {
 @media (max-width: 480px) {
   .gwr-stats { flex-direction: column; gap: 1.5rem; }
 }
+
+/* === Mobile polish for interview framing === */
+@media (max-width: 700px) {
+  .navbar-minimal { padding: 1rem 1.4rem; }
+  .nav-logo { font-size: 0.95rem; letter-spacing: 0.04em; }
+  .nav-cta { padding: 0.55rem 1rem; font-size: 0.6rem; letter-spacing: 0.18em; }
+
+  .hero-content { padding: 5.5rem 1.5rem 4rem !important; }
+  .hero-title { font-size: 2.6rem !important; line-height: 1.05 !important; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .hero-frame { font-size: 0.88rem; padding-left: 0.8rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 0.7rem; }
+  .hero-actions .btn-primary, .hero-actions .btn-ghost { text-align: center; padding: 1rem 1.2rem; }
+  .hero-scroll { display: none; }
+
+  .immersive-section { padding: 5rem 0 4rem; min-height: auto; }
+  .immersive-section.left-text::before, .immersive-section.right-text::before, .immersive-section.bottom-text::before {
+    background: linear-gradient(180deg, rgba(8,6,3,0.55) 0%, rgba(8,6,3,0.92) 100%) !important;
+  }
+  .immersive-content { padding: 0 1.5rem; align-items: flex-end; }
+  .immersive-section.right-text .immersive-content { justify-content: flex-start; }
+  .immersive-text { max-width: 100% !important; }
+  .immersive-text h2 { font-size: 2.2rem !important; line-height: 1.08 !important; }
+  .immersive-text .quotes-list .q { font-size: 1.1rem; }
+  .immersive-text .credentials-strip { gap: 0.7rem 1rem; font-size: 0.7rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.2rem !important; }
+  .immersive-text h2 { font-size: 1.95rem !important; }
+}
+
 </style>
 </head>
 <body>
 
 <!-- ===================== NAVIGATION ===================== -->
-<nav id="navbar">
+<nav id="navbar" class="navbar-minimal">
   <a href="#" class="nav-logo">Greg Pignataro</a>
-  <ul class="nav-links">
-    <li><a href="#who">Is This You</a></li>
-    <li><a href="#method">The Three Phases</a></li>
-    <li><a href="#story">The Story</a></li>
-    <li><a href="#beliefs">What I Believe</a></li>
-    <li><a href="#work">Work With Greg</a></li>
-    <li><a href="#writing">The Writing</a></li>
-  </ul>
-  <a href="#apply" class="nav-cta">Book a Call</a>
-  <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('mobile-open');">
-    <span></span><span></span><span></span>
-  </div>
+  <a href="#apply" class="nav-cta">Apply for an Interview</a>
 </nav>
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
   <div class="hero-dust"></div>
   <div class="hero-figure">
-    <img src="images/photos-may2026/hero-greg-cutout.png" alt="Greg Pignataro" loading="eager">
+    <picture>
+      <source srcset="images/photos-may2026/hero-greg-cutout.webp" type="image/webp">
+      <img src="images/photos-may2026/hero-greg-cutout.png" alt="Greg Pignataro" loading="eager">
+    </picture>
   </div>
   <div class="hero-content">
     <div class="hero-text">
       <p class="hero-eyebrow">For the ones who have tried everything</p>
       <h1 class="hero-title">Come home <em>to yourself.</em></h1>
       <p class="hero-subtitle">Greg helps people stop believing the quiet sentence that has been running the show their whole life: <em>I am not good enough.</em> The body or the mind is your entry point. The work underneath is the same.</p>
+      <p class="hero-frame"><em>This is not a service. It is a twelve month private practice. By application. Four to six people at a time.</em></p>
       <div class="hero-actions">
-        <a href="#apply" class="btn-primary">Book a Conversation</a>
+        <a href="#apply" class="btn-primary">Apply for an Interview</a>
         <a href="#who" class="btn-ghost">See If This Is You</a>
       </div>
     </div>
@@ -2026,7 +2064,7 @@ footer {
 </section>
 
 <!-- ===================== IS THIS YOU (immersive) ===================== -->
-<section id="who" class="immersive-section left-text" style="background-image: url('images/photos-may2026/somatic-fullbleed.jpg');">
+<section id="who" class="immersive-section left-text" style="background-image: url('images/photos-may2026/somatic-fullbleed.webp');">
   <div class="immersive-content">
     <div class="immersive-text reveal">
       <p class="eyebrow">Is This You</p>
@@ -2092,7 +2130,7 @@ footer {
 </section>
 
 <!-- ===================== GREG'S STORY ===================== -->
-<section id="story" class="immersive-section right-text" style="background-image: url('images/photos-may2026/story-fullbleed.jpg');">
+<section id="story" class="immersive-section right-text" style="background-image: url('images/photos-may2026/story-fullbleed.webp');">
   <div class="immersive-content">
     <div class="immersive-text reveal">
       <p class="eyebrow">His Story</p>
@@ -2152,7 +2190,7 @@ footer {
 
 
 <!-- ===================== WHAT WORKING WITH GREG LOOKS LIKE (immersive) ===================== -->
-<section class="immersive-section left-text" style="background-image: url('images/photos-may2026/working-fullbleed.jpg');">
+<section class="immersive-section left-text" style="background-image: url('images/photos-may2026/working-fullbleed.webp');">
   <div class="immersive-content">
     <div class="immersive-text reveal">
       <p class="eyebrow">What working with Greg actually looks like</p>
@@ -2496,9 +2534,9 @@ footer {
 <!-- ===================== APPLY CTA ===================== -->
 <section id="apply" class="cta-section">
   <div class="cta-inner">
-    <p class="eyebrow reveal" style="justify-content: center;">Book a Conversation</p>
+    <p class="eyebrow reveal" style="justify-content: center;">An Interview</p>
     <h2 class="section-title reveal" style="font-size: clamp(2.5rem, 4.5vw, 4rem);">This is not for everyone.<br>It might be for <em>you.</em></h2>
-    <p class="cta-desc reveal">Thirty minutes on a call. No pitch. No pressure. No script. Greg shows up fully present, asks you a few questions most people have never been asked, and tells you honestly whether the work is for you.</p>
+    <p class="cta-desc reveal">An interview is what this is. Thirty minutes. Both of you talking. No pitch. No pressure. No script. Greg asks the questions most people have never been asked. You ask whatever you need to ask. By the end you both know whether the work is right.</p>
     <div class="cta-process reveal">
       <div class="process-step">
         <div class="process-num">1</div>
