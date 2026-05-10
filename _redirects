@@ -1,4 +1,4 @@
-# Writing path aliases blog directory
-/writing/  /blog.html  200
-/writing  /blog.html  200
+# Writing path: serve dedicated index, alias slugs to blog
+/writing/  /writing/index.html  200
+/writing  /writing/index.html  200
 /writing/:slug  /blog/:slug  200

@@ -2332,9 +2332,373 @@ footer {
   .immersive-text h2 { font-size: 1.95rem !important; }
 }
 
+
+
+/* ============================================================ */
+/* OPTIMIZATIONS 2026-05-10: Trust line, Not For Everyone,      */
+/* What Changes, Three Phases Journey, Floating Pill            */
+/* ============================================================ */
+
+/* === Optimization 01: Trust line under hero === */
+.trust-line {
+  background: linear-gradient(180deg, var(--bg-primary, #faf7f2) 0%, rgba(184,134,58,0.04) 100%);
+  padding: 2.6rem 2rem 2.4rem;
+  border-bottom: 1px solid rgba(184,134,58,0.12);
+  border-top: 1px solid rgba(184,134,58,0.08);
+}
+.trust-line-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+.trust-line-eyebrow {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.7rem;
+  color: var(--gold);
+  margin-bottom: 1.3rem;
+  font-weight: 600;
+}
+.trust-line-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+.trust-line-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.18rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0.78;
+}
+a.trust-line-mark:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+.trust-line-mark .tlm-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+.trust-line-mark .tlm-sub {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--text-muted, #8a8175);
+}
+.trust-line-sep {
+  display: inline-block;
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(180deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
+}
+@media (max-width: 780px) {
+  .trust-line { padding: 2rem 1.4rem; }
+  .trust-line-grid { gap: 1rem; }
+  .trust-line-sep { display: none; }
+  .trust-line-mark .tlm-name { font-size: 0.94rem; }
+}
+
+/* === Optimization 02: Floating Apply Pill === */
+.floating-apply {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  z-index: 998;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  background: var(--gold);
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 12px 28px -8px rgba(184,134,58,0.55), 0 4px 12px -4px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(20px) scale(0.92);
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.16,1,0.3,1), transform 0.45s cubic-bezier(0.16,1,0.3,1), background 0.25s;
+}
+.floating-apply.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.floating-apply:hover {
+  background: #d4a358;
+  transform: translateY(-2px) scale(1.02);
+}
+.floating-apply .fa-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  animation: faPulse 2.4s ease-in-out infinite;
+}
+@keyframes faPulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+@media (max-width: 780px) {
+  .floating-apply {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    padding: 0.8rem 1.1rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+/* === Optimization 04: Not For Everyone === */
+.not-for-everyone {
+  background: linear-gradient(180deg, var(--bg-primary, #faf7f2) 0%, rgba(8,6,3,0.025) 100%);
+  padding: 7rem 2rem 6rem;
+  border-top: 1px solid rgba(184,134,58,0.1);
+}
+.nfe-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.nfe-eyebrow {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.nfe-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 1.18;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+.nfe-title em { color: var(--gold); font-style: italic; }
+.nfe-lede {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  line-height: 1.55;
+  color: var(--text-secondary, var(--text-primary));
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+.nfe-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.nfe-list li {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.4rem;
+  align-items: baseline;
+  padding: 1.2rem 1.6rem;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border-light, #ebe4d6);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.nfe-list li:hover {
+  transform: translateX(2px);
+  box-shadow: 0 8px 20px -8px rgba(184,134,58,0.2);
+}
+.nfe-marker {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.nfe-text {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+.nfe-close {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  text-align: center;
+  color: var(--text-secondary, var(--text-primary));
+  margin-top: 2.6rem;
+}
+.nfe-close em { color: var(--gold); font-style: italic; }
+@media (max-width: 780px) {
+  .not-for-everyone { padding: 5rem 1.4rem 4.5rem; }
+  .nfe-list li {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    padding: 1.2rem 1.2rem;
+  }
+}
+
+/* === Optimization 05: What Changes subsection === */
+.what-changes {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  max-width: 580px;
+}
+.what-changes-eyebrow {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.68rem;
+  color: var(--gold-bright, #e2b56a);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+.what-changes-line {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: rgba(253,251,248,0.92);
+  margin: 0.7rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.what-changes-line .wc-month {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-bright, #e2b56a);
+  font-weight: 600;
+  font-style: normal;
+  white-space: nowrap;
+  min-width: 110px;
+}
+.what-changes-line em {
+  color: rgba(253,251,248,0.92);
+  font-style: italic;
+}
+@media (max-width: 780px) {
+  .what-changes-line {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .what-changes-line .wc-month { min-width: 0; }
+}
+
+/* === Optimization 09: Three Phases vertical journey === */
+.method-grid-journey {
+  grid-template-columns: 1fr !important;
+  max-width: 800px;
+  margin: 4rem auto 0 !important;
+  position: relative;
+  gap: 2rem !important;
+}
+.method-grid-journey::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 60px;
+  bottom: 60px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, var(--gold) 15%, var(--gold) 85%, transparent 100%);
+  opacity: 0.3;
+}
+.method-grid-journey .method-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.6rem;
+  align-items: start;
+  padding: 2.4rem 2.4rem 2.4rem 1.4rem;
+  position: relative;
+}
+.method-grid-journey .method-card::before {
+  content: '';
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-card, #fff);
+  border: 2px solid var(--gold);
+  z-index: 2;
+}
+.method-grid-journey .method-card.method-card-destination::before {
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(184,134,58,0.18);
+}
+.method-grid-journey .method-num {
+  grid-row: span 2;
+  margin-bottom: 0;
+  font-size: 3rem;
+  text-align: right;
+  padding-right: 0.4rem;
+  align-self: center;
+}
+.method-grid-journey .method-name {
+  margin-bottom: 0.4rem;
+}
+.method-grid-journey .method-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media (max-width: 780px) {
+  .method-grid-journey { max-width: 100%; }
+  .method-grid-journey::before { display: none; }
+  .method-grid-journey .method-card {
+    grid-template-columns: 60px 1fr;
+    padding: 1.6rem 1.4rem;
+  }
+  .method-grid-journey .method-card::before { display: none; }
+  .method-grid-journey .method-num { font-size: 2.4rem; }
+}
+
+/* === Optimization 07: Return visitor hero (uses existing photos) === */
+html.returning-visitor .hero-figure picture source[type="image/webp"] {
+  /* no-op: keep webp fallback */
+}
+html.returning-visitor .hero {
+  background-image: linear-gradient(180deg, rgba(8,6,3,0.55) 0%, rgba(8,6,3,0.65) 100%), url('images/necker/necker-hero.jpg') !important;
+  background-size: cover !important;
+  background-position: center 30% !important;
+}
+html.returning-visitor .hero .hero-eyebrow::before {
+  content: 'Welcome back · ';
+  color: var(--gold-bright, #e2b56a);
+  opacity: 0.85;
+}
+
 </style>
 </head>
 <body>
+<!-- ===================== FLOATING APPLY PILL (Opt 02) ===================== -->
+<a href="#apply" class="floating-apply" id="floatingApply" aria-label="Apply for an Interview">
+  <span class="fa-dot"></span>Apply for an Interview
+</a>
+
+
 
 <!-- ===================== NAVIGATION ===================== -->
 <nav id="navbar" class="navbar-minimal">
@@ -2367,6 +2731,34 @@ footer {
   </div>
   <div class="hero-scroll">
     <div class="hero-scroll-chevron"></div>
+  </div>
+</section>
+
+<!-- ===================== TRUST LINE (Opt 01) ===================== -->
+<section class="trust-line">
+  <div class="trust-line-inner reveal">
+    <p class="trust-line-eyebrow">Featured in</p>
+    <div class="trust-line-grid">
+      <a href="https://www.guinnessworldrecords.com/world-records/722570-most-nordic-hamstring-curls-in-one-minute" target="_blank" rel="noopener" class="trust-line-mark">
+        <span class="tlm-name">Guinness World Records</span>
+        <span class="tlm-sub">Most Nordic curls in a minute</span>
+      </a>
+      <span class="trust-line-sep"></span>
+      <a href="https://www.neu.fit/podcast/episode-59-atg-training-and-setting-the-world-record-in-nordic-hamstring-curls-with-greg-pignataro-cscs/" target="_blank" rel="noopener" class="trust-line-mark">
+        <span class="tlm-name">NeuFit Podcast</span>
+        <span class="tlm-sub">Episode 59</span>
+      </a>
+      <span class="trust-line-sep"></span>
+      <span class="trust-line-mark trust-line-static">
+        <span class="tlm-name">Necker Island</span>
+        <span class="tlm-sub">Retreat facilitator</span>
+      </span>
+      <span class="trust-line-sep"></span>
+      <span class="trust-line-mark trust-line-static">
+        <span class="tlm-name">Compassionate Inquiry</span>
+        <span class="tlm-sub">Trained under Dr. Gabor Mat&eacute;</span>
+      </span>
+    </div>
   </div>
 </section>
 
@@ -2457,7 +2849,7 @@ footer {
     <h2 class="section-title reveal">Three phases. Most people<br>get stuck in the <em>first two.</em></h2>
     <div class="reveal" style="margin: 2rem auto 0; max-width: 1100px; border-radius: 8px; overflow: hidden; aspect-ratio: 21/9; background: url('images/photos-may2026/story-fullbleed.webp') center 30%/cover no-repeat; box-shadow: 0 24px 60px -12px rgba(0,0,0,0.3);"></div>
     <p class="section-subtitle reveal">There is an old Zen saying. Before enlightenment, mountains are mountains and rivers are rivers. Then, mountains are no longer mountains and rivers are no longer rivers. Finally, mountains are mountains and rivers are rivers once more. It is the cleanest description of what actually happens when a person does this work.</p>
-    <div class="method-grid">
+    <div class="method-grid method-grid-journey">
       <div class="method-card reveal">
         <div class="method-num">01</div>
         <div class="method-name">Mountains are mountains.</div>
@@ -2562,6 +2954,13 @@ footer {
         <li><strong>Voxer access between sessions.</strong> Voice notes when you need them.</li>
         <li><strong>Four to six clients at a time.</strong> Never more.</li>
       </ul>
+
+      <div class="what-changes">
+        <p class="what-changes-eyebrow">What changes inside the year</p>
+        <p class="what-changes-line"><span class="wc-month">Month three.</span> <em>The sentence that has been running the show your whole life stops running it.</em></p>
+        <p class="what-changes-line"><span class="wc-month">Month six.</span> <em>You stop checking. Your body stops asking permission.</em></p>
+        <p class="what-changes-line"><span class="wc-month">Month twelve.</span> <em>You do not need this practice anymore. You walk back into your life.</em></p>
+      </div>
     </div>
   </div>
 </section>
@@ -2895,6 +3294,22 @@ footer {
   <p class="manifesto-attribution">Greg Pignataro</p>
 </section>
 
+<!-- ===================== NOT FOR EVERYONE (Opt 04) ===================== -->
+<section class="not-for-everyone">
+  <div class="nfe-inner reveal">
+    <p class="nfe-eyebrow">Before you apply</p>
+    <h2 class="nfe-title">This practice is <em>not for everyone.</em></h2>
+    <p class="nfe-lede">Greg works with four to six people at a time. He would rather sit with an empty calendar than fill it with the wrong person. Read the four sentences below honestly. If any of them describe you, this is probably not the right room.</p>
+    <ul class="nfe-list">
+      <li><span class="nfe-marker">I.</span><span class="nfe-text">You want a ninety day fix. A program. A protocol. A checklist. The work Greg does is slower than that, on purpose.</span></li>
+      <li><span class="nfe-marker">II.</span><span class="nfe-text">You want to be told what to eat, how to train, and when to sleep. Greg is not your nutritionist. He is not your coach. He is your interlocutor.</span></li>
+      <li><span class="nfe-marker">III.</span><span class="nfe-text">You are looking for a guru, an awakening, or someone to tell you who you are. Greg will not perform either role. He cannot.</span></li>
+      <li><span class="nfe-marker">IV.</span><span class="nfe-text">Your only goal is the number on the scale, the body in the mirror, or the title on the next business card. Those things move on their own when the foundation changes. They are not the foundation.</span></li>
+    </ul>
+    <p class="nfe-close"><em>If none of those describe you, the door is open. Keep reading.</em></p>
+  </div>
+</section>
+
 <!-- ===================== APPLY CTA ===================== -->
 <section id="apply" class="cta-section cta-section-quiet">
   <div class="cta-quiet-grid reveal">
@@ -3112,6 +3527,39 @@ function wendyToggle() {
       document.getElementById('rayProgressFill').style.width = '0%';
     });
   }
+})();
+</script>
+
+<script>
+// Optimization 02: Floating Apply pill visibility
+(function() {
+  var pill = document.getElementById('floatingApply');
+  var applySection = document.getElementById('apply');
+  if (!pill || !applySection) return;
+  function update() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    var heroHeight = window.innerHeight * 0.9;
+    var applyTop = applySection.getBoundingClientRect().top + scrollY;
+    var applyBottom = applyTop + applySection.offsetHeight;
+    var viewportBottom = scrollY + window.innerHeight;
+    var pastHero = scrollY > heroHeight;
+    var nearApply = viewportBottom > applyTop - 100 && scrollY < applyBottom;
+    pill.classList.toggle('is-visible', pastHero && !nearApply);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// Optimization 07: Return visitor hero variant
+(function() {
+  try {
+    var visits = parseInt(localStorage.getItem('gp_visits') || '0', 10) + 1;
+    localStorage.setItem('gp_visits', String(visits));
+    if (visits > 1) {
+      document.documentElement.classList.add('returning-visitor');
+    }
+  } catch (e) { /* localStorage blocked, no harm */ }
 })();
 </script>
 </body>

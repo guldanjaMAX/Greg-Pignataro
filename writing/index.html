@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Writing &middot; Greg Pignataro</title>
+<meta name="description" content="Essays from Greg Pignataro on identity, the body, the work underneath the work. For the readers who are not yet ready to apply.">
+<link rel="icon" href="/design-brief/identity/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg-primary:#faf7f2;--bg-card:#fff;--bg-accent:#f5efe3;--text-primary:#1a1612;--text-secondary:#4a423a;--text-muted:#8a8175;--gold:#b8863a;--gold-bright:#d4a358;--gold-soft:#f0e6d2;--border-light:#ebe4d6;--serif:"EB Garamond","Cormorant Garamond",Georgia,serif;--sans:"Inter","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg-primary);color:var(--text-primary);line-height:1.65;font-size:16px}
+a{color:inherit;text-decoration:none}
+.navbar-minimal{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,247,242,.85);backdrop-filter:blur(14px);padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(184,134,58,.08)}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-primary)}
+.nav-cta{font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:600;color:var(--gold);padding:.6rem 1.2rem;border:1px solid var(--gold);border-radius:999px;transition:all .3s}
+.nav-cta:hover{background:var(--gold);color:#fff}
+.masthead{padding:9rem 2rem 5rem;text-align:center;background:linear-gradient(180deg,var(--gold-soft) 0%,var(--bg-primary) 80%);border-bottom:1px solid var(--border-light)}
+.masthead .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.32em;font-size:.72rem;color:var(--gold);margin-bottom:1.4rem;font-weight:600}
+.masthead h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,6vw,4.6rem);line-height:1.12;color:var(--text-primary);margin-bottom:1.2rem;letter-spacing:-.01em}
+.masthead h1 em{color:var(--gold);font-style:italic}
+.masthead .lede{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.55;color:var(--text-secondary);max-width:660px;margin:0 auto}
+.container{max-width:1080px;margin:0 auto;padding:0 2rem}
+.featured-section{padding:5rem 0 4rem}
+.featured-section .section-label{font-family:var(--sans);text-transform:uppercase;letter-spacing:.28em;font-size:.72rem;color:var(--gold);margin-bottom:.8rem;font-weight:600;text-align:center}
+.featured-section h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--text-primary);text-align:center;margin-bottom:3.2rem;letter-spacing:-.01em}
+.featured-section h2 em{color:var(--gold);font-style:italic}
+.featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.featured-card{background:var(--bg-card);border:1px solid var(--border-light);border-radius:8px;padding:2.4rem 2rem 2rem;display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s,border-color .4s;position:relative;overflow:hidden}
+.featured-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.4;transition:opacity .4s}
+.featured-card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 20px 40px -16px rgba(184,134,58,.18)}
+.featured-card:hover::before{opacity:1}
+.featured-card .fc-num{font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--gold);letter-spacing:.06em;margin-bottom:.6rem}
+.featured-card h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;line-height:1.25;color:var(--text-primary);margin-bottom:1rem}
+.featured-card .fc-pull{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.55;color:var(--text-secondary);margin-bottom:1.6rem;flex:1;padding-left:1rem;border-left:2px solid var(--gold-soft)}
+.featured-card .fc-meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:1rem;border-top:1px solid var(--border-light)}
+.featured-card .fc-time{font-family:var(--sans);font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--text-muted)}
+.featured-card .fc-link{font-family:var(--sans);font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:600}
+.quote-divider{padding:6rem 2rem;text-align:center;background:var(--bg-primary)}
+.quote-divider blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.45;color:var(--text-primary);max-width:820px;margin:0 auto}
+.quote-divider blockquote em{color:var(--gold);font-style:italic}
+.quote-divider .qd-attr{margin-top:1.4rem;font-family:var(--sans);font-size:.72rem;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);font-weight:600}
+.all-essays{padding:4rem 0 6rem;background:var(--bg-accent)}
+.all-essays .section-label{font-family:var(--sans);text-transform:uppercase;letter-spacing:.28em;font-size:.72rem;color:var(--gold);margin-bottom:.8rem;font-weight:600;text-align:center}
+.all-essays h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.2vw,2.4rem);text-align:center;color:var(--text-primary);margin-bottom:.6rem;letter-spacing:-.01em}
+.all-essays h2 em{color:var(--gold);font-style:italic}
+.all-essays .ae-sub{text-align:center;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--text-secondary);margin-bottom:3rem}
+.all-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.8rem}
+.all-grid a{padding:1.15rem 1.4rem;background:var(--bg-card);border:1px solid var(--border-light);border-radius:4px;font-family:var(--serif);font-size:1.05rem;color:var(--text-primary);transition:all .25s;line-height:1.35;display:flex;align-items:center;gap:.7rem}
+.all-grid a:hover{border-color:var(--gold);background:#fff;transform:translateX(2px);color:var(--gold)}
+.all-grid a::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold-soft);flex-shrink:0;transition:background .25s}
+.all-grid a:hover::before{background:var(--gold)}
+.email-block{background:var(--bg-primary);padding:5rem 2rem 6rem;text-align:center;border-top:1px solid var(--border-light)}
+.email-inner{max-width:620px;margin:0 auto}
+.email-block .eb-eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.28em;font-size:.72rem;color:var(--gold);margin-bottom:1rem;font-weight:600}
+.email-block h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3.2vw,2.2rem);color:var(--text-primary);margin-bottom:1.4rem;line-height:1.3}
+.email-block h3 em{color:var(--gold);font-style:italic}
+.email-form{display:flex;gap:.6rem;max-width:460px;margin:0 auto}
+.email-form input{flex:1;padding:.9rem 1.1rem;border:1px solid var(--border-light);background:#fff;border-radius:4px;font-family:var(--sans);font-size:.95rem;color:var(--text-primary)}
+.email-form input:focus{outline:0;border-color:var(--gold)}
+.email-form button{padding:.9rem 1.6rem;background:var(--gold);color:#fff;border:0;border-radius:4px;font-family:var(--sans);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:600;cursor:pointer;transition:background .25s}
+.email-form button:hover{background:var(--gold-bright)}
+.email-block .eb-fine{margin-top:1rem;font-size:.78rem;color:var(--text-muted);font-family:var(--serif);font-style:italic}
+footer{background:var(--bg-accent);padding:3rem 2rem;text-align:center;border-top:1px solid var(--border-light)}
+footer .ft-brand{font-family:var(--serif);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+footer .ft-line{font-family:var(--serif);font-style:italic;color:var(--text-secondary);font-size:1rem;margin-bottom:1.4rem}
+footer .ft-nav{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.4rem;font-size:.8rem;font-family:var(--sans);color:var(--text-secondary)}
+footer .ft-nav a:hover{color:var(--gold)}
+footer .ft-copy{font-size:.72rem;color:var(--text-muted);margin-top:1rem}
+@media (max-width:780px){.featured-grid{grid-template-columns:1fr}.masthead{padding:7rem 1.4rem 4rem}.email-form{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="navbar-minimal">
+  <a href="/" class="nav-logo">Greg Pignataro</a>
+  <a href="/#apply" class="nav-cta">Apply for an Interview</a>
+</nav>
+<header class="masthead">
+  <p class="eyebrow">The Writing</p>
+  <h1>For the readers <em>not yet ready to apply.</em></h1>
+  <p class="lede">Greg writes for the people he is not yet working with. Essays on identity, the body, the work underneath all the other work. No funnel. No call to action below the fold.</p>
+</header>
+<section class="featured-section">
+  <div class="container">
+    <p class="section-label">Three to start with</p>
+    <h2>If you only have time for <em>three.</em></h2>
+    <div class="featured-grid">
+      <a href="/writing/identity" class="featured-card">
+        <p class="fc-num">Essay 01</p>
+        <h3>The Identity You Spent Your Life Building</h3>
+        <p class="fc-pull">"The self you spent your whole life building was not put there by you. It was assembled by everyone who got to you before you could speak. The work is not to be a better version of that self. The work is to notice it was never the only one."</p>
+        <div class="fc-meta"><span class="fc-time">9 min read</span><span class="fc-link">Read &rarr;</span></div>
+      </a>
+      <a href="/writing/into-the-darkness" class="featured-card">
+        <p class="fc-num">Essay 02</p>
+        <h3>Eight Days in the Dark</h3>
+        <p class="fc-pull">"I went into a dark retreat because I wanted to see the floor underneath the floor. What I found was not a revelation. It was a quiet sentence I had been running from for thirty years. The dark did not give me anything. It took something I no longer needed."</p>
+        <div class="fc-meta"><span class="fc-time">12 min read</span><span class="fc-link">Read &rarr;</span></div>
+      </a>
+      <a href="/writing/what-is-pain" class="featured-card">
+        <p class="fc-num">Essay 03</p>
+        <h3>What Pain Is, Really</h3>
+        <p class="fc-pull">"Pain is not the message. It is the messenger. Most of the bodywork industry has spent forty years arguing about the messenger. The message is almost always the same and almost nobody is listening for it."</p>
+        <div class="fc-meta"><span class="fc-time">8 min read</span><span class="fc-link">Read &rarr;</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="quote-divider">
+  <blockquote>"Identity and the belief in separation are the root of most human suffering. I have worked with both in every dimension of my own life. <em>I can help you do the same.</em>"</blockquote>
+  <p class="qd-attr">Greg Pignataro</p>
+</section>
+<section class="all-essays">
+  <div class="container">
+    <p class="section-label">Everything else</p>
+    <h2>The <em>full archive.</em></h2>
+    <p class="ae-sub">Roughly forty essays. No particular order. Pick a title that pulls.</p>
+    <div class="all-grid">
+      <a href="/writing/all-or-nothing">All or Nothing</a>
+      <a href="/writing/attached-to-method">Attached to a Method</a>
+      <a href="/writing/bench-press">The Bench Press</a>
+      <a href="/writing/body-dysmorphia">Body Dysmorphia</a>
+      <a href="/writing/coaches-got-wrong">What Coaches Got Wrong</a>
+      <a href="/writing/common-ground">Finding Common Ground</a>
+      <a href="/writing/counting-calories">Counting Calories</a>
+      <a href="/writing/counting-calories-2">Counting Calories Part Two</a>
+      <a href="/writing/counting-calories-3">Counting Calories Part Three</a>
+      <a href="/writing/darkness-retreat">The Darkness Retreat</a>
+      <a href="/writing/emotional-homeostasis">Emotional Homeostasis</a>
+      <a href="/writing/enjoying-food">Enjoying Food</a>
+      <a href="/writing/hard-sets">Hard Sets</a>
+      <a href="/writing/householder-nutrition">Householder Nutrition</a>
+      <a href="/writing/hungry-time">The Hungry Time</a>
+      <a href="/writing/hurricane">The Hurricane</a>
+      <a href="/writing/identity-part-2">Identity, Part Two</a>
+      <a href="/writing/inner-game">The Inner Game</a>
+      <a href="/writing/less-is-more">Less Is More</a>
+      <a href="/writing/marathon-bullfighting">The Marathon and the Bullfight</a>
+      <a href="/writing/mastering-mild-hunger">Mastering Mild Hunger</a>
+      <a href="/writing/measuring-progress">Measuring Progress</a>
+      <a href="/writing/meditation-misconceptions">Meditation Misconceptions</a>
+      <a href="/writing/mind-body">Mind and Body</a>
+      <a href="/writing/nordic-curls">The Nordic Curls</a>
+      <a href="/writing/rice-is-out">Rice Is Out</a>
+      <a href="/writing/shoes-feet">Shoes and Feet</a>
+      <a href="/writing/short-vs-long-range">Short Range vs Long Range</a>
+      <a href="/writing/skill-vs-athleticism">Skill vs Athleticism</a>
+      <a href="/writing/something-sweet">Something Sweet</a>
+      <a href="/writing/sports-good-for-you">Sports Good For You</a>
+      <a href="/writing/sports-good-for-you-2">Sports Good For You Two</a>
+      <a href="/writing/static-stretching">Static Stretching</a>
+      <a href="/writing/stress-vs-discomfort">Stress vs Discomfort</a>
+      <a href="/writing/tendon-training">Tendon Training</a>
+      <a href="/writing/vital-nutrition-skills">Vital Nutrition Skills</a>
+      <a href="/writing/what-is-healthy">What Is Healthy</a>
+      <a href="/writing/what-is-woo">What Is Woo</a>
+      <a href="/writing/you-are-not-your-thoughts">You Are Not Your Thoughts</a>
+    </div>
+  </div>
+</section>
+<section class="email-block">
+  <div class="email-inner">
+    <p class="eb-eyebrow">For the rest of the work</p>
+    <h3>New essays land roughly <em>twice a month.</em></h3>
+    <form class="email-form" action="https://gregpignataro.us21.list-manage.com/subscribe/post?u=placeholder&id=placeholder" method="post" target="_blank">
+      <input type="email" name="EMAIL" placeholder="your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="eb-fine">Unsubscribe with one click. Greg does not run promotions.</p>
+  </div>
+</section>
+<footer>
+  <p class="ft-brand">Greg Pignataro</p>
+  <p class="ft-line">Come home to yourself.</p>
+  <nav class="ft-nav">
+    <a href="/">Home</a>
+    <a href="/#who">Is This You</a>
+    <a href="/#method">The Three Phases</a>
+    <a href="/#story">The Story</a>
+    <a href="/#beliefs">What I Believe</a>
+    <a href="/#apply">Apply</a>
+  </nav>
+  <p class="ft-copy">&copy; 2026 Greg Pignataro. All rights reserved.</p>
+</footer>
+</body>
+</html>
