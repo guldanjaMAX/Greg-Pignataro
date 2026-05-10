@@ -479,6 +479,38 @@ body::after {
   font-size: 0.92rem;
   line-height: 1.5;
 }
+.immersive-text .working-structure {
+  list-style: none;
+  padding: 0;
+  margin: 1.6rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-top: 1px solid rgba(253,251,248,0.18);
+  padding-top: 1.4rem;
+}
+.immersive-text .working-structure li {
+  font-family: var(--sans);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: rgba(253,251,248,0.86);
+  padding-left: 1rem;
+  position: relative;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
+.immersive-text .working-structure li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 1.5rem;
+  line-height: 1;
+  top: -0.05em;
+}
+.immersive-text .working-structure li strong {
+  color: var(--gold-light, #e2b56a);
+  font-weight: 500;
+}
 .immersive-text .immersive-cta {
   display: inline-block;
   margin-top: 1.6rem;
@@ -647,6 +679,18 @@ body::after {
   border-left: 1px solid var(--gold);
   text-shadow: 0 1px 8px rgba(0,0,0,0.4);
 }
+.hero-theme {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.18rem;
+  line-height: 1.4;
+  color: var(--gold-light, #d9b07d);
+  margin-bottom: 1.4rem;
+  max-width: 480px;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+  letter-spacing: 0.005em;
+}
+.hero-theme em { color: var(--gold-light, #e2b56a); }
 .hero-actions {
   display: flex;
   gap: 1.2rem;
@@ -2014,6 +2058,7 @@ footer {
     <div class="hero-text">
       <p class="hero-eyebrow">For the ones who have tried everything</p>
       <h1 class="hero-title">Come home <em>to yourself.</em></h1>
+      <p class="hero-theme"><em>You were never broken. Your body remembers.</em></p>
       <p class="hero-subtitle">Greg helps people stop believing the quiet sentence that has been running the show their whole life: <em>I am not good enough.</em> The body or the mind is your entry point. The work underneath is the same.</p>
       <p class="hero-frame"><em>This is not a service. It is a twelve month private practice. By application. Four to six people at a time.</em></p>
       <div class="hero-actions">
@@ -2095,6 +2140,11 @@ footer {
   <p class="manifesto-attribution">Greg Pignataro</p>
 </section>
 
+<!-- ===================== ATMOSPHERIC BREAK (between manifestos) ===================== -->
+<section class="manifesto-break" style="background: #0a0805; height: 60vh; min-height: 480px; max-height: 680px; background-image: url('images/photos-may2026/somatic-fullbleed.webp'); background-size: cover; background-position: center; position: relative;">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,6,3,0.5) 0%, rgba(8,6,3,0.3) 50%, rgba(8,6,3,0.6) 100%);"></div>
+</section>
+
 <!-- ===================== MONSTERS INC PRINCIPLE ===================== -->
 <section class="manifesto reveal" style="background: var(--bg-warm);">
   <p style="text-align: center; font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 auto 1.4rem; max-width: 860px;">The Monsters Inc. Principle</p>
@@ -2107,6 +2157,7 @@ footer {
   <div class="container">
     <p class="eyebrow reveal">The Map</p>
     <h2 class="section-title reveal">Three phases. Most people<br>get stuck in the <em>first two.</em></h2>
+    <div class="reveal" style="margin: 2rem auto 0; max-width: 1100px; border-radius: 8px; overflow: hidden; aspect-ratio: 21/9; background: url('images/photos-may2026/story-fullbleed.webp') center 30%/cover no-repeat; box-shadow: 0 24px 60px -12px rgba(0,0,0,0.3);"></div>
     <p class="section-subtitle reveal">There is an old Zen saying. Before enlightenment, mountains are mountains and rivers are rivers. Then, mountains are no longer mountains and rivers are no longer rivers. Finally, mountains are mountains and rivers are rivers once more. It is the cleanest description of what actually happens when a person does this work.</p>
     <div class="method-grid">
       <div class="method-card reveal">
@@ -2158,6 +2209,7 @@ footer {
 <!-- ===================== WHAT I ACTUALLY BELIEVE ===================== -->
 <section id="beliefs" style="background: var(--bg-accent);">
   <div class="container">
+    <div class="reveal" style="margin: 0 auto 3rem; max-width: 720px; aspect-ratio: 16/9; background: url('images/photos-may2026/hands-clasped-banner.webp') center 30%/cover no-repeat; border-radius: 8px; box-shadow: 0 18px 40px -10px rgba(0,0,0,0.25);"></div>
     <p class="eyebrow reveal">What I Actually Believe</p>
     <h2 class="section-title reveal">Three things most people in this<br>work will never say <em>out loud.</em></h2>
     <p class="section-subtitle reveal">Greg spent six years inside the fitness and wellness industry before walking out the door. He is not criticizing it from the outside. He is a whistleblower from inside the room.</p>
@@ -2189,6 +2241,12 @@ footer {
 </section>
 
 
+<!-- ===================== WENDY QUOTE (manifesto layer) ===================== -->
+<section class="manifesto reveal" style="background: var(--bg-primary); padding: 6rem 2rem;">
+  <p class="manifesto-quote" style="max-width:900px;margin:0 auto 1.6rem;">&ldquo;He put electrodes on the back of my neck and at the bottom of my feet, and I felt a current wash through me that created an alignment within my body I had not felt in years. He is a consummate professional. <em>I recommend him with my highest recommendation.</em>&rdquo;</p>
+  <p class="manifesto-attribution" style="text-align:center;font-size:.78rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;font-family:var(--sans);">Wendy Starland &middot; Music industry &middot; Three years with Greg</p>
+</section>
+
 <!-- ===================== WHAT WORKING WITH GREG LOOKS LIKE (immersive) ===================== -->
 <section class="immersive-section left-text" style="background-image: url('images/photos-may2026/working-fullbleed.webp');">
   <div class="immersive-content">
@@ -2197,6 +2255,13 @@ footer {
       <h2>One person at a time. <em>For twelve months.</em></h2>
       <p>This is not a group program. It is not a course. It is not a series of pre recorded calls you watch in the kitchen. It is a private practice. One person. Twelve months. Weekly touchpoints. Two in person intensives.</p>
       <p>What happens between us is uncluttered. No funnel. No upsell, no certification, no community to manage. The relationship is the work. The frequency is the work. The patience is the work. We slow down. We stay. We do not start over.</p>
+      <ul class="working-structure">
+        <li><strong>12 months.</strong> The minimum container.</li>
+        <li><strong>Weekly 1-on-1 calls.</strong> Same day, same time, every week.</li>
+        <li><strong>Two in person intensives.</strong> Greg flies to you.</li>
+        <li><strong>Voxer access between sessions.</strong> Voice notes when you need them.</li>
+        <li><strong>Four to six clients at a time.</strong> Never more.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -2435,7 +2500,7 @@ footer {
           <h4>10 Days in Total Darkness</h4>
           <p>A raw account of fear, boredom, revelation, and what was waiting underneath it all. No phone. No light. No distraction. Just everything you have been avoiding. Greg entered a darkness retreat to find out what was left when the noise stopped.</p>
           <span class="essay-meta">12 min read</span>
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/darkness-retreat" class="essay-read-link">Read the full piece &rarr;</a>
+          <a href="/writing/darkness-retreat" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
@@ -2448,7 +2513,7 @@ footer {
           <h4>Into the Darkness</h4>
           <p>Most people are not afraid of the dark. They are afraid of what shows up when there is nothing left to distract them. Written the night before Greg entered eight days of total darkness.</p>
           <span class="essay-meta">6 min read</span>
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/into-the-darkness" class="essay-read-link">Read the full piece &rarr;</a>
+          <a href="/writing/into-the-darkness" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
@@ -2461,7 +2526,7 @@ footer {
           <h4>Body Dysmorphia and the Mirror</h4>
           <p>You have hit every goal you set for your body and still cannot stand what you see. That is not a discipline problem. That is a perception problem, and no amount of training will fix it.</p>
           <span class="essay-meta">8 min read</span>
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/body-dysmorphia" class="essay-read-link">Read the full piece &rarr;</a>
+          <a href="/writing/body-dysmorphia" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
@@ -2474,7 +2539,7 @@ footer {
           <h4>You Are Not Your Thoughts</h4>
           <p>The voice in your head that tells you that you are not doing enough, not lean enough, not disciplined enough — it is not you. It is a pattern. Understanding this distinction changes everything about how you make decisions under pressure.</p>
           <span class="essay-meta">6 min read</span>
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/you-are-not-your-thoughts" class="essay-read-link">Read the full piece &rarr;</a>
+          <a href="/writing/you-are-not-your-thoughts" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
@@ -2487,7 +2552,7 @@ footer {
           <h4>Mastering Mild Hunger</h4>
           <p>You do not need another diet. You need to learn how to sit with mild hunger without panicking, without bingeing, and without turning it into a moral issue. This is the most practical nutrition skill Greg teaches, and it has nothing to do with willpower.</p>
           <span class="essay-meta">6 min read</span>
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/mastering-mild-hunger" class="essay-read-link">Read the full piece &rarr;</a>
+          <a href="/writing/mastering-mild-hunger" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
@@ -2500,7 +2565,7 @@ footer {
           <h4>What Does It Mean to Be Healthy?</h4>
           <p>Health is not a number on a scale, a blood panel, or a body fat percentage. It is not the absence of disease. Greg asks the question that the entire fitness industry avoids because the answer would put most of them out of business.</p>
           <span class="essay-meta">6 min read</span>
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/what-is-healthy" class="essay-read-link">Read the full piece &rarr;</a>
+          <a href="/writing/what-is-healthy" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
@@ -2513,14 +2578,14 @@ footer {
           <h4>The All or Nothing Trap</h4>
           <p>You are either all in or completely off the rails. There is no middle. All or nothing thinking is the hallmark of high performers — and the thing that keeps them from ever actually resting, recovering, or feeling enough.</p>
           <span class="essay-meta">7 min read</span>
-          <a href="https://greg-blog-cms.james-d13.workers.dev/writing/all-or-nothing" class="essay-read-link">Read the full piece &rarr;</a>
+          <a href="/writing/all-or-nothing" class="essay-read-link">Read the full piece &rarr;</a>
         </div>
       </div>
 
     </div>
 
     <div class="reveal" style="text-align: center; margin-top: 3rem;">
-      <a href="https://greg-blog-cms.james-d13.workers.dev/writing" class="essay-toggle-btn" style="display:inline-block;">Read All Essays</a>
+      <a href="/writing" class="essay-toggle-btn" style="display:inline-block;">Read All Essays</a>
     </div>
   </div>
 </section>

@@ -1,0 +1,4 @@
+# Writing path aliases blog directory
+/writing/  /blog.html  200
+/writing  /blog.html  200
+/writing/:slug  /blog/:slug  200
