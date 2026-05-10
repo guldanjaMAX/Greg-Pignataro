@@ -191,6 +191,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- LCP image preload (hero) - Plan A perf polish -->
+  <link rel="preload" as="image" type="image/webp" href="images/photos-may2026/hero-greg-cutout.webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="images/photos-may2026/hero-lake-bg.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 /* ============================================
@@ -2690,9 +2694,36 @@ html.returning-visitor .hero .hero-eyebrow::before {
   opacity: 0.85;
 }
 
+
+/* Accessibility: Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 9999;
+  padding: 0.8rem 1.2rem;
+  background: var(--gold, #b8863a);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--sans), sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--gold-bright, #d4a358);
+  outline-offset: 2px;
+}
+
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ===================== FLOATING APPLY PILL (Opt 02) ===================== -->
 <a href="#apply" class="floating-apply" id="floatingApply" aria-label="Apply for an Interview">
   <span class="fa-dot"></span>Apply for an Interview
@@ -2707,12 +2738,12 @@ html.returning-visitor .hero .hero-eyebrow::before {
 </nav>
 
 <!-- ===================== HERO ===================== -->
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="hero-dust"></div>
   <div class="hero-figure">
     <picture>
       <source srcset="images/photos-may2026/hero-greg-cutout.webp" type="image/webp">
-      <img src="images/photos-may2026/hero-greg-cutout.png" alt="Greg Pignataro" loading="eager">
+      <img src="images/photos-may2026/hero-greg-cutout.png" alt="Greg Pignataro" loading="eager" fetchpriority="high" decoding="async">
     </picture>
   </div>
   <div class="hero-content">
@@ -2980,7 +3011,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
             <source src="videos/wendy-starland.mov" type="video/quicktime">
           </video>
           <div class="wendy-cover" id="wendyCover">
-            <img src="images/testimonials/wendy-cover.jpg" alt="Wendy Starland" loading="lazy">
+            <img decoding="async" src="images/testimonials/wendy-cover.jpg" alt="Wendy Starland" loading="lazy">
             <div class="wendy-play-btn" id="wendyPlayBtn">
               <span class="wendy-pulse"></span>
               <span class="wendy-pulse wendy-pulse-2"></span>
@@ -2998,7 +3029,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
         <span class="wendy-badge">Video Testimonial</span>
         <p class="wendy-quote-text">"He put electrodes on the back of my neck and at the bottom of my feet and I felt a current wash through me that created all of this alignment within my body. He is a consummate professional and I recommend him with my highest recommendation."</p>
         <div class="wendy-person">
-          <img class="wendy-thumb" src="images/testimonials/wendy-avatar.jpg" alt="Wendy Starland" loading="lazy">
+          <img decoding="async" class="wendy-thumb" src="images/testimonials/wendy-avatar.jpg" alt="Wendy Starland" loading="lazy">
           <div>
             <span class="wendy-name">Wendy Starland</span>
             <span class="wendy-role">Grammy-Winning Music Producer &middot; Discovered Lady Gaga</span>
@@ -3023,7 +3054,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
             <source src="videos/lee-richter.mp4" type="video/mp4">
           </video>
           <div class="video-card-cover" id="leeCover">
-            <img src="images/testimonials/lee-cover.jpg" alt="Lee Richter" loading="lazy">
+            <img decoding="async" src="images/testimonials/lee-cover.jpg" alt="Lee Richter" loading="lazy">
             <div class="video-card-play">
               <span class="wendy-pulse"></span>
               <span class="wendy-pulse wendy-pulse-2"></span>
@@ -3037,7 +3068,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
           <span class="wendy-badge">Video Testimonial</span>
           <p class="testimonial-text">"Within 24 hours my knee felt so much better. He is genuine in his way of wanting to help people. My entire vacation was saved because I was able to participate instead of staying on the sidelines."</p>
           <div class="testimonial-footer">
-            <img class="testimonial-photo" src="images/testimonials/lee-avatar.jpg" alt="Lee Richter" loading="lazy">
+            <img decoding="async" class="testimonial-photo" src="images/testimonials/lee-avatar.jpg" alt="Lee Richter" loading="lazy">
             <div class="testimonial-info">
               <span class="testimonial-author">Lee Richter</span>
               <span class="testimonial-role">CEO, Pinnacle Global Network &middot; San Francisco</span>
@@ -3057,7 +3088,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
             <source src="videos/ray-taggart.mp4" type="video/mp4">
           </video>
           <div class="video-card-cover" id="rayCover">
-            <img src="images/testimonials/ray-cover.jpg" alt="Ray Taggart" loading="lazy">
+            <img decoding="async" src="images/testimonials/ray-cover.jpg" alt="Ray Taggart" loading="lazy">
             <div class="video-card-play">
               <span class="wendy-pulse"></span>
               <span class="wendy-pulse wendy-pulse-2"></span>
@@ -3071,7 +3102,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
           <span class="wendy-badge">Video Testimonial</span>
           <p class="testimonial-text">"I did a backward lunge — it always gives me pain every single time. We put the pads on and it was amazing. I actually had zero pain. My brain recalculated what this injury is. He has such a heart for humans."</p>
           <div class="testimonial-footer">
-            <img class="testimonial-photo" src="images/testimonials/ray-avatar.jpg" alt="Ray Taggart" loading="lazy">
+            <img decoding="async" class="testimonial-photo" src="images/testimonials/ray-avatar.jpg" alt="Ray Taggart" loading="lazy">
             <div class="testimonial-info">
               <span class="testimonial-author">Ray Taggart</span>
               <span class="testimonial-role">Co-Founder, Evolved Podcasting &middot; Performer</span>
@@ -3090,7 +3121,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
       <div class="testimonial reveal">
         <p class="testimonial-text">"I have spent my entire career studying the body. Greg showed me the one thing I was missing: that the body does not just store pain, it stores the conversations you have been too afraid to have. One session changed how I approach everything."</p>
         <div class="testimonial-footer">
-          <img class="testimonial-photo" loading="lazy" src="images/testimonials/anthony.jpg" alt="Anthony Balduzzi">
+          <img decoding="async" class="testimonial-photo" loading="lazy" src="images/testimonials/anthony.jpg" alt="Anthony Balduzzi">
           <div class="testimonial-info">
             <span class="testimonial-author">Anthony Balduzzi</span>
             <span class="testimonial-role">Founder, Fit Father Project</span>
@@ -3100,7 +3131,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
       <div class="testimonial reveal reveal-delay-1">
         <p class="testimonial-text">"I walked in skeptical. I am an analytical person and this sounded too abstract. Within an hour Greg helped me access something I had been suppressing for over a decade. My shoulders dropped, my breathing changed, and I felt a stillness I did not know was possible."</p>
         <div class="testimonial-footer">
-          <img class="testimonial-photo" loading="lazy" src="images/testimonials/rahul.jpg" alt="Rahul S.">
+          <img decoding="async" class="testimonial-photo" loading="lazy" src="images/testimonials/rahul.jpg" alt="Rahul S.">
           <div class="testimonial-info">
             <span class="testimonial-author">Rahul S.</span>
             <span class="testimonial-role">Restaurateur</span>
@@ -3110,7 +3141,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
       <div class="testimonial reveal reveal-delay-2">
         <p class="testimonial-text">"I thought I had dealt with everything. Built the business, stayed in shape, checked every box. Greg helped me see that the thing I was running from was not behind me. It was living in my chest. The afternoon I stopped running was the best afternoon of my life."</p>
         <div class="testimonial-footer">
-          <img class="testimonial-photo" loading="lazy" src="images/testimonials/john.jpg" alt="John Guldan">
+          <img decoding="async" class="testimonial-photo" loading="lazy" src="images/testimonials/john.jpg" alt="John Guldan">
           <div class="testimonial-info">
             <span class="testimonial-author">John Guldan</span>
             <span class="testimonial-role">Entrepreneur</span>
@@ -3182,7 +3213,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
 
       <div class="essay-card reveal" data-category="inner-work">
         <div class="essay-card-img">
-          <img src="blog-images/darkness-retreat.jpg" alt="10 Days in Total Darkness">
+          <img loading="lazy" decoding="async" src="blog-images/darkness-retreat.jpg" alt="10 Days in Total Darkness">
         </div>
         <div class="essay-card-text">
           <span class="essay-tag">Inner Work</span>
@@ -3195,7 +3226,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
 
       <div class="essay-card reveal" data-category="inner-work">
         <div class="essay-card-img">
-          <img src="blog-images/into-the-darkness.jpg" alt="Into the Darkness">
+          <img loading="lazy" decoding="async" src="blog-images/into-the-darkness.jpg" alt="Into the Darkness">
         </div>
         <div class="essay-card-text">
           <span class="essay-tag">Inner Work</span>
@@ -3208,7 +3239,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
 
       <div class="essay-card reveal" data-category="psychology">
         <div class="essay-card-img">
-          <img src="blog-images/body-dysmorphia.jpg" alt="Body Dysmorphia and the Mirror">
+          <img loading="lazy" decoding="async" src="blog-images/body-dysmorphia.jpg" alt="Body Dysmorphia and the Mirror">
         </div>
         <div class="essay-card-text">
           <span class="essay-tag">Psychology</span>
@@ -3221,7 +3252,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
 
       <div class="essay-card reveal" data-category="psychology">
         <div class="essay-card-img">
-          <img src="blog-images/you-are-not-your-thoughts.jpg" alt="You Are Not Your Thoughts">
+          <img loading="lazy" decoding="async" src="blog-images/you-are-not-your-thoughts.jpg" alt="You Are Not Your Thoughts">
         </div>
         <div class="essay-card-text">
           <span class="essay-tag">Psychology</span>
@@ -3234,7 +3265,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
 
       <div class="essay-card reveal" data-category="nutrition">
         <div class="essay-card-img">
-          <img src="blog-images/mastering-mild-hunger.jpg" alt="Mastering Mild Hunger">
+          <img loading="lazy" decoding="async" src="blog-images/mastering-mild-hunger.jpg" alt="Mastering Mild Hunger">
         </div>
         <div class="essay-card-text">
           <span class="essay-tag">Nutrition</span>
@@ -3247,7 +3278,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
 
       <div class="essay-card reveal" data-category="philosophy">
         <div class="essay-card-img">
-          <img src="blog-images/what-is-healthy.jpg" alt="What Does It Mean to Be Healthy?">
+          <img loading="lazy" decoding="async" src="blog-images/what-is-healthy.jpg" alt="What Does It Mean to Be Healthy?">
         </div>
         <div class="essay-card-text">
           <span class="essay-tag">Philosophy</span>
@@ -3260,7 +3291,7 @@ html.returning-visitor .hero .hero-eyebrow::before {
 
       <div class="essay-card reveal" data-category="psychology">
         <div class="essay-card-img">
-          <img src="blog-images/all-or-nothing.jpg" alt="The All or Nothing Mindset">
+          <img loading="lazy" decoding="async" src="blog-images/all-or-nothing.jpg" alt="The All or Nothing Mindset">
         </div>
         <div class="essay-card-text">
           <span class="essay-tag">Psychology</span>
