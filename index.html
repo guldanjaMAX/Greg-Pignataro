@@ -3967,7 +3967,7 @@ function wendyToggle() {
         // Optionally allow re-trigger - we leave .in-view sticky for clean experience
       }
     });
-  }, { threshold: 0.35 });
+  }, { threshold: 0.15 });
   document.querySelectorAll('.chapter').forEach(c => chapterObs.observe(c));
 
   // ----- Manifesto: word-by-word reveal -----
