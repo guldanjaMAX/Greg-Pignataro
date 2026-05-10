@@ -2115,8 +2115,10 @@ footer {
   position: relative;
   padding: 3.5rem 3rem;
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 120px 1fr;
+  grid-template-areas: "num name" "num desc";
+  column-gap: 2.5rem;
+  row-gap: 0.8rem;
   align-items: start;
   margin-top: 0.5rem;
 }
@@ -2134,6 +2136,7 @@ footer {
   display: none;
 }
 .method-card-featured .method-num {
+  grid-area: num;
   color: var(--gold-bright, #e2b56a) !important;
   font-size: 5.5rem;
   opacity: 1;
@@ -2142,21 +2145,25 @@ footer {
   letter-spacing: -0.05em;
 }
 .method-card-featured .method-name {
+  grid-area: name;
   color: var(--gold-bright, #e2b56a) !important;
   font-size: 1.55rem;
   line-height: 1.35;
+  margin: 0;
 }
 .method-card-featured .method-desc {
+  grid-area: desc;
   font-size: 1.05rem;
   line-height: 1.65;
-  margin-top: 1rem;
-  max-width: 760px;
+  max-width: 880px;
+  margin: 0;
 }
 @media (max-width: 780px) {
   .method-card-featured {
     grid-template-columns: 1fr;
+    grid-template-areas: "num" "name" "desc";
     padding: 2.5rem 1.75rem;
-    gap: 1rem;
+    row-gap: 0.6rem;
   }
   .method-card-featured .method-num {
     font-size: 4rem;
