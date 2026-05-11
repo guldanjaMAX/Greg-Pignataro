@@ -51,17 +51,99 @@ a{color:inherit;text-decoration:none}
 .v8 .layer-img{position:absolute;inset:0;background:url('https://gregpignataro.com/images/photos-may2026/hero-lone-figure-mountains.webp') center 50%/cover;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%)}
 .v8 .layer-fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,6,3,0.4) 0%,rgba(8,6,3,0.0) 30%,rgba(8,6,3,0.9) 100%)}
 .v2 .h-content{padding-top:8rem}
+
+/* Eye-contact variations 9-12 (Greg looking at camera) */
+.v9{display:grid !important;grid-template-columns:1fr 1fr;background:#0a0805;padding:0}
+.v9 .photo-side{background:url('https://gregpignataro.com/images/photos-may2026/greg-portrait-direct.webp') center/cover;position:relative}
+.v9 .photo-side::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(10,8,5,0.4) 100%)}
+.v9 .text-side{background:linear-gradient(180deg,#1a1107 0%,#0a0805 100%);padding:5rem 3.5rem;display:flex;flex-direction:column;justify-content:center;position:relative;border-left:1px solid rgba(199,155,86,0.2)}
+.v9 .h-content{padding:0;max-width:520px}
+
+.v10{background:#0a0805;display:grid !important;grid-template-columns:1.2fr 1fr;padding:0;position:relative}
+.v10 .photo-side{background:url('https://gregpignataro.com/images/photos-may2026/greg-close-portrait.webp') center 20%/cover;position:relative;overflow:hidden}
+.v10 .photo-side::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 70%,rgba(10,8,5,0.6) 100%)}
+.v10 .text-side{padding:5rem 3.5rem;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#16110a 0%,#0a0805 100%)}
+.v10 .h-content{padding:0;max-width:480px}
+
+.v11{background:linear-gradient(90deg,transparent 0%,rgba(8,6,3,0.0) 35%,rgba(8,6,3,0.65) 65%,rgba(8,6,3,0.9) 100%),url('https://gregpignataro.com/images/photos-may2026/greg-plaid-smile.webp') center 20%/cover}
+.v11 .h-content{margin-left:auto;margin-right:0;max-width:580px;text-align:left;padding-right:4rem}
+
+.v12{background:linear-gradient(180deg,rgba(8,6,3,0.35) 0%,rgba(8,6,3,0.1) 30%,rgba(8,6,3,0.7) 80%),url('https://gregpignataro.com/images/photos-may2026/greg-hands-forward.webp') center 35%/cover}
+.v12 .h-content{align-self:flex-end;padding-bottom:4rem}
 @media (max-width:780px){.h-content{padding:4rem 1.5rem}.h-title{font-size:clamp(2rem,8vw,2.8rem)}}
 </style>
 </head>
 <body>
 <div class="toolbar">
-  <h1>Hero <em>lab.</em> &middot; 8 variations</h1>
+  <h1>Hero <em>lab.</em> &middot; 12 variations</h1>
   <div class="nav-jump">
+    <a href="#v9" style="background:rgba(199,155,86,0.18);border-color:var(--gold);color:var(--gold-bright)">09 eye</a>
+    <a href="#v10" style="background:rgba(199,155,86,0.18);border-color:var(--gold);color:var(--gold-bright)">10 eye</a>
+    <a href="#v11" style="background:rgba(199,155,86,0.18);border-color:var(--gold);color:var(--gold-bright)">11 eye</a>
+    <a href="#v12" style="background:rgba(199,155,86,0.18);border-color:var(--gold);color:var(--gold-bright)">12 eye</a>
     <a href="#v1">01</a><a href="#v2">02</a><a href="#v3">03</a><a href="#v4">04</a>
     <a href="#v5">05</a><a href="#v6">06</a><a href="#v7">07</a><a href="#v8">08</a>
   </div>
 </div>
+<!-- ============ EYE-CONTACT VARIATIONS (priority) ============ -->
+<section class="variation v9" id="v9">
+  <div class="var-label">Variation 09<small>Greg looking at you &middot; diptych with full body portrait</small></div>
+  <div class="photo-side"></div>
+  <div class="text-side">
+    <div class="h-content">
+      <p class="h-eyebrow">For the ones who have tried everything</p>
+      <h1 class="h-title">Come home <em>to yourself.</em></h1>
+      <p class="h-theme">You were never broken. Your body remembers.</p>
+      <span class="h-rule"></span>
+      <p class="h-lineage">Gabor Mat&eacute; lineage &middot; Necker Island &middot; Guinness World Record</p>
+      <div class="h-actions"><a class="btn-primary">Apply for an Interview</a><a class="btn-ghost">See if this is you</a></div>
+    </div>
+  </div>
+  <div class="var-pick">Tell me &ldquo;09&rdquo;</div>
+</section>
+
+<section class="variation v10" id="v10">
+  <div class="var-label">Variation 10<small>Editorial close-up &middot; Greg&rsquo;s eyes on the headline</small></div>
+  <div class="photo-side"></div>
+  <div class="text-side">
+    <div class="h-content">
+      <p class="h-eyebrow">For the ones who have tried everything</p>
+      <h1 class="h-title">Come home <em>to yourself.</em></h1>
+      <p class="h-theme">You were never broken. Your body remembers.</p>
+      <span class="h-rule"></span>
+      <p class="h-lineage">Gabor Mat&eacute; lineage &middot; Necker Island &middot; Guinness World Record</p>
+      <div class="h-actions"><a class="btn-primary">Apply for an Interview</a><a class="btn-ghost">See if this is you</a></div>
+    </div>
+  </div>
+  <div class="var-pick">Tell me &ldquo;10&rdquo;</div>
+</section>
+
+<section class="variation v11" id="v11">
+  <div class="var-label">Variation 11<small>Greg seated in courtyard &middot; type on the right</small></div>
+  <div class="h-content">
+    <p class="h-eyebrow">For the ones who have tried everything</p>
+    <h1 class="h-title">Come home <em>to yourself.</em></h1>
+    <p class="h-theme">You were never broken. Your body remembers.</p>
+    <span class="h-rule"></span>
+    <p class="h-lineage">Gabor Mat&eacute; lineage &middot; Necker Island &middot; Guinness World Record</p>
+    <div class="h-actions"><a class="btn-primary">Apply for an Interview</a><a class="btn-ghost">See if this is you</a></div>
+  </div>
+  <div class="var-pick">Tell me &ldquo;11&rdquo;</div>
+</section>
+
+<section class="variation v12" id="v12">
+  <div class="var-label">Variation 12<small>Low angle hands in foreground &middot; Greg in contemplation</small></div>
+  <div class="h-content center">
+    <p class="h-eyebrow">For the ones who have tried everything</p>
+    <h1 class="h-title">Come home <em>to yourself.</em></h1>
+    <p class="h-theme">You were never broken. Your body remembers.</p>
+    <span class="h-rule"></span>
+    <p class="h-lineage">Gabor Mat&eacute; lineage &middot; Necker Island &middot; Guinness World Record</p>
+    <div class="h-actions"><a class="btn-primary">Apply for an Interview</a><a class="btn-ghost">See if this is you</a></div>
+  </div>
+  <div class="var-pick">Tell me &ldquo;12&rdquo;</div>
+</section>
+
 <section class="variation v1" id="v1">
   <div class="var-label">Variation 01<small>Lone figure on the ridge &middot; left aligned</small></div>
   <div class="h-content">
