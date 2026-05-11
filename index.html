@@ -2180,20 +2180,12 @@ footer {
 
 .cta-section-quiet { padding: 7rem 2rem; }
 .cta-quiet-grid {
-  max-width: 1080px;
+  max-width: 760px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 3rem;
-  align-items: center;
+  display: block;
+  text-align: center;
 }
-.cta-quiet-image {
-  width: 100%;
-  aspect-ratio: 4/5;
-  background: url('images/photos-may2026/hands-clasped-banner.webp') center 30%/cover no-repeat, url('images/photos-may2026/hands-clasped-banner.jpg') center 30%/cover no-repeat;
-  border-radius: 6px;
-  box-shadow: 0 20px 60px -15px rgba(0,0,0,0.25);
-}
+.cta-quiet-image { display: none; }
 .cta-quiet-copy { padding: 0; }
 .cta-quiet-question {
   font-family: var(--serif);
@@ -2633,38 +2625,20 @@ a.trust-line-mark:hover {
   opacity: 0.3;
 }
 .method-grid-journey .method-card {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 1.6rem;
-  align-items: start;
-  padding: 2.4rem 2.4rem 2.4rem 1.4rem;
+  display: block;
+  padding: 2.2rem 2.4rem 2.4rem;
   position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid rgba(199,155,86,0.3);
+  border-radius: 4px;
 }
-.method-grid-journey .method-card::before {
-  content: '';
-  position: absolute;
-  left: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--bg-card, #fff);
-  border: 2px solid var(--gold);
-  z-index: 2;
-}
+.method-grid-journey .method-card::before { display: none; }
 .method-grid-journey .method-card.method-card-destination::before {
   background: var(--gold);
   box-shadow: 0 0 0 4px rgba(184,134,58,0.18);
 }
-.method-grid-journey .method-num {
-  grid-row: span 2;
-  margin-bottom: 0;
-  font-size: 3rem;
-  text-align: right;
-  padding-right: 0.4rem;
-  align-self: center;
-}
+.method-grid-journey .method-num { display: none; }
 .method-grid-journey .method-name {
   margin-bottom: 0.4rem;
 }
