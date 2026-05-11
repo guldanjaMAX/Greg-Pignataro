@@ -562,15 +562,36 @@ body::after {
 .hero {
   height: 100vh;
   max-height: 100vh;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(90deg, rgba(8,6,3,0.85) 0%, rgba(8,6,3,0.55) 38%, rgba(8,6,3,0.10) 70%, rgba(8,6,3,0.35) 100%),
-    linear-gradient(180deg, rgba(8,6,3,0.35) 0%, rgba(8,6,3,0.20) 50%, rgba(8,6,3,0.65) 100%),
-    url('images/photos-may2026/greg-desert-arms-out.webp') center 30% / cover no-repeat;
   background-color: #0a0805;
+  display: grid;
+  grid-template-columns: minmax(380px, 45%) 1fr;
+}
+.hero::before {
+  content: '';
+  display: block;
+  background: url('images/photos-may2026/greg-studio-5648.webp') center 25% / cover no-repeat;
+  background-color: #0a0805;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(45% - 1px);
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(199,155,86,0.35) 30%, rgba(199,155,86,0.35) 70%, transparent);
+  z-index: 5;
+}
+.hero-figure { display: none !important; }
+@media (max-width: 780px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 38vh 1fr;
+  }
+  .hero::after { display: none; }
 }
 .hero-figure { display: none !important; }
 .hero::before {
@@ -626,14 +647,15 @@ body::after {
 
 .hero-content {
   position: relative;
-  z-index: 3;
-  max-width: 1440px;
+  z-index: 4;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 7rem 4rem 2rem;
-  width: 100%;
+  padding: 5rem 3.5rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  height: 100%;
 }
 .hero-text { max-width: 540px; }
 .hero-eyebrow {
