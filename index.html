@@ -3993,15 +3993,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
   <p class="footer-copy">&copy; 2026 Greg Pignataro. All rights reserved.</p>
 </footer>
 
-<!-- ===================== COOKIE CONSENT ===================== -->
-<div id="cookieConsent" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:10000; background:rgba(44,37,32,0.95); backdrop-filter:blur(12px); padding:1.2rem 2rem; font-family:var(--sans); font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.5;">
-  <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;">
-    <p style="margin:0; flex:1; min-width:280px;">This site uses cookies (Google Analytics) to understand how visitors interact with the content. No personal data is sold or shared. <a href="/privacy" style="color:#C99B4F; text-decoration:underline;">Privacy Policy</a></p>
-    <div style="display:flex; gap:0.8rem; flex-shrink:0;">
-      <button onclick="acceptCookies()" style="background:#B8863A; color:#fff; border:none; padding:0.6rem 1.4rem; border-radius:100px; font-family:var(--sans); font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer;">Accept</button>
-      <button onclick="declineCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); padding:0.6rem 1.4rem; border-radius:100px; font-family:var(--sans); font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer;">Decline</button>
-    </div>
-  </div>
 </div>
 
 <!-- ===================== SCRIPTS ===================== -->
@@ -4066,30 +4057,6 @@ document.querySelectorAll('.writing-filter-btn').forEach(btn => {
     });
   });
 });
-
-// ===== COOKIE CONSENT =====
-(function() {
-  const consent = localStorage.getItem('cookie_consent');
-  if (!consent) {
-    setTimeout(function() {
-      document.getElementById('cookieConsent').style.display = 'block';
-    }, 1500);
-  } else if (consent === 'declined') {
-    // Disable GA if declined
-    window['ga-disable-G-X73WCJRFHT'] = true;
-  }
-})();
-
-function acceptCookies() {
-  localStorage.setItem('cookie_consent', 'accepted');
-  document.getElementById('cookieConsent').style.display = 'none';
-}
-
-function declineCookies() {
-  localStorage.setItem('cookie_consent', 'declined');
-  window['ga-disable-G-X73WCJRFHT'] = true;
-  document.getElementById('cookieConsent').style.display = 'none';
-}
 
 /* ===== VIDEO CARD TOGGLE (Lee, Ray) ===== */
 function videoCardToggle(name) {
