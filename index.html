@@ -3519,6 +3519,7 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 }
 
 </style>
+<style id="lab-picks-css">
 
 /* ============== DESIGN LAB PICKS (Welcome C, Itsy B, Map B, Story B, Ways A, Apply C) ============== */
 
@@ -3615,6 +3616,12 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
   .lab-map .scene{aspect-ratio:16/10}
 }
 
+/* Ensure picked sections always render with full layout regardless of reveal-state */
+.lab-welcome,.lab-itsy,.lab-map,.lab-story,.lab-ways,.lab-apply{min-height:100vh!important}
+.lab-welcome .reveal,.lab-itsy .reveal,.lab-map .reveal,.lab-story .reveal,.lab-ways .reveal,.lab-apply .reveal,
+.lab-welcome.reveal,.lab-itsy.reveal,.lab-map.reveal,.lab-story.reveal,.lab-ways.reveal,.lab-apply.reveal{opacity:1!important;transform:none!important}
+
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
