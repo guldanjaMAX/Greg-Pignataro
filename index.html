@@ -3325,6 +3325,133 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 @media (max-width: 980px) { .modalities-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 540px) { .modalities-grid { grid-template-columns: 1fr; gap: 1.2rem; } }
 
+
+/* === HERO redesign: full-bleed desert silhouette === */
+.hero {
+  background-image: linear-gradient(180deg, rgba(8,6,3,0.45) 0%, rgba(8,6,3,0.35) 40%, rgba(8,6,3,0.75) 100%), url('images/photos-may2026/greg-desert-arms-out.webp') !important;
+  background-size: cover !important;
+  background-position: center 40% !important;
+}
+/* Hide the Greg cutout layer - the new background already contains Greg */
+.hero-figure { display: none !important; }
+/* Realign hero text to be more dramatic */
+.hero-content { max-width: 900px !important; }
+.hero-text { padding-right: 0 !important; }
+.hero-title { text-shadow: 0 4px 32px rgba(8,6,3,0.55); }
+.hero-theme { text-shadow: 0 2px 12px rgba(8,6,3,0.55); }
+.hero-lineage { text-shadow: 0 1px 8px rgba(8,6,3,0.55); }
+.hero-subtitle { text-shadow: 0 1px 8px rgba(8,6,3,0.55); }
+.hero-frame { text-shadow: 0 1px 8px rgba(8,6,3,0.55); }
+html.returning-visitor .hero {
+  background-image: linear-gradient(180deg, rgba(8,6,3,0.45) 0%, rgba(8,6,3,0.65) 100%), url('images/photos-may2026/greg-walking-away.webp') !important;
+}
+/* Lighter lineage de-emphasized */
+.hero-lineage { font-size: 0.78rem !important; letter-spacing: 0.06em; opacity: 0.7; }
+
+/* === MAP redesign: cleaner horizontal three-phase flow === */
+.method-grid-journey {
+  grid-template-columns: 1fr !important;
+  max-width: 920px !important;
+  margin: 3rem auto 0 !important;
+  gap: 1rem !important;
+  position: relative;
+}
+.method-grid-journey::before {
+  display: none !important;
+}
+.method-grid-journey .method-card {
+  display: block !important;
+  grid-template-columns: none !important;
+  padding: 2rem 2.4rem 2.2rem !important;
+  background: var(--bg-card, #fff) !important;
+  border: 1px solid var(--border-light, #ebe4d6) !important;
+  border-left: 3px solid rgba(199,155,86,0.35) !important;
+  border-radius: 4px !important;
+  position: relative;
+}
+.method-grid-journey .method-card::before,
+.method-grid-journey .method-card::after {
+  display: none !important;
+}
+.method-grid-journey .method-card .method-name {
+  font-family: var(--serif) !important;
+  font-style: normal !important;
+  font-size: 1.45rem !important;
+  font-weight: 500 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.3 !important;
+}
+.method-grid-journey .method-card .method-desc {
+  font-family: var(--serif) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  color: var(--text-secondary) !important;
+}
+.method-grid-journey .method-card-destination {
+  border-left: 3px solid var(--gold) !important;
+  background: linear-gradient(135deg, rgba(199,155,86,0.06) 0%, rgba(199,155,86,0.02) 60%, var(--bg-card) 100%) !important;
+}
+.method-grid-journey .method-card-destination .method-name {
+  color: var(--gold) !important;
+  font-style: italic !important;
+}
+
+/* === APPLY redesign: photo as ambient backdrop, type wins === */
+.cta-section-quiet {
+  padding: 8rem 2rem 9rem !important;
+  background:
+    linear-gradient(180deg, rgba(10,8,5,0.78) 0%, rgba(20,14,8,0.6) 45%, rgba(10,8,5,0.92) 100%),
+    url('images/photos-may2026/doorway-light.webp') center 40%/cover no-repeat,
+    var(--bg-primary) !important;
+  position: relative;
+  text-align: center;
+}
+.cta-section-quiet::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(212,163,88,0.18) 0%, transparent 50%);
+  pointer-events: none;
+}
+.cta-quiet-grid {
+  display: block !important;
+  grid-template-columns: none !important;
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  position: relative;
+  z-index: 2;
+}
+.cta-quiet-image {
+  display: none !important;
+}
+.cta-quiet-copy {
+  text-align: center !important;
+}
+.cta-quiet-copy > .eyebrow {
+  display: none !important;
+}
+.cta-quiet-question {
+  font-size: clamp(1.9rem, 4vw, 3rem) !important;
+  margin: 0 auto 1.4rem !important;
+  max-width: 720px !important;
+}
+.cta-section-quiet .cta-desc {
+  text-align: center !important;
+  max-width: 580px !important;
+  margin: 0 auto 2rem !important;
+}
+.cta-section-quiet .btn-primary {
+  padding: 1rem 2.2rem !important;
+}
+.cta-section-quiet p[style*="font-style"] {
+  text-align: center !important;
+  max-width: 480px !important;
+  margin: 1.6rem auto 0 !important;
+}
+
 </style>
 </head>
 <body>
@@ -3352,18 +3479,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="main-content">
   <div class="hero-dust"></div>
-  <div class="gold-particles" aria-hidden="true">
-    <span class="p" style="left: 8%; animation-duration: 22s; animation-delay: -2s;"></span>
-    <span class="p" style="left: 18%; animation-duration: 28s; animation-delay: -8s; width: 2px; height: 2px;"></span>
-    <span class="p" style="left: 26%; animation-duration: 24s; animation-delay: -14s;"></span>
-    <span class="p" style="left: 35%; animation-duration: 30s; animation-delay: -4s; width: 4px; height: 4px;"></span>
-    <span class="p" style="left: 44%; animation-duration: 26s; animation-delay: -18s;"></span>
-    <span class="p" style="left: 52%; animation-duration: 32s; animation-delay: -10s;"></span>
-    <span class="p" style="left: 62%; animation-duration: 25s; animation-delay: -22s; width: 2px; height: 2px;"></span>
-    <span class="p" style="left: 71%; animation-duration: 29s; animation-delay: -6s;"></span>
-    <span class="p" style="left: 80%; animation-duration: 27s; animation-delay: -16s; width: 4px; height: 4px;"></span>
-    <span class="p" style="left: 89%; animation-duration: 23s; animation-delay: -12s;"></span>
-  </div>
   <div class="hero-figure">
     <picture>
       <source srcset="images/photos-may2026/hero-greg-cutout.webp" type="image/webp">
@@ -3420,22 +3535,11 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 
 
 
-<!-- ============== CHAPTER I — THE RECKONING ============== -->
-<section class="chapter" id="chapter-1" aria-label="Chapter One: The Reckoning">
-  <div class="chapter-bg" style="background-image: url('images/photos-may2026/chapter-water.webp');"></div>
-  <div class="chapter-inner">
-    <p class="chapter-roman">I.</p>
-    <h2 class="chapter-name">The <em>reckoning.</em></h2>
-    <span class="chapter-rule" aria-hidden="true"></span>
-    <p class="chapter-quote">Most people arrive at this work the same way. Quietly. Often at three in the morning. Always after everything else stopped working.</p>
-  </div>
-</section>
 
 <!-- ===================== IS THIS YOU (immersive) ===================== -->
 <section id="who" class="immersive-section left-text" style="background-image: url('images/photos-may2026/somatic-fullbleed.webp');">
   <div class="immersive-content">
     <div class="immersive-text reveal">
-      <p class="eyebrow">Is This You</p>
       <h2>You have done <em>everything right.</em><br>So why does something still feel <em>off?</em></h2>
       <p>If you have been high performing long enough to build a life most people would envy, and you are now somewhere in the middle of a transition nobody prepared you for (a divorce, a sale, a retirement, a last child leaving, a diagnosis, a reckoning), there are probably three sentences you have said to a friend, to a therapist, or to the ceiling at three in the morning.</p>
       <div class="quotes-list">
@@ -3467,46 +3571,28 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 </section>
 
 <!-- ===================== ATMOSPHERIC BREAK (between manifestos) ===================== -->
-<section class="manifesto-break" style="background: #0a0805; height: 60vh; min-height: 480px; max-height: 680px; background-image: url('images/photos-may2026/greg-desert-arms-out.webp'); background-size: cover; background-position: center; position: relative;">
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,6,3,0.5) 0%, rgba(8,6,3,0.3) 50%, rgba(8,6,3,0.6) 100%);"></div>
-</section>
-
 <!-- ===================== MONSTERS INC PRINCIPLE ===================== -->
 
 
 <!-- ===================== THE THREE PHASES ===================== -->
 
-<!-- ============== CHAPTER II — THE MAP ============== -->
-<section class="chapter" id="chapter-2" aria-label="Chapter Two: The Map">
-  <div class="chapter-bg" style="background-image: url('images/photos-may2026/chapter-mountains.webp');"></div>
-  <div class="chapter-inner">
-    <p class="chapter-roman">II.</p>
-    <h2 class="chapter-name">The <em>map.</em></h2>
-    <span class="chapter-rule" aria-hidden="true"></span>
-    <p class="chapter-quote">Three phases. Most coaches live in the first. Most spiritual teachers live in the second. Almost no one is pointing at the third.</p>
-  </div>
-</section>
 
 
 <section id="method" style="background: var(--bg-primary);">
   <div class="container">
-    <p class="eyebrow reveal">The Map</p>
     <h2 class="section-title reveal">Three phases. Most people<br>get stuck in the <em>first two.</em></h2>
     <div class="reveal" style="margin: 2rem auto 0; max-width: 1100px; border-radius: 8px; overflow: hidden; aspect-ratio: 21/9; background: url('images/photos-may2026/greg-walking-away.webp') center 50%/cover no-repeat; box-shadow: 0 24px 60px -12px rgba(0,0,0,0.3);"></div>
     <p class="section-subtitle reveal">There is an old Zen saying. Before enlightenment, mountains are mountains and rivers are rivers. Then, mountains are no longer mountains and rivers are no longer rivers. Finally, mountains are mountains and rivers are rivers once more. It is the cleanest description of what actually happens when a person does this work.</p>
     <div class="method-grid method-grid-journey">
       <div class="method-card reveal">
-        <div class="method-num">01</div>
         <div class="method-name">Mountains are mountains.</div>
         <div class="method-desc">You chase the body, the career, the right identity. You optimize. You achieve. You believe that if you can just get the outside right, the inside will follow. For a while, it works. Then it stops working, and you do not know why. This is where most of the self development industry lives.</div>
       </div>
       <div class="method-card reveal reveal-delay-1">
-        <div class="method-num">02</div>
         <div class="method-name">Mountains are no longer mountains.</div>
         <div class="method-desc">Something cracks. A divorce. A sale. A ceremony. A dark night. The identity you built your life around dissolves. Everything you believed is up for review. This is the moment most spiritual teachers are happy to keep you in. This is where most people get stranded.</div>
       </div>
       <div class="method-card method-card-destination reveal reveal-delay-2">
-        <div class="method-num">03</div>
         <div class="method-name">Mountains are mountains once more.</div>
         <div class="method-desc">You come home. The body is a body again, but you love it. You have preferences, not compulsions. You care for yourself because it feels good, not because you are afraid of what happens if you stop. You want things without needing them.</div>
         <p class="method-card-pull"><em>This is where the work is actually going.</em></p>
@@ -3518,16 +3604,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 
 <!-- ===================== GREG'S STORY ===================== -->
 
-<!-- ============== CHAPTER III — THE STORY ============== -->
-<section class="chapter" id="chapter-3" aria-label="Chapter Three: The Story">
-  <div class="chapter-bg" style="background-image: url('images/photos-may2026/gold-cracks.webp'); background-position: center;"></div>
-  <div class="chapter-inner">
-    <p class="chapter-roman">III.</p>
-    <h2 class="chapter-name">The man who <em>walked through it first.</em></h2>
-    <span class="chapter-rule" aria-hidden="true"></span>
-    <p class="chapter-quote">Before he sat across from anyone else, he sat across from himself. For longer than he meant to.</p>
-  </div>
-</section>
 
 <section id="story" class="immersive-section right-text" style="background-image: url('images/photos-may2026/story-fullbleed.webp');">
   <div class="immersive-content">
@@ -3555,15 +3631,13 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <section class="modalities-section" id="modalities">
   <div class="modalities-inner">
     <div class="modalities-head reveal">
-      <p class="eyebrow">Eight Doors</p>
       <h2>The work goes through <em>every door.</em></h2>
       <p class="lede">There is not one way home. There are many. Greg sits at the threshold of eight of them and walks people through whichever one is unlocked first.</p>
     </div>
     <div class="modalities-grid">
       <div class="modality-card reveal">
         <div class="modality-img" style="background-image:url('images/modalities/modality-neufit.webp');">
-          <span class="modality-num">I.</span>
-        </div>
+          </div>
         <div class="modality-body">
           <h3>NeuFit and the <em>nervous system.</em></h3>
           <p>Direct current to the body to release the patterns it has been bracing against for years.</p>
@@ -3571,8 +3645,7 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
       </div>
       <div class="modality-card reveal reveal-delay-1">
         <div class="modality-img" style="background-image:url('images/modalities/modality-talk-therapy.webp');">
-          <span class="modality-num">II.</span>
-        </div>
+          </div>
         <div class="modality-body">
           <h3>Talk that <em>actually goes deep.</em></h3>
           <p>Two chairs. A real conversation. The kind of room most therapy never makes.</p>
@@ -3580,8 +3653,7 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
       </div>
       <div class="modality-card reveal reveal-delay-2">
         <div class="modality-img" style="background-image:url('images/modalities/modality-sound-therapy.webp');">
-          <span class="modality-num">III.</span>
-        </div>
+          </div>
         <div class="modality-body">
           <h3>Sound as a <em>way through.</em></h3>
           <p>Bowls, frequencies, breath. The body listens to vibration in a way the mind cannot interrupt.</p>
@@ -3589,8 +3661,7 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
       </div>
       <div class="modality-card reveal reveal-delay-3">
         <div class="modality-img" style="background-image:url('images/modalities/modality-physical-therapy.webp');">
-          <span class="modality-num">IV.</span>
-        </div>
+          </div>
         <div class="modality-body">
           <h3>Physical work and <em>embodiment.</em></h3>
           <p>The body is not a vehicle. It is a doorway. Twenty years inside it qualifies Greg to point this out.</p>
@@ -3598,8 +3669,7 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
       </div>
       <div class="modality-card reveal">
         <div class="modality-img" style="background-image:url('images/modalities/modality-plant-medicine.webp');">
-          <span class="modality-num">V.</span>
-        </div>
+          </div>
         <div class="modality-body">
           <h3>Plant medicine, <em>held well.</em></h3>
           <p>Not the medicine itself. The integration. The week after. The year after. The life after.</p>
@@ -3607,8 +3677,7 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
       </div>
       <div class="modality-card reveal reveal-delay-1">
         <div class="modality-img" style="background-image:url('images/modalities/modality-sexual-healing.webp');">
-          <span class="modality-num">VI.</span>
-        </div>
+          </div>
         <div class="modality-body">
           <h3>Sexual healing <em>and power.</em></h3>
           <p>The most shut-down room in most adults. Reopened with reverence, never haste.</p>
@@ -3616,8 +3685,7 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
       </div>
       <div class="modality-card reveal reveal-delay-2">
         <div class="modality-img" style="background-image:url('images/modalities/modality-forgiveness.webp');">
-          <span class="modality-num">VII.</span>
-        </div>
+          </div>
         <div class="modality-body">
           <h3>The work of <em>forgiveness.</em></h3>
           <p>Not for them. For the part of you still carrying the weight a decade later.</p>
@@ -3625,8 +3693,7 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
       </div>
       <div class="modality-card reveal reveal-delay-3">
         <div class="modality-img" style="background-image:url('images/modalities/modality-self-love.webp');">
-          <span class="modality-num">VIII.</span>
-        </div>
+          </div>
         <div class="modality-body">
           <h3>Self love that is <em>not performance.</em></h3>
           <p>The hand on your own chest in a quiet room. The end of the war you have been waging on your body.</p>
@@ -3648,28 +3715,23 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <section id="beliefs" style="background: var(--bg-accent);">
   <div class="container">
     <div class="reveal" style="margin: 0 auto 3rem; max-width: 720px; aspect-ratio: 16/9; background: url('images/photos-may2026/hands-clasped-banner.webp') center 30%/cover no-repeat; border-radius: 8px; box-shadow: 0 18px 40px -10px rgba(0,0,0,0.25);"></div>
-    <p class="eyebrow reveal">What I Actually Believe</p>
     <h2 class="section-title reveal">Three things most people in this<br>work will never say <em>out loud.</em></h2>
     <p class="section-subtitle reveal">Greg spent six years inside the fitness and wellness industry before walking out the door. He is not criticizing it from the outside. He is a whistleblower from inside the room.</p>
 
     <div class="method-grid">
       <div class="method-card reveal">
-        <div class="method-num">I</div>
         <div class="method-name">You do not need to find your purpose. You need to embrace purposelessness.</div>
         <div class="method-desc">The self help industry has made a billion dollar religion out of &ldquo;finding your purpose.&rdquo; It is a trap. True freedom is realizing you do not have one, and never did. Once you have met the fear underneath that realization, you are finally free to build and pursue anything you want. Not from need. From choice.</div>
       </div>
       <div class="method-card reveal reveal-delay-1">
-        <div class="method-num">II</div>
         <div class="method-name">The wellness industry is teaching you to abuse yourself in a socially acceptable way.</div>
         <div class="method-desc">Fear, shame, and guilt are the water the fitness, medical, and wellness industries are blindly swimming in. They call it discipline. They call it accountability. They call it tough love. It is self disconnection wearing a sports bra. I was inside that industry for six years. I built a business inside it. I am not criticizing it from the outside. I am a whistleblower.</div>
       </div>
       <div class="method-card reveal reveal-delay-2">
-        <div class="method-num">III</div>
         <div class="method-name">Most spiritual teachers will strand you halfway.</div>
         <div class="method-desc">The non dual teachers I admire will take you to the place where everything dissolves and leave you there. The new age teachers will dress that same halfway point up in language about &ldquo;higher selves&rdquo; and &ldquo;ascension&rdquo; and &ldquo;soul contracts.&rdquo; I love some of those teachers. I am not one of them. The work is not to leave the body and live in the clouds. The work is to come home to the body and love it without needing it to be anything other than what it is.</div>
       </div>
       <div class="method-card method-card-featured reveal reveal-delay-3">
-        <div class="method-num">IV</div>
         <div class="method-name">The deeper this work goes, the more it attracts practitioners who are not well.</div>
         <div class="method-desc">Greg is not one of them. A Guinness World Record earned through discipline, not charisma. Training under Dr. Gabor Mat&eacute;. Facilitation at Richard Branson&rsquo;s Necker Island. He is one of the very rare practitioners in this space who is not a wolf in the hen house. You will be met with presence, competence, and care. Nothing more. Nothing less.</div>
       </div>
@@ -3695,7 +3757,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <section class="immersive-section left-text" style="background-image: url('images/photos-may2026/working-fullbleed.webp');">
   <div class="immersive-content">
     <div class="immersive-text reveal">
-      <p class="eyebrow">What working with Greg actually looks like</p>
       <h2>One person at a time. <em>For twelve months.</em></h2>
       <p>This is not a group program. It is not a course. It is not a series of pre recorded calls you watch in the kitchen. It is a private practice. One person. Twelve months. Weekly touchpoints. Two in person intensives.</p>
       <p>What happens between us is uncluttered. No funnel. No upsell, no certification, no community to manage. The relationship is the work. The frequency is the work. The patience is the work. We slow down. We stay. We do not start over.</p>
@@ -3720,7 +3781,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <!-- ===================== SOCIAL PROOF ===================== -->
 <section style="background: var(--bg-primary);">
   <div class="container">
-    <p class="eyebrow reveal" style="justify-content: center;">Real Results</p>
     <h2 class="section-title reveal" style="text-align: center;">From people who stopped <em>pretending.</em></h2>
     <p class="section-subtitle reveal" style="text-align: center;">These are not case studies. They are people who walked into a room looking for one thing and walked out having found something they did not know they were missing.</p>
 
@@ -3921,7 +3981,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <!-- ===================== NOT FOR EVERYONE (Opt 04) ===================== -->
 <section class="not-for-everyone">
   <div class="nfe-inner reveal">
-    <p class="nfe-eyebrow">Before you apply</p>
     <h2 class="nfe-title">This practice is <em>not for everyone.</em></h2>
     <p class="nfe-lede">Greg works with four to six people at a time. He would rather sit with an empty calendar than fill it with the wrong person. Read the four sentences below honestly. If any of them describe you, this is probably not the right room.</p>
     <ul class="nfe-list">
