@@ -2990,6 +2990,255 @@ html.no-intro .intro-curtain { display: none; }
   .chapter-bg { transform: none !important; transition: none !important; }
 }
 
+
+
+/* ===== Audit fixes 2026-05-10 ===== */
+
+/* Single Apply CTA on screen at any moment */
+.nav-cta.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: all 0.35s ease;
+}
+.nav-cta {
+  transition: all 0.35s ease;
+}
+
+/* Three Phases vertical journey on mobile: restore the gold connector */
+@media (max-width: 780px) {
+  .method-grid-journey {
+    position: relative;
+  }
+  .method-grid-journey::before {
+    display: block !important;
+    content: '' !important;
+    position: absolute !important;
+    left: 30px !important;
+    top: 50px !important;
+    bottom: 50px !important;
+    width: 1px !important;
+    background: linear-gradient(180deg, transparent 0%, var(--gold) 12%, var(--gold) 88%, transparent 100%) !important;
+    opacity: 0.35 !important;
+  }
+  .method-grid-journey .method-card {
+    grid-template-columns: 60px 1fr !important;
+    padding-left: 1rem !important;
+    position: relative;
+  }
+  .method-grid-journey .method-card::before {
+    display: block !important;
+    content: '' !important;
+    position: absolute !important;
+    left: 22px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    background: var(--bg-card, #fff) !important;
+    border: 2px solid var(--gold) !important;
+    z-index: 2;
+  }
+  .method-grid-journey .method-card.method-card-destination::before {
+    background: var(--gold) !important;
+    box-shadow: 0 0 0 4px rgba(184,134,58,0.18) !important;
+  }
+}
+
+/* Vary chapter animations: 
+   - Chapter II: numeral fades in from a smaller scale (like ink drawing)
+   - Chapter III: background uses crossfade instead of scale */
+#chapter-2.chapter .chapter-roman {
+  transition: opacity 1.4s cubic-bezier(0.22,1,0.36,1) 0.3s, transform 1.4s cubic-bezier(0.22,1,0.36,1) 0.3s, letter-spacing 1.4s cubic-bezier(0.22,1,0.36,1) 0.3s !important;
+  transform: scale(0.6) !important;
+  letter-spacing: 0.4em !important;
+}
+#chapter-2.in-view .chapter-roman {
+  transform: scale(1) !important;
+  letter-spacing: -0.02em !important;
+}
+#chapter-3.chapter .chapter-bg {
+  transition: opacity 2.2s cubic-bezier(0.22,1,0.36,1) !important;
+  transform: none !important;
+  opacity: 0 !important;
+}
+#chapter-3.in-view .chapter-bg {
+  opacity: 0.68 !important;
+  transform: none !important;
+}
+
+/* Wendy quote redesign: dark backdrop with avatar inset and gold underline */
+.wendy-manifesto-darkened {
+  background: linear-gradient(180deg, #0e0a06 0%, #1a1107 100%) !important;
+  color: #fdfbf8 !important;
+  position: relative;
+  overflow: hidden;
+}
+.wendy-manifesto-darkened::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(199,155,86,0.10) 0%, transparent 55%);
+  pointer-events: none;
+}
+.wendy-manifesto-darkened .manifesto-quote {
+  color: rgba(253,251,248,0.92) !important;
+  position: relative;
+  z-index: 2;
+}
+.wendy-manifesto-darkened .manifesto-quote em {
+  color: var(--gold-bright, #e2b56a) !important;
+}
+.wendy-attribution-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.wendy-attribution-row .w-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-image: url('images/testimonials/wendy-cover.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(199,155,86,0.55);
+  box-shadow: 0 0 0 4px rgba(10,8,5,0.4), 0 0 18px rgba(199,155,86,0.18);
+  flex-shrink: 0;
+}
+.wendy-attribution-row .w-text {
+  text-align: left;
+}
+.wendy-attribution-row .w-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold-bright, #e2b56a);
+  position: relative;
+  display: inline-block;
+}
+.wendy-attribution-row .w-name::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+.wendy-attribution-row .w-meta {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(253,251,248,0.55);
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+/* Not For Everyone semantic labels: replace numerals with one-word italic gold */
+.nfe-marker-label {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.18rem;
+  color: var(--gold-bright, #e2b56a);
+  letter-spacing: 0;
+  text-align: right;
+  padding-right: 0.6rem;
+}
+@media (max-width: 780px) {
+  .nfe-marker-label { text-align: left; padding-right: 0; }
+}
+
+/* Dark footer reskin */
+footer.footer-dark {
+  background: linear-gradient(180deg, #0e0a06 0%, #1a1107 100%) !important;
+  color: #fdfbf8 !important;
+  padding: 5rem 2rem 3rem !important;
+  position: relative;
+  overflow: hidden;
+}
+footer.footer-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(199,155,86,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+footer.footer-dark .footer-tagline-large {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--gold-bright, #e2b56a);
+  text-align: center;
+  margin-bottom: 2.4rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 2;
+}
+footer.footer-dark .footer-tagline-large em {
+  font-style: italic;
+  color: #fdfbf8;
+}
+footer.footer-dark .footer-top-link { color: rgba(253,251,248,0.55) !important; }
+footer.footer-dark .footer-top-link:hover { color: var(--gold-bright) !important; }
+footer.footer-dark .footer-brand { color: rgba(253,251,248,0.92) !important; }
+footer.footer-dark .footer-tagline { color: rgba(253,251,248,0.7) !important; }
+footer.footer-dark .footer-nav a { color: rgba(253,251,248,0.7) !important; }
+footer.footer-dark .footer-nav a:hover { color: var(--gold-bright) !important; }
+footer.footer-dark .footer-social a { color: rgba(253,251,248,0.55) !important; }
+footer.footer-dark .footer-social a:hover { color: var(--gold-bright) !important; }
+footer.footer-dark .footer-legal a { color: rgba(253,251,248,0.45) !important; }
+footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
+
+/* Necker proof inset in Working With Greg */
+.necker-proof-inset {
+  margin-top: 2.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.4rem 1.6rem;
+  background: rgba(253,251,248,0.04);
+  border-left: 2px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+  max-width: 580px;
+}
+.necker-proof-inset .npi-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 4px;
+  background-image: url('images/photos-may2026/necker-large.webp');
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px -8px rgba(0,0,0,0.5);
+}
+.necker-proof-inset .npi-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: rgba(253,251,248,0.85);
+}
+.necker-proof-inset .npi-text strong {
+  color: var(--gold-bright, #e2b56a);
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+@media (max-width: 780px) {
+  .necker-proof-inset { flex-direction: column; align-items: start; }
+}
+
 </style>
 </head>
 <body>
@@ -3291,9 +3540,15 @@ html.no-intro .intro-curtain { display: none; }
 
 
 <!-- ===================== WENDY QUOTE (manifesto layer) ===================== -->
-<section class="manifesto reveal" style="background: var(--bg-primary); padding: 6rem 2rem;">
-  <p class="manifesto-quote" style="max-width:900px;margin:0 auto 1.6rem;">&ldquo;He put electrodes on the back of my neck and at the bottom of my feet, and I felt a current wash through me that created an alignment within my body I had not felt in years. He is a consummate professional. <em>I recommend him with my highest recommendation.</em>&rdquo;</p>
-  <p class="manifesto-attribution" style="text-align:center;font-size:.78rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;font-family:var(--sans);">Wendy Starland &middot; Music industry &middot; Three years with Greg</p>
+<section class="manifesto reveal wendy-manifesto-darkened" style="padding: 7rem 2rem;">
+  <p class="manifesto-quote" style="max-width:920px;margin:0 auto 1.6rem;">&ldquo;He put electrodes on the back of my neck and at the bottom of my feet, and I felt a current wash through me that created an alignment within my body I had not felt in years. He is a consummate professional. <em>I recommend him with my highest recommendation.</em>&rdquo;</p>
+  <div class="wendy-attribution-row">
+    <div class="w-avatar" aria-hidden="true"></div>
+    <div class="w-text">
+      <span class="w-name">Wendy Starland</span>
+      <div class="w-meta">Music industry &middot; Three years with Greg</div>
+    </div>
+  </div>
 </section>
 
 <!-- ===================== WHAT WORKING WITH GREG LOOKS LIKE (immersive) ===================== -->
@@ -3311,6 +3566,11 @@ html.no-intro .intro-curtain { display: none; }
         <li><strong>Voxer access between sessions.</strong> Voice notes when you need them.</li>
         <li><strong>Four to six clients at a time.</strong> Never more.</li>
       </ul>
+
+      <div class="necker-proof-inset">
+        <div class="npi-img" aria-hidden="true"></div>
+        <p class="npi-text"><strong>Real proof &middot; Necker Island</strong>The work is not theoretical. Greg facilitates retreats at Richard Branson&apos;s Necker Island. <em>The same practice you experience in this twelve month container is the one he holds in those rooms.</em></p>
+      </div>
 
       <div class="what-changes">
         <p class="what-changes-eyebrow">What changes inside the year</p>
@@ -3658,10 +3918,10 @@ html.no-intro .intro-curtain { display: none; }
     <h2 class="nfe-title">This practice is <em>not for everyone.</em></h2>
     <p class="nfe-lede">Greg works with four to six people at a time. He would rather sit with an empty calendar than fill it with the wrong person. Read the four sentences below honestly. If any of them describe you, this is probably not the right room.</p>
     <ul class="nfe-list">
-      <li><span class="nfe-marker">I.</span><span class="nfe-text">You want a ninety day fix. A program. A protocol. A checklist. The work Greg does is slower than that, on purpose.</span></li>
-      <li><span class="nfe-marker">II.</span><span class="nfe-text">You want to be told what to eat, how to train, and when to sleep. Greg is not your nutritionist. He is not your coach. He is your interlocutor.</span></li>
-      <li><span class="nfe-marker">III.</span><span class="nfe-text">You are looking for a guru, an awakening, or someone to tell you who you are. Greg will not perform either role. He cannot.</span></li>
-      <li><span class="nfe-marker">IV.</span><span class="nfe-text">Your only goal is the number on the scale, the body in the mirror, or the title on the next business card. Those things move on their own when the foundation changes. They are not the foundation.</span></li>
+      <li><span class="nfe-marker nfe-marker-label">Timeline.</span><span class="nfe-text">You want a ninety day fix. A program. A protocol. A checklist. The work Greg does is slower than that, on purpose.</span></li>
+      <li><span class="nfe-marker nfe-marker-label">Transaction.</span><span class="nfe-text">You want to be told what to eat, how to train, and when to sleep. Greg is not your nutritionist. He is not your coach. He is your interlocutor.</span></li>
+      <li><span class="nfe-marker nfe-marker-label">Guru.</span><span class="nfe-text">You are looking for a guru, an awakening, or someone to tell you who you are. Greg will not perform either role. He cannot.</span></li>
+      <li><span class="nfe-marker nfe-marker-label">Mirror.</span><span class="nfe-text">Your only goal is the number on the scale, the body in the mirror, or the title on the next business card. Those things move on their own when the foundation changes. They are not the foundation.</span></li>
     </ul>
     <p class="nfe-close"><em>If none of those describe you, the door is open. Keep reading.</em></p>
   </div>
@@ -3682,7 +3942,8 @@ html.no-intro .intro-curtain { display: none; }
 </section>
 
 <!-- ===================== FOOTER ===================== -->
-<footer>
+<footer class="footer-dark">
+  <p class="footer-tagline-large"><em>Come home</em> to yourself.</p>
   <a href="#" class="footer-top-link">Back to Top</a>
   <div class="footer-brand">Greg Pignataro</div>
   <p class="footer-tagline">Come home to yourself.</p>
@@ -3901,7 +4162,11 @@ function wendyToggle() {
     var viewportBottom = scrollY + window.innerHeight;
     var pastHero = scrollY > heroHeight;
     var nearApply = viewportBottom > applyTop - 100 && scrollY < applyBottom;
-    pill.classList.toggle('is-visible', pastHero && !nearApply);
+    var showFloat = pastHero && !nearApply;
+    pill.classList.toggle('is-visible', showFloat);
+    // Single CTA at any moment: hide nav Apply when floating shows
+    var navCta = document.querySelector('.navbar-minimal .nav-cta');
+    if (navCta) navCta.classList.toggle('is-hidden', showFloat);
   }
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
