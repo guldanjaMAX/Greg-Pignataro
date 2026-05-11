@@ -703,23 +703,8 @@ body::after {
   max-width: 560px;
   margin: 2.4rem auto 0;
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 48%;
-  background: url('images/photos-may2026/greg-studio-5648.webp') center 22% / cover no-repeat;
-  background-color: #0a0805;
-  z-index: 1;
-}
-/* hero seam removed */
+.hero::before { display: none; }
 .hero-figure, .hero-dust, .gold-particles { display: none !important; }
-@media (max-width: 780px) {
-  .hero::before { width: 100%; height: 38vh; bottom: auto; }
-  .hero::after { display: none; }
-}
 .hero-figure { display: none !important; }
 /* old .hero::before gradient removed - was overriding diptych photo */
 .hero-dust {
