@@ -566,9 +566,13 @@ body::after {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: url('images/photos-may2026/hero-lake-bg.webp') center center / cover no-repeat;
+  background:
+    linear-gradient(90deg, rgba(8,6,3,0.85) 0%, rgba(8,6,3,0.55) 38%, rgba(8,6,3,0.10) 70%, rgba(8,6,3,0.35) 100%),
+    linear-gradient(180deg, rgba(8,6,3,0.35) 0%, rgba(8,6,3,0.20) 50%, rgba(8,6,3,0.65) 100%),
+    url('images/photos-may2026/greg-desert-arms-out.webp') center 30% / cover no-repeat;
   background-color: #0a0805;
 }
+.hero-figure { display: none !important; }
 .hero::before {
   content: '';
   position: absolute;
@@ -3325,6 +3329,109 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 @media (max-width: 980px) { .modalities-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 540px) { .modalities-grid { grid-template-columns: 1fr; gap: 1.2rem; } }
 
+
+/* Map redesign: cleaner cards, less giant numerals */
+.method-grid-journey {
+  grid-template-columns: 1fr !important;
+  max-width: 940px !important;
+  margin: 3rem auto 0 !important;
+  gap: 1rem !important;
+  position: relative;
+}
+.method-grid-journey::before { display: none !important; }
+.method-grid-journey .method-card {
+  display: block !important;
+  padding: 2.2rem 2.4rem 2.4rem !important;
+  background: var(--bg-card, #fff) !important;
+  border: 1px solid var(--border-light, #ebe4d6) !important;
+  border-left: 3px solid rgba(199,155,86,0.3) !important;
+  border-radius: 4px !important;
+  position: relative;
+}
+.method-grid-journey .method-card::before,
+.method-grid-journey .method-card::after { display: none !important; }
+.method-grid-journey .method-card .method-name {
+  font-family: var(--serif) !important;
+  font-style: normal !important;
+  font-size: 1.55rem !important;
+  font-weight: 500 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 0.6rem !important;
+  line-height: 1.3 !important;
+}
+.method-grid-journey .method-card .method-desc {
+  font-family: var(--serif) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+  color: var(--text-secondary) !important;
+}
+.method-grid-journey .method-card-destination {
+  border-left: 3px solid var(--gold, #b8863a) !important;
+  background: linear-gradient(135deg, rgba(199,155,86,0.07) 0%, rgba(199,155,86,0.02) 60%, var(--bg-card) 100%) !important;
+}
+.method-grid-journey .method-card-destination .method-name {
+  color: var(--gold, #b8863a) !important;
+  font-style: italic !important;
+}
+.method-card-pull {
+  margin-top: 1rem;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold, #b8863a);
+  font-size: 1rem;
+}
+
+/* Apply CTA redesign: centered with doorway dominant */
+.cta-section-quiet {
+  padding: 8rem 2rem 9rem !important;
+  background:
+    linear-gradient(180deg, rgba(10,8,5,0.75) 0%, rgba(20,14,8,0.55) 45%, rgba(10,8,5,0.90) 100%),
+    url('images/photos-may2026/doorway-light.webp') center 40%/cover no-repeat,
+    var(--bg-primary, #faf7f2) !important;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+.cta-section-quiet::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(212,163,88,0.18) 0%, transparent 50%);
+  pointer-events: none;
+}
+.cta-quiet-grid {
+  display: block !important;
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  position: relative;
+  z-index: 2;
+}
+.cta-quiet-image { display: none !important; }
+.cta-quiet-copy { text-align: center !important; }
+.cta-quiet-copy > .eyebrow { display: none !important; }
+.cta-quiet-question {
+  font-size: clamp(1.9rem, 4vw, 3rem) !important;
+  margin: 0 auto 1.4rem !important;
+  max-width: 720px !important;
+  color: #fdfbf8 !important;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.55) !important;
+}
+.cta-quiet-question em { color: var(--gold-bright, #e2b56a) !important; font-style: italic; }
+.cta-section-quiet .cta-desc {
+  text-align: center !important;
+  max-width: 580px !important;
+  margin: 0 auto 2rem !important;
+  color: rgba(253,251,248,0.88) !important;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.5);
+}
+.cta-section-quiet p[style*="italic"] {
+  text-align: center !important;
+  max-width: 480px !important;
+  margin: 1.6rem auto 0 !important;
+  color: rgba(253,251,248,0.65) !important;
+}
+
 </style>
 </head>
 <body>
@@ -3420,22 +3527,10 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 
 
 
-<!-- ============== CHAPTER I — THE RECKONING ============== -->
-<section class="chapter" id="chapter-1" aria-label="Chapter One: The Reckoning">
-  <div class="chapter-bg" style="background-image: url('images/photos-may2026/chapter-water.webp');"></div>
-  <div class="chapter-inner">
-    <p class="chapter-roman">I.</p>
-    <h2 class="chapter-name">The <em>reckoning.</em></h2>
-    <span class="chapter-rule" aria-hidden="true"></span>
-    <p class="chapter-quote">Most people arrive at this work the same way. Quietly. Often at three in the morning. Always after everything else stopped working.</p>
-  </div>
-</section>
-
 <!-- ===================== IS THIS YOU (immersive) ===================== -->
 <section id="who" class="immersive-section left-text" style="background-image: url('images/photos-may2026/somatic-fullbleed.webp');">
   <div class="immersive-content">
     <div class="immersive-text reveal">
-      <p class="eyebrow">Is This You</p>
       <h2>You have done <em>everything right.</em><br>So why does something still feel <em>off?</em></h2>
       <p>If you have been high performing long enough to build a life most people would envy, and you are now somewhere in the middle of a transition nobody prepared you for (a divorce, a sale, a retirement, a last child leaving, a diagnosis, a reckoning), there are probably three sentences you have said to a friend, to a therapist, or to the ceiling at three in the morning.</p>
       <div class="quotes-list">
@@ -3466,31 +3561,13 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
   <p class="manifesto-attribution">Greg Pignataro</p>
 </section>
 
-<!-- ===================== ATMOSPHERIC BREAK (between manifestos) ===================== -->
-<section class="manifesto-break" style="background: #0a0805; height: 60vh; min-height: 480px; max-height: 680px; background-image: url('images/photos-may2026/greg-desert-arms-out.webp'); background-size: cover; background-position: center; position: relative;">
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,6,3,0.5) 0%, rgba(8,6,3,0.3) 50%, rgba(8,6,3,0.6) 100%);"></div>
-</section>
-
 <!-- ===================== MONSTERS INC PRINCIPLE ===================== -->
 
 
 <!-- ===================== THE THREE PHASES ===================== -->
 
-<!-- ============== CHAPTER II — THE MAP ============== -->
-<section class="chapter" id="chapter-2" aria-label="Chapter Two: The Map">
-  <div class="chapter-bg" style="background-image: url('images/photos-may2026/chapter-mountains.webp');"></div>
-  <div class="chapter-inner">
-    <p class="chapter-roman">II.</p>
-    <h2 class="chapter-name">The <em>map.</em></h2>
-    <span class="chapter-rule" aria-hidden="true"></span>
-    <p class="chapter-quote">Three phases. Most coaches live in the first. Most spiritual teachers live in the second. Almost no one is pointing at the third.</p>
-  </div>
-</section>
-
-
 <section id="method" style="background: var(--bg-primary);">
   <div class="container">
-    <p class="eyebrow reveal">The Map</p>
     <h2 class="section-title reveal">Three phases. Most people<br>get stuck in the <em>first two.</em></h2>
     <div class="reveal" style="margin: 2rem auto 0; max-width: 1100px; border-radius: 8px; overflow: hidden; aspect-ratio: 21/9; background: url('images/photos-may2026/greg-walking-away.webp') center 50%/cover no-repeat; box-shadow: 0 24px 60px -12px rgba(0,0,0,0.3);"></div>
     <p class="section-subtitle reveal">There is an old Zen saying. Before enlightenment, mountains are mountains and rivers are rivers. Then, mountains are no longer mountains and rivers are no longer rivers. Finally, mountains are mountains and rivers are rivers once more. It is the cleanest description of what actually happens when a person does this work.</p>
@@ -3515,21 +3592,9 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 
 <!-- ===================== GREG'S STORY ===================== -->
 
-<!-- ============== CHAPTER III — THE STORY ============== -->
-<section class="chapter" id="chapter-3" aria-label="Chapter Three: The Story">
-  <div class="chapter-bg" style="background-image: url('images/photos-may2026/gold-cracks.webp'); background-position: center;"></div>
-  <div class="chapter-inner">
-    <p class="chapter-roman">III.</p>
-    <h2 class="chapter-name">The man who <em>walked through it first.</em></h2>
-    <span class="chapter-rule" aria-hidden="true"></span>
-    <p class="chapter-quote">Before he sat across from anyone else, he sat across from himself. For longer than he meant to.</p>
-  </div>
-</section>
-
 <section id="story" class="immersive-section right-text" style="background-image: url('images/photos-may2026/story-fullbleed.webp');">
   <div class="immersive-content">
     <div class="immersive-text reveal">
-      <p class="eyebrow">His Story</p>
       <h2>He walked through it <em>first.</em></h2>
       <p>In February 2020, Greg was on a phone call with a close friend when something happened he had no framework for. Ten thousand pounds lifted. Decades of ambient anxiety went quiet at once. He had grown up atheist. He was not meditating. It just happened. And instead of turning it into a brand, he spent the next five years actually doing the work.</p>
       <blockquote class="story-pull">He <em>deliberately gained twenty pounds</em> to prove to himself that he did not need a six pack to be lovable.</blockquote>
@@ -3552,7 +3617,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <section class="modalities-section" id="modalities">
   <div class="modalities-inner">
     <div class="modalities-head reveal">
-      <p class="eyebrow">Eight Doors</p>
       <h2>The work goes through <em>every door.</em></h2>
       <p class="lede">There is not one way home. There are many. Greg sits at the threshold of eight of them and walks people through whichever one is unlocked first.</p>
     </div>
@@ -3637,7 +3701,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <section id="beliefs" style="background: var(--bg-accent);">
   <div class="container">
     <div class="reveal" style="margin: 0 auto 3rem; max-width: 720px; aspect-ratio: 16/9; background: url('images/photos-may2026/hands-clasped-banner.webp') center 30%/cover no-repeat; border-radius: 8px; box-shadow: 0 18px 40px -10px rgba(0,0,0,0.25);"></div>
-    <p class="eyebrow reveal">What I Actually Believe</p>
     <h2 class="section-title reveal">Three things most people in this<br>work will never say <em>out loud.</em></h2>
     <p class="section-subtitle reveal">Greg spent six years inside the fitness and wellness industry before walking out the door. He is not criticizing it from the outside. He is a whistleblower from inside the room.</p>
 
@@ -3680,7 +3743,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <section class="immersive-section left-text" style="background-image: url('images/photos-may2026/working-fullbleed.webp');">
   <div class="immersive-content">
     <div class="immersive-text reveal">
-      <p class="eyebrow">What working with Greg actually looks like</p>
       <h2>One person at a time. <em>For twelve months.</em></h2>
       <p>This is not a group program. It is not a course. It is not a series of pre recorded calls you watch in the kitchen. It is a private practice. One person. Twelve months. Weekly touchpoints. Two in person intensives.</p>
       <p>What happens between us is uncluttered. No funnel. No upsell, no certification, no community to manage. The relationship is the work. The frequency is the work. The patience is the work. We slow down. We stay. We do not start over.</p>
@@ -3705,7 +3767,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <!-- ===================== SOCIAL PROOF ===================== -->
 <section style="background: var(--bg-primary);">
   <div class="container">
-    <p class="eyebrow reveal" style="justify-content: center;">Real Results</p>
     <h2 class="section-title reveal" style="text-align: center;">From people who stopped <em>pretending.</em></h2>
     <p class="section-subtitle reveal" style="text-align: center;">These are not case studies. They are people who walked into a room looking for one thing and walked out having found something they did not know they were missing.</p>
 
@@ -3906,7 +3967,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 <!-- ===================== NOT FOR EVERYONE (Opt 04) ===================== -->
 <section class="not-for-everyone">
   <div class="nfe-inner reveal">
-    <p class="nfe-eyebrow">Before you apply</p>
     <h2 class="nfe-title">This practice is <em>not for everyone.</em></h2>
     <p class="nfe-lede">Greg works with four to six people at a time. He would rather sit with an empty calendar than fill it with the wrong person. Read the four sentences below honestly. If any of them describe you, this is probably not the right room.</p>
     <ul class="nfe-list">
@@ -3924,7 +3984,6 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
   <div class="cta-quiet-grid reveal">
     <div class="cta-quiet-image"></div>
     <div class="cta-quiet-copy">
-      <p class="eyebrow" style="justify-content: flex-start;">An Interview</p>
       <h2 class="cta-quiet-question">What would you bring to a conversation with someone <em>who is not trying to sell you anything?</em></h2>
       <p class="cta-desc" style="text-align:left;max-width:520px;margin:0 0 1.8rem;">Thirty minutes. Both of you talking. No pitch. No pressure. No script. By the end you both know whether the work is right.</p>
       <a href="https://calendly.com/greg-enlightened/discovery-call" target="_blank" rel="noopener" class="btn-primary">Apply for an Interview</a>
