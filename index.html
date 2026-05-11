@@ -3621,6 +3621,24 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 .lab-welcome .reveal,.lab-itsy .reveal,.lab-map .reveal,.lab-story .reveal,.lab-ways .reveal,.lab-apply .reveal,
 .lab-welcome.reveal,.lab-itsy.reveal,.lab-map.reveal,.lab-story.reveal,.lab-ways.reveal,.lab-apply.reveal{opacity:1!important;transform:none!important}
 
+/* ===== NAV: KILL ALL MENU CHROME ===== */
+#navbar,.navbar-minimal,nav.navbar,nav.navbar-minimal,#floatingApply,.floating-apply{display:none!important}
+body{padding-top:0!important}
+
+/* ===== WELCOME C FIX: stretch photo full height + use a more intimate close-up ===== */
+.lab-welcome{align-items:stretch!important;grid-template-columns:48% 1fr!important}
+.lab-welcome .photo{height:auto!important;align-self:stretch;background:url('images/photos-may2026/doorway-light.webp') center 35%/cover no-repeat!important}
+.lab-welcome .photo::after{background:linear-gradient(90deg,rgba(10,8,5,0.25) 0%,transparent 50%,rgba(250,247,242,0.5) 100%)!important}
+.lab-welcome .inner{display:flex;flex-direction:column;justify-content:center;padding:7rem 5rem!important}
+
+/* ===== IS THIS YOU B FIX: solid dark band so 3-col row is legible ===== */
+.lab-itsy::before{background:linear-gradient(180deg,rgba(10,8,5,0.55) 0%,rgba(10,8,5,0.15) 22%,rgba(10,8,5,0.15) 45%,rgba(10,8,5,0.85) 62%,rgba(10,8,5,0.96) 100%)!important;z-index:1}
+.lab-itsy .inner{padding:0 4.5rem 5.5rem!important}
+.lab-itsy h2{margin-bottom:4rem!important;max-width:900px!important}
+.lab-itsy .row{padding-top:2rem;border-top:1px solid rgba(199,155,86,0.35)}
+.lab-itsy .row .q{color:#fdfbf8!important;font-size:1.1rem!important;text-shadow:0 1px 8px rgba(0,0,0,0.5)}
+.lab-itsy .row .a{color:#e2b56a!important;font-size:0.9rem!important;text-shadow:0 1px 8px rgba(0,0,0,0.5)}
+
 </style>
 </head>
 <body>
