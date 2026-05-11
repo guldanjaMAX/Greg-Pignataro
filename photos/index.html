@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greg Photo Library · Ranked for Hero</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#0a0805;--paper:#fdfbf8;--gold:#c79b56;--gold-bright:#e2b56a;--gold-soft:#3a2e1a;--green:#5a7a4f;--amber:#b87a2a;--rose:#a0524a;--serif:"EB Garamond",Georgia,serif;--sans:"Inter",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:#0a0805;color:#fdfbf8;line-height:1.6}
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(10,8,5,0.96);backdrop-filter:blur(14px);padding:1rem 1.6rem;border-bottom:1px solid rgba(199,155,86,0.2)}
+.toolbar h1{font-family:var(--serif);font-size:1.05rem;color:var(--gold-bright);font-weight:500}
+.toolbar h1 em{font-style:italic;color:#fdfbf8}
+.toolbar p{font-size:0.78rem;color:rgba(253,251,248,0.65);margin-top:0.3rem}
+.tier{padding:3rem 2rem 2rem;max-width:1400px;margin:0 auto}
+.tier-head{margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(199,155,86,0.2)}
+.tier-name{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.1rem;letter-spacing:0.04em}
+.tier h2{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.2rem);font-weight:400;color:#fdfbf8;margin-top:0.4rem;line-height:1.25}
+.tier h2 em{color:var(--gold);font-style:italic}
+.tier p{font-family:var(--serif);font-style:italic;color:rgba(253,251,248,0.7);max-width:780px;margin-top:0.8rem;font-size:1.02rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.grid.large{grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}
+.photo{position:relative;background:#1a1410;border-radius:6px;overflow:hidden;border:1px solid rgba(199,155,86,0.15);transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;display:block}
+.photo:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 18px 40px -14px rgba(199,155,86,0.25)}
+.photo img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:#0a0805}
+.photo.tall img{aspect-ratio:3/4}
+.photo .pmeta{padding:0.7rem 0.9rem 0.8rem;display:flex;justify-content:space-between;align-items:baseline;gap:0.6rem}
+.photo .pid{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:0.82rem}
+.photo .pscore{font-family:var(--sans);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.18rem 0.55rem;border-radius:999px;font-weight:600;white-space:nowrap}
+.pscore.s{background:rgba(199,155,86,0.22);color:var(--gold-bright)}
+.pscore.a{background:rgba(90,122,79,0.22);color:#a8c89a}
+.pscore.b{background:rgba(184,122,42,0.22);color:#e0b674}
+.pscore.c{background:rgba(160,82,74,0.18);color:#cc8a82}
+.photo .pdesc{padding:0 0.9rem 0.9rem;font-family:var(--serif);font-size:0.86rem;line-height:1.45;color:rgba(253,251,248,0.7)}
+.photo .pdesc em{color:var(--gold-bright);font-style:italic}
+
+/* Tier S - largest grid */
+.tier-S .grid{grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:1.4rem}
+.tier-S .photo img{aspect-ratio:16/10}
+.tier-S .photo.tall img{aspect-ratio:3/4}
+
+/* Tier C/D smaller */
+.tier-C .grid,.tier-D .grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.6rem}
+.tier-C .photo .pdesc,.tier-D .photo .pdesc{display:none}
+.tier-C .photo .pmeta,.tier-D .photo .pmeta{padding:0.4rem 0.6rem 0.5rem;font-size:0.7rem}
+
+.intro{padding:4rem 2rem 2rem;max-width:900px;margin:0 auto;text-align:center}
+.intro h1{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.2rem);font-weight:400;color:#fdfbf8;line-height:1.15;margin-bottom:1rem}
+.intro h1 em{color:var(--gold);font-style:italic}
+.intro p{font-family:var(--serif);font-style:italic;color:rgba(253,251,248,0.8);font-size:1.15rem;line-height:1.55;margin-bottom:1.2rem}
+
+.key-section{background:rgba(199,155,86,0.06);padding:2rem;border-radius:4px;border:1px solid rgba(199,155,86,0.18);margin:2rem auto;max-width:900px}
+.key-section h3{font-family:var(--sans);text-transform:uppercase;letter-spacing:0.22em;font-size:0.72rem;color:var(--gold);font-weight:600;margin-bottom:1rem}
+.key-row{display:flex;align-items:center;gap:0.7rem;margin:0.5rem 0;font-family:var(--serif);color:rgba(253,251,248,0.8);font-size:0.95rem}
+.key-row .pscore{flex-shrink:0}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>Greg's photo library &mdash; <em>ranked for hero.</em></h1>
+  <p>134 photos total &middot; 9 in the top tier &middot; tell me a photo ID and I deploy it</p>
+</div>
+
+<div class="intro">
+  <h1>The full <em>drawing board.</em></h1>
+  <p>Every photo I could verify is Greg, ranked for full-screen hero use. Each photo has a score and a recommended layout. Tell me which numbers to combine into a hero and we will deploy.</p>
+
+  <div class="key-section">
+    <h3>How I scored each photo</h3>
+    <div class="key-row"><span class="pscore s">Tier S</span> Perfect for full-bleed hero. Wide composition, negative space, strong emotional resonance with the headline.</div>
+    <div class="key-row"><span class="pscore a">Tier A</span> Excellent. Works for hero with a specific layout (diptych, vignette, etc.).</div>
+    <div class="key-row"><span class="pscore b">Tier B</span> Good for hero with a strong gradient or crop. Or perfect for a different section.</div>
+    <div class="key-row"><span class="pscore c">Tier C</span> Better suited for other sections (writing, modality cards, beliefs).</div>
+  </div>
+</div>
+
+<!-- TIER S - the absolute best -->
+<div class="tier tier-S">
+  <div class="tier-head">
+    <p class="tier-name">Tier S</p>
+    <h2>The top <em>nine.</em></h2>
+    <p>These are the photos I would build a hero around without hesitation. Each one has the composition and emotional weight to carry the headline alone.</p>
+  </div>
+  <div class="grid">
+
+    <a class="photo" id="p-6280">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6280.webp" alt="">
+      <div class="pmeta"><span class="pid">#6280 Desert arms outstretched</span><span class="pscore s">95%</span></div>
+      <p class="pdesc">Greg on a stone block in the desert with arms wide. Mountains and saguaro. <em>Christ-pose energy without the religion.</em> The most cinematic photo in the library.</p>
+    </a>
+
+    <a class="photo" id="p-5699">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5699.webp" alt="">
+      <div class="pmeta"><span class="pid">#5699 Direct portrait in green sweater</span><span class="pscore s">94%</span></div>
+      <p class="pdesc">Greg full body, green sweater, courtyard, looking directly at camera with a warm slight smile. <em>The classic personal brand hero.</em> Works best as a diptych.</p>
+    </a>
+
+    <a class="photo" id="p-6196">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6196.webp" alt="">
+      <div class="pmeta"><span class="pid">#6196 Meditating at the pond</span><span class="pscore s">92%</span></div>
+      <p class="pdesc">Greg from behind in lotus position by a still turquoise pond. Bald, plaid shirt. <em>The most direct visualization of &ldquo;come home to yourself.&rdquo;</em></p>
+    </a>
+
+    <a class="photo" id="p-6308">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6308.webp" alt="">
+      <div class="pmeta"><span class="pid">#6308 Silhouette through arch</span><span class="pscore s">92%</span></div>
+      <p class="pdesc">Greg silhouetted from behind, framed by a stone archway looking at desert hills. Massive negative space. <em>The reader becomes Greg.</em></p>
+    </a>
+
+    <a class="photo" id="p-5740">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5740.webp" alt="">
+      <div class="pmeta"><span class="pid">#5740 Editorial close-up</span><span class="pscore s">90%</span></div>
+      <p class="pdesc">Tight portrait of Greg's face, soft natural light, beard, eyes thoughtful and direct. <em>National Geographic feature energy.</em> Best for a centered or diptych layout.</p>
+    </a>
+
+    <a class="photo" id="p-6422">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6422.webp" alt="">
+      <div class="pmeta"><span class="pid">#6422 Walking away barefoot</span><span class="pscore s">90%</span></div>
+      <p class="pdesc">Greg walking away barefoot in the desert. Back to camera. Olive sweater, dark jeans, gravel and brush. <em>The literal photo of &ldquo;he walked through it first.&rdquo;</em></p>
+    </a>
+
+    <a class="photo" id="p-6028">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6028.webp" alt="">
+      <div class="pmeta"><span class="pid">#6028 Plaid courtyard portrait</span><span class="pscore s">90%</span></div>
+      <p class="pdesc">Greg in plaid, seated on a low wall, hands clasped, looking at camera with a warm smile. <em>&ldquo;Sitting across from you&rdquo; energy.</em> Best for diptych.</p>
+    </a>
+
+    <a class="photo" id="p-6354">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6354.webp" alt="">
+      <div class="pmeta"><span class="pid">#6354 Desert silhouette with vignette</span><span class="pscore s">88%</span></div>
+      <p class="pdesc">Same scene as 6308 but framed through a darker foreground. Greg arms slightly out. <em>Looks like a film still.</em> Heavy mood.</p>
+    </a>
+
+    <a class="photo" id="p-5774">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5774.webp" alt="">
+      <div class="pmeta"><span class="pid">#5774 Warm laughing portrait</span><span class="pscore s">88%</span></div>
+      <p class="pdesc">Greg in green sweater laughing in a garden by an adobe wall. Soft sunlight. <em>The warmest, most disarming photo in the library.</em></p>
+    </a>
+
+  </div>
+</div>
+
+<!-- TIER A - excellent secondary -->
+<div class="tier tier-A">
+  <div class="tier-head">
+    <p class="tier-name">Tier A</p>
+    <h2>Strong <em>second tier.</em></h2>
+    <p>These work as a hero in a specific layout, or as a hero for a return visitor variant.</p>
+  </div>
+  <div class="grid">
+
+    <a class="photo" id="p-5845">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5845.webp" alt="">
+      <div class="pmeta"><span class="pid">#5845 Low angle hands forward</span><span class="pscore a">86%</span></div>
+      <p class="pdesc">Greg's clasped hands sharp in foreground, Greg in soft focus behind in green sweater, looking up. Devotional without being religious.</p>
+    </a>
+
+    <a class="photo" id="p-6450">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6450.webp" alt="">
+      <div class="pmeta"><span class="pid">#6450 Treatment session smile</span><span class="pscore a">84%</span></div>
+      <p class="pdesc">Greg seated in his treatment room smiling at a female client (out of focus foreground). Guinness certificate on wall. Real proof, real warmth.</p>
+    </a>
+
+    <a class="photo" id="p-5740-alt">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5839.webp" alt="">
+      <div class="pmeta"><span class="pid">#5839 Hands clasped seated</span><span class="pscore a">82%</span></div>
+      <p class="pdesc">Greg seated in green sweater, hands interlocked, head out of frame. Contemplative. Already used as the Beliefs hands banner. Could go in hero.</p>
+    </a>
+
+    <a class="photo" id="p-greg-authority">
+      <img src="https://gregpignataro.com/images/headshots/greg_authority.jpg" alt="">
+      <div class="pmeta"><span class="pid">Headshot &middot; Authority</span><span class="pscore a">80%</span></div>
+      <p class="pdesc">Studio headshot with &ldquo;ON-SCREEN AUTHORITY&rdquo; backdrop. Bright, smiling, eyes engaged. Best for diptych layout.</p>
+    </a>
+
+    <a class="photo" id="p-greg-warm">
+      <img src="https://gregpignataro.com/images/headshots/greg_warm_connect.jpg" alt="">
+      <div class="pmeta"><span class="pid">Headshot &middot; Warm Connect</span><span class="pscore a">80%</span></div>
+      <p class="pdesc">Studio headshot with warm smile. The &ldquo;you can talk to me&rdquo; energy.</p>
+    </a>
+
+    <a class="photo" id="p-greg-intense">
+      <img src="https://gregpignataro.com/images/headshots/greg_intense_focus.jpg" alt="">
+      <div class="pmeta"><span class="pid">Headshot &middot; Intense Focus</span><span class="pscore a">79%</span></div>
+      <p class="pdesc">Studio headshot, neutral expression, direct eye contact. The &ldquo;I see you&rdquo; photo.</p>
+    </a>
+
+    <a class="photo" id="p-6500">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6500.webp" alt="">
+      <div class="pmeta"><span class="pid">#6500 Treatment room close</span><span class="pscore a">78%</span></div>
+      <p class="pdesc">Greg seated in his treatment room, leaning toward a client. Warm window light. Good for Working With Greg, not hero usually.</p>
+    </a>
+
+    <a class="photo" id="p-6469">
+      <img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6469.webp" alt="">
+      <div class="pmeta"><span class="pid">#6469 Laughing with client</span><span class="pscore a">76%</span></div>
+      <p class="pdesc">Close-up of Greg laughing during a session. Genuine human moment.</p>
+    </a>
+  </div>
+</div>
+
+<!-- TIER B - good for non-hero sections -->
+<div class="tier tier-B">
+  <div class="tier-head">
+    <p class="tier-name">Tier B</p>
+    <h2>Specific <em>fits.</em></h2>
+    <p>Works for sections other than hero, or as a hero with a particular crop.</p>
+  </div>
+  <div class="grid">
+    <a class="photo" id="p-5774-extra"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5994.webp" alt=""><div class="pmeta"><span class="pid">#5994 Plaid courtyard side</span><span class="pscore b">74%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6014.webp" alt=""><div class="pmeta"><span class="pid">#6014 Plaid courtyard direct</span><span class="pscore b">74%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6011.webp" alt=""><div class="pmeta"><span class="pid">#6011 Plaid courtyard side</span><span class="pscore b">72%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6121.webp" alt=""><div class="pmeta"><span class="pid">#6121 Plaid courtyard wide</span><span class="pscore b">72%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6123.webp" alt=""><div class="pmeta"><span class="pid">#6123 Plaid lake side</span><span class="pscore b">72%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6137.webp" alt=""><div class="pmeta"><span class="pid">#6137 Plaid lake side</span><span class="pscore b">70%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6206.webp" alt=""><div class="pmeta"><span class="pid">#6206 Lake meditation</span><span class="pscore b">70%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6212.webp" alt=""><div class="pmeta"><span class="pid">#6212 Lake meditation wide</span><span class="pscore b">70%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6220.webp" alt=""><div class="pmeta"><span class="pid">#6220 Lake meditation arms</span><span class="pscore b">68%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a6236.webp" alt=""><div class="pmeta"><span class="pid">#6236 Lake meditation back</span><span class="pscore b">68%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5648.webp" alt=""><div class="pmeta"><span class="pid">#5648 Studio black</span><span class="pscore b">68%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5680.webp" alt=""><div class="pmeta"><span class="pid">#5680 Studio side</span><span class="pscore b">66%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5689.webp" alt=""><div class="pmeta"><span class="pid">#5689 Studio direct</span><span class="pscore b">68%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5717.webp" alt=""><div class="pmeta"><span class="pid">#5717 Green sweater</span><span class="pscore b">70%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5765.webp" alt=""><div class="pmeta"><span class="pid">#5765 Green sweater portrait</span><span class="pscore b">72%</span></div></a>
+    <a class="photo"><img src="https://gregpignataro.com/images/gallery-2026-05-11/p-ef7a5772.webp" alt=""><div class="pmeta"><span class="pid">#5772 Green sweater close</span><span class="pscore b">68%</span></div></a>
+  </div>
+</div>
+
+<!-- TIER C - small grid for browsing -->
+<div class="tier tier-C">
+  <div class="tier-head">
+    <p class="tier-name">Tier C</p>
+    <h2>Browse the <em>rest.</em></h2>
+    <p>Detail shots, environment, and outtakes. Each is numbered. If any catch your eye, give me the number and we will pull it up.</p>
+  </div>
+  <div class="grid" id="rest-grid"></div>
+</div>
+
+<section style="padding:5rem 2rem;background:linear-gradient(180deg,#0a0805 0%,#1a1107 100%);text-align:center;border-top:1px solid rgba(199,155,86,0.2);margin-top:4rem">
+  <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);color:#fdfbf8;margin-bottom:1.4rem">Pick <em style="color:var(--gold);font-style:italic">a number</em>.</h2>
+  <p style="font-family:var(--serif);font-style:italic;font-size:1.05rem;color:rgba(253,251,248,0.75);max-width:660px;margin:0 auto 1.6rem;line-height:1.6">Tell me &ldquo;Let&apos;s try #6280 as the hero&rdquo; or &ldquo;Build me a hero with #5699 on the right and #6422 on the left.&rdquo; I deploy and we iterate.</p>
+</section>
+
+<script>
+// Auto-fill the rest grid with all Tier C photos
+const usedIds = new Set([
+  'ef7a6280','ef7a5699','ef7a6196','ef7a6308','ef7a5740','ef7a6422','ef7a6028','ef7a6354','ef7a5774',
+  'ef7a5845','ef7a6450','ef7a5839','ef7a6500','ef7a6469',
+  'ef7a5994','ef7a6014','ef7a6011','ef7a6121','ef7a6123','ef7a6137',
+  'ef7a6206','ef7a6212','ef7a6220','ef7a6236','ef7a5648','ef7a5680','ef7a5689','ef7a5717','ef7a5765','ef7a5772'
+]);
+fetch('https://gregpignataro.com/images/gallery-2026-05-11/').then(r=>r.text()).catch(()=>'');
+// Hardcode the full list (we know it from the upload)
+const allIds = `ef7a5613 ef7a5615 ef7a5622 ef7a5626 ef7a5627 ef7a5628 ef7a5635 ef7a5640 ef7a5645 ef7a5648 ef7a5652 ef7a5657 ef7a5671 ef7a5680 ef7a5686 ef7a5689 ef7a5695 ef7a5699 ef7a5714 ef7a5717 ef7a5724 ef7a5726 ef7a5733 ef7a5740 ef7a5743 ef7a5747 ef7a5765 ef7a5772 ef7a5774 ef7a5815 ef7a5830 ef7a5834 ef7a5839 ef7a5845 ef7a5851 ef7a5857 ef7a5871 ef7a5884 ef7a5892 ef7a5894 ef7a5903 ef7a5910 ef7a5912 ef7a5925 ef7a5936 ef7a5937 ef7a5943 ef7a5949 ef7a5951 ef7a5994 ef7a6010 ef7a6011 ef7a6014 ef7a6020 ef7a6028 ef7a6033 ef7a6034 ef7a6035 ef7a6049 ef7a6055 ef7a6069 ef7a6078 ef7a6087 ef7a6095 ef7a6114 ef7a6121 ef7a6123 ef7a6128 ef7a6137 ef7a6152 ef7a6154 ef7a6157 ef7a6161 ef7a6174 ef7a6176 ef7a6183 ef7a6196 ef7a6199 ef7a6206 ef7a6212 ef7a6220 ef7a6236 ef7a6280 ef7a6308 ef7a6310 ef7a6337 ef7a6354 ef7a6380 ef7a6403 ef7a6422 ef7a6450 ef7a6451 ef7a6457 ef7a6469 ef7a6478 ef7a6480 ef7a6482 ef7a6484 ef7a6497 ef7a6498 ef7a6500 ef7a6519 ef7a6523 ef7a6533 ef7a6535 ef7a6538 ef7a6540 ef7a6549 ef7a6554 ef7a6559 ef7a6562 ef7a6577 ef7a5859 ef7a5891 ef7a5900 ef7a5916 ef7a5917 ef7a5921 ef7a5944 ef7a5950 ef7a5982 ef7a5990 ef7a6044 ef7a6062 ef7a6068 ef7a6076 ef7a6083`.split(/\s+/).filter(x=>x);
+const restGrid = document.getElementById('rest-grid');
+allIds.forEach(id => {
+  if (usedIds.has(id)) return;
+  const a = document.createElement('a');
+  a.className = 'photo';
+  const num = id.replace('ef7a','').replace(/^0+/,'');
+  a.innerHTML = `<img loading="lazy" src="https://gregpignataro.com/images/gallery-2026-05-11/p-${id}.webp" alt=""><div class="pmeta"><span class="pid">#${num}</span></div>`;
+  a.id = 'p-' + id;
+  restGrid.appendChild(a);
+});
+</script>
+</body>
+</html>
