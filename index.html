@@ -3673,6 +3673,42 @@ section.manifesto.santa-claus *{transition:none!important;animation:none!importa
 .lab-map .scene .label h3{font-size:clamp(1.5rem,2vw,1.85rem)!important;line-height:1.2!important;margin-bottom:0.8rem!important}
 .lab-map .scene .label p{font-size:clamp(1.05rem,1.25vw,1.2rem)!important;line-height:1.55!important;color:rgba(253,251,248,0.92)!important;text-shadow:0 1px 8px rgba(0,0,0,0.5)}
 
+/* =============== POLISH LAYERS 1, 2, 3 =============== */
+/* Layer 1: Quiet hero arrival */
+@keyframes lp-photo-in{from{transform:scale(1.05);filter:brightness(0.65)}to{transform:scale(1);filter:none}}
+@keyframes lp-text-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+section.hero .hero-photo{animation:lp-photo-in 2.4s cubic-bezier(0.22,1,0.36,1) both;animation-delay:0.15s}
+section.hero .hero-text>.hero-top{animation:lp-text-in 1.2s ease-out both;animation-delay:0.55s}
+section.hero .hero-text>.hero-bottom{animation:lp-text-in 1.2s ease-out both;animation-delay:0.95s}
+
+/* Layer 2: Scroll-respected reveals on lab sections */
+@keyframes lp-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes lp-rise-soft{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.lab-welcome .inner,.lab-itsy .inner,.lab-map .head,.lab-story .right,.lab-ways .head,.lab-apply .inner,
+.lab-welcome .photo,.lab-itsy::before,.lab-map .scenes,.lab-story .left,.lab-ways .strip{opacity:0;transition:none}
+section.lp-in.lab-welcome .photo{animation:lp-rise-soft 1.4s ease-out 0.1s both}
+section.lp-in.lab-welcome .inner{animation:lp-rise 1.2s ease-out 0.35s both}
+section.lp-in.lab-itsy .inner{animation:lp-rise 1.3s ease-out 0.3s both}
+section.lp-in.lab-itsy::before{animation:lp-rise-soft 1.1s ease-out 0s both}
+section.lp-in.lab-map .head{animation:lp-rise 1.1s ease-out 0.15s both}
+section.lp-in.lab-map .scenes{animation:lp-rise 1.3s ease-out 0.4s both}
+section.lp-in.lab-story .left{animation:lp-rise-soft 1.2s ease-out 0.1s both}
+section.lp-in.lab-story .right{animation:lp-rise 1.2s ease-out 0.35s both}
+section.lp-in.lab-ways .head{animation:lp-rise 1.1s ease-out 0.15s both}
+section.lp-in.lab-ways .strip{animation:lp-rise 1.3s ease-out 0.45s both}
+section.lp-in.lab-apply .inner{animation:lp-rise 1.4s ease-out 0.2s both}
+/* Italic phrases linger slightly */
+section.lp-in.lab-welcome em,section.lp-in.lab-itsy em,section.lp-in.lab-map em,section.lp-in.lab-story em,section.lp-in.lab-ways em,section.lp-in.lab-apply em{animation:lp-rise-soft 1.4s ease-out 1s both}
+
+/* Layer 3: Gold halo pulse on apply */
+@keyframes lp-halo{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.06);opacity:1}}
+section.lab-apply::before{animation:lp-halo 6s ease-in-out infinite!important;transform-origin:center}
+
+/* Respect users who don't want motion */
+@media (prefers-reduced-motion:reduce){
+  section.hero .hero-photo,section.hero .hero-text>*,section.lab-welcome .inner,section.lab-itsy .inner,section.lab-map .head,section.lab-map .scenes,section.lab-story .left,section.lab-story .right,section.lab-ways .head,section.lab-ways .strip,section.lab-apply .inner,section.lab-welcome .photo,section.lab-apply::before,section.lab-itsy::before{animation:none!important;opacity:1!important;transform:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -4425,6 +4461,33 @@ function wendyToggle() {
     }, { passive: true });
     update();
   }
+})();
+</script>
+
+<script>
+// Polish layers 2 — Scroll-respected reveals on lab sections
+(function(){
+  var labSel = 'section.lab-welcome, section.lab-itsy, section.lab-map, section.lab-story, section.lab-ways, section.lab-apply';
+  var sections = document.querySelectorAll(labSel);
+  if(!sections.length) return;
+  if(!('IntersectionObserver' in window)){
+    // Failsafe: just show everything if IO is unavailable
+    sections.forEach(function(s){ s.classList.add('lp-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('lp-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  sections.forEach(function(s){ io.observe(s); });
+  // Hard failsafe: ensure all sections become visible after 2.5s no matter what
+  setTimeout(function(){
+    sections.forEach(function(s){ s.classList.add('lp-in'); });
+  }, 2500);
 })();
 </script>
 
