@@ -3655,13 +3655,23 @@ section.lab-welcome>.photo::after,.lab-welcome>.photo::after{content:''!importan
 section.lab-welcome>.inner,.lab-welcome>.inner{display:flex;flex-direction:column;justify-content:center;padding:7rem 5rem!important;margin:0!important}
 section.lab-welcome{position:relative}
 
-/* ===== IS THIS YOU B FIX: solid dark band so 3-col row is legible ===== */
-.lab-itsy::before{background:linear-gradient(180deg,rgba(10,8,5,0.55) 0%,rgba(10,8,5,0.15) 22%,rgba(10,8,5,0.15) 45%,rgba(10,8,5,0.85) 62%,rgba(10,8,5,0.96) 100%)!important;z-index:1}
-.lab-itsy .inner{padding:0 4.5rem 5.5rem!important}
-.lab-itsy h2{margin-bottom:4rem!important;max-width:900px!important}
-.lab-itsy .row{padding-top:2rem;border-top:1px solid rgba(199,155,86,0.35)}
-.lab-itsy .row .q{color:#fdfbf8!important;font-size:1.1rem!important;text-shadow:0 1px 8px rgba(0,0,0,0.5)}
-.lab-itsy .row .a{color:#e2b56a!important;font-size:0.9rem!important;text-shadow:0 1px 8px rgba(0,0,0,0.5)}
+/* ===== IS THIS YOU B FIX: solid dark band so 3-col row is fully legible ===== */
+.lab-itsy::before{background:linear-gradient(180deg,rgba(10,8,5,0.6) 0%,rgba(10,8,5,0.25) 22%,rgba(10,8,5,0.15) 40%,rgba(10,8,5,0.9) 52%,#0a0805 60%,#0a0805 100%)!important;z-index:1}
+.lab-itsy .inner{padding:0 4.5rem 5rem!important;display:flex;flex-direction:column;justify-content:flex-end;min-height:100vh}
+.lab-itsy h2{margin-bottom:3rem!important;max-width:900px!important;text-shadow:0 2px 16px rgba(0,0,0,0.4)}
+.lab-itsy .row{padding-top:2.2rem;border-top:1px solid rgba(199,155,86,0.4)}
+.lab-itsy .row .q{color:#fdfbf8!important;font-size:1.1rem!important;text-shadow:0 1px 8px rgba(0,0,0,0.7)}
+.lab-itsy .row .a{color:#e2b56a!important;font-size:0.9rem!important;text-shadow:0 1px 8px rgba(0,0,0,0.7)}
+
+/* ===== SANTA CLAUS PRINCIPLE: NO ANIMATION (force visible immediately) ===== */
+section.manifesto.santa-claus,section.manifesto.santa-claus.reveal{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+section.manifesto.santa-claus *{transition:none!important;animation:none!important}
+
+/* ===== MAP B: bigger description text for 50+ readers ===== */
+.lab-map .scene .label{padding:2.4rem 1.8rem!important}
+.lab-map .scene .label .num{font-size:1.1rem!important;margin-bottom:0.6rem!important}
+.lab-map .scene .label h3{font-size:clamp(1.5rem,2vw,1.85rem)!important;line-height:1.2!important;margin-bottom:0.8rem!important}
+.lab-map .scene .label p{font-size:clamp(1.05rem,1.25vw,1.2rem)!important;line-height:1.55!important;color:rgba(253,251,248,0.92)!important;text-shadow:0 1px 8px rgba(0,0,0,0.5)}
 
 </style>
 </head>
@@ -3764,7 +3774,7 @@ section.lab-welcome{position:relative}
 
 
 <!-- ===================== SANTA CLAUS ANALOGY ===================== -->
-<section class="manifesto reveal" style="background: var(--bg-primary);">
+<section class="manifesto santa-claus" style="background: var(--bg-primary);">
   <p style="text-align: center; font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 auto 1.4rem; max-width: 860px;">The Santa Claus Principle</p>
   <p class="manifesto-quote">&ldquo;Most health programs are trying to help Santa Claus eat fewer cookies. Better macros. Smarter training. Cleaner sleep habits. The belief that your body has to look a certain way to be worthy of love. <em>That is Santa Claus.</em>&rdquo;</p>
   <p class="manifesto-attribution">Greg Pignataro</p>
