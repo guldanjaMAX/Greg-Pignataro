@@ -3695,6 +3695,11 @@ section.lab-apply::before{animation:lp-halo 6s ease-in-out infinite!important;tr
 .lab-itsy h2{text-shadow:0 2px 24px rgba(0,0,0,0.7)!important}
 .lab-itsy h2 .first,.lab-itsy h2 .second{text-shadow:0 2px 24px rgba(0,0,0,0.7)!important}
 
+/* =============== FORCE ALL REVEAL ELEMENTS VISIBLE — fix faded ghost sections =============
+   The legacy IntersectionObserver doesn't fire reliably (and gets confused by programmatic scrolls and
+   refresh on a scrolled page). Force the reveal class to always render content visible. */
+.reveal,.reveal.reveal-delay-1,.reveal.reveal-delay-2,.reveal.reveal-delay-3{opacity:1!important;transform:none!important;visibility:visible!important;filter:none!important}
+
 /* =============== MOBILE RESPONSIVE — comprehensive override ============= */
 @media (max-width:880px){
   /* HERO: stack photo + text vertically */
