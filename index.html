@@ -3709,6 +3709,69 @@ section.lab-apply::before{animation:lp-halo 6s ease-in-out infinite!important;tr
   section.hero .hero-photo,section.hero .hero-text>*,section.lab-welcome .inner,section.lab-itsy .inner,section.lab-map .head,section.lab-map .scenes,section.lab-story .left,section.lab-story .right,section.lab-ways .head,section.lab-ways .strip,section.lab-apply .inner,section.lab-welcome .photo,section.lab-apply::before,section.lab-itsy::before{animation:none!important;opacity:1!important;transform:none!important}
 }
 
+/* =============== MOBILE RESPONSIVE — comprehensive override ============= */
+@media (max-width:880px){
+  /* HERO: stack photo + text vertically */
+  section.hero{height:auto!important;min-height:90vh!important;display:flex!important;flex-direction:column!important}
+  section.hero .hero-photo{position:relative!important;width:100%!important;height:48vh!important;min-height:300px!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;background-position:30% 25%!important}
+  section.hero .hero-photo::after{background:linear-gradient(180deg,transparent 50%,rgba(10,8,5,0.55) 100%)!important}
+  section.hero .hero-text{position:relative!important;width:100%!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;padding:2.4rem 1.6rem 3rem!important;flex:1 1 auto!important}
+  section.hero .hero-text .hero-headline{font-size:clamp(2.6rem,9vw,3.6rem)!important;line-height:1!important}
+  section.hero .hero-text .hero-whisper{max-width:none!important;font-size:1rem!important}
+  section.hero .hero-text .hero-credits{font-size:0.55rem!important}
+
+  /* WELCOME C: stack photo top, text bottom */
+  section.lab-welcome{grid-template-columns:1fr!important;align-items:stretch!important;min-height:auto!important}
+  section.lab-welcome>.photo{height:38vh!important;width:100%!important;min-height:280px!important}
+  section.lab-welcome>.photo::after{background:linear-gradient(180deg,transparent 60%,rgba(250,247,242,0.4) 100%)!important}
+  section.lab-welcome>.inner{padding:3rem 1.6rem 4rem!important;max-width:none!important}
+  section.lab-welcome>.inner .body{font-size:1.25rem!important;line-height:1.5!important}
+
+  /* IS THIS YOU B: vertical stack questions, stronger contrast solid dark */
+  section.lab-itsy{background-position:35% 18%!important;background-size:cover!important;min-height:auto!important;display:flex!important;flex-direction:column!important}
+  section.lab-itsy::before{background:linear-gradient(180deg,rgba(10,8,5,0.4) 0%,rgba(10,8,5,0.1) 18%,rgba(10,8,5,0.1) 30%,rgba(10,8,5,0.85) 42%,#0a0805 55%,#0a0805 100%)!important}
+  section.lab-itsy .inner{padding:30vh 1.6rem 3rem!important;min-height:90vh!important}
+  section.lab-itsy h2{font-size:2.1rem!important;margin-bottom:2rem!important;line-height:1.05!important}
+  section.lab-itsy h2 .first,section.lab-itsy h2 .second{font-size:1em!important}
+  section.lab-itsy .row{grid-template-columns:1fr!important;gap:1.6rem!important;padding-top:1.6rem!important}
+  section.lab-itsy .row .q{font-size:1.1rem!important;color:#fdfbf8!important;text-shadow:0 1px 6px rgba(0,0,0,0.6)!important}
+  section.lab-itsy .row .a{font-size:0.95rem!important;color:#e2b56a!important;border-top:1px solid rgba(199,155,86,0.35)!important;padding-top:0.6rem!important;text-shadow:0 1px 6px rgba(0,0,0,0.6)!important}
+
+  /* MAP B: stack 3 scenes vertically */
+  section.lab-map{padding:3rem 0!important;min-height:auto!important}
+  section.lab-map .head{padding:0 1.6rem!important;margin-bottom:2rem!important}
+  section.lab-map .scenes{grid-template-columns:1fr!important;gap:2px!important}
+  section.lab-map .scene{aspect-ratio:16/11!important}
+  section.lab-map .scene .label{padding:1.6rem 1.4rem!important}
+  section.lab-map .scene .label h3{font-size:1.35rem!important}
+  section.lab-map .scene .label p{font-size:1rem!important}
+
+  /* STORY B: stack photo top, text bottom */
+  section.lab-story{grid-template-columns:1fr!important;min-height:auto!important}
+  section.lab-story .left{height:38vh!important;width:100%!important;min-height:280px!important;background-position:center 25%!important}
+  section.lab-story .right{padding:3rem 1.6rem 4rem!important}
+  section.lab-story h2{font-size:2.2rem!important}
+  section.lab-story .body{font-size:1.05rem!important;max-width:none!important}
+  section.lab-story .pull{font-size:1.05rem!important;max-width:none!important}
+  section.lab-story .creds{max-width:none!important;font-size:0.65rem!important}
+
+  /* WAYS A: 2-col strip on mobile */
+  section.lab-ways{padding:3rem 0!important;min-height:auto!important}
+  section.lab-ways .head{padding:0 1.6rem!important;margin-bottom:2.4rem!important}
+  section.lab-ways .head h2{font-size:2rem!important}
+  section.lab-ways .strip{grid-template-columns:repeat(2,1fr)!important;gap:2px!important}
+  section.lab-ways .way{aspect-ratio:1/1.2!important}
+  section.lab-ways .way .lbl{padding:1.1rem 0.9rem!important}
+  section.lab-ways .way .lbl h3{font-size:0.92rem!important}
+  section.lab-ways .way .lbl p{font-size:0.7rem!important}
+  section.lab-ways .close{padding:0 1.6rem!important;margin-top:2.4rem!important;font-size:0.95rem!important}
+
+  /* APPLY C: tighter padding */
+  section.lab-apply{padding:5rem 1.6rem!important;min-height:auto!important}
+  section.lab-apply h2{font-size:1.95rem!important;line-height:1.15!important}
+  section.lab-apply .body{font-size:1rem!important}
+}
+
 </style>
 </head>
 <body>
