@@ -3702,14 +3702,19 @@ section.lab-apply::before{animation:lp-halo 6s ease-in-out infinite!important;tr
 
 /* =============== MOBILE RESPONSIVE — comprehensive override ============= */
 @media (max-width:880px){
-  /* HERO: stack photo + text vertically */
-  section.hero{height:auto!important;min-height:90vh!important;display:flex!important;flex-direction:column!important}
-  section.hero .hero-photo{position:relative!important;width:100%!important;height:48vh!important;min-height:300px!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;background-position:30% 25%!important}
-  section.hero .hero-photo::after{background:linear-gradient(180deg,transparent 50%,rgba(10,8,5,0.55) 100%)!important}
-  section.hero .hero-text{position:relative!important;width:100%!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;padding:2.4rem 1.6rem 3rem!important;flex:1 1 auto!important}
-  section.hero .hero-text .hero-headline{font-size:clamp(2.6rem,9vw,3.6rem)!important;line-height:1!important}
-  section.hero .hero-text .hero-whisper{max-width:none!important;font-size:1rem!important}
-  section.hero .hero-text .hero-credits{font-size:0.55rem!important}
+  /* HERO MOBILE: photo full-bleed BEHIND, text overlaid on top with strong contrast */
+  section.hero{height:100vh!important;min-height:100vh!important;display:block!important;position:relative!important;overflow:hidden!important}
+  section.hero .hero-photo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;left:0!important;right:0!important;top:0!important;bottom:0!important;background-position:35% 22%!important;background-size:cover!important}
+  section.hero .hero-photo::after{background:linear-gradient(180deg,rgba(10,8,5,0.65) 0%,rgba(10,8,5,0.35) 28%,rgba(10,8,5,0.2) 55%,rgba(10,8,5,0.85) 100%)!important}
+  section.hero .hero-text{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;left:0!important;right:0!important;top:0!important;bottom:0!important;padding:6vh 1.6rem 4vh!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;z-index:3!important}
+  section.hero .hero-text .hero-top{display:flex!important;flex-direction:column!important;gap:1rem!important}
+  section.hero .hero-text .hero-wordmark{color:#fdfbf8!important;text-shadow:0 1px 12px rgba(0,0,0,0.6)!important}
+  section.hero .hero-text .hero-rule{background:rgba(253,251,248,0.5)!important}
+  section.hero .hero-text .hero-headline{font-size:clamp(2.6rem,9vw,3.6rem)!important;line-height:1!important;text-shadow:0 2px 24px rgba(0,0,0,0.6)!important}
+  section.hero .hero-text .hero-bottom{display:flex!important;flex-direction:column!important;gap:1.2rem!important}
+  section.hero .hero-text .hero-whisper{max-width:none!important;font-size:1rem!important;color:#fdfbf8!important;text-shadow:0 1px 12px rgba(0,0,0,0.6)!important}
+  section.hero .hero-text .hero-whisper em{color:#e2b56a!important}
+  section.hero .hero-text .hero-credits{font-size:0.55rem!important;color:rgba(253,251,248,0.7)!important;text-shadow:0 1px 8px rgba(0,0,0,0.6)!important;border-top:1px solid rgba(253,251,248,0.2)!important}
 
   /* WELCOME C: stack photo top, text bottom */
   section.lab-welcome{grid-template-columns:1fr!important;align-items:stretch!important;min-height:auto!important}
