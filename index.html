@@ -3769,6 +3769,84 @@ section.lab-apply::before{animation:lp-halo 6s ease-in-out infinite!important;tr
 }
 
 </style>
+<!-- SEO UPGRADE: extra schemas -->
+<!-- ProfessionalService schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://gregpignataro.com/#practice",
+  "name": "Greg Pignataro Private Practice",
+  "url": "https://gregpignataro.com/",
+  "image": "https://gregpignataro.com/og-image-home.jpg",
+  "logo": "https://gregpignataro.com/og-image-home.jpg",
+  "founder": {"@id": "https://gregpignataro.com/#greg"},
+  "priceRange": "$$$$",
+  "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "Worldwide"}],
+  "serviceType": "Somatic and identity transformation practice",
+  "slogan": "Come home to yourself.",
+  "knowsAbout": [
+    "Identity dissolution",
+    "Somatic healing",
+    "Nervous system regulation",
+    "Body image and shame",
+    "Integration after psychedelics",
+    "Executive transitions",
+    "Empty nest reckoning",
+    "Post-sale identity loss"
+  ]
+}
+</script>
+
+<!-- Breadcrumb schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Greg Pignataro", "item": "https://gregpignataro.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Apply for an Interview", "item": "https://gregpignataro.com/#apply"}
+  ]
+}
+</script>
+
+<!-- SiteNavigationElement so search engines + LLMs know the page anchors -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {"@type": "SiteNavigationElement", "name": "Is This You", "url": "https://gregpignataro.com/#who"},
+    {"@type": "SiteNavigationElement", "name": "The Three Phases", "url": "https://gregpignataro.com/#method"},
+    {"@type": "SiteNavigationElement", "name": "His Story", "url": "https://gregpignataro.com/#story"},
+    {"@type": "SiteNavigationElement", "name": "Eight Ways Home", "url": "https://gregpignataro.com/#modalities"},
+    {"@type": "SiteNavigationElement", "name": "What I Believe", "url": "https://gregpignataro.com/#beliefs"},
+    {"@type": "SiteNavigationElement", "name": "Apply for an Interview", "url": "https://gregpignataro.com/#apply"}
+  ]
+}
+</script>
+
+<!-- Sharper meta for crawlers + LLMs -->
+<meta name="keywords" content="Greg Pignataro, embodied transformation, somatic healing, nervous system regulation, identity dissolution, Gabor Mate Compassionate Inquiry, NeuFit, post-sale identity, empty nest reckoning, executive transitions, twelve month container, private practice">
+<meta name="application-name" content="Greg Pignataro">
+<meta name="apple-mobile-web-app-title" content="Greg Pignataro">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="article:author" content="Greg Pignataro">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:secure_url" content="https://gregpignataro.com/og-image-home.jpg">
+
+<!-- GA4 placeholder (Google Analytics 4) — replace G-XXXXXXXXXX with the real measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PLACEHOLDER', { 'anonymize_ip': true });
+</script>
+
+
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
