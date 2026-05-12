@@ -3625,6 +3625,29 @@ footer.footer-dark .footer-copy { color: rgba(253,251,248,0.4) !important; }
 #navbar,.navbar-minimal,nav.navbar,nav.navbar-minimal,#floatingApply,.floating-apply{display:none!important}
 body{padding-top:0!important}
 
+/* ===== HERO LAYOUT D: photo 72% right, text 38% left ===== */
+section.hero{position:relative!important;height:100vh!important;min-height:620px!important;max-height:none!important;overflow:hidden!important;background:#0a0805!important}
+section.hero .hero-photo{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:auto!important;width:72%!important;height:auto!important;inset:auto!important;background:url('images/photos-may2026/greg-studio-5648.webp') 30% 22%/cover no-repeat!important;z-index:0!important}
+section.hero .hero-photo::after{content:''!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,#0a0805 0%,rgba(10,8,5,0.55) 8%,transparent 20%)!important;z-index:1!important;pointer-events:none}
+section.hero .hero-vignette{display:none!important}
+section.hero .hero-text{position:absolute!important;top:0!important;left:0!important;bottom:0!important;width:38%!important;padding:7vh 3.5vw!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;z-index:3!important;color:#fdfbf8}
+section.hero .hero-text .hero-top{display:flex;flex-direction:column;gap:1.4rem}
+section.hero .hero-text .hero-wordmark{font-family:var(--serif,"EB Garamond",Georgia,serif)!important;font-size:1rem!important;color:#e2b56a!important;letter-spacing:0.18em!important;text-transform:uppercase!important;font-weight:500!important;margin:0!important;position:static!important}
+section.hero .hero-text .hero-rule{display:block!important;width:40px!important;height:1px!important;background:rgba(199,155,86,0.6)!important;position:static!important}
+section.hero .hero-text .hero-headline{font-family:var(--serif,"EB Garamond",Georgia,serif)!important;font-weight:400!important;font-size:clamp(2.8rem,5.5vw,4.6rem)!important;line-height:1!important;letter-spacing:-0.005em!important;color:#fdfbf8!important;position:static!important;top:auto!important;left:auto!important;text-shadow:none!important;margin:0!important;max-width:none!important}
+section.hero .hero-text .hero-headline em{font-style:italic!important;color:#e2b56a!important;display:block!important;margin:0!important}
+section.hero .hero-text .hero-bottom{display:flex;flex-direction:column;gap:1.6rem}
+section.hero .hero-text .hero-whisper{font-family:var(--serif,"EB Garamond",Georgia,serif)!important;font-style:italic!important;font-size:clamp(0.95rem,1.3vw,1.1rem)!important;color:rgba(253,251,248,0.78)!important;line-height:1.5!important;max-width:300px!important;position:static!important;bottom:auto!important;left:auto!important;margin:0!important;text-shadow:none!important}
+section.hero .hero-text .hero-whisper em{color:#e2b56a!important;font-style:normal!important}
+section.hero .hero-text .hero-credits{font-family:var(--sans,"Inter",Arial,sans-serif)!important;font-size:0.58rem!important;letter-spacing:0.2em!important;text-transform:uppercase!important;color:rgba(253,251,248,0.5)!important;line-height:1.7!important;border-top:1px solid rgba(199,155,86,0.2)!important;padding-top:1.2rem!important;list-style:none!important;position:static!important;right:auto!important;bottom:auto!important;text-align:left!important;margin:0!important}
+section.hero .hero-text .hero-credits li{margin:0!important;padding:0!important;text-align:left!important}
+section.hero .hero-scroll-cue{display:none!important}
+@media (max-width:780px){
+  section.hero .hero-photo{width:100%!important;opacity:0.55!important}
+  section.hero .hero-photo::after{background:rgba(10,8,5,0.45)!important}
+  section.hero .hero-text{width:100%!important;padding:6vh 6vw!important}
+}
+
 /* ===== WELCOME C FIX: kill section padding, photo bleeds full column ===== */
 section.lab-welcome,.lab-welcome{align-items:stretch!important;grid-template-columns:48% 1fr!important;padding:0!important;margin:0!important;width:100%!important;max-width:100%!important}
 section.lab-welcome>.photo,.lab-welcome>.photo{height:100%!important;width:100%!important;min-height:100vh!important;align-self:stretch;background:url('images/photos-may2026/doorway-light.webp') center 35%/cover no-repeat!important;padding:0!important;margin:0!important;display:block!important;box-sizing:border-box!important}
@@ -3664,22 +3687,24 @@ section.lab-welcome{position:relative}
   <a href="#apply" class="nav-cta">Apply for an Interview</a>
 </nav>
 
-<!-- ===================== HERO ===================== -->
+<!-- ===================== HERO (Layout D) ===================== -->
 <section class="hero" id="main-content">
   <div class="hero-photo"></div>
-  <div class="hero-vignette"></div>
-
-  <h1 class="hero-headline">Come home<br><em>to yourself.</em></h1>
-
-  <p class="hero-whisper">You were never broken. <em>Your body remembers.</em></p>
-
-  <ul class="hero-credits">
-    <li>Lineage of Dr. Gabor Mat&eacute;</li>
-    <li>Necker Island Retreat Facilitator</li>
-    <li>Guinness World Record holder</li>
-  </ul>
-
-  <span class="hero-scroll-cue" aria-hidden="true"></span>
+  <div class="hero-text">
+    <div class="hero-top">
+      <p class="hero-wordmark">Greg Pignataro</p>
+      <span class="hero-rule"></span>
+      <h1 class="hero-headline">Come home<em>to yourself.</em></h1>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-whisper">You were never broken. <em>Your body remembers.</em></p>
+      <ul class="hero-credits">
+        <li>Lineage of Dr. Gabor Mat&eacute;</li>
+        <li>Necker Island Retreat Facilitator</li>
+        <li>Guinness World Record holder</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- ===================== BELOW THE FOLD: the welcome (Lab pick: C) ===================== -->
